@@ -298,6 +298,8 @@ namespace TPRandomizer.Assets
                 )
             );
 
+            seedHeader.Add(Converter.GcByte((int)randomizerSettings.mirrorChamberEntrance));
+
             while (seedHeader.Count < SeedHeaderSize)
             {
                 seedHeader.Add((byte)0x0);
@@ -1580,6 +1582,24 @@ namespace TPRandomizer.Assets
                     (int)StageIDs.Kakariko_Graveyard_Interiors,
                     7
                 ), // Call event017 to give player item
+
+                // Modify LBT scnChg so player can swim into it
+                new ARCReplacement(
+                    "8F0",
+                    "46C35000",
+                    (byte)FileDirectory.Room,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Lakebed_Temple,
+                    0
+                ),
+                new ARCReplacement(
+                    "8EC",
+                    "442F0000",
+                    (byte)FileDirectory.Room,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Lakebed_Temple,
+                    0
+                ),
                 /*
                 // Note: I don't know how to modify the event system to get these items to work properly, but I already did the work on finding the replacement values, so just keeping them here.
                 new ARCReplacement(

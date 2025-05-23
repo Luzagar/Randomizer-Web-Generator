@@ -93,9 +93,6 @@ namespace TPRandomizer.Assets
             { 0x0, 0x61 }, // Defeated first bulblin outside link's house
             { 0x0, 0x62 }, // Defeated second bulblin outside link's house
             { 0x0, 0x60 }, // Defeated Hugo
-            { 0x6, 0x7B }, // Open path from faron field to south of castle town
-            { 0x6, 0x44 }, // Eldin field Goron Bridge repaired
-            { 0x3, 0xBE }, // Impaz in her house
         };
 
         /// <summary>
@@ -502,10 +499,27 @@ namespace TPRandomizer.Assets
             { 0x19, 0xBB },
         };
 
+        public static readonly byte[,] StatueRegionFlags = new byte[,]
+        {
+            { 0x9, 0x56 }, // Remove invisible wall from Doctor
+        };
+
         public static readonly byte[,] CharmRegionFlags = new byte[,]
         {
             { 0x6, 0x43 }, // Remove HV rocks from Hyrule field
             { 0x3, 0x70 }, // Darbus destroyed HV rocks
+        };
+
+        public static readonly byte[,] DungeonERRegionFlags = new byte[,]
+        {
+            // Set Ooccoo Flags
+            { 0x10, 0xE9 },
+            { 0x11, 0xE9 },
+            { 0x12, 0xE9 },
+            { 0x13, 0xE9 },
+            { 0x14, 0xE9 },
+            { 0x15, 0xE9 },
+            { 0x16, 0xE9 },
         };
 
         /// <summary>
@@ -533,6 +547,7 @@ namespace TPRandomizer.Assets
                 { 22, HcShortcutFlags },
                 { 23, PalaceFirstDoor },
                 { 28, CharmRegionFlags },
+                { 29, DungeonERRegionFlags },
             };
 
         /// <summary>
@@ -782,6 +797,7 @@ namespace TPRandomizer.Assets
             /* 26 */RandomizerSettings.iliaQuest >= IliaQuest.Invoice,
             /* 27 */RandomizerSettings.iliaQuest >= IliaQuest.Statue,
             /* 28 */RandomizerSettings.iliaQuest >= IliaQuest.Charm,
+            /* 29 */RandomizerSettings.shuffleDungeonEntrances != DungeonER.Off,
         };
     }
 }

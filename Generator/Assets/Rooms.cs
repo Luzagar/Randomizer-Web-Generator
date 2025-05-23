@@ -391,6 +391,20 @@ namespace TPRandomizer
                 "Mirror Chamber Portal",
             };
 
+        public static List<string> DungeonNames =
+            new()
+            {
+                "Forest Temple",
+                "Goron Mines",
+                "Lakebed Temple",
+                "Arbiters Grounds",
+                "Snowpeak Ruins",
+                "Temple of Time",
+                "City in The Sky",
+                "Palace of Twilight",
+                "Hyrule Castle"
+            };
+
         /// <summary>
         /// A dictionary of all of the rooms that will be used to generate a playthrough graph.
         /// </summary>

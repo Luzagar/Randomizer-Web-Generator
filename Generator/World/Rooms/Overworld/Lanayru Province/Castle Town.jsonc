@@ -162,7 +162,7 @@
         "ConnectedArea": "Castle Town Goron House",
         "Requirements": "true",
         "GlitchedRequirements": "true"
-      },
+      }
     ],
     "Checks": 
     [
@@ -350,8 +350,8 @@
       },
       {
         "ConnectedArea": "Castle Town Doctors Office Lower",
-        "Requirements": "Invoice",
-        "GlitchedRequirements": "Invoice"
+        "Requirements": "Invoice or (Setting.iliaQuest equals Statue) or (Setting.iliaQuest equals Charm)",
+        "GlitchedRequirements": "Invoice or (Setting.iliaQuest equals Statue) or (Setting.iliaQuest equals Charm)"
       }
     ],
     "Checks": [""],
@@ -363,8 +363,8 @@
     [
       {
         "ConnectedArea": "Castle Town Doctors Office Entrance",
-        "Requirements": "Invoice or (Setting.iliaQuest not equals Vanilla) or (Setting.iliaQuest not equals Letter)",
-        "GlitchedRequirements": "Invoice or (Setting.iliaQuest not equals Vanilla) or (Setting.iliaQuest not equals Letter)"
+        "Requirements": "Invoice or (Setting.iliaQuest equals Statue) or (Setting.iliaQuest equals Charm)",
+        "GlitchedRequirements": "Invoice or (Setting.iliaQuest equals Statue) or (Setting.iliaQuest equals Charm)"
       },
       {
         "ConnectedArea": "Castle Town Doctors Office Upper",

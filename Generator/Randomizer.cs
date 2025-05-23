@@ -146,10 +146,6 @@ namespace TPRandomizer
             while (remainingGenerationAttempts > 0)
             {
                 remainingGenerationAttempts--;
-                foreach (Item startingItem in Randomizer.SSettings.startingItems)
-                {
-                    Randomizer.Items.heldItems.Add(startingItem);
-                }
                 Randomizer.Items.heldItems.AddRange(Randomizer.Items.BaseItemPool);
 
                 // Place plando checks first
@@ -158,6 +154,12 @@ namespace TPRandomizer
 
                 Console.WriteLine("Placing Vanilla Checks.");
                 PlaceVanillaChecks();
+
+                // We want to add starting items to the player after plando/vanilla items are placed because we don't want to assume a 1:1 balace on certain items.
+                foreach (Item startingItem in Randomizer.SSettings.startingItems)
+                {
+                    Randomizer.Items.heldItems.Add(startingItem);
+                }
 
                 // Once we have placed all vanilla checks, we want to give the player all of the items they should be searching for and then generate the world based on the room class values and their neighbour values.
                 try
@@ -1410,7 +1412,7 @@ namespace TPRandomizer
             check.itemWasPlaced = true;
             check.itemId = item;
 
-            //Console.WriteLine("Placed " + check.itemId + " in check " + check.checkName);
+            // Console.WriteLine("Placed " + check.itemId + " in check " + check.checkName);
         }
 
         private static void StartOver()
