@@ -5,8 +5,8 @@
     [
       {
         "ConnectedArea": "Lake Hylia Cave Entrance",
-        "Requirements": "canSmash and ((Room.Zoras_Domain_Throne_Room and CanCompleteEldinTwilight) or CanCompleteLanayruTwilight)",
-        "GlitchedRequirements": "canSmash and ((Room.Zoras_Domain_Throne_Room and CanCompleteEldinTwilight) or CanCompleteLanayruTwilight)"
+        "Requirements": "canSmash and CanWarpMeteor",
+        "GlitchedRequirements": "canSmash and CanWarpMeteor"
       },
       {
         "ConnectedArea": "Lake Hylia Lakebed Temple Entrance",
@@ -30,8 +30,8 @@
       },
       {
         "ConnectedArea": "Lake Hylia Lanayru Spring",
-        "Requirements": "((Room.Zoras_Domain_Throne_Room and CanCompleteEldinTwilight) or CanCompleteLanayruTwilight)",
-        "GlitchedRequirements": "((Room.Zoras_Domain_Throne_Room and CanCompleteEldinTwilight) or CanCompleteLanayruTwilight)"
+        "Requirements": "CanWarpMeteor",
+        "GlitchedRequirements": "CanWarpMeteor"
       },
       {
         "ConnectedArea": "Lake Hylia Water Toadpoli Grotto",

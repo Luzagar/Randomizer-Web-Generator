@@ -1877,6 +1877,16 @@ namespace TPRandomizer
                 );
         }
 
+        public static bool CanWarpMeteor()
+        {
+            return CanCompleteLanayruTwilight()
+                || (
+                    CanCompleteEldinTwilight()
+                    && Randomizer.Rooms.RoomDict["Zoras Domain Throne Room"].ReachedByPlaythrough
+                    && CanUse(Item.Shadow_Crystal)
+                );
+        }
+
         public static bool CanCompleteAllTwilight()
         {
             return (

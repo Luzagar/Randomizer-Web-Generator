@@ -1147,10 +1147,7 @@ namespace TPRandomizer
             if (parseSetting.skipCityEntrance)
             {
                 // We still need a skybook for Shad
-                for (int i = 0; i < 6; i++)
-                {
-                    RemoveItem(Item.Progressive_Sky_Book);
-                }
+                updateItemToCount(RandomizedImportantItems, Item.Progressive_Sky_Book, 1);
             }
 
             foreach (Item startingItem in parseSetting.startingItems)

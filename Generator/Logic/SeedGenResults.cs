@@ -109,7 +109,7 @@ namespace TPRandomizer
 
             foreach (KeyValuePair<string, Room> roomEntry in Randomizer.Rooms.RoomDict)
             {
-                //Console.WriteLine("checking room: " + roomEntry.Value.RoomName);
+                Console.WriteLine("checking room: " + roomEntry.Value.RoomName);
                 foreach (Entrance entrance in roomEntry.Value.Exits)
                 {
                     if (entrance.IsShuffled())
@@ -563,6 +563,9 @@ namespace TPRandomizer
             result.Add("randomizeStartingPoint", sSettings.randomizeStartingPoint);
             result.Add("shuffleHiddenRupees", sSettings.shuffleHiddenRupees);
             result.Add("hcShortcut", sSettings.hcShortcut);
+            result.Add("iliaQuest", sSettings.iliaQuest.ToString());
+            result.Add("mirrorChamberEntrance", sSettings.mirrorChamberEntrance.ToString());
+            result.Add("shuffleDungeonEntrances", sSettings.shuffleDungeonEntrances.ToString());
 
             result.Add("startingItems", sSettings.startingItems);
             result.Add("excludedChecks", sSettings.excludedChecks);

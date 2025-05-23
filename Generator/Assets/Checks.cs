@@ -490,8 +490,6 @@ namespace TPRandomizer
                         {
                             currentCheck.checkStatus = "Vanilla";
                         }
-
-                        Randomizer.Items.RandomizedImportantItems.Remove(currentCheck.itemId);
                     }
                 }
 

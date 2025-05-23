@@ -105,8 +105,8 @@
       },
       {
         "ConnectedArea": "Zoras Domain Top of Waterfall",
-        "Requirements": "((Room.Zoras_Domain_Throne_Room and CanCompleteEldinTwilight) or CanCompleteLanayruTwilight)",
-        "GlitchedRequirements": "((Room.Zoras_Domain_Throne_Room and CanCompleteEldinTwilight) or CanCompleteLanayruTwilight)"
+        "Requirements": "CanWarpMeteor or Shadow_Crystal",
+        "GlitchedRequirements": "CanWarpMeteor or Shadow_Crystal"
       },
       {
         "ConnectedArea": "Zoras Domain Snowpeak Entrance",

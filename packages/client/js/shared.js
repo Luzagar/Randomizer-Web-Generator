@@ -445,6 +445,8 @@
       { id: 'hiddenRupeeCheckbox' },
       { id: 'hcShortcutCheckbox' },
       { id: 'iliaQuestFieldset', bitLength: 3 },
+      { id: 'mirrorChamberFieldset', bitLength: 2 },
+      { id: 'dungeonERFieldset', bitLength: 2 },
     ].map(({ id, bitLength }) => {
       const val = getVal(id);
       if (bitLength) {
@@ -926,11 +928,15 @@
       processBasic({ id: 'hiddenRupees' });
       processBasic({ id: 'hcShortcut' });
       processBasic({ id: 'iliaQuest', bitLength: 3 });
+      processBasic({ id: 'mirrorChamber', bitLength: 2 });
+      processBasic({ id: 'dungeonER', bitLength: 2 });
     } else {
       res.randomizeStartingPoint = false; // Vanilla
       res.hiddenRupees = false; // Vanilla
       res.hcShortcut = false;
       res.iliaQuest = 0; // Vanilla
+      res.mirrorChamber = 0; // Vanilla
+      res.dungeonER = 0; // Vanilla
     }
 
     res.startingItems = processor.nextEolList(9);
