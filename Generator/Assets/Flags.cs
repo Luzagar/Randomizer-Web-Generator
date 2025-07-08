@@ -358,11 +358,6 @@ namespace TPRandomizer.Assets
         {
             { 0x4, 0x70 }, // Blew up rock in front of lakebed CS.
             { 0x4, 0x78 }, // Blew up rock in front of lakebed.
-            { 0x12, 0x94 }, // south-east stalactite fell second room
-            { 0x12, 0x95 }, // north east stalactite fell in second room
-            { 0x12, 0x96 }, // south Stalactite fell second room
-            { 0x12, 0x97 }, // north west stalactite fell in second room
-            { 0x12, 0x98 }, // south west stalactile fell in second room
         };
 
         public static readonly byte[,] OpenArbitersRegionFlags = new byte[,]
