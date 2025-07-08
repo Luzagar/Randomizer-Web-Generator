@@ -37,6 +37,8 @@ namespace TPRandomizer
         // other
         public SharedSettings decodedSSettings;
 
+        public static byte checkIDBitLength = 10;
+
         public SeedGenResults(string seedId, JObject inputJsonContents)
         {
             if (Randomizer.Checks.CheckDict.Count < 1)
@@ -168,8 +170,8 @@ namespace TPRandomizer
             int smallest = checkNumIdToItemId.First().Key;
             int largest = checkNumIdToItemId.Last().Key;
 
-            result += SettingsEncoder.EncodeNumAsBits(smallest, 10);
-            result += SettingsEncoder.EncodeNumAsBits(largest, 10);
+            result += SettingsEncoder.EncodeNumAsBits(smallest, SeedGenResults.checkIDBitLength);
+            result += SettingsEncoder.EncodeNumAsBits(largest, SeedGenResults.checkIDBitLength);
 
             string itemBits = "";
 
@@ -206,8 +208,8 @@ namespace TPRandomizer
                 return checkNumIdToItemId;
             }
 
-            int smallest = processor.NextInt(10);
-            int largest = processor.NextInt(10);
+            int smallest = processor.NextInt(SeedGenResults.checkIDBitLength);
+            int largest = processor.NextInt(SeedGenResults.checkIDBitLength);
 
             List<int> checkIdsWithItemIds = new();
 
@@ -264,7 +266,10 @@ namespace TPRandomizer
 
                     foreach (KeyValuePair<int, Item> pair in spherePairsList)
                     {
-                        result += SettingsEncoder.EncodeNumAsBits(pair.Key, 9); // checkId
+                        result += SettingsEncoder.EncodeNumAsBits(
+                            pair.Key,
+                            SeedGenResults.checkIDBitLength
+                        ); // checkId
                         result += SettingsEncoder.EncodeNumAsBits((int)pair.Value, 9); // itemId
                     }
                 }
@@ -298,7 +303,7 @@ namespace TPRandomizer
 
                 for (int i = 0; i < numPairsInSphere; i++)
                 {
-                    int checkId = processor.NextInt(9);
+                    int checkId = processor.NextInt(SeedGenResults.checkIDBitLength);
                     Item itemId = (Item)processor.NextInt(9);
 
                     spherePairs.Add(new KeyValuePair<int, Item>(checkId, itemId));
@@ -596,6 +601,9 @@ namespace TPRandomizer
             result.Add("iliaQuest", sSettings.iliaQuest.ToString());
             result.Add("mirrorChamberEntrance", sSettings.mirrorChamberEntrance.ToString());
             result.Add("shuffleDungeonEntrances", sSettings.shuffleDungeonEntrances.ToString());
+            result.Add("shuffleFreestandingRupees", sSettings.shuffleFreestandingRupees);
+            result.Add("decoupleEntrances", sSettings.decoupleEntrances);
+            result.Add("unpairEntrances", sSettings.unpairEntrances);
 
             result.Add("startingItems", sSettings.startingItems);
             result.Add("excludedChecks", sSettings.excludedChecks);

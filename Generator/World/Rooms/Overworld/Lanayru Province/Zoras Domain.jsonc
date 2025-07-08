@@ -95,8 +95,8 @@
     [
       {
         "ConnectedArea": "Zoras Domain West Ledge",
-        "Requirements": "(Progressive_Clawshot, 1) or Shadow_Crystal or canSmash",
-        "GlitchedRequirements": "(Progressive_Clawshot, 1) or Shadow_Crystal or canSmash"
+        "Requirements": "(Progressive_Clawshot, 1) or Shadow_Crystal or CanSmash",
+        "GlitchedRequirements": "(Progressive_Clawshot, 1) or Shadow_Crystal or CanSmash"
       },
       {
         "ConnectedArea": "Upper Zoras River",
@@ -153,8 +153,8 @@
       },
       {
         "ConnectedArea": "Zoras Domain Top of Waterfall",
-        "Requirements": "canSmash",
-        "GlitchedRequirements": "canSmash"
+        "Requirements": "CanSmash",
+        "GlitchedRequirements": "CanSmash"
       },
       {
         "ConnectedArea": "Lanayru Field Behind Boulder",

@@ -71,6 +71,9 @@ namespace TPRandomizer
         public IliaQuest iliaQuest { get; set; }
         public MirrorChamberEntrance mirrorChamberEntrance { get; set; }
         public DungeonER shuffleDungeonEntrances { get; set; }
+        public bool unpairEntrances { get; set; }
+        public bool decoupleEntrances { get; set; }
+        public bool shuffleFreestandingRupees { get; set; }
         public List<Item> startingItems { get; set; }
         public List<string> excludedChecks { get; set; }
         public List<(string, Item)> plandoChecks { get; set; }
@@ -137,6 +140,9 @@ namespace TPRandomizer
             shuffleShopRefills = processor.NextBool();
             mirrorChamberEntrance = (MirrorChamberEntrance)processor.NextInt(2);
             shuffleDungeonEntrances = (DungeonER)processor.NextInt(2);
+            unpairEntrances = processor.NextBool();
+            decoupleEntrances = processor.NextBool();
+            shuffleFreestandingRupees = processor.NextBool();
             // We sort these lists so that the order which the UI happens to
             // pass the data up does not affect anything.
             startingItems = processor.NextItemList();

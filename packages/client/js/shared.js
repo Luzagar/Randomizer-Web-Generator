@@ -452,6 +452,9 @@
       { id: 'shopRefillsCheckbox' },
       { id: 'mirrorChamberFieldset', bitLength: 2 },
       { id: 'dungeonERFieldset', bitLength: 2 },
+      { id: 'unpairedEntrancesCheckbox' },
+      { id: 'decoupleEntrancesCheckbox' },
+      { id: 'freestandingRupeeCheckbox' },
     ].map(({ id, bitLength }) => {
       const val = getVal(id);
       if (bitLength) {
@@ -943,6 +946,9 @@
       processBasic({ id: 'shopRefills' });
       processBasic({ id: 'mirrorChamber', bitLength: 2 });
       processBasic({ id: 'dungeonER', bitLength: 2 });
+      processBasic({ id: 'unpairEntrances' });
+      processBasic({ id: 'decoupleEntrances' });
+      processBasic({ id: 'freestandingRupees' });
     } else {
       res.randomizeStartingPoint = false; // Vanilla
       res.hiddenRupees = false; // Vanilla
@@ -953,6 +959,9 @@
       res.shopRefills = false
       res.mirrorChamber = 0; // Vanilla
       res.dungeonER = 0; // Vanilla
+      res.unpairEntrances = false; // Vanilla
+      res.decoupleEntrances = false; // Vanilla
+      res.freestandingRupees = false; // Vanilla
     }
 
     res.startingItems = processor.nextEolList(9);
@@ -1337,6 +1346,8 @@
         { id: 'ironsColorFieldset', rgb: true },
         { id: 'spinnerColorFieldset', rgb: true },
         { id: 'woodSwordColorFieldset', rgb: true },
+        { id: 'eponaColorFieldset', rgb: true },
+        { id: 'wolfColorFieldset', rgb: true },
         { id: 'lanternColorFieldset', rgb: true },
         // { id: 'midnaHairColorFieldset', bitLength: 1 },
         { id: 'heartColorFieldset', rgb: true },

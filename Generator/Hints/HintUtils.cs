@@ -1244,7 +1244,7 @@ namespace TPRandomizer.Hints
         {
             return new(
                 HintTypeUtils.NumBitsToEncode,
-                9,
+                SeedGenResults.checkIDBitLength,
                 ZoneUtils.NumBitsToEncode,
                 HintCategoryUtils.NumBitsToEncode,
                 AreaId.NumBitsToEncode,
