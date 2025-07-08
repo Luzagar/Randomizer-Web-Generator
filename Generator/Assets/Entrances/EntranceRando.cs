@@ -195,6 +195,11 @@ namespace TPRandomizer
             return ConnectedArea;
         }
 
+        public string GetOriginalConnectedArea()
+        {
+            return OriginalConnectedArea;
+        }
+
         public string GetParentArea()
         {
             return ParentArea;
@@ -328,11 +333,6 @@ namespace TPRandomizer
     /// </summary>
     public class EntranceRando
     {
-        // If disabled, a randomized double door can lead to a different location, depending on which door you use.
-        bool pairEntrances = true;
-
-        // If enabled, all entrances are "one way" so if you go through Faron Woods -> FT Entrance and end up in GM, going back the way you came may not lead you to Faron Woods.
-        bool decoupleEntrances = false;
         public List<SpawnTableEntry> SpawnTable = new();
         public EntranceInfo vanillaSpawn = new("Outside Links House", "", 43, 1, "1", "FF", "");
         public List<Entrance> spawnList = new();
@@ -389,7 +389,7 @@ namespace TPRandomizer
 
             Randomizer.Rooms.RoomDict["Root"].Exits.Add(rootExit);
 
-            if (pairEntrances)
+            if (!Randomizer.SSettings.unpairEntrances)
             {
                 PairEntrances();
             }
@@ -468,7 +468,7 @@ namespace TPRandomizer
                     GetShufflableEntrances(EntranceType.Dungeon, true)
                 );
 
-                if (decoupleEntrances)
+                if (Randomizer.SSettings.decoupleEntrances)
                 {
                     newEntrancePools.Add(
                         EntranceType.Dungeon_Reverse,
@@ -887,7 +887,7 @@ namespace TPRandomizer
                         continue;
                     }
 
-                    err = ReplaceEntrance(entrance, target, rollBacks, rnd);
+                    err = ReplaceEntrance(entrance, target, rollBacks);
                     if (err == EntranceShuffleError.NONE)
                     {
                         break;
@@ -922,8 +922,7 @@ namespace TPRandomizer
         EntranceShuffleError ReplaceEntrance(
             Entrance entrance,
             Entrance target,
-            Dictionary<Entrance, Entrance> rollBacks,
-            Random rnd
+            Dictionary<Entrance, Entrance> rollBacks
         )
         {
             Console.WriteLine(
@@ -1150,7 +1149,7 @@ namespace TPRandomizer
                 }
             }
 
-            return pairedEntrance.PairedEntrance;
+            return pairedEntrance;
         }
 
         // returns all entrances that are connected to a room.
@@ -1196,17 +1195,18 @@ namespace TPRandomizer
                 {
                     Entrance bossEntrance = Randomizer.Rooms.RoomDict[bossRoomName].Exits[0];
                     Entrance newEntrance = GetDungeonEntrance(
-                        GetReverseConnectionEntrance(bossRoomName)[0]
-                    );
+                            GetReverseConnectionEntrance(bossRoomName)[0]
+                        )
+                        .GetReplacedEntrance();
 
-                    if (pairEntrances)
+                    if (!Randomizer.SSettings.decoupleEntrances)
                     {
-                        newEntrance = newEntrance.GetReplacedEntrance().GetReverse();
+                        newEntrance = newEntrance.GetReverse().GetReplacedEntrance();
                     }
 
                     bossEntrance.Disconnect();
                     bossEntrance.SetAsShuffled();
-                    bossEntrance.Connect(newEntrance.GetConnectedArea());
+                    bossEntrance.Connect(newEntrance.GetOriginalConnectedArea());
                     bossEntrance.SetReplacedEntrance(newEntrance);
                 }
             }
@@ -1220,10 +1220,11 @@ namespace TPRandomizer
                 string bossRoomName = "Arbiters Grounds Boss Room";
                 Entrance bossEntrance = Randomizer.Rooms.RoomDict[bossRoomName].Exits[0];
                 Entrance newEntrance = GetDungeonEntrance(
-                    GetReverseConnectionEntrance(bossRoomName)[0]
-                );
+                        GetReverseConnectionEntrance(bossRoomName)[0]
+                    )
+                    .GetReplacedEntrance();
 
-                if (pairEntrances)
+                if (!Randomizer.SSettings.decoupleEntrances)
                 {
                     newEntrance = newEntrance.GetReplacedEntrance().GetReverse();
                 }

@@ -5,8 +5,8 @@
     [
       {
         "ConnectedArea": "Kakariko Gorge Cave Entrance",
-        "Requirements": "canSmash",
-        "GlitchedRequirements": "canSmash"
+        "Requirements": "CanSmash",
+        "GlitchedRequirements": "CanSmash"
       },
       {
         "ConnectedArea": "Kakariko Gorge Behind Gate",
@@ -20,8 +20,8 @@
       },
       {
         "ConnectedArea": "Eldin Field",
-        "Requirements": "canSmash",
-        "GlitchedRequirements": "canSmash"
+        "Requirements": "CanSmash",
+        "GlitchedRequirements": "CanSmash"
       },
       {
         "ConnectedArea": "Kakariko Gorge Keese Grotto",
@@ -48,8 +48,8 @@
     [
       {
         "ConnectedArea": "Kakariko Gorge",
-        "Requirements": "canSmash",
-        "GlitchedRequirements": "canSmash"
+        "Requirements": "CanSmash",
+        "GlitchedRequirements": "CanSmash"
       },
       {
         "ConnectedArea": "Eldin Lantern Cave",
@@ -133,8 +133,8 @@
       },
       {
         "ConnectedArea": "Kakariko Gorge",
-        "Requirements": "canSmash",
-        "GlitchedRequirements": "canSmash"
+        "Requirements": "CanSmash",
+        "GlitchedRequirements": "CanSmash"
       },
       {
         "ConnectedArea": "Kakariko Village Behind Gate",
@@ -143,8 +143,8 @@
       },
       {
         "ConnectedArea": "North Eldin Field",
-        "Requirements": "canSmash",
-        "GlitchedRequirements": "canSmash or (Shadow_Crystal and CanCompleteEldinTwilight)"
+        "Requirements": "CanSmash",
+        "GlitchedRequirements": "CanSmash or (Shadow_Crystal and CanCompleteEldinTwilight)"
       },
       {
         "ConnectedArea": "Eldin Field Bomskit Grotto",
@@ -232,8 +232,8 @@
     [
       {
         "ConnectedArea": "Eldin Field",
-        "Requirements": "canSmash",
-        "GlitchedRequirements": "canSmash or (CanDoMapGlitch and CanCompleteEldinTwilight and (CanCompleteLanayruTwilight or Item.Horse_Call))"
+        "Requirements": "CanSmash",
+        "GlitchedRequirements": "CanSmash or (CanDoMapGlitch and CanCompleteEldinTwilight and (CanCompleteLanayruTwilight or Horse_Call))"
       },
       {
         "ConnectedArea": "Eldin Field Outside Hidden Village",

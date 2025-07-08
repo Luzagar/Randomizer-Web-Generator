@@ -185,7 +185,7 @@
               <div class="selectGroup">
                 <label for="faronLogicFieldset">Faron Woods Logic:</label><br />
                 <select
-                  name="Faron Woods  Logic"
+                  name="Faron Woods Logic"
                   data-tooltip-text="'Open': Midna will not prevent the player from leaving Faron Woods.&#0010;&#0010;'Closed': Midna will block the player from leaving Faron Woods until Forest Temple is completed.&#0010;"
                   id="faronLogicFieldset"
                 >
@@ -196,8 +196,76 @@
             </fieldset>
           </div>
           <div class="tabColumn">
+            <fieldset id="worldOptionsFieldset">
+              <legend>World</legend>
+              <div
+                data-tooltip-text="If checked, when starting a new save file, instead of starting in Ordon, the starting spawn point will be randomized.&#0010;&#0010;Note: Enabling this setting also forces the Prologue to be skipped.&#0010;"
+              >
+                <input
+                  type="checkbox"
+                  id="randomizeStartingPointCheckbox"
+                  name="Randomize Starting Point Checkbox"
+                  value=""
+                />
+                <label for="randomizeStartingPointCheckbox"
+                  >Randomize Starting Location</label
+                ><br />
+              </div>
+              <div class="selectGroup" style="margin-top: 8px">
+                <label for="dungeonERFieldset">Shuffle Dungeon Entrances</label><br />
+                <select
+                  name="Shuffle Dungeon Entrances Fieldset"
+                  id="dungeonERFieldset"
+                  data-tooltip-text="Adds dungeon entrances to the entrance pool.&#0010;&#0010;'Off': Dungeon entrances are vanilla.&#0010;&#0010;'Dungeons': The 8 main dungeons' entrances are shuffled.&#0010;&#0010;'Dungeons & Hyrule': All dungeons and Hyrule Castle will have their entrances shuffled.&#0010;&#0010;Note: Shuffling dungeon entrances forces MDH to be skipped.&#0010;"
+                >
+                  <option value="0">Off</option>
+                  <option value="1">Dungeons</option>
+                  <option value="2">Dungeons & Hyrule</option>
+                </select>
+              </div>
+              <div class="selectGroup" style="margin-top: 8px">
+                <label for="mirrorChamberFieldset">Mirror Chamber Access</label><br />
+                <select
+                  name="Mirror Chamber Fieldset"
+                  id="mirrorChamberFieldset"
+                  data-tooltip-text="Customizes the access between the Lower Mirror Chamber and Stallord rooms.&#0010;&#0010;'Open': The entrance is open and operates like normal.&#0010;&#0010;'Barrier': A barrier is placed in front of the Mirror Chamber Entrance and goes away when Stallord is defeated&#0010;&#0010;'Closed': The Mirror Chamber is isolated from the world graph and cannot be reached via the Stallord Boss Room. To access it, players will need either the portal or access from PoT.&#0010;"
+                >
+                  <option value="0">Open</option>
+                  <option value="1">Barrier</option>
+                  <option value="2">Closed</option>
+                </select>
+              </div>
+              <div
+                data-tooltip-text="If checked, entrances that seemingly go to the same place are randomized.&#0010;&#0010;Example: SPR Left Door and Right Doors could potentially lead to different places.&#0010;&#0010;Note: This option is only available if you have dungeon entrances randomized.&#0010;"
+              >
+                <input
+                  type="checkbox"
+                  id="unpairedEntrancesCheckbox"
+                  name="Unpaired Entrances Checkbox"
+                  value=""
+                />
+                <label for="unpairedEntrancesCheckbox"
+                  >Unpair Entrances</label
+                ><br />
+              </div>
+              <div
+                data-tooltip-text="If checked, entrances are de-coupled, meaning that going back the way you came could lead you to somewhere else.&#0010;&#0010;Example: If you enter FT from North Faron and then leave the dungeon the way you entered, you could end up in Lake Hylia.&#0010;&#0010;Note: This option is only available if you have dungeon entrances randomized.&#0010;"
+              >
+                <input
+                  type="checkbox"
+                  id="decoupleEntrancesCheckbox"
+                  name="Decouple Entrances Checkbox"
+                  value=""
+                />
+                <label for="DecoupleEntrancesCheckbox"
+                  >Decouple Entrances</label
+                ><br />
+              </div>
+            </fieldset>
+          </div>
+          <div class="tabColumn">
             <fieldset id="itemPoolOptionsFieldset">
-              <legend>Item Pool</legend>
+              <legend>World Items</legend>
               <div
                 data-tooltip-text="If checked, the golden bug locations across Hyrule are randomized.&#0010;"
                 style="width: 50%"
@@ -270,6 +338,18 @@
                   value=""
                 />
                 <label for="hiddenRupeeCheckbox"> Hidden Rupees </label><br />
+              </div>
+              <div
+                style="width: 80%"
+                data-tooltip-text="If checked, certain freestanding rupees are randomized.&#0010;"
+              >
+                <input
+                  type="checkbox"
+                  id="freestandingRupeeCheckbox"
+                  name="Freestanding Rupees"
+                  value=""
+                />
+                <label for="freestandingRupeeCheckbox"> Freestanding Rupees </label><br />
               </div>
               <div class="selectGroup">
                 <label for="poeSettingsFieldset">Poe Souls:</label><br />
@@ -652,43 +732,6 @@
                   value=""
                 />
                 <label for="bonksDoDamageCheckbox">Bonks Do Damage</label><br />
-              </div>
-              <div
-                data-tooltip-text="If checked, when starting a new save file, instead of starting in Ordon, the starting spawn point will be randomized.&#0010;"
-              >
-                <input
-                  type="checkbox"
-                  id="randomizeStartingPointCheckbox"
-                  name="Randomize Starting Point Checkbox"
-                  value=""
-                />
-                <label for="randomizeStartingPointCheckbox"
-                  >Randomize Starting Location</label
-                ><br />
-              </div>
-              <div class="selectGroup" style="margin-top: 8px">
-                <label for="dungeonERFieldset">Shuffle Dungeon Entrances</label><br />
-                <select
-                  name="Shuffle Dungeon Entrances Fieldset"
-                  id="dungeonERFieldset"
-                  data-tooltip-text="Adds dungeon entrances to the entrance pool.&#0010;&#0010;'Off': Dungeon entrances are vanilla.&#0010;&#0010;'Dungeons': The 8 main dungeons' entrances are shuffled.&#0010;&#0010;'Dungeons & Hyrule': All dungeons and Hyrule Castle will have their entrances shuffled.&#0010;"
-                >
-                  <option value="0">Off</option>
-                  <option value="1">Dungeons</option>
-                  <option value="2">Dungeons & Hyrule</option>
-                </select>
-              </div>
-              <div class="selectGroup" style="margin-top: 8px">
-                <label for="mirrorChamberFieldset">Mirror Chamber Access</label><br />
-                <select
-                  name="Mirror Chamber Fieldset"
-                  id="mirrorChamberFieldset"
-                  data-tooltip-text="Customizes the access between the Lower Mirror Chamber and Stallord rooms.&#0010;&#0010;'Open': The entrance is open and operates like normal.&#0010;&#0010;'Barrier': A barrier is placed in front of the Mirror Chamber Entrance and goes away when Stallord is defeated&#0010;&#0010;'Closed': The Mirror Chamber is isolated from the world graph and cannot be reached via the Stallord Boss Room. To access it, players will need either the portal or access from PoT.&#0010;"
-                >
-                  <option value="0">Open</option>
-                  <option value="1">Barrier</option>
-                  <option value="2">Closed</option>
-                </select>
               </div>
               <div class="selectGroup" style="margin-top: 8px">
                 <label for="trapItemFieldset">Trap Item Frequency</label><br />

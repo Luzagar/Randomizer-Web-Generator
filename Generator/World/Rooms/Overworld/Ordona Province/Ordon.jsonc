@@ -3,7 +3,7 @@
     "RoomName": "Outside Links House",
     "Exits":
     [
-      { // TODO: auto set the flag to remove Fado from outside link's house.
+      { 
         "ConnectedArea": "Ordon Village",
         "Requirements": "true",
         "GlitchedRequirements": "true"
@@ -55,33 +55,49 @@
       },
       {
         "ConnectedArea": "Ordon Seras Shop",
-        "Requirements": "CanChangeTime and CanCompleteGoats1",
-        "GlitchedRequirements": "CanChangeTime and CanCompleteGoats1"
+        "Requirements": "CanChangeTime",
+        "GlitchedRequirements": "CanChangeTime"
       },
       {
         "ConnectedArea": "Ordon Shield House",
-        "Requirements": "CanChangeTime and CanCompleteGoats1",
-        "GlitchedRequirements": "CanChangeTime and CanCompleteGoats1"
+        "Requirements": "CanChangeTime",
+        "GlitchedRequirements": "CanChangeTime"
       },
       {
         "ConnectedArea": "Ordon Sword House",
-        "Requirements": "CanChangeTime and CanCompleteGoats1",
-        "GlitchedRequirements": "CanChangeTime and CanCompleteGoats1"
+        "Requirements": "CanChangeTime",
+        "GlitchedRequirements": "CanChangeTime"
       },
       {
         "ConnectedArea": "Ordon Bos House Left Door",
-        "Requirements": "CanChangeTime and CanCompleteGoats1",
-        "GlitchedRequirements": "CanChangeTime and CanCompleteGoats1"
+        "Requirements": "CanChangeTime",
+        "GlitchedRequirements": "CanChangeTime"
       },
       {
         "ConnectedArea": "Ordon Bos House Right Door",
-        "Requirements": "CanChangeTime and CanCompleteGoats1",
-        "GlitchedRequirements": "CanChangeTime and CanCompleteGoats1"
+        "Requirements": "CanChangeTime",
+        "GlitchedRequirements": "CanChangeTime"
       }
     ],
     "Checks":
     [
-        "Uli Cradle Delivery"
+      "Ordon Bo Cliff Rupee",
+      "Ordon Bo Roof Rupee",
+      "Ordon Bo Window Rupee 1",
+      "Ordon Bo Window Rupee 2",
+      "Ordon Hidden Rusl House Rupee",
+      "Ordon Rupee In Grass By Bo",
+      "Ordon Rupee In River 1",
+      "Ordon Rupee In River 2",
+      "Ordon Rupee Under Bridge",
+      "Ordon Rupee Under Tall Tree 1",
+      "Ordon Rupee Under Tall Tree 2",
+      "Ordon Rusl House Roof Rupee 1",
+      "Ordon Rusl House Roof Rupee 2",
+      "Ordon Shield House Ledge Grass Rupee",
+      "Ordon Tree Long Branch Rupee",
+      "Ordon Tree Short Branch Rupee",
+      "Uli Cradle Delivery"
     ],
     "Region": "Ordona Province"
   },
@@ -274,7 +290,7 @@
       },
       {
         "ConnectedArea": "Ordon Bridge",
-        "Requirements": "(Room.Outside_Links_House and HasSword and Slingshot) or canCompletePrologue",
+        "Requirements": "(Room.Outside_Links_House and HasSword and Slingshot) or CanCompletePrologue",
         // Gate clip
         "GlitchedRequirements": "true"
       }
@@ -291,8 +307,8 @@
     [
       {
         "ConnectedArea": "Ordon Spring",
-        "Requirements": "(Room.Outside_Links_House and HasSword and Slingshot) or canCompletePrologue",
-        "GlitchedRequirements": "(Room.Outside_Links_House and HasSword and Slingshot) or canCompletePrologue"
+        "Requirements": "(Room.Outside_Links_House and HasSword and Slingshot) or CanCompletePrologue",
+        "GlitchedRequirements": "(Room.Outside_Links_House and HasSword and Slingshot) or CanCompletePrologue"
       },
       {
         "ConnectedArea": "South Faron Woods",

@@ -122,6 +122,8 @@ function onDomContentLoaded() {
 
   // Set default settings string in UI.
   setSettingsString();
+  setDungeonERSettings();
+  setOverworldERSettings();
   // If returning back from the seed page, the browser will fill in the state.
   // This updates the string after the browser updates all of the fields to
   // their previous values.
@@ -398,12 +400,21 @@ document
   .addEventListener('click', setSettingsString);
 document
   .getElementById('randomizeStartingPointCheckbox')
-  .addEventListener('click', setSettingsString);
+  .addEventListener('click', setOverworldERSettings);
   document.getElementById('iliaQuestFieldset').onchange = setSettingsString;
 document.getElementById('mirrorChamberFieldset').onchange =
   setSettingsString;
 document.getElementById('dungeonERFieldset').onchange =
-setEntranceRandoSettings;
+setDungeonERSettings;
+document
+  .getElementById('unpairedEntrancesCheckbox')
+  .addEventListener('click', setSettingsString);
+  document
+  .getElementById('decoupleEntrancesCheckbox')
+  .addEventListener('click', setSettingsString);
+  document
+  .getElementById('freestandingRupeeCheckbox')
+  .addEventListener('click', setSettingsString);
 document
   .getElementById('importSettingsStringButton')
   .addEventListener('click', importSettingsString);
@@ -412,16 +423,30 @@ function importSettingsString() {
   parseSettingsString(document.getElementById('settingsStringTextbox').value);
 }
 
-function setEntranceRandoSettings()
+function setOverworldERSettings()
+{
+  var overworldEREnabled = document.getElementById('randomizeStartingPointCheckbox').checked;
+  document.getElementById('introCheckbox').checked = overworldEREnabled;
+  document.getElementById('introCheckbox').disabled = overworldEREnabled;
+  setSettingsString();
+}
+
+function setDungeonERSettings()
 {
   if (document.getElementById('dungeonERFieldset').value !=0)
   {
     document.getElementById('mdhCheckbox').checked = true;
     document.getElementById('mdhCheckbox').disabled = true;
+    document.getElementById('unpairedEntrancesCheckbox').disabled = false;
+    document.getElementById('decoupleEntrancesCheckbox').disabled = false;
   }
   else
   {
     document.getElementById('mdhCheckbox').disabled = false;
+    document.getElementById('unpairedEntrancesCheckbox').checked = false;
+    document.getElementById('decoupleEntrancesCheckbox').checked = false;
+    document.getElementById('unpairedEntrancesCheckbox').disabled = true;
+    document.getElementById('decoupleEntrancesCheckbox').disabled = true;
   }
   setSettingsString();
   
@@ -1276,6 +1301,9 @@ function populateSSettings(s) {
   $('#iliaQuestFieldset').val(s.iliaQuest);
   $('#mirrorChamberFieldset').val(s.mirrorChamber);
   $('#dungeonERFieldset').val(s.dungeonER);
+  $('#unpairedEntrancesCheckbox').prop('checked', s.upairEntrances);
+  $('#decoupleEntrancesCheckbox').prop('checked', s.decoupleEntrances);
+  $('#freestandingRupeeCheckbox').prop('checked', s.freestandingRupees);
 
   const $excludedChecksParent = $('#baseExcludedChecksListbox');
   s.excludedChecks.forEach((checkNumId) => {

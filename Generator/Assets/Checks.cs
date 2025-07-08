@@ -521,6 +521,14 @@ namespace TPRandomizer
                         currentCheck.checkStatus = "Vanilla";
                     }
                 }
+
+                if (!parseSetting.shuffleFreestandingRupees)
+                {
+                    if (currentCheck.checkCategory.Contains("Rupee - Freestanding"))
+                    {
+                        currentCheck.checkStatus = "Vanilla";
+                    }
+                }
             }
 
             List<string> removedQuestChecks = new();

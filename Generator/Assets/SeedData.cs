@@ -1354,7 +1354,7 @@ namespace TPRandomizer.Assets
                     4
                 ), // Set the new flag for buying the shield
                 new ARCReplacement(
-                    "5418",
+                    "418",
                     "C493D583",
                     (byte)FileDirectory.Room,
                     (byte)ReplacementType.Instruction,
@@ -1582,75 +1582,161 @@ namespace TPRandomizer.Assets
                     (int)StageIDs.Lakebed_Temple,
                     0
                 ),
+
+                // Modify Faron woods to remove the boulders in front of the dungeon during prologue
                 new ARCReplacement(
-                    "8EC",
-                    "442F0000",
+                    "1774",
+                    "00000000",
                     (byte)FileDirectory.Room,
                     (byte)ReplacementType.Instruction,
-                    (int)StageIDs.Lakebed_Temple,
+                    (int)StageIDs.Faron_Woods,
+                    6
+                ),
+                new ARCReplacement(
+                    "1794",
+                    "00000000",
+                    (byte)FileDirectory.Room,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Faron_Woods,
+                    6
+                ),
+
+                // Freestanding Rupee Archive patches
+
+                // Rupees in rock near Coro
+                new ARCReplacement(
+                    "697",
+                    "00F30481",
+                    (byte)FileDirectory.Room,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Faron_Woods,
+                    4
+                ),
+                new ARCReplacement(
+                    "6B7",
+                    "00F30482",
+                    (byte)FileDirectory.Room,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Faron_Woods,
+                    4
+                ),
+                new ARCReplacement(
+                    "6D7",
+                    "00F30483",
+                    (byte)FileDirectory.Room,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Faron_Woods,
+                    4
+                ),
+
+                // Rupee on Rusl's House
+                new ARCReplacement(
+                    "3BAF",
+                    "00F3FF84",
+                    (byte)FileDirectory.Room,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Ordon_Village,
+                    0
+                ),
+                new ARCReplacement(
+                    "89B3",
+                    "00F3FF84",
+                    (byte)FileDirectory.Room,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Ordon_Village,
+                    0
+                ),
+
+                // Rupee Above Hanch's house
+                new ARCReplacement(
+                    "3B4F",
+                    "00F3FF85",
+                    (byte)FileDirectory.Room,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Ordon_Village,
+                    0
+                ),
+
+                // Rupee by Bo's Window
+                new ARCReplacement(
+                    "3C0F",
+                    "00F3FF8A",
+                    (byte)FileDirectory.Room,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Ordon_Village,
+                    0
+                ),
+
+                // Rupee in River
+                new ARCReplacement(
+                    "3D4F",
+                    "0013FF91",
+                    (byte)FileDirectory.Room,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Ordon_Village,
                     0
                 ),
                 /*
-                // Note: I don't know how to modify the event system to get these items to work properly, but I already did the work on finding the replacement values, so just keeping them here.
-                new ARCReplacement(
-                    "3014",
-                    "FF05FFFF",
-                    (byte)FileDirectory.Room,
-                    (byte)ReplacementType.Instruction,
-                    (int)StageIDs.Death_Mountain,
-                    3
-                ),
-                new ARCReplacement(
-                    "3950",
-                    "FF05FFFF",
-                    (byte)FileDirectory.Room,
-                    (byte)ReplacementType.Instruction,
-                    (int)StageIDs.Death_Mountain,
-                    3
-                ), // Add flag to DM milk shop item
+            // Note: I don't know how to modify the event system to get these items to work properly, but I already did the work on finding the replacement values, so just keeping them here.
+            new ARCReplacement(
+                "3014",
+                "FF05FFFF",
+                (byte)FileDirectory.Room,
+                (byte)ReplacementType.Instruction,
+                (int)StageIDs.Death_Mountain,
+                3
+            ),
+            new ARCReplacement(
+                "3950",
+                "FF05FFFF",
+                (byte)FileDirectory.Room,
+                (byte)ReplacementType.Instruction,
+                (int)StageIDs.Death_Mountain,
+                3
+            ), // Add flag to DM milk shop item
 
-                new ARCReplacement(
-                    "3034",
-                    "FF28FFFF",
-                    (byte)FileDirectory.Room,
-                    (byte)ReplacementType.Instruction,
-                    (int)StageIDs.Death_Mountain,
-                    3
-                ),
-                new ARCReplacement(
-                    "3970",
-                    "FF28FFFF",
-                    (byte)FileDirectory.Room,
-                    (byte)ReplacementType.Instruction,
-                    (int)StageIDs.Death_Mountain,
-                    3
-                ), // Add flag to DM wooden shield shop item
+            new ARCReplacement(
+                "3034",
+                "FF28FFFF",
+                (byte)FileDirectory.Room,
+                (byte)ReplacementType.Instruction,
+                (int)StageIDs.Death_Mountain,
+                3
+            ),
+            new ARCReplacement(
+                "3970",
+                "FF28FFFF",
+                (byte)FileDirectory.Room,
+                (byte)ReplacementType.Instruction,
+                (int)StageIDs.Death_Mountain,
+                3
+            ), // Add flag to DM wooden shield shop item
 
-                new ARCReplacement(
-                    "3054",
-                    "FF04FFFF",
-                    (byte)FileDirectory.Room,
-                    (byte)ReplacementType.Instruction,
-                    (int)StageIDs.Death_Mountain,
-                    3
-                ),
-                new ARCReplacement(
-                    "3990",
-                    "FF04FFFF",
-                    (byte)FileDirectory.Room,
-                    (byte)ReplacementType.Instruction,
-                    (int)StageIDs.Death_Mountain,
-                    3
-                ), // Add flag to DM oil shop item
+            new ARCReplacement(
+                "3054",
+                "FF04FFFF",
+                (byte)FileDirectory.Room,
+                (byte)ReplacementType.Instruction,
+                (int)StageIDs.Death_Mountain,
+                3
+            ),
+            new ARCReplacement(
+                "3990",
+                "FF04FFFF",
+                (byte)FileDirectory.Room,
+                (byte)ReplacementType.Instruction,
+                (int)StageIDs.Death_Mountain,
+                3
+            ), // Add flag to DM oil shop item
 
-                new ARCReplacement(
-                    "49C",
-                    "FF3CFFFF",
-                    (byte)FileDirectory.Room,
-                    (byte)ReplacementType.Instruction,
-                    (int)StageIDs.Castle_Town_Shops,
-                    0
-                ), // Add flag to CT Red Potion */
+            new ARCReplacement(
+                "49C",
+                "FF3CFFFF",
+                (byte)FileDirectory.Room,
+                (byte)ReplacementType.Instruction,
+                (int)StageIDs.Castle_Town_Shops,
+                0
+            ), // Add flag to CT Red Potion */
 
                 //.. ModifyChestAppearanceARC(), This is still in development
             ];
