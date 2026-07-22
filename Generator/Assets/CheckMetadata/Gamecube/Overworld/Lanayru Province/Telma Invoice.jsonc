@@ -1,7 +1,9 @@
 {
-    "arcOffsets": ["A7F"],
-    "stageIDX": [70],
-    "fileDirectoryType": [1],
-    "replacementType": [0],
-    "dataCategory": ["ARC"]
+  "arcOffsets": ["A7F"],
+  "stageIDX": [70],
+  "fileDirectoryType": [1],
+  "replacementType": [0],
+  "checkCategory": ["Overworld", "Quest", "Castle Town"],
+  "itemId": "Invoice",
+  "dataCategory": ["ARC"]
 }

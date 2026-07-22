@@ -1,0 +1,11 @@
+{
+  "arcOffsets": ["1524"],
+  "stageIDX": [24],
+  "roomIDX": 13,
+  "fileDirectoryType": [0],
+  "replacementType": [0],
+  "chestLowerNibble": "F",
+  "checkCategory": ["Chest", "Dungeon", "Arbiters Grounds"],
+  "itemId": "Yellow_Rupee",
+  "dataCategory": ["Chest", "ARC"]
+}

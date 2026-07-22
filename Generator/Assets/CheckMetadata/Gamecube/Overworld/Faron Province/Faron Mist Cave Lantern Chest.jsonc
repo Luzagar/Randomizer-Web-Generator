@@ -1,8 +1,11 @@
 {
-    "arcOffsets": ["1F8"],
-    "stageIDX": [45],
-    "roomIDX": 14,
-    "fileDirectoryType": [0],
-    "replacementType": [0],
-    "dataCategory": ["Chest", "ARC"]
+  "arcOffsets": ["1F8"],
+  "stageIDX": [45],
+  "roomIDX": 14,
+  "fileDirectoryType": [0],
+  "replacementType": [0],
+  "chestLowerNibble": "5",
+  "checkCategory": ["Overworld", "Chest", "Faron Woods"],
+  "itemId": "Piece_of_Heart",
+  "dataCategory": ["Chest", "ARC"]
 }

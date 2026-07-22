@@ -1,3 +1,5 @@
 {
-    "dataCategory": [""]
+  "checkCategory": ["Overworld", "Death Mountain"],
+  "itemId": "Death_Mountain_Portal",
+  "dataCategory": [""]
 }

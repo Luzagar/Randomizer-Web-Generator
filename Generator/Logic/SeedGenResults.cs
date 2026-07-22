@@ -117,21 +117,13 @@ namespace TPRandomizer
                     new()
                     {
                         (
-                            new(
-                                "Forest Temple Ooccoo Out",
-                                "",
-                                (int)StageIDs.Faron_Woods,
-                                6,
-                                "96",
-                                "FF",
-                                ""
-                            ),
-                            "Forest Temple Entrance",
+                            new("FT Ooccoo Out", "", (int)StageIDs.Faron_Woods, 6, "96", "FF", ""),
+                            "FT Entrance",
                             "North Faron Woods"
                         ),
                         (
                             new(
-                                "Goron Mines Ooccoo Out",
+                                "GM Ooccoo Out",
                                 "",
                                 (int)StageIDs.Death_Mountain,
                                 3,
@@ -139,51 +131,27 @@ namespace TPRandomizer
                                 "FF",
                                 ""
                             ),
-                            "Goron Mines Entrance",
-                            "Death Mountain Sumo Hall Goron Mines Tunnel"
+                            "GM Entrance",
+                            "Death Mountain Sumo Hall GM Tunnel"
                         ),
                         (
-                            new(
-                                "Lakebed Temple Ooccoo Out",
-                                "",
-                                (int)StageIDs.Lake_Hylia,
-                                0,
-                                "96",
-                                "FF",
-                                ""
-                            ),
-                            "Lakebed Temple Entrance",
-                            "Lake Hylia Lakebed Temple Entrance"
+                            new("LBT Ooccoo Out", "", (int)StageIDs.Lake_Hylia, 0, "96", "FF", ""),
+                            "LBT Entrance",
+                            "Lake Hylia LBT Entrance"
                         ),
                         (
-                            new(
-                                "Arbiters Grounds Ooccoo Out",
-                                "",
-                                (int)StageIDs.Bulblin_Camp,
-                                3,
-                                "05",
-                                "FF",
-                                ""
-                            ),
-                            "Arbiters Grounds Entrance",
-                            "Outside Arbiters Grounds"
+                            new("AG Ooccoo Out", "", (int)StageIDs.Bulblin_Camp, 3, "05", "FF", ""),
+                            "AG Entrance",
+                            "Outside AG"
                         ),
                         (
-                            new(
-                                "Snowpeak Ruins Ooccoo Out",
-                                "",
-                                (int)StageIDs.Snowpeak,
-                                1,
-                                "0D",
-                                "FF",
-                                ""
-                            ),
-                            "Snowpeak Ruins Left Door",
+                            new("SPR Ooccoo Out", "", (int)StageIDs.Snowpeak, 1, "0D", "FF", ""),
+                            "SPR Left Door",
                             "Snowpeak Summit Lower Left Door"
                         ),
                         (
                             new(
-                                "Temple of Time Ooccoo Out",
+                                "ToT Ooccoo Out",
                                 "",
                                 (int)StageIDs.Sacred_Grove,
                                 1,
@@ -191,12 +159,12 @@ namespace TPRandomizer
                                 "FF",
                                 ""
                             ),
-                            "Temple of Time Entrance",
+                            "ToT Entrance",
                             "Sacred Grove Past Behind Window"
                         ),
                         (
                             new(
-                                "City in The Sky Ooccooo Out",
+                                "CitS Ooccooo Out",
                                 "",
                                 (int)StageIDs.City_in_the_Sky,
                                 16,
@@ -204,7 +172,7 @@ namespace TPRandomizer
                                 "FF",
                                 ""
                             ),
-                            "City in The Sky Entrance",
+                            "CitS Entrance",
                             "Lake Hylia"
                         ),
                     };
@@ -525,10 +493,10 @@ namespace TPRandomizer
             return reqDungeonsList;
         }
 
-        private List<string> GetShuffledEntrancesStringList()
+        private Dictionary<string, string> GetShuffledEntrancesStringList()
         {
             EntranceRando entranceRando = new();
-            List<string> shuffledEntrances = new();
+            Dictionary<string, string> shuffledEntrances = new();
 
             EntranceRando.DeserializeSpawnTable();
 
@@ -554,7 +522,7 @@ namespace TPRandomizer
                         {
                             if (entry.State == entranceBytes[7])
                             {
-                                shuffledEntrances.Add("Spawn Location -> " + entry.TargetRoom);
+                                shuffledEntrances.Add("Spawn Location", entry.TargetRoom);
                             }
                         }
                     }
@@ -601,7 +569,8 @@ namespace TPRandomizer
                                                         shuffledEntrances.Add(
                                                             entry.SourceRoom
                                                                 + " -> "
-                                                                + entry2.TargetRoom
+                                                                + entry.TargetRoom,
+                                                            entry2.TargetRoom
                                                         );
                                                         /*Console.WriteLine(
                                                             entry.SourceRoom
@@ -673,10 +642,35 @@ namespace TPRandomizer
             result.Add("itemScarcity", sSettings.itemScarcity.ToString());
             result.Add("damageMagnification", sSettings.damageMagnification.ToString());
             result.Add("bonksDoDamage", sSettings.bonksDoDamage);
-            result.Add("shuffleRewards", sSettings.shuffleRewards);
-            result.Add("smallKeySettings", sSettings.smallKeySettings.ToString());
-            result.Add("bigKeySettings", sSettings.bigKeySettings.ToString());
-            result.Add("mapAndCompassSettings", sSettings.mapAndCompassSettings.ToString());
+            result.Add("shuffleFusedShadows", sSettings.shuffleFusedShadows);
+            result.Add("shuffleMirrorShards", sSettings.shuffleMirrorShards);
+            result.Add("ftSmallKeySettings", sSettings.ftSmallKeySettings.ToString());
+            result.Add("gmSmallKeySettings", sSettings.gmSmallKeySettings.ToString());
+            result.Add("lbtSmallKeySettings", sSettings.lbtSmallKeySettings.ToString());
+            result.Add("agSmallKeySettings", sSettings.agSmallKeySettings.ToString());
+            result.Add("sprSmallKeySettings", sSettings.sprSmallKeySettings.ToString());
+            result.Add("totSmallKeySettings", sSettings.totSmallKeySettings.ToString());
+            result.Add("citsSmallKeySettings", sSettings.citsSmallKeySettings.ToString());
+            result.Add("potSmallKeySettings", sSettings.potSmallKeySettings.ToString());
+            result.Add("hcSmallKeySettings", sSettings.hcSmallKeySettings.ToString());
+            result.Add("ftBigKeySettings", sSettings.ftBigKeySettings.ToString());
+            result.Add("gmBigKeySettings", sSettings.gmBigKeySettings.ToString());
+            result.Add("lbtBigKeySettings", sSettings.lbtBigKeySettings.ToString());
+            result.Add("agBigKeySettings", sSettings.agBigKeySettings.ToString());
+            result.Add("sprBigKeySettings", sSettings.sprBigKeySettings.ToString());
+            result.Add("totBigKeySettings", sSettings.totBigKeySettings.ToString());
+            result.Add("citsBigKeySettings", sSettings.citsBigKeySettings.ToString());
+            result.Add("potBigKeySettings", sSettings.potBigKeySettings.ToString());
+            result.Add("hcBigKeySettings", sSettings.hcBigKeySettings.ToString());
+            result.Add("ftMapAndCompassSettings", sSettings.ftMapAndCompassSettings.ToString());
+            result.Add("gmMapAndCompassSettings", sSettings.gmMapAndCompassSettings.ToString());
+            result.Add("lbtMapAndCompassSettings", sSettings.lbtMapAndCompassSettings.ToString());
+            result.Add("agMapAndCompassSettings", sSettings.agMapAndCompassSettings.ToString());
+            result.Add("sprMapAndCompassSettings", sSettings.sprMapAndCompassSettings.ToString());
+            result.Add("totMapAndCompassSettings", sSettings.totMapAndCompassSettings.ToString());
+            result.Add("citsMapAndCompassSettings", sSettings.citsMapAndCompassSettings.ToString());
+            result.Add("potMapAndCompassSettings", sSettings.potMapAndCompassSettings.ToString());
+            result.Add("hcMapAndCompassSettings", sSettings.hcMapAndCompassSettings.ToString());
             result.Add("skipPrologue", sSettings.skipPrologue);
             result.Add("faronTwilightCleared", sSettings.faronTwilightCleared);
             result.Add("eldinTwilightCleared", sSettings.eldinTwilightCleared);
@@ -708,7 +702,14 @@ namespace TPRandomizer
             result.Add("hintDistribution", sSettings.hintDistribution.ToString());
             result.Add("randomizeStartingPoint", sSettings.randomizeStartingPoint);
             result.Add("shuffleHiddenRupees", sSettings.shuffleHiddenRupees);
+            result.Add("ftShortcut", sSettings.ftShortCut);
             result.Add("gmShortcut", sSettings.gmShortcut);
+            result.Add("lbtShortcut", sSettings.lbtShortCut);
+            result.Add("agShortcut", sSettings.agShortCut);
+            result.Add("sprShortcut", sSettings.sprShortCut);
+            result.Add("citsBridgeShortcut", sSettings.citsBridgeShortCut);
+            result.Add("citsFanShortcut", sSettings.citsFanShortCut);
+            result.Add("potShortcut", sSettings.potShortCut);
             result.Add("hcShortcut", sSettings.hcShortcut);
             result.Add("iliaQuest", sSettings.iliaQuest.ToString());
             result.Add("mirrorChamberEntrance", sSettings.mirrorChamberEntrance.ToString());
@@ -724,9 +725,24 @@ namespace TPRandomizer
             result.Add("noPlandoHints", sSettings.noPlandoHints);
             result.Add("adjustHintsForCompletionists", sSettings.adjustHintsForCompletionists);
             result.Add("hintDungeonEntrances", sSettings.hintDungeonEntrances);
+            result.Add("shuffleFishJournals", sSettings.shuffleFishJournals);
+            result.Add("shuffleLegendaryLoach", sSettings.shuffleLegendaryLoach);
+            result.Add("chestSizeMatchesContent", sSettings.chestSizeMatchesContent);
+            result.Add("shuffleGrottoEntrances", sSettings.shuffleGrottoEntrances);
+            result.Add("shuffleCaveEntrances", sSettings.shuffleCaveEntrances);
+            result.Add("shuffleOneWayEntrances", sSettings.shuffleOneWayEntrances);
+            result.Add("shuffleInteriorEntrances", sSettings.shuffleInteriorEntrances);
+            result.Add("shuffleBossEntrances", sSettings.shuffleBossEntrances);
+            result.Add("shuffleExteriorEntrances", sSettings.shuffleExteriorEntrances);
+            result.Add("shuffleAnimalConversations", sSettings.shuffleAnimalConversations);
+            result.Add("spawnGWolves", sSettings.spawnGWolves);
+            result.Add("shuffleMinigames", sSettings.shuffleMinigames);
+            result.Add("affordableDonations", sSettings.affordableDonations);
+            result.Add("alwaysGreatSpin", sSettings.alwaysGreatSpin);
 
             result.Add("startingItems", sSettings.startingItems);
             result.Add("excludedChecks", sSettings.excludedChecks);
+            result.Add("logicalTricks", sSettings.logicalTricks.Keys);
 
             return result;
         }

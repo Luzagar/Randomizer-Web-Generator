@@ -56,15 +56,15 @@ namespace TPRandomizer.Hints
                         "Lanayru Field Poe Grotto Left Poe",
                         "Lanayru Field Poe Grotto Right Poe",
                         "Lanayru Field Skulltula Grotto Chest",
-                        "West Hyrule Field Helmasaur Grotto Chest",
-                        "Outside South Castle Town Tektite Grotto Chest",
+                        "BCT Helmasaur Grotto Chest",
+                        "OCT South Tektite Grotto Chest",
                         "Lake Hylia Bridge Bubble Grotto Chest",
                         "Lake Hylia Shell Blade Grotto Chest",
                         "Lake Hylia Water Toadpoli Grotto Chest",
-                        "Gerudo Desert Rock Grotto First Poe",
-                        "Gerudo Desert Rock Grotto Lantern Chest",
-                        "Gerudo Desert Rock Grotto Second Poe",
-                        "Gerudo Desert Skulltula Grotto Chest",
+                        "Desert Rock Grotto First Poe",
+                        "Desert Rock Grotto Lantern Chest",
+                        "Desert Rock Grotto Second Poe",
+                        "Desert Skulltula Grotto Chest",
                         "Snowpeak Freezard Grotto Chest",
                     }
                 },
@@ -73,7 +73,7 @@ namespace TPRandomizer.Hints
                     new[]
                     {
                         "Talo Sharpshooting",
-                        "Kakariko Village Malo Mart Hawkeye",
+                        "Kak Village Malo Mart Hawkeye",
                         "Death Mountain Trail Poe",
                         "Snowboard Racing Prize",
                         "Doctors Office Balcony Chest",
@@ -99,29 +99,25 @@ namespace TPRandomizer.Hints
                     new[]
                     {
                         "Sacred Grove Past Owl Statue Chest",
-                        "Sacred Grove Temple of Time Owl Statue Poe",
+                        "Sacred Grove ToT Owl Statue Poe",
                         "Faron Woods Owl Statue Chest",
                         "Faron Woods Owl Statue Sky Character",
-                        "Kakariko Gorge Owl Statue Chest",
-                        "Kakariko Gorge Owl Statue Sky Character",
+                        "Kak Gorge Owl Statue Chest",
+                        "Kak Gorge Owl Statue Sky Character",
                         "Bridge of Eldin Owl Statue Chest",
                         "Bridge of Eldin Owl Statue Sky Character",
                         "Hyrule Field Amphitheater Owl Statue Chest",
                         "Hyrule Field Amphitheater Owl Statue Sky Character",
                         "Lake Hylia Bridge Owl Statue Chest",
                         "Lake Hylia Bridge Owl Statue Sky Character",
-                        "Gerudo Desert Owl Statue Chest",
-                        "Gerudo Desert Owl Statue Sky Character",
-                        "Hyrule Castle Graveyard Owl Statue Chest",
+                        "Desert Owl Statue Chest",
+                        "Desert Owl Statue Sky Character",
+                        "HC Graveyard Owl Statue Chest",
                     }
                 },
                 {
                     HintCategory.Llc_Lantern_Chests,
-                    new[]
-                    {
-                        "Lake Lantern Cave Sixth Chest",
-                        "Lake Lantern Cave End Lantern Chest",
-                    }
+                    new[] { "LLC Sixth Chest", "LLC End Lantern Chest", }
                 },
                 {
                     HintCategory.Underwater,
@@ -132,20 +128,20 @@ namespace TPRandomizer.Hints
                         "Lake Hylia Underwater Chest",
                         "Lanayru Spring Underwater Left Chest",
                         "Lanayru Spring Underwater Right Chest",
-                        "Zoras Domain Extinguish All Torches Chest",
-                        "Zoras Domain Light All Torches Chest",
-                        "Zoras Domain Underwater Goron",
-                        "Goron Mines Crystal Switch Room Underwater Chest",
-                        "Goron Mines Outside Underwater Chest",
-                        "Lakebed Temple Before Deku Toad Underwater Left Chest",
-                        "Lakebed Temple Before Deku Toad Underwater Right Chest",
-                        "Lakebed Temple Central Room Spire Chest",
-                        "Lakebed Temple West Second Floor Southwest Underwater Chest",
-                        "City in The Sky Underwater East Chest",
-                        "City in The Sky Underwater West Chest",
+                        "ZD Extinguish All Torches Chest",
+                        "ZD Light All Torches Chest",
+                        "ZD Underwater Goron",
+                        "GM Crystal Switch Room Underwater Chest",
+                        "GM Outside Underwater Chest",
+                        "LBT Before Deku Toad Underwater Left Chest",
+                        "LBT Before Deku Toad Underwater Right Chest",
+                        "LBT Central Room Spire Chest",
+                        "LBT West Second Floor Southwest Underwater Chest",
+                        "CitS Underwater East Chest",
+                        "CitS Underwater West Chest",
                         // Rupees:
                         "Eldin Spring Underwater Boulder Rupee",
-                        "Kakariko Graveyard Underwater Boulder Rupee",
+                        "Kak Graveyard Underwater Boulder Rupee",
                         "Lake Hylia Left Underwater Pillar Rupee",
                         "Lake Hylia Right Underwater Pillar Rupee",
                         "Lake Hylia Left Underwater Boulder Rupee",
@@ -154,48 +150,48 @@ namespace TPRandomizer.Hints
                         "Lanayru Field South Underwater Boulder Rupee",
                         "Lanayru Spring Upper Underwater Boulder Rupee",
                         "Lanayru Spring Lower Underwater Boulder Rupee",
-                        "Zoras Domain Central Underwater Boulder Rupee",
-                        "Zoras Domain North Underwater Boulder Rupee",
-                        "Zoras Domain Throne East Gate Underwater Rupee",
-                        "Zoras Domain Throne West Gate Underwater Rupee",
-                        "Zoras Domain Throne East Underwater Rupee",
-                        "Zoras Domain Throne Northwest Underwater Rupee",
-                        "Zoras Domain Throne West Underwater Rupee",
-                        "Zoras Domain Throne South Underwater Rupee",
+                        "ZD Central Underwater Boulder Rupee",
+                        "ZD North Underwater Boulder Rupee",
+                        "ZD Throne East Gate Underwater Rupee",
+                        "ZD Throne West Gate Underwater Rupee",
+                        "ZD Throne East Underwater Rupee",
+                        "ZD Throne Northwest Underwater Rupee",
+                        "ZD Throne West Underwater Rupee",
+                        "ZD Throne South Underwater Rupee",
                     }
                 },
                 {
                     HintCategory.Southern_Desert,
                     new[]
                     {
-                        "Gerudo Desert East Canyon Chest",
-                        "Gerudo Desert East Poe",
-                        "Gerudo Desert Female Dayfly",
-                        "Gerudo Desert Lone Small Chest",
-                        "Gerudo Desert Male Dayfly",
-                        "Gerudo Desert Owl Statue Chest",
-                        "Gerudo Desert Owl Statue Sky Character",
-                        "Gerudo Desert Peahat Ledge Chest",
-                        "Gerudo Desert Poe Above Cave of Ordeals",
-                        "Gerudo Desert Skulltula Grotto Chest",
-                        "Gerudo Desert South Chest Behind Wooden Gates",
-                        "Gerudo Desert West Canyon Chest"
+                        "Desert East Canyon Chest",
+                        "Desert East Poe",
+                        "Desert Female Dayfly",
+                        "Desert Lone Small Chest",
+                        "Desert Male Dayfly",
+                        "Desert Owl Statue Chest",
+                        "Desert Owl Statue Sky Character",
+                        "Desert Peahat Ledge Chest",
+                        "Desert Poe Above CoO",
+                        "Desert Skulltula Grotto Chest",
+                        "Desert South Chest Behind Wooden Gates",
+                        "Desert West Canyon Chest"
                     }
                 },
                 {
                     HintCategory.Northern_Desert,
                     new[]
                     {
-                        "Gerudo Desert Campfire East Chest",
-                        "Gerudo Desert Campfire North Chest",
-                        "Gerudo Desert Campfire West Chest",
-                        "Gerudo Desert North Peahat Poe",
-                        "Gerudo Desert North Small Chest Before Bulblin Camp",
-                        "Gerudo Desert Northeast Chest Behind Gates",
-                        "Gerudo Desert Northwest Chest Behind Gates",
-                        "Gerudo Desert Rock Grotto First Poe",
-                        "Gerudo Desert Rock Grotto Lantern Chest",
-                        "Gerudo Desert Rock Grotto Second Poe",
+                        "Desert Campfire East Chest",
+                        "Desert Campfire North Chest",
+                        "Desert Campfire West Chest",
+                        "Desert North Peahat Poe",
+                        "Desert North Small Chest Before Bulblin Camp",
+                        "Desert Northeast Chest Behind Gates",
+                        "Desert Northwest Chest Behind Gates",
+                        "Desert Rock Grotto First Poe",
+                        "Desert Rock Grotto Lantern Chest",
+                        "Desert Rock Grotto Second Poe",
                     }
                 },
                 {
@@ -204,41 +200,41 @@ namespace TPRandomizer.Hints
                     HintCategory.Goron_Mines_2nd_Part,
                     new[]
                     {
-                        "Goron Mines Gor Ebizo Chest",
-                        "Goron Mines Gor Ebizo Key Shard",
-                        "Goron Mines Chest Before Dangoro",
-                        "Goron Mines Dangoro Chest",
-                        "Goron Mines Beamos Room Chest",
-                        "Goron Mines Gor Liggs Chest",
-                        "Goron Mines Gor Liggs Key Shard",
-                        "Goron Mines Main Magnet Room Top Chest",
+                        "GM Gor Ebizo Chest",
+                        "GM Gor Ebizo Key Shard",
+                        "GM Chest Before Dangoro",
+                        "GM Dangoro Chest",
+                        "GM Beamos Room Chest",
+                        "GM Gor Liggs Chest",
+                        "GM Gor Liggs Key Shard",
+                        "GM Main Magnet Room Top Chest",
                     }
                 },
                 {
                     HintCategory.Temple_of_Time_2nd_Half,
                     new[]
                     {
-                        "Temple of Time Moving Wall Dinalfos Room Chest",
-                        "Temple of Time Scales Gohma Chest",
-                        "Temple of Time Poe Above Scales",
-                        "Temple of Time Scales Upper Chest",
-                        "Temple of Time Floor Switch Puzzle Room Upper Chest",
-                        "Temple of Time Big Key Chest",
-                        "Temple of Time Guillotine Chest",
-                        "Temple of Time Chest Before Darknut",
-                        "Temple of Time Darknut Chest",
+                        "ToT Moving Wall Dinalfos Room Chest",
+                        "ToT Scales Gohma Chest",
+                        "ToT Poe Above Scales",
+                        "ToT Scales Upper Chest",
+                        "ToT Floor Switch Puzzle Room Upper Chest",
+                        "ToT Big Key Chest",
+                        "ToT Guillotine Chest",
+                        "ToT Chest Before Darknut",
+                        "ToT Darknut Chest",
                     }
                 },
                 {
                     HintCategory.City_in_the_Sky_East_Wing,
                     new[]
                     {
-                        "City in The Sky East First Wing Chest After Fans",
-                        "City in The Sky East Tile Worm Small Chest",
-                        "City in The Sky East Wing After Dinalfos Alcove Chest",
-                        "City in The Sky East Wing After Dinalfos Ledge Chest",
-                        "City in The Sky East Wing Lower Level Chest",
-                        "City in The Sky Aeralfos Chest",
+                        "CitS East First Wing Chest After Fans",
+                        "CitS East Tile Worm Small Chest",
+                        "CitS East Wing After Dinalfos Alcove Chest",
+                        "CitS East Wing After Dinalfos Ledge Chest",
+                        "CitS East Wing Lower Level Chest",
+                        "CitS Aeralfos Chest",
                     }
                 },
                 // We don't put `Dungeon` here since it isn't used and it would
@@ -247,15 +243,15 @@ namespace TPRandomizer.Hints
                     HintCategory.Lake_Lantern_Cave_2nd_Half,
                     new[]
                     {
-                        "Lake Lantern Cave Second Poe",
-                        "Lake Lantern Cave Final Poe",
-                        "Lake Lantern Cave Ninth Chest",
-                        "Lake Lantern Cave Tenth Chest",
-                        "Lake Lantern Cave Eleventh Chest",
-                        "Lake Lantern Cave Twelfth Chest",
-                        "Lake Lantern Cave Thirteenth Chest",
-                        "Lake Lantern Cave Fourteenth Chest",
-                        "Lake Lantern Cave End Lantern Chest",
+                        "LLC Second Poe",
+                        "LLC Final Poe",
+                        "LLC Ninth Chest",
+                        "LLC Tenth Chest",
+                        "LLC Eleventh Chest",
+                        "LLC Twelfth Chest",
+                        "LLC Thirteenth Chest",
+                        "LLC Fourteenth Chest",
+                        "LLC End Lantern Chest",
                     }
                 },
                 {
@@ -294,61 +290,61 @@ namespace TPRandomizer.Hints
                         "Snowboarding Top Left Rupee",
                         "Snowboarding Top Right Rupee",
                         // Include the golden wolf which depends on the howling stone.
-                        "Kakariko Graveyard Golden Wolf",
+                        "Kak Graveyard Golden Wolf",
                     }
                 },
                 {
                     HintCategory.Arbiters_Grounds_2nd_Half,
                     new[]
                     {
-                        "Arbiters Grounds North Turning Room Chest",
-                        "Arbiters Grounds Big Key Chest",
-                        "Arbiters Grounds Spinner Room First Small Chest",
-                        "Arbiters Grounds Spinner Room Lower Central Small Chest",
-                        "Arbiters Grounds Spinner Room Lower North Chest",
-                        "Arbiters Grounds Spinner Room Second Small Chest",
-                        "Arbiters Grounds Spinner Room Stalfos Alcove Chest",
-                        "Arbiters Grounds Death Sword Chest",
-                        "Arbiters Grounds Stallord Heart Container",
-                        "Arbiters Grounds Dungeon Reward",
+                        "AG North Turning Room Chest",
+                        "AG Big Key Chest",
+                        "AG Spinner Room First Small Chest",
+                        "AG Spinner Room Lower Central Small Chest",
+                        "AG Spinner Room Lower North Chest",
+                        "AG Spinner Room Second Small Chest",
+                        "AG Spinner Room Stalfos Alcove Chest",
+                        "AG Death Sword Chest",
+                        "AG Stallord Heart Container",
+                        "AG Dungeon Reward",
                     }
                 },
                 {
                     HintCategory.Lakebed_Temple_2nd_Wing,
                     new[]
                     {
-                        "Lakebed Temple West Lower Small Chest",
-                        "Lakebed Temple West Second Floor Central Small Chest",
-                        "Lakebed Temple West Second Floor Northeast Chest",
-                        "Lakebed Temple West Second Floor Southeast Chest",
-                        "Lakebed Temple West Second Floor Southwest Underwater Chest",
-                        "Lakebed Temple West Water Supply Chest",
-                        "Lakebed Temple West Water Supply Small Chest",
-                        "Lakebed Temple Underwater Maze Small Chest",
-                        "Lakebed Temple Big Key Chest",
+                        "LBT West Lower Small Chest",
+                        "LBT West Second Floor Central Small Chest",
+                        "LBT West Second Floor Northeast Chest",
+                        "LBT West Second Floor Southeast Chest",
+                        "LBT West Second Floor Southwest Underwater Chest",
+                        "LBT West Water Supply Chest",
+                        "LBT West Water Supply Small Chest",
+                        "LBT Underwater Maze Small Chest",
+                        "LBT Big Key Chest",
                     }
                 },
                 {
                     HintCategory.Forest_Temple_West_Wing,
                     new[]
                     {
-                        "Forest Temple Big Baba Key",
-                        "Forest Temple Totem Pole Chest",
-                        "Forest Temple West Deku Like Chest",
-                        "Forest Temple West Tile Worm Chest Behind Stairs",
-                        "Forest Temple West Tile Worm Room Vines Chest",
-                        "Forest Temple Gale Boomerang",
+                        "FT Big Baba Key",
+                        "FT Totem Pole Chest",
+                        "FT West Deku Like Chest",
+                        "FT West Tile Worm Chest Behind Stairs",
+                        "FT West Tile Worm Room Vines Chest",
+                        "FT Gale Boomerang",
                     }
                 },
                 {
                     HintCategory.Snowpeak_Ruins_2nd_Floor,
                     new[]
                     {
-                        "Snowpeak Ruins Chapel Chest",
-                        "Snowpeak Ruins Ice Room Poe",
-                        "Snowpeak Ruins Lobby Chandelier Chest",
-                        "Snowpeak Ruins Northeast Chandelier Chest",
-                        "Snowpeak Ruins Wooden Beam Chandelier Chest",
+                        "SPR Chapel Chest",
+                        "SPR Ice Room Poe",
+                        "SPR Lobby Chandelier Chest",
+                        "SPR Northeast Chandelier Chest",
+                        "SPR Wooden Beam Chandelier Chest",
                     }
                 },
                 {
@@ -356,23 +352,23 @@ namespace TPRandomizer.Hints
                     new[]
                     {
                         "Faron Woods Golden Wolf",
-                        "Gerudo Desert Golden Wolf",
-                        "Kakariko Graveyard Golden Wolf",
-                        "North Castle Town Golden Wolf",
+                        "Desert Golden Wolf",
+                        "Kak Graveyard Golden Wolf",
+                        "North CT Golden Wolf",
                         "Ordon Spring Golden Wolf",
-                        "Outside South Castle Town Golden Wolf",
-                        "West Hyrule Field Golden Wolf"
+                        "OCT South Golden Wolf",
+                        "BCT Golden Wolf"
                     }
                 },
                 {
                     HintCategory.Palace_of_Twilight_Center_Wing,
                     new[]
                     {
-                        "Palace of Twilight Big Key Chest",
-                        "Palace of Twilight Central First Room Chest",
-                        "Palace of Twilight Central Outdoor Chest",
-                        "Palace of Twilight Central Tower Chest",
-                        "Palace of Twilight Zant Heart Container",
+                        "PoT Big Key Chest",
+                        "PoT Central First Room Chest",
+                        "PoT Central Outdoor Chest",
+                        "PoT Central Tower Chest",
+                        "PoT Zant Heart Container",
                     }
                 }
             };

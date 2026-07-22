@@ -1,0 +1,10 @@
+{
+  "moduleID": ["ED"],
+  "stageIDX": [29],
+  "relOffsets": ["2CB4"],
+  "overrideInstruction": ["38800000"],
+  "relReplacementType": [0],
+  "checkCategory": ["Dungeon", "Snowpeak Ruins"],
+  "itemId": "Ball_and_Chain",
+  "dataCategory": ["REL"]
+}

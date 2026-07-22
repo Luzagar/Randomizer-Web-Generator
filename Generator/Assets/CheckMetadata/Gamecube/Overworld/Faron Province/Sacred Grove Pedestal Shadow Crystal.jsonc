@@ -1,6 +1,8 @@
 {
-    "stageIDX": [54],
-    "roomIDX": 1,
-    "flag": "32",
-    "dataCategory": ["Event"]
+  "stageIDX": [54],
+  "roomIDX": 1,
+  "flag": "32",
+  "checkCategory": ["Overworld", "Sacred Grove"],
+  "itemId": "Shadow_Crystal",
+  "dataCategory": ["Event"]
 }

@@ -1,0 +1,17 @@
+{
+  "arcOffsets": ["10AC"],
+  "stageIDX": [6],
+  "roomIDX": 0,
+  "fileDirectoryType": [0],
+  "replacementType": [0],
+  "chestLowerNibble": "F",
+  "checkCategory": [
+    "Chest",
+    "Dungeon",
+    "Forest Temple",
+    "Dungeon Items",
+    "Dungeon Map"
+  ],
+  "itemId": "Forest_Temple_Dungeon_Map",
+  "dataCategory": ["Chest", "ARC"]
+}

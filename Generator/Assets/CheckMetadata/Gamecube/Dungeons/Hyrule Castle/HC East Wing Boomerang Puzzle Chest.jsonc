@@ -1,0 +1,17 @@
+{
+  "arcOffsets": ["2B0"],
+  "stageIDX": [20],
+  "roomIDX": 14,
+  "fileDirectoryType": [0],
+  "replacementType": [0],
+  "chestLowerNibble": "F",
+  "checkCategory": [
+    "Chest",
+    "Dungeon",
+    "Hyrule Castle",
+    "Dungeon Items",
+    "Dungeon Map"
+  ],
+  "itemId": "Hyrule_Castle_Dungeon_Map",
+  "dataCategory": ["Chest", "ARC"]
+}

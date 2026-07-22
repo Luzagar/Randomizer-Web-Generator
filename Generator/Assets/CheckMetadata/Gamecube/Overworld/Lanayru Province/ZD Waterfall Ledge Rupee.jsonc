@@ -1,0 +1,10 @@
+{
+  "arcOffsets": ["339F"],
+  "stageIDX": [50],
+  "roomIDX": 1,
+  "fileDirectoryType": [0],
+  "replacementType": [0],
+  "checkCategory": ["Overworld", "Zoras Domain", "Rupee - Freestanding"],
+  "itemId": "Blue_Rupee",
+  "dataCategory": ["ARC"]
+}

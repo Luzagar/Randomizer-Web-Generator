@@ -1,0 +1,486 @@
+[
+  {
+    "RoomName": "SPR Left Door",
+    "Exits": [
+      {
+        "ConnectedArea": "SPR Entrance",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "Snowpeak Summit Lower Left Door",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Region": "Snowpeak Ruins"
+  },
+  {
+    "RoomName": "SPR Right Door",
+    "Exits": [
+      {
+        "ConnectedArea": "SPR Entrance",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "Snowpeak Summit Lower Right Door",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Region": "Snowpeak Ruins"
+  },
+  {
+    "RoomName": "SPR Boss Room",
+    "Exits": [
+      {
+        "ConnectedArea": "Snowpeak Summit Lower",
+        "Requirements": "CanDefeatBlizzeta",
+        "GlitchedRequirements": "CanDefeatBlizzeta"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "SPR Blizzeta Heart Container",
+        "Requirements": "CanDefeatBlizzeta",
+        "GlitchedRequirements": "CanDefeatBlizzeta"
+      },
+      {
+        "CheckName": "SPR Blizzeta",
+        "Requirements": "CanDefeatBlizzeta",
+        "GlitchedRequirements": "CanDefeatBlizzeta"
+      },
+      {
+        "CheckName": "SPR Dungeon Reward",
+        "Requirements": "CanDefeatBlizzeta",
+        "GlitchedRequirements": "CanDefeatBlizzeta"
+      }
+    ],
+    "Region": "Snowpeak Ruins"
+  },
+  {
+    "RoomName": "SPR Caged Freezard Room",
+    "Exits": [
+      {
+        "ConnectedArea": "SPR Yeto and Yeta",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "SPR Second Floor Mini Freezard Room",
+        "Requirements": "Ball_and_Chain and (Snowpeak_Ruins_Small_Key, 3)",
+        // You can either use the key or you can break the ice in the lobby with B&C and clawshot across.
+        "GlitchedRequirements": "Ball_and_Chain and ((Snowpeak_Ruins_Small_Key, 4) or (Progressive_Clawshot, 1))"
+      },
+      {
+        "ConnectedArea": "SPR Wooden Beam Room",
+        "Requirements": "Ball_and_Chain",
+        "GlitchedRequirements": "Ball_and_Chain"
+      },
+      {
+        "ConnectedArea": "SPR West Courtyard",
+        "Requirements": "(Snowpeak_Ruins_Small_Key, 2)",
+        // If coming from the Lobby, 2F floor clip is in logic, which explains the lack of the B&C requirement.
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "SPR Chapel",
+        "Requirements": "Trick.spr_ladder_freezard_cancel or (Setting.sprShortCut equals True)",
+        // If coming from the Lobby, 2F floor clip is in logic, which explains the lack of the B&C requirement. Then you can Freezard Ladder Cancel
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "SPR Caged Freezard Room Lower",
+        // Breaking the floor
+        "Requirements": "CanSmash",
+        "GlitchedRequirements": "CanSmash"
+      }
+    ],
+    "Checks": [],
+    "Region": "Snowpeak Ruins"
+  },
+  {
+    // This is the plaform with the chest below the caged freezard room
+    "RoomName": "SPR Caged Freezard Room Lower",
+    "Exits": [
+      {
+        "ConnectedArea": "SPR Caged Freezard Room",
+        "Requirements": "(Progressive_Clawshot, 1)",
+        "GlitchedRequirements": "(Progressive_Clawshot, 1)"
+      },
+      {
+        "ConnectedArea": "SPR Entrance",
+        "Requirements": "false",
+        "GlitchedRequirements": "CanDoLJA"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "SPR Broken Floor Chest",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Region": "Snowpeak Ruins"
+  },
+  {
+    "RoomName": "SPR Chapel",
+    "Exits": [
+      {
+        "ConnectedArea": "SPR West Courtyard",
+        "Requirements": "CanDefeatChilfos",
+        "GlitchedRequirements": "CanDefeatChilfos"
+      },
+      {
+        "ConnectedArea": "SPR Boss Room",
+        "Requirements": "Snowpeak_Ruins_Bedroom_Key",
+        "GlitchedRequirements": "Snowpeak_Ruins_Bedroom_Key"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "SPR Chapel Chest",
+        "Requirements": "CanDefeatChilfos",
+        "GlitchedRequirements": "CanDefeatChilfos"
+      }
+    ],
+    "Region": "Snowpeak Ruins"
+  },
+  {
+    "RoomName": "SPR Darkhammer Room",
+    "Exits": [
+      {
+        "ConnectedArea": "SPR West Courtyard",
+        "Requirements": "CanDefeatDarkhammer",
+        "GlitchedRequirements": "CanDefeatDarkhammer"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "SPR Ball and Chain",
+        "Requirements": "CanDefeatDarkhammer",
+        "GlitchedRequirements": "CanDefeatDarkhammer"
+      },
+      {
+        "CheckName": "SPR Chest After Darkhammer",
+        "Requirements": "CanDefeatDarkhammer and Ball_and_Chain",
+        "GlitchedRequirements": "CanDefeatDarkhammer and Ball_and_Chain"
+      }
+    ],
+    "Region": "Snowpeak Ruins"
+  },
+  {
+    "RoomName": "SPR East Courtyard",
+    "Exits": [
+      {
+        "ConnectedArea": "SPR Yeto and Yeta",
+        "Requirements": "Shadow_Crystal or Ball_and_Chain",
+        "GlitchedRequirements": "Shadow_Crystal or Ball_and_Chain"
+      },
+      {
+        "ConnectedArea": "SPR West Courtyard",
+        "Requirements": "Ball_and_Chain",
+        "GlitchedRequirements": "Ball_and_Chain"
+      },
+      {
+        //We consider both 1F and 2F entry here since on their own the requirements are greater than necessary. Regardless of where you use your 2nd key, assuming you waste the 1st on the gate, you can still access the room from either floor if you have Claw.
+        "ConnectedArea": "SPR Northeast Chilfos Room First Floor",
+        "Requirements": "((Snowpeak_Ruins_Small_Key, 4) and CanDefeatMiniFreezard) or ((Snowpeak_Ruins_Small_Key, 2) and (Progressive_Clawshot, 1) and CanDefeatMiniFreezard)",
+        //If coming from the first floor, you need the key requirement and to be able to defeat the Mini Freezards. If coming from the second floor, you need to be able to break the ice in the lobby and the ice in the switch room.
+        "GlitchedRequirements": "((Snowpeak_Ruins_Small_Key, 4) and CanDefeatMiniFreezard) or (Ball_and_Chain and (Progressive_Clawshot, 1))"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "SPR East Courtyard Buried Chest",
+        "Requirements": "Shadow_Crystal",
+        "GlitchedRequirements": "Shadow_Crystal"
+      },
+      {
+        "CheckName": "SPR East Courtyard Chest",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Region": "Snowpeak Ruins"
+  },
+  {
+    "RoomName": "SPR Entrance",
+    "Exits": [
+      {
+        "ConnectedArea": "SPR Left Door",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "SPR Right Door",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "SPR Yeto and Yeta",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "SPR Caged Freezard Room Lower",
+        "Requirements": "false",
+        "GlitchedRequirements": "CanDoLJA"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "SPR Lobby Chandelier Chest",
+        "Requirements": "(((Snowpeak_Ruins_Small_Key, 3) and Snowpeak_Ruins_Ordon_Goat_Cheese)) and Ball_and_Chain and (Shadow_Crystal or Trick.spr_lobby_chandelier_without_wolf)",
+        // Vanilla, Break the ice from the lower level, or keese LJA
+        "GlitchedRequirements": "((((Snowpeak_Ruins_Small_Key, 3) and Snowpeak_Ruins_Ordon_Goat_Cheese) or Progressive_Clawshot) and Ball_and_Chain) or (Shadow_Crystal and CanDoLJA)"
+      },
+      {
+        "CheckName": "SPR Lobby West Armor Chest",
+        "Requirements": "Ball_and_Chain",
+        "GlitchedRequirements": "Ball_and_Chain"
+      },
+      {
+        "CheckName": "SPR Lobby East Armor Chest",
+        "Requirements": "Ball_and_Chain",
+        "GlitchedRequirements": "Ball_and_Chain"
+      },
+      {
+        "CheckName": "SPR Lobby Armor Poe",
+        "Requirements": "Shadow_Crystal and Ball_and_Chain",
+        "GlitchedRequirements": "Shadow_Crystal and Ball_and_Chain"
+      },
+      {
+        "CheckName": "SPR Lobby Poe",
+        "Requirements": "Shadow_Crystal",
+        "GlitchedRequirements": "Shadow_Crystal"
+      }
+    ],
+    "Region": "Snowpeak Ruins"
+  },
+  {
+    "RoomName": "SPR Northeast Chilfos Room First Floor",
+    "Exits": [
+      {
+        "ConnectedArea": "SPR East Courtyard",
+        "Requirements": "(Snowpeak_Ruins_Small_Key, 4)",
+        "GlitchedRequirements": "(Snowpeak_Ruins_Small_Key, 4)"
+      },
+      {
+        "ConnectedArea": "SPR Yeto and Yeta",
+        "Requirements": "CanDefeatChilfos",
+        "GlitchedRequirements": "CanDefeatChilfos"
+      },
+      {
+        "ConnectedArea": "SPR Northeast Chilfos Room Second Floor",
+        "Requirements": "false",
+        // LJA in ice block room
+        "GlitchedRequirements": "CanDoLJA"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "SPR Ordon Pumpkin Chest",
+        "Requirements": "CanDefeatChilfos",
+        "GlitchedRequirements": "CanDefeatChilfos"
+      }
+    ],
+    "Region": "Snowpeak Ruins"
+  },
+  {
+    "RoomName": "SPR Northeast Chilfos Room Second Floor",
+    "Exits": [
+      {
+        "ConnectedArea": "SPR Northeast Chilfos Room First Floor",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "SPR Yeto and Yeta",
+        "Requirements": "Ball_and_Chain",
+        "GlitchedRequirements": "Ball_and_Chain"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "SPR Northeast Chandelier Chest",
+        "Requirements": "CanDefeatChilfos and Ball_and_Chain",
+        "GlitchedRequirements": "CanDefeatChilfos and Ball_and_Chain"
+      }
+    ],
+    "Region": "Snowpeak Ruins"
+  },
+  {
+    "RoomName": "SPR Second Floor Mini Freezard Room",
+    "Exits": [
+      {
+        "ConnectedArea": "SPR Entrance",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "SPR Yeto and Yeta",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "SPR Northeast Chilfos Room Second Floor",
+        "Requirements": "Ball_and_Chain and ((Progressive_Clawshot, 1) or ((Progressive_Hidden_Skill, 3) and Trick.spr_ne_chandelier_with_bs)) and CanDefeatChilfos",
+        // LJA in ice block room
+        "GlitchedRequirements": "(Ball_and_Chain and (Progressive_Clawshot, 1) and CanDefeatChilfos) or CanDoLJA"
+      },
+      {
+        "ConnectedArea": "SPR Caged Freezard Room",
+        "Requirements": "(Snowpeak_Ruins_Small_Key, 4)",
+        "GlitchedRequirements": "(Snowpeak_Ruins_Small_Key, 4) or (Ball_and_Chain and (Progressive_Clawshot, 1))"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "SPR Ice Room Poe",
+        "Requirements": "Shadow_Crystal",
+        "GlitchedRequirements": "Shadow_Crystal"
+      }
+    ],
+    "Region": "Snowpeak Ruins"
+  },
+  {
+    "RoomName": "SPR West Cannon Room",
+    "Exits": [
+      {
+        "ConnectedArea": "SPR West Courtyard",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "SPR Wooden Beam Room",
+        "Requirements": "CanSmash",
+        "GlitchedRequirements": "CanSmash"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "SPR West Cannon Room Central Chest",
+        "Requirements": "Ball_and_Chain",
+        "GlitchedRequirements": "Ball_and_Chain"
+      },
+      {
+        "CheckName": "SPR West Cannon Room Corner Chest",
+        "Requirements": "CanSmash",
+        "GlitchedRequirements": "CanSmash"
+      }
+    ],
+    "Region": "Snowpeak Ruins"
+  },
+  {
+    "RoomName": "SPR West Courtyard",
+    "Exits": [
+      {
+        "ConnectedArea": "SPR Yeto and Yeta",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "SPR East Courtyard",
+        "Requirements": "Ball_and_Chain",
+        // Break the ice or freezard ladder cancel and jump to east side from boss door
+        "GlitchedRequirements": "Ball_and_Chain or (Snowpeak_Ruins_Small_Key, 4) or Snowpeak_Ruins_Ordon_Goat_Cheese"
+      },
+      {
+        "ConnectedArea": "SPR West Cannon Room",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "SPR Chapel",
+        "Requirements": "((Snowpeak_Ruins_Small_Key, 4) and Snowpeak_Ruins_Ordon_Goat_Cheese and Ball_and_Chain and HasBombs) or (Snowpeak_Ruins_Ordon_Goat_Cheese and (Setting.sprShortCut equals True))",
+        // Freezard Ladder Cancel
+        "GlitchedRequirements": "(Snowpeak_Ruins_Small_Key, 4) or Snowpeak_Ruins_Ordon_Goat_Cheese"
+      },
+      {
+        "ConnectedArea": "SPR Darkhammer Room",
+        //Don't require gate to be unlocked for cannonballs if we have Cheese since we can get to the other side by going through Yeta's room.
+        "Requirements": "(Ball_and_Chain or (((Snowpeak_Ruins_Small_Key, 2) or Snowpeak_Ruins_Ordon_Goat_Cheese) and HasBombs)) or (Setting.sprShortCut equals True)",
+        // We can also just wolf clip in.
+        "GlitchedRequirements": "Ball_and_Chain or (((Snowpeak_Ruins_Small_Key, 4) or Snowpeak_Ruins_Ordon_Goat_Cheese) and HasBombs) or (Shadow_Crystal and (Setting.damageMagnification not_equal OHKO)) or (Setting.sprShortCut equals True)"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "SPR West Courtyard Buried Chest",
+        "Requirements": "Shadow_Crystal",
+        "GlitchedRequirements": "Shadow_Crystal"
+      },
+      {
+        "CheckName": "SPR Courtyard Central Chest",
+        //Don't require gate to be unlocked for cannonballs if we have Cheese since we can get to the otherside by going through Yeta's room.
+        "Requirements": "Ball_and_Chain or (HasBombs and (((Snowpeak_Ruins_Small_Key, 2) or Snowpeak_Ruins_Ordon_Goat_Cheese)))",
+        "GlitchedRequirements": "Ball_and_Chain or (HasBombs and ((Snowpeak_Ruins_Small_Key, 2)))"
+      }
+    ],
+    "Region": "Snowpeak Ruins"
+  },
+  {
+    "RoomName": "SPR Wooden Beam Room",
+    "Exits": [
+      {
+        "ConnectedArea": "SPR West Cannon Room",
+        "Requirements": "Ball_and_Chain",
+        // You can use wolf to clip through the ice
+        "GlitchedRequirements": "Ball_and_Chain or Shadow_Crystal"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "SPR Wooden Beam Central Chest",
+        "Requirements": "CanDefeatIceKeese",
+        "GlitchedRequirements": "CanDefeatIceKeese"
+      },
+      {
+        "CheckName": "SPR Wooden Beam Northwest Chest",
+        "Requirements": "CanDefeatIceKeese",
+        "GlitchedRequirements": "CanDefeatIceKeese"
+      },
+      {
+        "CheckName": "SPR Wooden Beam Chandelier Chest",
+        "Requirements": "Snowpeak_Ruins_Ordon_Goat_Cheese and Ball_and_Chain",
+        "GlitchedRequirements": "Snowpeak_Ruins_Ordon_Goat_Cheese and (Ball_and_Chain or CanDoLJA)"
+      }
+    ],
+    "Region": "Snowpeak Ruins"
+  },
+  {
+    "RoomName": "SPR Yeto and Yeta",
+    "Exits": [
+      {
+        "ConnectedArea": "SPR Entrance",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "SPR Caged Freezard Room",
+        "Requirements": "Snowpeak_Ruins_Ordon_Goat_Cheese",
+        "GlitchedRequirements": "Snowpeak_Ruins_Ordon_Goat_Cheese"
+      },
+      {
+        "ConnectedArea": "SPR West Courtyard",
+        "Requirements": "Snowpeak_Ruins_Ordon_Pumpkin",
+        "GlitchedRequirements": "Snowpeak_Ruins_Ordon_Pumpkin"
+      },
+      {
+        "ConnectedArea": "SPR East Courtyard",
+        "Requirements": "Shadow_Crystal or Ball_and_Chain",
+        "GlitchedRequirements": "Shadow_Crystal or Ball_and_Chain"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "SPR Mansion Map",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Region": "Snowpeak Ruins"
+  }
+]

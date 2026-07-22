@@ -1,8 +1,11 @@
 {
-    "arcOffsets": ["DA0"],
-    "stageIDX": [32],
-    "roomIDX": 0,
-    "fileDirectoryType": [0],
-    "replacementType": [0],
-    "dataCategory": ["Chest", "ARC"]
+  "arcOffsets": ["DA0"],
+  "stageIDX": [32],
+  "roomIDX": 0,
+  "fileDirectoryType": [0],
+  "replacementType": [0],
+  "chestLowerNibble": "F",
+  "checkCategory": ["Overworld", "Chest", "Eldin Lantern Cave"],
+  "itemId": "Purple_Rupee",
+  "dataCategory": ["Chest", "ARC"]
 }

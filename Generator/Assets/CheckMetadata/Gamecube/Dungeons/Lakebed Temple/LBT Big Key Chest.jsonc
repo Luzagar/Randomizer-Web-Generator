@@ -1,0 +1,11 @@
+{
+  "arcOffsets": ["D00"],
+  "stageIDX": [0],
+  "roomIDX": 6,
+  "fileDirectoryType": [0],
+  "replacementType": [0],
+  "chestLowerNibble": "F",
+  "checkCategory": ["Chest", "Dungeon", "Lakebed Temple", "Big Key"],
+  "itemId": "Lakebed_Temple_Big_Key",
+  "dataCategory": ["Chest", "ARC"]
+}

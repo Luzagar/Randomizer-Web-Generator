@@ -1,0 +1,11 @@
+{
+  "arcOffsets": ["4EC"],
+  "stageIDX": [20],
+  "roomIDX": 1,
+  "fileDirectoryType": [0],
+  "replacementType": [0],
+  "chestLowerNibble": "4",
+  "checkCategory": ["Chest", "Dungeon", "Hyrule Castle"],
+  "itemId": "Silver_Rupee",
+  "dataCategory": ["Chest", "ARC"]
+}

@@ -260,6 +260,50 @@
 
     initCustomColorPickers();
 
+    // Attempt to load previously used values from localStorage
+
+    const arrayOfCosmeticSettings = [
+      'bgmFieldset',
+      'randomizeFanfaresCheckbox',
+      'randomizeSfxCheckbox',
+      'disableEnemyBGMCheckbox',
+      'invertCameraCheckbox',
+      'lightSwordGlowCheckbox',
+      'linkHairColorFieldsetColorPicker',
+      'hTunicHatColorFieldsetColorPicker',
+      'hTunicBodyColorFieldsetColorPicker',
+      'hTunicSkirtColorFieldsetColorPicker',
+      'zTunicHatColorFieldsetColorPicker',
+      'zTunicHelmetColorFieldsetColorPicker',
+      'zTunicBodyColorFieldsetColorPicker',
+      'zTunicScalesColorFieldsetColorPicker',
+      'zTunicBootsColorFieldsetColorPicker',
+      'msBladeColorFieldsetColorPicker',
+      'msHandleColorFieldsetColorPicker',
+      'boomerangColorFieldsetColorPicker',
+      'ironsColorFieldsetColorPicker',
+      'spinnerColorFieldsetColorPicker',
+      'woodSwordColorFieldsetColorPicker',
+      'eponaColorFieldsetColorPicker',
+      'wolfColorFieldsetColorPicker',
+      'lanternColorFieldsetColorPicker',
+      'lightSwordColorFieldsetColorPicker',
+      'heartColorFieldset',
+      'aButtonColorFieldset',
+      'bButtonColorFieldset',
+      'xButtonColorFieldset',
+      'yButtonColorFieldset',
+      'zButtonColorFieldset',
+      'midnaHairBaseColorFieldsetColorPicker',
+      'midnaHairTipColorFieldsetColorPicker',
+      'midnaDomeRingColorFieldset',
+    ];
+
+    for (let i = 0; i < arrayOfCosmeticSettings.length; i++) {
+      const elId = arrayOfCosmeticSettings[i];
+      setCosmeticSettingFromStorage(elId);
+    }
+
     function handleToggleTranslationsWarning() {
       let showTranslationsWarning = false;
       if (
@@ -295,6 +339,44 @@
     languageSelectedEvent.subscribe(() => {
       handleToggleTranslationsWarning();
     });
+  }
+
+  function setCosmeticSettingFromStorage(elId) {
+    const element = document.getElementById(elId);
+
+    if (elId.includes('ColorPicker')) {
+      // Is a custom color input.
+      const fieldElement = document.getElementById(
+        elId.replace('ColorPicker', '')
+      );
+      const rawValue = localStorage.getItem(elId.replace('ColorPicker', ''));
+      const numericValue = parseInt(rawValue, 16);
+      const totalOptions = fieldElement.options.length;
+
+      if (!isNaN(numericValue) && numericValue < totalOptions) {
+        // Stored value is a plain option index — just select it directly.
+        fieldElement.selectedIndex = numericValue;
+        fieldElement.dispatchEvent(new Event('change', { bubbles: true }));
+      } else {
+        // Set color input's value and trigger 'input' event.
+        const hexValue = '#' + rawValue.slice(2);
+        element.value = hexValue;
+        element.setAttribute('value', hexValue);
+        element.dispatchEvent(new Event('input', { bubbles: true }));
+
+        // Change selected option to be the Custom one.
+        const $customOption = $(fieldElement).find('option[data-custom-color]');
+        if ($customOption.length > 0) {
+          const customOption = $customOption[0];
+          $(fieldElement).val(customOption.value);
+          fieldElement.dispatchEvent(new Event('change', { bubbles: true }));
+        }
+      }
+    } else if (elId.includes('Checkbox')) {
+      element.checked = localStorage.getItem(elId) === 'true';
+    } else {
+      element.selectedIndex = localStorage.getItem(elId);
+    }
   }
 
   function updateLangDisplay() {
@@ -821,6 +903,9 @@
       Poe: true,
       'Rupee - Hidden': true,
       'Rupee - Freestanding': true,
+      Fishing: true,
+      Animal: true,
+      Minigame: true,
     };
 
     const importantItems = {

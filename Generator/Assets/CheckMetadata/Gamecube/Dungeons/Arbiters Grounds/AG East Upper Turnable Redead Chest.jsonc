@@ -1,0 +1,11 @@
+{
+  "arcOffsets": ["D34"],
+  "stageIDX": [24],
+  "roomIDX": 4,
+  "fileDirectoryType": [0],
+  "replacementType": [0],
+  "chestLowerNibble": "F",
+  "checkCategory": ["Chest", "Dungeon", "Arbiters Grounds", "Small Key"],
+  "itemId": "Arbiters_Grounds_Small_Key",
+  "dataCategory": ["Chest", "ARC"]
+}

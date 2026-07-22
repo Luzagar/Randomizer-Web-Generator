@@ -1,8 +1,11 @@
 {
-    "arcOffsets": ["ED0"],
-    "stageIDX": [34],
-    "roomIDX": 10,
-    "fileDirectoryType": [0],
-    "replacementType": [0],
-    "dataCategory": ["Chest", "ARC"]
+  "arcOffsets": ["ED0"],
+  "stageIDX": [34],
+  "roomIDX": 10,
+  "fileDirectoryType": [0],
+  "replacementType": [0],
+  "chestLowerNibble": "7",
+  "checkCategory": ["Overworld", "Chest", "Eldin Stockcave"],
+  "itemId": "Orange_Rupee",
+  "dataCategory": ["Chest", "ARC"]
 }

@@ -1,8 +1,11 @@
 {
-    "arcOffsets": ["2F4C"],
-    "stageIDX": [46],
-    "roomIDX": 0,
-    "fileDirectoryType": [0],
-    "replacementType": [0],
-    "dataCategory": ["Chest", "ARC"]
+  "arcOffsets": ["2F4C"],
+  "stageIDX": [46],
+  "roomIDX": 0,
+  "fileDirectoryType": [0],
+  "replacementType": [0],
+  "chestLowerNibble": "F",
+  "checkCategory": ["Overworld", "Chest", "Kakariko Village"],
+  "itemId": "Piece_of_Heart",
+  "dataCategory": ["Chest", "ARC"]
 }

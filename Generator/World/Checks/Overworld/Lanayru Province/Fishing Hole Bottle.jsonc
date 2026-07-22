@@ -1,6 +1,0 @@
-{
-    "requirements": "(Progressive_Fishing_Rod, 1)",
-    "glitchedRequirements": "(Progressive_Fishing_Rod, 1)",
-    "checkCategory": ["Overworld", "Fishing Hole"],
-    "itemId": "Empty_Bottle"
-}

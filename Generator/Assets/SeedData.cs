@@ -20,7 +20,7 @@ namespace TPRandomizer.Assets
         // See <add_documentation_reference_here> for the flowchart for
         // determining if you should increment the major or minor version.
         public static readonly UInt16 VersionMajor = 1;
-        public static readonly UInt16 VersionMinor = 3;
+        public static readonly UInt16 VersionMinor = 4;
         public static readonly UInt16 VersionPatch = 0;
 
         // For convenience. This does not include any sort of leading 'v', so
@@ -140,6 +140,7 @@ namespace TPRandomizer.Assets
             CheckDataRaw.AddRange(ParseSkyCharacters());
             CheckDataRaw.AddRange(ParseShopItems());
             CheckDataRaw.AddRange(ParseEventItems());
+            CheckDataRaw.AddRange(ParseFlagItems());
             CheckDataRaw.AddRange(ParseStartingItems());
             while (CheckDataRaw.Count % 0x10 != 0)
             {
@@ -276,7 +277,10 @@ namespace TPRandomizer.Assets
                 }
             }
 
-            seedHeader.AddRange(Converter.GcBytes((UInt16) (2000 - randomizerSettings.maloShopDonation)));
+            int donationValue = randomizerSettings.affordableDonations
+                ? Math.Max(randomizerSettings.maloShopDonation, 1900)
+                : 2000 - randomizerSettings.maloShopDonation;
+            seedHeader.AddRange(Converter.GcBytes((UInt16) donationValue));
             seedHeader.Add(Converter.GcByte((int)randomizerSettings.castleRequirements));
             seedHeader.Add(Converter.GcByte((int)randomizerSettings.palaceRequirements));
             int mapBits = 0;
@@ -371,7 +375,8 @@ namespace TPRandomizer.Assets
                 randomizerSettings.instantText,
                 randomizerSettings.skipMajorCutscenes,
                 fcSettings.invertCameraAxis,
-                fcSettings.lightSwordAlwaysGlows
+                fcSettings.lightSwordAlwaysGlows,
+                randomizerSettings.alwaysGreatSpin
             };
             bool[] flagsBitfieldArray =
             {
@@ -384,6 +389,7 @@ namespace TPRandomizer.Assets
                 fcSettings.lanternGlowColor.getResult().basicDataEntry == 0xFFFFFE, // Rainbow Lantern
                 fcSettings.midnaHairBaseLightWorldInactive == 0xFFFFFE, // Rainbow Midna Hair
                 fcSettings.lightSwordGlowColor.getResult().basicDataEntry == 0xFFFFFE, // Rainbow Glow
+                randomizerSettings.shuffleExteriorEntrances,
             };
 
             List<bool[]> flagArrayList = new()
@@ -432,6 +438,10 @@ namespace TPRandomizer.Assets
             List<byte> listOfArcReplacements = new();
             ushort count = 0;
             List<ARCReplacement> staticArcReplacements = generateStaticArcReplacements();
+            if (Randomizer.SSettings.chestSizeMatchesContent)
+            {
+                staticArcReplacements.AddRange(GenerateChestSizeReplacements());
+            }
             foreach (KeyValuePair<string, Check> checkList in Randomizer.Checks.CheckDict.ToList())
             {
                 Check currentCheck = checkList.Value;
@@ -700,7 +710,7 @@ namespace TPRandomizer.Assets
                                     )
                             )
                         );
-                        Console.WriteLine(currentCheck.checkName);
+                        //Console.WriteLine(currentCheck.checkName);
                         listOfRELReplacements.AddRange(
                             Converter.GcBytes(
                                 (UInt32)(
@@ -1049,6 +1059,31 @@ namespace TPRandomizer.Assets
                     0x28EC,
                     DataFunctions.ASM_LOAD_IMMEDIATE(3, (int)Item.Wooden_Statue)
                 ),// Replace the call to setWarashibeItem with a call to offWarashibeItem
+
+                // D_A_B_GM - Armogohma
+                new RELReplacement(
+                    (int)ReplacementType.Instruction,
+                    (int)0xFF,
+                    (int)GCRelIDs.D_A_B_GM,
+                    0x45D0,
+                    DataFunctions.ASM_NOP()
+                ),// Nop out the addition of random frames to make the timer between attacks consistent.
+
+                new RELReplacement(
+                    (int)ReplacementType.Instruction,
+                    (int)0xFF,
+                    (int)GCRelIDs.D_A_B_GM,
+                    0x151C,
+                    DataFunctions.ASM_NOP()
+                ),// Nop out the bge check so that Armogohma always fires a beam once the timer reaches 0
+
+                new RELReplacement(
+                    (int)ReplacementType.Instruction,
+                    (int)0xFF,
+                    (int)GCRelIDs.D_A_OBJ_SHIELD,
+                    0x6F0,
+                    DataFunctions.ASM_NOP()
+                ),// Remove the Y Rot modificaiton for the hanging shield item
             ];
 
             // Parse Midna hair color replacement
@@ -1211,6 +1246,25 @@ namespace TPRandomizer.Assets
                 Check currentCheck = checkList.Value;
                 if (currentCheck.dataCategory.Contains("Event"))
                 {
+                    // Handle each event check type since we don't want to place anything unless the check is shuffled
+                    if (currentCheck.checkCategory.Contains("Fish Journal") && !Randomizer.SSettings.shuffleFishJournals)
+                    {
+                        continue;
+                    }
+                    if (currentCheck.checkCategory.Contains("Legendary Loach") && !Randomizer.SSettings.shuffleLegendaryLoach)
+                    {
+                        continue;
+                    }
+
+                    if (currentCheck.checkCategory.Contains("Animal Conversation") && !Randomizer.SSettings.shuffleAnimalConversations)
+                    {
+                        continue;
+                    }
+
+                    if (currentCheck.checkCategory.Contains("Minigame") && !Randomizer.SSettings.shuffleMinigames)
+                    {
+                        continue;
+                    }
                     listOfEventItems.Add(Converter.GcByte((byte)currentCheck.itemId));
 
                     listOfEventItems.Add(Converter.GcByte((byte)currentCheck.stageIDX[0]));
@@ -1233,19 +1287,80 @@ namespace TPRandomizer.Assets
             return listOfEventItems;
         }
 
+        private List<byte> ParseFlagItems()
+        {
+            List<byte> listOfFlagItems = new();
+            ushort count = 0;
+            foreach (KeyValuePair<string, Check> checkList in Randomizer.Checks.CheckDict.ToList())
+            {
+                Check currentCheck = checkList.Value;
+                if (currentCheck.dataCategory.Contains("Flag"))
+                {
+                    listOfFlagItems.AddRange(Converter.GcBytes(UInt16.Parse(
+                        currentCheck.flag,
+                        System.Globalization.NumberStyles.HexNumber
+                    )));
+
+                    listOfFlagItems.Add(Converter.GcByte((byte)currentCheck.stageIDX[0]));
+
+                    listOfFlagItems.Add(Converter.GcByte((byte)currentCheck.itemId));
+                    listOfFlagItems.Add(
+                        Converter.GcByte(0xFF)
+                    );
+                    count++;
+                }
+            }
+
+            SeedHeaderRaw.flagCheckInfoNumEntries = count;
+            SeedHeaderRaw.flagCheckInfoDataOffset = (ushort)(CheckDataRaw.Count);
+            return listOfFlagItems;
+        }
+
         private List<byte> ParseStartingItems()
         {
             SharedSettings randomizerSettings = Randomizer.SSettings;
             List<byte> listOfStartingItems = new();
             ushort count = 0;
-
-            if (randomizerSettings.smallKeySettings == SSettings.Enums.SmallKeySettings.Keysy)
+            if (randomizerSettings.ftSmallKeySettings == SmallKeySettings.Keysy)
             {
-                // We want to remove all small keys since they dont actually need to be given to the player
-                foreach (Item sk in Randomizer.Items.RegionSmallKeys)
-                {
-                    randomizerSettings.startingItems.Remove(sk);
-                }
+                randomizerSettings.startingItems.RemoveAll(Item => Item == Item.Forest_Temple_Small_Key);
+            }
+
+            if (randomizerSettings.gmSmallKeySettings == SmallKeySettings.Keysy)
+            {
+                randomizerSettings.startingItems.RemoveAll(Item => Item == Item.Goron_Mines_Small_Key);
+            }
+
+            if (randomizerSettings.lbtSmallKeySettings == SmallKeySettings.Keysy)
+            {
+                randomizerSettings.startingItems.RemoveAll(Item => Item == Item.Lakebed_Temple_Small_Key);
+            }
+
+            if (randomizerSettings.agSmallKeySettings == SmallKeySettings.Keysy)
+            {
+                randomizerSettings.startingItems.RemoveAll(Item => Item == Item.Arbiters_Grounds_Small_Key);
+            }
+            if (randomizerSettings.sprSmallKeySettings == SmallKeySettings.Keysy)
+            {
+                randomizerSettings.startingItems.RemoveAll(Item => Item == Item.Snowpeak_Ruins_Small_Key);
+                randomizerSettings.startingItems.Remove(Item.Snowpeak_Ruins_Ordon_Goat_Cheese);
+                randomizerSettings.startingItems.Remove(Item.Snowpeak_Ruins_Ordon_Pumpkin);
+            }
+            if (randomizerSettings.totSmallKeySettings == SmallKeySettings.Keysy)
+            {
+                randomizerSettings.startingItems.RemoveAll(Item => Item == Item.Temple_of_Time_Small_Key);
+            }
+            if (randomizerSettings.citsSmallKeySettings == SmallKeySettings.Keysy)
+            {
+                randomizerSettings.startingItems.RemoveAll(Item => Item == Item.City_in_The_Sky_Small_Key);
+            }
+            if (randomizerSettings.potSmallKeySettings == SmallKeySettings.Keysy)
+            {
+                randomizerSettings.startingItems.RemoveAll(Item => Item == Item.Palace_of_Twilight_Small_Key);
+            }
+            if (randomizerSettings.hcSmallKeySettings == SmallKeySettings.Keysy)
+            {
+                randomizerSettings.startingItems.RemoveAll(Item => Item == Item.Hyrule_Castle_Small_Key);
             }
 
             foreach (Item startingItem in randomizerSettings.startingItems)
@@ -1273,13 +1388,33 @@ namespace TPRandomizer.Assets
 
             if (!Randomizer.SSettings.skipBridgeDonation)
             {
-                byte[,] donationBits = new byte[,]
+                byte[,] donationBits = Randomizer.SSettings.affordableDonations
+                ? new byte[,]
+                {
+                    { 0xF9, 0x3 }, // Add 900 rupees to Malo Mart
+                    { 0xFA, 0x84 }, 
+                }
+                : new byte[,]
                 {
                     { 0xF9, 0x1 }, // Add 256 Rupees to Malo Mart.
                     { 0xFA, 0xF4 }, // Add 244 Rupees to Malo Mart.
                 };
                 arrayOfEventFlags = BackendFunctions.ConcatFlagArrays(arrayOfEventFlags, donationBits);
             }
+
+            byte[,] charloDonationBits = Randomizer.SSettings.affordableDonations
+                ? new byte[,]
+                {
+                    { 0xF7, 0x3 },  // Add 900 rupees to Charlo
+                    { 0xF8, 0x84 },
+                }
+                : new byte[,]
+                {
+                    { 0xF7, 0x1 },  // Add 256 Rupees to Charlo
+                    { 0xF8, 0xF4 }, // Add 244 Rupees to Charlo
+                };
+
+            arrayOfEventFlags = BackendFunctions.ConcatFlagArrays(arrayOfEventFlags, charloDonationBits);
 
             arrayOfEventFlags = BackendFunctions.ConcatFlagArrays(
                 arrayOfEventFlags,
@@ -1376,12 +1511,12 @@ namespace TPRandomizer.Assets
 
         private List<byte> GenerateEntranceTable()
         {
-            Console.WriteLine(seedGenResults.entrances);
+            //Console.WriteLine(seedGenResults.entrances);
             List<byte> entranceTable = new();
             string[] entranceBytes = seedGenResults.entrances.Split(",");
             for (int i = 0; i < entranceBytes.Count() - 1; i++)
             {
-                Console.WriteLine("Start: " + entranceBytes[i]);
+                //Console.WriteLine("Start: " + entranceBytes[i]);
                 entranceTable.Add(
                     Converter.GcByte(
                         byte.Parse(entranceBytes[i], System.Globalization.NumberStyles.HexNumber)
@@ -1597,6 +1732,15 @@ namespace TPRandomizer.Assets
                     (int)StageIDs.Ordon_Village,
                     0
                 ), // Patch Bo Left Door so it always opens
+
+                new ARCReplacement(
+                    "3368",
+                    "00000000",
+                    (byte)FileDirectory.Room,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Ordon_Village,
+                    0
+                ), // Remove Bo Actor from outside his house to prevent confusion and weird goat interactions
 
                 new ARCReplacement(
                     "1A62",
@@ -2110,6 +2254,58 @@ namespace TPRandomizer.Assets
                     (int)StageIDs.Castle_Town,
                     0
                 ), // Skip DoorBoy time checks for entering CT Malo Mart
+
+                 new ARCReplacement(
+                    "856",
+                    "F7C04594",
+                    (byte)FileDirectory.Room,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Bulblin_Camp,
+                    1
+                ), // Add custom flag to Bulblin Camp front chest
+
+                new ARCReplacement(
+                    "876",
+                    "F7804515",
+                    (byte)FileDirectory.Room,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Bulblin_Camp,
+                    1
+                ), // Add custom flag to Bulblin Camp back chest
+
+                new ARCReplacement(
+                    "9630",
+                    "4A300000",
+                    (byte)FileDirectory.Room,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Lake_Hylia,
+                    0
+                ), // Change fbf top chest to compatible replacement
+                new ARCReplacement(
+                    "9634",
+                     "30132645",
+                    (byte)FileDirectory.Room,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Lake_Hylia,
+                    0
+                ), // Change fbf top chest to compatible replacement
+
+                new ARCReplacement(
+                    "AE60",
+                    "4A300000",
+                    (byte)FileDirectory.Room,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Lake_Hylia,
+                    0
+                ), // Change fbf top chest to compatible replacement
+                new ARCReplacement(
+                    "AE64",
+                     "30132645",
+                    (byte)FileDirectory.Room,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Lake_Hylia,
+                    0
+                ), // Change fbf top chest to compatible replacement
 
                 // Freestanding Rupee Archive patches
 
@@ -3292,6 +3488,121 @@ namespace TPRandomizer.Assets
                 //.. ModifyChestAppearanceARC(), This is still in development
             ];
 
+            if (Randomizer.SSettings.shuffleExteriorEntrances)
+            {
+                List<ARCReplacement> listOfExteriorERReplacements =
+                [
+                    new ARCReplacement(
+                        "15E",
+                        "0001F09F",
+                        (byte)FileDirectory.Room,
+                        (byte)ReplacementType.Instruction,
+                        (int)StageIDs.Zoras_Domain,
+                        0
+                    ), // Modify ZD Throne -> ZD Outside Spawn to use the same entrance
+                    new ARCReplacement(
+                        "16B",
+                        "0001F09F",
+                        (byte)FileDirectory.Room,
+                        (byte)ReplacementType.Instruction,
+                        (int)StageIDs.Zoras_Domain,
+                        0
+                    ), // Modify ZD Throne -> ZD Outside Spawn to use the same entrance
+                    new ARCReplacement(
+                        "178",
+                        "0001F09F",
+                        (byte)FileDirectory.Room,
+                        (byte)ReplacementType.Instruction,
+                        (int)StageIDs.Zoras_Domain,
+                        0
+                    ), // Modify ZD Throne -> ZD Outside Spawn to use the same entrance
+                    new ARCReplacement(
+                        "190",
+                        "000100F0",
+                        (byte)FileDirectory.Room,
+                        (byte)ReplacementType.Instruction,
+                        (int)StageIDs.Zoras_Domain,
+                        1
+                    ), // Modify ZD Outside -> ZD Throne Spawn to use the same entrance
+                    new ARCReplacement(
+                        "190",
+                        "000100F0",
+                        (byte)FileDirectory.Room,
+                        (byte)ReplacementType.Instruction,
+                        (int)StageIDs.Zoras_Domain,
+                        1
+                    ), // Modify ZD Outside -> ZD Throne Spawn to use the same entrance
+                    new ARCReplacement(
+                        "19D",
+                        "000100F0",
+                        (byte)FileDirectory.Room,
+                        (byte)ReplacementType.Instruction,
+                        (int)StageIDs.Zoras_Domain,
+                        1
+                    ), // Modify ZD Outside -> ZD Throne Spawn to use the same entrance
+                    new ARCReplacement(
+                        "1B7",
+                        "000700F0",
+                        (byte)FileDirectory.Room,
+                        (byte)ReplacementType.Instruction,
+                        (int)StageIDs.Zoras_Domain,
+                        1
+                    ), // Modify ZD Outside -> UZR Spawn to use the same entrance
+                    new ARCReplacement(
+                        "1DE",
+                        "000700F0",
+                        (byte)FileDirectory.Room,
+                        (byte)ReplacementType.Instruction,
+                        (int)StageIDs.Zoras_Domain,
+                        1
+                    ), // Modify ZD Outside -> UZR Spawn to use the same entrance
+                    new ARCReplacement(
+                        "221",
+                        "000A01F0",
+                        (byte)FileDirectory.Room,
+                        (byte)ReplacementType.Instruction,
+                        (int)StageIDs.Upper_Zoras_River,
+                        0
+                    ), // Modify ZD Outside <- UZR Spawn to use the same entrance
+                    new ARCReplacement(
+                        "207",
+                        "000A01F0",
+                        (byte)FileDirectory.Room,
+                        (byte)ReplacementType.Instruction,
+                        (int)StageIDs.Upper_Zoras_River,
+                        0
+                    ), // Modify ZD Outside <- UZR Spawn to use the same entrance
+                ];
+                listOfStaticReplacements.AddRange(listOfExteriorERReplacements);
+            }
+
+            if (Randomizer.SSettings.agShortCut)
+            {
+                listOfStaticReplacements.Add(
+                    new ARCReplacement(
+                        "AD0",
+                        "000000FF",
+                        (byte)FileDirectory.Room,
+                        (byte)ReplacementType.Instruction,
+                        (int)StageIDs.Arbiters_Grounds,
+                        2
+                    ) 
+                ); // Sets the mSw switch on the poe gate actor to be 0xFF
+            }
+
+            if (Randomizer.SSettings.potShortCut)
+            {
+                listOfStaticReplacements.Add(
+                new ARCReplacement(
+                    "F74",
+                    "00000000",
+                    (byte)FileDirectory.Room,
+                    (byte)ReplacementType.Instruction,
+                    (int)StageIDs.Palace_of_Twilight,
+                    0
+                ) // Remove the DrkMst SCOB so the player can access the central Wing without the light sword.
+                );
+            }
             return listOfStaticReplacements;
         }
 
@@ -3384,49 +3695,58 @@ namespace TPRandomizer.Assets
             return messageTableInfo;
         }
 
-        private static List<ARCReplacement> ModifyChestAppearanceARC()
+        private static List<ARCReplacement> GenerateChestSizeReplacements()
         {
-            List<ARCReplacement> listOfArcReplacements = new();
-            // Loop through all checks.
-            foreach (KeyValuePair<string, Check> checkList in Randomizer.Checks.CheckDict.ToList())
+            List<ARCReplacement> chestReplacements = new();
+
+            foreach (KeyValuePair<string, Check> checkEntry in Randomizer.Checks.CheckDict)
             {
-                Check currentCheck = checkList.Value;
-                if (currentCheck.dataCategory.Contains("Chest"))
+                Check check = checkEntry.Value;
+
+                if (!check.checkCategory.Contains("Chest") || !check.dataCategory.Contains("ARC"))
                 {
-                    if (currentCheck.dataCategory.Contains("ARC")) // If the chest is an ARC check, so we need to add a new ARC replacement entry.
-                    {
-                        string offset = (
-                            (UInt32)
-                                uint.Parse(
-                                    currentCheck.arcOffsets[0],
-                                    System.Globalization.NumberStyles.HexNumber
-                                ) - 0x18
-                        ).ToString("X");
-                        string value = "";
+                    continue;
+                }
 
-                        if (Randomizer.Items.RandomizedImportantItems.Contains(currentCheck.itemId))
-                        {
-                            value = "42300000"; // Big Blue Chest. Value is padded to a u32
-                        }
-                        else
-                        {
-                            value = "41300000"; // Small Brown Chest. Value is padded to a u32
-                        }
+                if (check.arcOffsets == null || check.arcOffsets.Count == 0 || check.chestLowerNibble == null)
+                {
+                    continue;
+                }
+                Item item = check.itemId;
 
-                        listOfArcReplacements.Add(
-                            new ARCReplacement(
-                                offset,
-                                value,
-                                (byte)FileDirectory.Room,
-                                (byte)ReplacementType.Instruction,
-                                currentCheck.stageIDX[0],
-                                currentCheck.roomIDX
-                            )
-                        );
-                    }
+                byte chestSize = ItemFunctions.GetChestSizeForItem(item);
+
+                for (int i = 0; i < check.arcOffsets.Count; i++)
+                {
+                    uint itemOffset = uint.Parse(
+                        check.arcOffsets[i],
+                        System.Globalization.NumberStyles.HexNumber
+                    );
+                    uint chestTypeOffset = itemOffset - 0x13;
+                    
+                    byte lowerNibble = byte.Parse(
+                                check.chestLowerNibble,
+                                System.Globalization.NumberStyles.HexNumber
+                            );
+
+                    byte chestTypeByte = (byte)((chestSize << 4) | lowerNibble);
+
+                    string replacementValue = "000000" + chestTypeByte.ToString("X2");
+
+                    chestReplacements.Add(
+                        new ARCReplacement(
+                            chestTypeOffset.ToString("X"),
+                            replacementValue,
+                            (byte)FileDirectory.Room,
+                            (byte)ReplacementType.SingleByte,
+                            check.stageIDX[i],
+                            check.roomIDX
+                        )
+                    );
                 }
             }
-            return listOfArcReplacements;
+
+            return chestReplacements;
         }
 
         public static byte[] patchGCIWithSeed(char region, List<byte> seed, SeedGenResults seedGenResults)
@@ -3557,7 +3877,7 @@ namespace TPRandomizer.Assets
 
                     for(int j = 0x2040, k= 0x0; j < 0x2060; j++, k++)
                     {
-                        Console.WriteLine(j + " " + k);
+                        //Console.WriteLine(j + " " + k);
                         gciBytes[j] = stringBytes[k];
                     }
 
@@ -3951,6 +4271,8 @@ namespace TPRandomizer.Assets
             public UInt16 shopCheckInfoDataOffset { get; set; }
             public UInt16 eventCheckInfoNumEntries { get; set; }
             public UInt16 eventCheckInfoDataOffset { get; set; }
+            public UInt16 flagCheckInfoNumEntries { get; set; }
+            public UInt16 flagCheckInfoDataOffset { get; set; }
             public UInt16 startingItemInfoNumEntries { get; set; }
             public UInt16 startingItemInfoDataOffset { get; set; }
             public UInt16 shuffledEntranceInfoNumEntries { get; set; }
@@ -4155,6 +4477,7 @@ namespace TPRandomizer.Assets
         Instruction = 0x3, // Replaces a u32 instruction
         AlwaysLoaded = 0x4, // Replaces values specifically in the bmgres archive which is always loaded.
         MessageResource = 0x5, // Replaces values in the MESG section of a bmgres archive file.
+        SingleByte = 0x6, // Replaces a single byte value
     };
 
     enum GCRelIDs

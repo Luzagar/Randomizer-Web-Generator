@@ -1,8 +1,11 @@
 {
-    "arcOffsets": ["6E8"],
-    "stageIDX": [40],
-    "roomIDX": 0,
-    "fileDirectoryType": [0],
-    "replacementType": [0],
-    "dataCategory": ["Chest", "ARC"]
+  "arcOffsets": ["6E8"],
+  "stageIDX": [40],
+  "roomIDX": 0,
+  "fileDirectoryType": [0],
+  "replacementType": [0],
+  "chestLowerNibble": "F",
+  "checkCategory": ["Overworld", "Chest", "Faron Woods"],
+  "itemId": "Yellow_Rupee",
+  "dataCategory": ["Chest", "ARC"]
 }

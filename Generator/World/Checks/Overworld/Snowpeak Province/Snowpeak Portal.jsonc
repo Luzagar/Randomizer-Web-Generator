@@ -1,6 +1,0 @@
-{
-    "requirements": "CanDefeatShadowBeast",
-    "glitchedRequirements": "CanDefeatShadowBeast",
-    "checkCategory": ["Overworld", "Snowpeak"],
-    "itemId": "Snowpeak_Portal"
-}

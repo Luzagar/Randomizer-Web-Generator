@@ -1,6 +1,0 @@
-{
-  "requirements": "Shadow_Crystal and CanCompletePrologue and CanCompleteFaronTwilight",
-  "glitchedRequirements": "Shadow_Crystal and CanCompleteFaronTwilight",
-  "checkCategory": [ "Overworld", "Poe", "Faron Woods" ],
-  "itemId": "Poe_Soul"
-}

@@ -1,8 +1,11 @@
 {
-    "arcOffsets": ["1588"],
-    "stageIDX": [53],
-    "roomIDX": 4,
-    "fileDirectoryType": [0],
-    "replacementType": [0],
-    "dataCategory": ["Chest", "ARC"]
+  "arcOffsets": ["1588"],
+  "stageIDX": [53],
+  "roomIDX": 4,
+  "fileDirectoryType": [0],
+  "replacementType": [0],
+  "chestLowerNibble": "F",
+  "checkCategory": ["Overworld", "Chest", "Castle Town"],
+  "itemId": "Red_Rupee",
+  "dataCategory": ["Chest", "ARC"]
 }

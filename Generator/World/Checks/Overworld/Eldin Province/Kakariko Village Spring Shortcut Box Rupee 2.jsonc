@@ -1,6 +1,0 @@
-{
-    "requirements": "CanSmash and CanCompleteEldinTwilight",
-    "glitchedRequirements": "(CanSmash or Shadow_Crystal) and CanCompleteEldinTwilight",
-    "checkCategory": [ "Overworld", "Kakariko Village", "Rupee - Hidden" ],
-    "itemId": "Yellow_Rupee"
-  }

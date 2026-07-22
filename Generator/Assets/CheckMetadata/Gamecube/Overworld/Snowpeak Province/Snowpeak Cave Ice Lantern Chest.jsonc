@@ -1,8 +1,11 @@
 {
-    "arcOffsets": ["978"],
-    "stageIDX": [51],
-    "roomIDX": 2,
-    "fileDirectoryType": [0],
-    "replacementType": [0],
-    "dataCategory": ["Chest", "ARC"]
+  "arcOffsets": ["978"],
+  "stageIDX": [51],
+  "roomIDX": 2,
+  "fileDirectoryType": [0],
+  "replacementType": [0],
+  "chestLowerNibble": "3",
+  "checkCategory": ["Overworld", "Chest", "Snowpeak Province"],
+  "itemId": "Orange_Rupee",
+  "dataCategory": ["Chest", "ARC"]
 }

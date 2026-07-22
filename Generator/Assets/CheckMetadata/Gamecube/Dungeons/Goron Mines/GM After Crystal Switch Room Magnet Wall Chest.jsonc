@@ -1,0 +1,11 @@
+{
+  "arcOffsets": ["A88"],
+  "stageIDX": [3],
+  "roomIDX": 6,
+  "fileDirectoryType": [0],
+  "replacementType": [0],
+  "chestLowerNibble": "F",
+  "checkCategory": ["Chest", "Dungeon", "Goron Mines"],
+  "itemId": "Piece_of_Heart",
+  "dataCategory": ["Chest", "ARC"]
+}

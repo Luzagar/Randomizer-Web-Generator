@@ -1,6 +1,0 @@
-{
-    "requirements": "CanCompleteEldinTwilight",
-    "glitchedRequirements": "CanCompleteEldinTwilight",
-    "checkCategory": ["Overworld", "Kakariko Village", "Shop"],
-    "itemId": "Wooden_Shield"
-}

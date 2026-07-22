@@ -1,6 +1,0 @@
-{
-    "requirements": "CanDefeatFyrus",
-    "glitchedRequirements": "CanDefeatFyrus",
-    "checkCategory": ["Heart Container", "Dungeon", "Goron Mines", "Boss"],
-    "itemId": "Heart_Container"
-}

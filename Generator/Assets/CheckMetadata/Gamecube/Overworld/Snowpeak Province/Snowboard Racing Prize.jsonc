@@ -1,7 +1,9 @@
 {
-    "arcOffsets": ["17D7"],
-    "stageIDX": [51],
-    "fileDirectoryType": [1],
-    "replacementType": [0],
-    "dataCategory": ["ARC"]
+  "arcOffsets": ["17D7"],
+  "stageIDX": [51],
+  "fileDirectoryType": [1],
+  "replacementType": [0],
+  "checkCategory": ["Overworld", "Minigame", "Snowpeak Province"],
+  "itemId": "Piece_of_Heart",
+  "dataCategory": ["ARC"]
 }

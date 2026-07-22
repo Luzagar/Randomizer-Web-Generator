@@ -1,0 +1,11 @@
+{
+  "arcOffsets": ["470"],
+  "stageIDX": [9],
+  "roomIDX": 6,
+  "fileDirectoryType": [0],
+  "replacementType": [0],
+  "chestLowerNibble": "F",
+  "checkCategory": ["Chest", "Dungeon", "Temple of Time", "Big Key"],
+  "itemId": "Temple_of_Time_Big_Key",
+  "dataCategory": ["Chest", "ARC"]
+}

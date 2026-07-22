@@ -2,6 +2,8 @@ namespace TPRandomizer
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel;
+    using System.Linq;
     using TPRandomizer.SSettings.Enums;
 
     /// <summary>
@@ -22,7 +24,7 @@ namespace TPRandomizer
         /// <summary>
         /// Gets or sets a list of checks contained inside the room.
         /// </summary>
-        public List<string> Checks { get; set; }
+        public List<CheckData> Checks { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the current room has been visited in the current playthrough.
@@ -38,6 +40,35 @@ namespace TPRandomizer
         /// Gets or sets the logical region that the room is contained in.
         /// </summary>
         public string Region { get; set; }
+
+        public List<string> getCheckNames()
+        {
+            List<string> listOfChecks = new();
+            foreach (CheckData roomCheckData in Checks)
+            {
+                listOfChecks.Add(roomCheckData.CheckName);
+            }
+            return listOfChecks;
+        }
+    }
+
+    public class CheckData
+    {
+        public string CheckName { get; set; }
+        public string Requirements { get; set; }
+        public string GlitchedRequirements { get; set; }
+
+        private LogicAST reqsCache;
+
+        public LogicAST CachedRequirements()
+        {
+            if (reqsCache != null)
+            {
+                return reqsCache;
+            }
+
+            return reqsCache = Parser.Parse(Requirements);
+        }
     }
 
     public enum StageIDs : int
@@ -147,44 +178,44 @@ namespace TPRandomizer
                 "Sacred Grove Upper",
                 "Sacred Grove Lower",
                 "Faron Field",
-                "Kakariko Gorge",
-                "Kakariko Gorge Behind Gate",
-                "Death Mountain Near Kakariko",
+                "Kak Gorge",
+                "Kak Gorge Behind Gate",
+                "Death Mountain Near Kak",
                 "Death Mountain Trail",
                 "Death Mountain Volcano",
                 "Death Mountain Outside Sumo Hall",
                 "Death Mountain Elevator Lower",
                 "Eldin Field",
-                "Eldin Field Near Castle Town",
+                "Eldin Field Near CT",
                 "Eldin Field From Lava Cave Lower",
                 "Eldin Field Grotto Platform",
-                "Eldin Field Outside Hidden Village",
+                "Eldin Field Outside HV",
                 "Lanayru Field",
                 "Lanayru Field Behind Boulder",
                 "Hyrule Field Near Spinner Rails",
-                "Upper Zoras River",
+                "UZR River",
                 "Fishing Hole",
-                "Zoras Domain",
-                "Zoras Domain West Ledge",
-                "Zoras Domain Throne Room",
+                "ZD Waterfall Area",
+                "ZD West Ledge",
+                "ZD Throne Room",
                 "Snowpeak Climb Lower",
                 "Snowpeak Climb Upper",
                 "Snowpeak Summit Upper",
                 "Snowpeak Summit Lower",
-                "Outside Castle Town West",
-                "Outside Castle Town West Grotto Ledge",
-                "Castle Town West",
-                "Castle Town Center",
-                "Castle Town East",
-                "Castle Town Doctors Office Balcony",
-                "Outside Castle Town East",
-                "Castle Town South",
-                "Outside Castle Town South",
+                "BCT",
+                "BCT Grotto Ledge",
+                "CT West",
+                "CT Center",
+                "CT East",
+                "CT Doctors Office Balcony",
+                "OCT East",
+                "CT South",
+                "OCT South",
                 "Lake Hylia Bridge",
                 "Lake Hylia",
                 "Gerudo Desert",
-                "Gerudo Desert Basin",
-                "Gerudo Desert Outside Bulblin Camp",
+                "Desert Basin",
+                "Desert Outside Bulblin Camp",
                 "Bulblin Camp",
                 "Mirror Chamber Lower",
                 "Mirror Chamber Upper",
@@ -208,51 +239,51 @@ namespace TPRandomizer
                 "Sacred Grove Upper",
                 "Sacred Grove Lower",
                 "Faron Field",
-                "Kakariko Gorge",
-                //"Kakariko Gorge Cave Entrance",
-                "Kakariko Gorge Behind Gate",
-                "Death Mountain Near Kakariko",
+                "Kak Gorge",
+                //"Kak Gorge Cave Entrance",
+                "Kak Gorge Behind Gate",
+                "Death Mountain Near Kak",
                 "Death Mountain Trail",
                 "Death Mountain Volcano",
                 "Death Mountain Outside Sumo Hall",
                 "Death Mountain Elevator Lower",
                 "Eldin Field",
-                "Eldin Field Near Castle Town",
+                "Eldin Field Near CT",
                 "Eldin Field Lava Cave Ledge",
                 "Eldin Field From Lava Cave Lower",
                 "Eldin Field Grotto Platform",
-                "Eldin Field Outside Hidden Village",
+                "Eldin Field Outside HV",
                 "Lanayru Field",
                 //"Lanayru Field Cave Entrance",
                 "Lanayru Field Behind Boulder",
                 "Hyrule Field Near Spinner Rails",
-                "Upper Zoras River",
+                "UZR River",
                 "Fishing Hole",
-                "Zoras Domain",
-                "Zoras Domain West Ledge",
-                "Zoras Domain Throne Room",
+                "ZD Waterfall Area",
+                "ZD West Ledge",
+                "ZD Throne Room",
                 "Snowpeak Climb Lower",
                 "Snowpeak Climb Upper",
                 "Snowpeak Summit Lower",
-                "Outside Castle Town West",
-                "Outside Castle Town West Grotto Ledge",
-                "Castle Town West",
-                "Castle Town Center",
-                "Castle Town East",
-                "Castle Town Doctors Office Balcony",
-                "Outside Castle Town East",
-                "Castle Town South",
-                "Outside Castle Town South",
+                "BCT",
+                "BCT Grotto Ledge",
+                "CT West",
+                "CT Center",
+                "CT East",
+                "CT Doctors Office Balcony",
+                "OCT East",
+                "CT South",
+                "OCT South",
                 "Lake Hylia Bridge",
                 "Lake Hylia Bridge Grotto Ledge",
                 "Lake Hylia",
                 "Lake Hylia Cave Entrance",
-                "Lake Hylia Lakebed Temple Entrance",
+                "Lake Hylia LBT Entrance",
                 "Gerudo Desert",
-                "Gerudo Desert Cave of Ordeals Plateau",
-                "Gerudo Desert Basin",
-                "Gerudo Desert North East Ledge",
-                "Gerudo Desert Outside Bulblin Camp",
+                "Desert Cave of Ordeals Plateau",
+                "Desert Basin",
+                "Desert North East Ledge",
+                "Desert Outside Bulblin Camp",
                 "Bulblin Camp",
                 "Mirror Chamber Lower",
                 "Mirror Chamber Upper",
@@ -300,15 +331,15 @@ namespace TPRandomizer
         public static List<string> EldinMapRooms =
             new()
             {
-                "Kakariko Gorge",
-                "Kakariko Gorge Cave Entrance",
-                "Kakariko Gorge Behind Gate",
-                "Lower Kakariko Village",
-                "Upper Kakariko Village",
-                "Kakariko Top of Watchtower",
-                "Kakariko Village Behind Gate",
-                "Kakariko Graveyard",
-                "Death Mountain Near Kakariko",
+                "Kak Gorge",
+                "Kak Gorge Cave Entrance",
+                "Kak Gorge Behind Gate",
+                "Lower Kak Village",
+                "Upper Kak Village",
+                "Kak Top of Watchtower",
+                "Kak Village Behind Gate",
+                "Kak Graveyard",
+                "Death Mountain Near Kak",
                 "Death Mountain Trail",
                 "Death Mountain Volcano",
                 "Death Mountain Hot Spring",
@@ -325,7 +356,7 @@ namespace TPRandomizer
                 // destroyed, or entering from CT when the bridge is already
                 // repaired).
 
-                // "Eldin Field Near Castle Town",
+                // "Eldin Field Near CT",
                 // "North Eldin Field",
                 // "Eldin Field Grotto Platform",
                 // "Outside Hidden Village",
@@ -339,31 +370,31 @@ namespace TPRandomizer
                 "Lanayru Field Cave Entrance",
                 "Lanayru Field Behind Boulder",
                 "Hyrule Field Near Spinner Rails",
-                "Upper Zoras River",
+                "UZR River",
                 "Fishing Hole",
-                "Zoras Domain",
-                "Zoras Domain West Ledge",
-                "Zoras Domain Throne Room",
-                "Zoras Domain Top of Waterfall",
-                "Outside Castle Town West",
-                "Outside Castle Town West Grotto Ledge",
-                "Castle Town West",
-                "Castle Town Center",
-                "Castle Town North",
-                "Castle Town North Behind First Door",
-                "Castle Town North Inside Barrier",
-                "Castle Town East",
-                "Castle Town Doctors Office Balcony",
-                "Outside Castle Town East",
-                "Castle Town South",
-                "South Castle Town Doors",
-                "Outside Castle Town South",
+                "ZD Waterfall Area",
+                "ZD West Ledge",
+                "ZD Throne Room",
+                "ZD Top of Waterfall",
+                "BCT",
+                "BCT Grotto Ledge",
+                "CT West",
+                "CT Center",
+                "CT North",
+                "CT North Behind First Door",
+                "CT North Inside Barrier",
+                "CT East",
+                "CT Doctors Office Balcony",
+                "OCT East",
+                "CT South",
+                "South CT Doors",
+                "OCT South",
                 "Lake Hylia Bridge",
                 "Lake Hylia Bridge Grotto Ledge",
                 "Lake Hylia",
                 "Lake Hylia Flight By Fowl",
                 "Lake Hylia Cave Entrance",
-                "Lake Hylia Lakebed Temple Entrance",
+                "Lake Hylia LBT Entrance",
                 "Lake Hylia Lanayru Spring",
             };
 
@@ -380,18 +411,20 @@ namespace TPRandomizer
             new()
             {
                 "Gerudo Desert",
-                "Gerudo Desert Cave of Ordeals Plateau",
-                "Gerudo Desert Basin",
-                "Gerudo Desert North East Ledge",
-                "Gerudo Desert Outside Bulblin Camp",
+                "Desert CoO Plateau",
+                "Desert Basin",
+                "Desert North East Ledge",
+                "Desert Outside Bulblin Camp",
                 "Bulblin Camp",
-                "Outside Arbiters Grounds",
+                "Outside AG",
                 "Mirror Chamber Lower",
                 "Mirror Chamber Upper",
                 "Mirror Chamber Portal",
             };
 
         public static List<string> DungeonNames =
+            new() { "FT", "GM", "LBT", "AG", "SPR", "ToT", "CitS", "PoT" };
+        public static List<string> AllDungeonNames =
             new()
             {
                 "Forest Temple",
@@ -401,7 +434,8 @@ namespace TPRandomizer
                 "Snowpeak Ruins",
                 "Temple of Time",
                 "City in The Sky",
-                "Palace of Twilight"
+                "Palace of Twilight",
+                "Hyrule Castle"
             };
 
         /// <summary>
@@ -421,8 +455,82 @@ namespace TPRandomizer
             SharedSettings parseSetting = Randomizer.SSettings;
             string itemName = itemToPlace.ToString();
             itemName = itemName.Replace("_", " ");
+            var dungeonConfigs = new[]
+            {
+                new
+                {
+                    Region = "Forest Temple",
+                    SmallKeySetting = parseSetting.ftSmallKeySettings,
+                    BigKeySetting = parseSetting.ftBigKeySettings,
+                    MapCompassSetting = parseSetting.ftMapAndCompassSettings
+                },
+                new
+                {
+                    Region = "Goron Mines",
+                    SmallKeySetting = parseSetting.gmSmallKeySettings,
+                    BigKeySetting = parseSetting.gmBigKeySettings,
+                    MapCompassSetting = parseSetting.gmMapAndCompassSettings
+                },
+                new
+                {
+                    Region = "Lakebed Temple",
+                    SmallKeySetting = parseSetting.lbtSmallKeySettings,
+                    BigKeySetting = parseSetting.lbtBigKeySettings,
+                    MapCompassSetting = parseSetting.lbtMapAndCompassSettings
+                },
+                new
+                {
+                    Region = "Arbiters Grounds",
+                    SmallKeySetting = parseSetting.agSmallKeySettings,
+                    BigKeySetting = parseSetting.agBigKeySettings,
+                    MapCompassSetting = parseSetting.agMapAndCompassSettings
+                },
+                new
+                {
+                    Region = "Snowpeak Ruins",
+                    SmallKeySetting = parseSetting.sprSmallKeySettings,
+                    BigKeySetting = parseSetting.sprBigKeySettings,
+                    MapCompassSetting = parseSetting.sprMapAndCompassSettings
+                },
+                new
+                {
+                    Region = "Temple of Time",
+                    SmallKeySetting = parseSetting.totSmallKeySettings,
+                    BigKeySetting = parseSetting.totBigKeySettings,
+                    MapCompassSetting = parseSetting.totMapAndCompassSettings
+                },
+                new
+                {
+                    Region = "City in The Sky",
+                    SmallKeySetting = parseSetting.citsSmallKeySettings,
+                    BigKeySetting = parseSetting.citsBigKeySettings,
+                    MapCompassSetting = parseSetting.citsMapAndCompassSettings
+                },
+                new
+                {
+                    Region = "Palace of Twilight",
+                    SmallKeySetting = parseSetting.potSmallKeySettings,
+                    BigKeySetting = parseSetting.potBigKeySettings,
+                    MapCompassSetting = parseSetting.potMapAndCompassSettings
+                },
+                new
+                {
+                    Region = "Hyrule Castle",
+                    SmallKeySetting = parseSetting.hcSmallKeySettings,
+                    BigKeySetting = parseSetting.hcBigKeySettings,
+                    MapCompassSetting = parseSetting.hcMapAndCompassSettings
+                }
+            };
+
+            bool isDungeonItem = false;
+            bool ownDungeon = false;
+            bool anyDungeon = false;
+            bool overworld = false;
+
             if (Randomizer.Items.RegionSmallKeys.Contains(itemToPlace))
             {
+                isDungeonItem = true;
+
                 if (
                     Randomizer.SSettings.noSmallKeysOnBosses
                     && ItemFunctions.IsSmallKeyOnBossCheck(itemToPlace, currentCheck)
@@ -431,56 +539,82 @@ namespace TPRandomizer
                     return false;
                 }
 
-                if (
-                    (parseSetting.smallKeySettings == SmallKeySettings.Own_Dungeon)
-                    && itemName.Contains(currentRoom.Region)
-                )
+                foreach (var config in dungeonConfigs)
                 {
-                    return checkBarrenRegionLocation(currentRoom, currentCheck, itemName);
-                }
-                else if (
-                    (parseSetting.smallKeySettings == SmallKeySettings.Any_Dungeon)
-                    && (
-                        currentCheck.checkCategory.Contains("Dungeon")
-                        || itemName.Contains(currentRoom.Region)
-                    )
-                )
-                {
-                    return checkBarrenRegionLocation(currentRoom, currentCheck, itemName);
+                    if (!itemName.Contains(config.Region))
+                    {
+                        continue;
+                    }
+
+                    ownDungeon = config.SmallKeySetting == SmallKeySettings.Own_Dungeon;
+
+                    anyDungeon = config.SmallKeySetting == SmallKeySettings.Any_Dungeon;
+
+                    overworld = config.SmallKeySetting == SmallKeySettings.Overworld;
+
+                    break;
                 }
             }
             else if (Randomizer.Items.DungeonBigKeys.Contains(itemToPlace))
             {
-                if (parseSetting.bigKeySettings == BigKeySettings.Own_Dungeon)
+                isDungeonItem = true;
+
+                foreach (var config in dungeonConfigs)
                 {
-                    if (itemName.Contains(currentRoom.Region))
+                    if (!itemName.Contains(config.Region))
                     {
-                        return checkBarrenRegionLocation(currentRoom, currentCheck, itemName);
+                        continue;
                     }
-                }
-                else if (parseSetting.bigKeySettings == BigKeySettings.Any_Dungeon)
-                {
-                    if (currentCheck.checkCategory.Contains("Dungeon"))
-                    {
-                        return checkBarrenRegionLocation(currentRoom, currentCheck, itemName);
-                    }
+
+                    ownDungeon = config.BigKeySetting == BigKeySettings.Own_Dungeon;
+
+                    anyDungeon = config.BigKeySetting == BigKeySettings.Any_Dungeon;
+
+                    overworld = config.BigKeySetting == BigKeySettings.Overworld;
+
+                    break;
                 }
             }
             else if (Randomizer.Items.DungeonMapsAndCompasses.Contains(itemToPlace))
             {
-                if (parseSetting.mapAndCompassSettings == MapAndCompassSettings.Own_Dungeon)
+                isDungeonItem = true;
+
+                foreach (var config in dungeonConfigs)
                 {
-                    if (itemName.Contains(currentRoom.Region))
+                    if (!itemName.Contains(config.Region))
                     {
-                        return true;
+                        continue;
                     }
+
+                    ownDungeon = config.MapCompassSetting == MapAndCompassSettings.Own_Dungeon;
+
+                    anyDungeon = config.MapCompassSetting == MapAndCompassSettings.Any_Dungeon;
+
+                    overworld = config.MapCompassSetting == MapAndCompassSettings.Overworld;
+
+                    break;
                 }
-                else if (parseSetting.mapAndCompassSettings == MapAndCompassSettings.Any_Dungeon)
+            }
+
+            if (isDungeonItem)
+            {
+                bool sameDungeon = dungeonConfigs.Any(
+                    config =>
+                        itemName.Contains(config.Region)
+                        && currentCheck.checkCategory.Contains(config.Region)
+                );
+
+                bool inDungeon = currentCheck.checkCategory.Contains("Dungeon");
+
+                bool inOverworld = currentCheck.checkCategory.Contains("Overworld");
+
+                if (
+                    (ownDungeon && sameDungeon)
+                    || (anyDungeon && inDungeon)
+                    || (overworld && inOverworld)
+                )
                 {
-                    if (currentCheck.checkCategory.Contains("Dungeon"))
-                    {
-                        return true;
-                    }
+                    return checkBarrenRegionLocation(currentRoom, currentCheck, itemName);
                 }
             }
 

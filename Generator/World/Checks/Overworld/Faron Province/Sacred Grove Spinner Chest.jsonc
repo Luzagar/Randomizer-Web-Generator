@@ -1,6 +1,0 @@
-{
-    "requirements": "Spinner",
-    "glitchedRequirements": "Spinner or CanDoLJA",
-    "checkCategory": ["Overworld", "Chest", "Sacred Grove"],
-    "itemId": "Orange_Rupee"
-}

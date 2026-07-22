@@ -1,0 +1,11 @@
+{
+  "arcOffsets": ["3D8"],
+  "stageIDX": [20],
+  "roomIDX": 15,
+  "fileDirectoryType": [0],
+  "replacementType": [0],
+  "chestLowerNibble": "F",
+  "checkCategory": ["Chest", "Dungeon", "Hyrule Castle", "Small Key"],
+  "itemId": "Hyrule_Castle_Small_Key",
+  "dataCategory": ["Chest", "ARC"]
+}

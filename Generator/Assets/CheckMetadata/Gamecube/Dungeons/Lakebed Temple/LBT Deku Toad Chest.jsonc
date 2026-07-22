@@ -1,0 +1,11 @@
+{
+  "arcOffsets": ["69C"],
+  "stageIDX": [2],
+  "roomIDX": 51,
+  "fileDirectoryType": [0],
+  "replacementType": [0],
+  //"chestLowerNibble": "0", excluding for the moment due to chest not spawning properly if its a big key chest
+  "checkCategory": ["Chest", "Dungeon", "Lakebed Temple"],
+  "itemId": "Progressive_Clawshot",
+  "dataCategory": ["Chest", "ARC"]
+}

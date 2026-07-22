@@ -313,6 +313,15 @@ app.get('/', (req: express.Request, res: express.Response) => {
 
       msg = msg.replace('<!-- CHECK_IDS -->', arr.join('\n'));
 
+      const logicalTricksList = JSON.parse(
+        callGenerator('print_tricks_for_ui')
+      );
+      const tricksArr = Object.keys(logicalTricksList).map((key) => {
+        return `<li><label><input type='checkbox' data-trickId='${logicalTricksList[key]}'>${key}</label></li>`;
+      });
+
+      msg = msg.replace('<!-- TRICK_IDS -->', tricksArr.join('\n'));
+
       const startingItems = [
         [50, 'Shadow Crystal'],
         [132, 'Horse Call'],
@@ -561,6 +570,8 @@ app.get('/', (req: express.Request, res: express.Response) => {
         [0x3e, 'Hawkeye'],
         [0x84, 'Horse_Call'],
         [0x13, 'Foolish_Item'],
+        [0x109, 'Major Item'],
+        [0x10a, 'Junk Item'],
       ];
 
       const plandoItemEls = plandoItems

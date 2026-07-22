@@ -1,0 +1,283 @@
+[
+  {
+    "RoomName": "CitS Boss Room",
+    "Exits": [
+      {
+        "ConnectedArea": "CitS Entrance",
+        "Requirements": "CanDefeatArgorok",
+        "GlitchedRequirements": "CanDefeatArgorok"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "CitS Argorok Heart Container",
+        "Requirements": "CanDefeatArgorok",
+        "GlitchedRequirements": "CanDefeatArgorok"
+      },
+      {
+        "CheckName": "CitS Argorok",
+        "Requirements": "CanDefeatArgorok",
+        "GlitchedRequirements": "CanDefeatArgorok"
+      },
+      {
+        "CheckName": "CitS Dungeon Reward",
+        "Requirements": "CanDefeatArgorok",
+        "GlitchedRequirements": "CanDefeatArgorok"
+      }
+    ],
+    "Region": "City in The Sky"
+  },
+  {
+    "RoomName": "CitS Central Tower Second Floor",
+    "Exits": [
+      {
+        "ConnectedArea": "CitS West Wing",
+        "Requirements": "(Progressive_Clawshot, 2)",
+        "GlitchedRequirements": "(Progressive_Clawshot, 2)"
+      },
+      {
+        "ConnectedArea": "CitS Lobby",
+        "Requirements": "((Progressive_Clawshot, 1) and HasHeavyMod and Shadow_Crystal) and (Setting.damageMagnification not_equal OHKO)",
+        "GlitchedRequirements": "((Progressive_Clawshot, 1) and HasHeavyMod and (Shadow_Crystal or CanDoLJA)) and (Setting.damageMagnification not_equal OHKO)"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "CitS Central Outside Ledge Chest",
+        "Requirements": "(CanDefeatDinalfos and CanDefeatWalltula and CanDefeatKargarok and Shadow_Crystal) or (Progressive_Clawshot and Trick.cits_central_outside_ledge_chest_with_claw)",
+        // Walk across ropes as wolf or use claw on the vines.
+        "GlitchedRequirements": "(CanDefeatKargarok and CanDefeatWalltula and Shadow_Crystal) or Progressive_Clawshot"
+      },
+      {
+        "CheckName": "CitS Central Outside Poe Island Chest",
+        "Requirements": "((CanDefeatDinalfos and CanDefeatWalltula and CanDefeatKargarok) or (Progressive_Clawshot and Trick.cits_central_outside_ledge_chest_with_claw)) and Shadow_Crystal",
+        // Either walk the ropes to the left or Claw up and then walk on the ropes
+        "GlitchedRequirements": "((CanDefeatKargarok and CanDefeatWalltula) or Progressive_Clawshot) and Shadow_Crystal"
+      },
+      {
+        "CheckName": "CitS Big Key Chest",
+        "Requirements": "CanDefeatDinalfos and CanDefeatWalltula and CanDefeatKargarok and Shadow_Crystal and (Progressive_Clawshot or HasHeavyMod)",
+        // Either walking the ropes as wolf, clawshotting vines or doing Kai clip
+        "GlitchedRequirements": "(CanDefeatKargarok and Shadow_Crystal) or ((Shadow_Crystal or CanDoLJA) and Progressive_Clawshot) or (Progressive_Clawshot, 2)"
+      },
+      {
+        "CheckName": "CitS Chest Below Big Key Chest",
+        "Requirements": "CanDefeatHelmasaur",
+        "GlitchedRequirements": "CanDefeatHelmasaur"
+      },
+      {
+        "CheckName": "CitS Poe Above Central Fan",
+        "Requirements": "Shadow_Crystal and CanDefeatWalltula",
+        "GlitchedRequirements": "Shadow_Crystal and CanDefeatWalltula"
+      }
+    ],
+    "Region": "City in The Sky"
+  },
+  {
+    "RoomName": "CitS East Wing",
+    "Exits": [
+      {
+        "ConnectedArea": "CitS Lobby",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "CitS East First Wing Chest After Fans",
+        "Requirements": "(Progressive_Clawshot, 1) or Trick.cits_itemless_east_first_room",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "CitS East Wing Lower Level Chest",
+        "Requirements": "(Progressive_Clawshot, 2) and (((CanDefeatDinalfos or Trick.cits_dinalfos_with_claw) and CanDefeatTileWorm) or Trick.cits_compass_chest_with_2_claws)",
+        "GlitchedRequirements": "(Progressive_Clawshot, 2)"
+      },
+      {
+        "CheckName": "CitS East Tile Worm Small Chest",
+        "Requirements": "(Progressive_Clawshot,1) or Trick.cits_itemless_east_first_room",
+        "GlitchedRequirements": "(Progressive_Clawshot,1) or CanDoLJA"
+      },
+      {
+        "CheckName": "CitS East Wing After Dinalfos Alcove Chest",
+        "Requirements": "(Progressive_Clawshot, 1) and CanDefeatTileWorm and (CanDefeatDinalfos or Trick.cits_dinalfos_with_claw)",
+        "GlitchedRequirements": "(Progressive_Clawshot, 1) and ((CanDefeatTileWorm and CanDefeatDinalfos) or HasHeavyMod)"
+      },
+      {
+        "CheckName": "CitS East Wing After Dinalfos Ledge Chest",
+        "Requirements": "(Progressive_Clawshot, 1) and CanDefeatTileWorm and (CanDefeatDinalfos or Trick.cits_dinalfos_with_claw)",
+        "GlitchedRequirements": "(Progressive_Clawshot, 1) and ((CanDefeatTileWorm and CanDefeatDinalfos) or HasHeavyMod)"
+      },
+      {
+        "CheckName": "CitS Aeralfos Chest",
+        "Requirements": "CanDefeatAeralfos and (Progressive_Clawshot, 1) and HasHeavyMod and (CanDefeatDinalfos or Trick.cits_dinalfos_with_claw) and CanDefeatTileWorm",
+        // You can equip Irons mid-air to bypass the tile worms
+        "GlitchedRequirements": "CanDefeatAeralfos and (Progressive_Clawshot, 1) and HasHeavyMod"
+      }
+    ],
+    "Region": "City in The Sky"
+  },
+  {
+    "RoomName": "CitS Entrance",
+    "Exits": [
+      {
+        "ConnectedArea": "Lake Hylia",
+        // A custom spawn is added where jumping off the left side puts the player in Lake Hylia
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "CitS Lobby",
+        "Requirements": "((Progressive_Clawshot, 1) or Progressive_Bow or (Trick.cits_entrance_with_bnc and Ball_and_Chain)) and (Progressive_Clawshot or Trick.cits_itemless_central_room)",
+        "GlitchedRequirements": "(Progressive_Clawshot, 1) or ((Progressive_Bow, 1) and CanDoLJA)"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "CitS Underwater West Chest",
+        "Requirements": "HasHeavyMod",
+        "GlitchedRequirements": "HasHeavyMod"
+      },
+      {
+        "CheckName": "CitS Underwater East Chest",
+        "Requirements": "HasHeavyMod",
+        "GlitchedRequirements": "HasHeavyMod"
+      }
+    ],
+    "Region": "City in The Sky"
+  },
+  {
+    "RoomName": "CitS Lobby",
+    "Exits": [
+      {
+        "ConnectedArea": "CitS Entrance",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "CitS East Wing",
+        "Requirements": "(Spinner or (Setting.citsBridgeShortCut equals True)) and (City_in_The_Sky_Small_Key, 1)",
+        "GlitchedRequirements": "(Spinner or (Setting.citsBridgeShortCut equals True)) and (City_in_The_Sky_Small_Key, 1)"
+      },
+      {
+        "ConnectedArea": "CitS West Wing",
+        "Requirements": "((Progressive_Clawshot, 1) and (Spinner or (Setting.citsBridgeShortCut equals True))) or (Progressive_Clawshot, 2)",
+        "GlitchedRequirements": "((Progressive_Clawshot, 1) or CanDoLJA) and (Spinner or (Setting.citsBridgeShortCut equals True))"
+      },
+      {
+        "ConnectedArea": "CitS North Wing",
+        "Requirements": "(Progressive_Clawshot, 2) and ((CanDefeatBabaSerpent and CanDefeatKargarok and Shadow_Crystal and HasHeavyMod) or Trick.cits_north_with_2_claws or (Setting.citsFanShortCut equals True))",
+        // You can use only Double Claws to reach north wing. Thank Hab for this.
+        "GlitchedRequirements": "(Progressive_Clawshot, 2)"
+      },
+      {
+        "ConnectedArea": "CitS Central Tower Second Floor",
+        "Requirements": "(Room.CitS_Central_Tower_Second_Floor and (Progressive_Clawshot, 1) and HasHeavyMod) or (Progressive_Clawshot and Shadow_Crystal and Trick.cits_fan_skip)",
+        // Fan skip
+        "GlitchedRequirements": "Progressive_Clawshot and Shadow_Crystal"
+      }
+    ],
+    "Region": "City in The Sky"
+  },
+  {
+    "RoomName": "CitS North Wing",
+    "Exits": [
+      {
+        "ConnectedArea": "CitS Lobby",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "CitS Boss Room",
+        "Requirements": "(Progressive_Clawshot, 2) and CanDefeatAeralfos and City_in_The_Sky_Big_Key",
+        "GlitchedRequirements": "(Progressive_Clawshot, 2) and CanDefeatAeralfos and City_in_The_Sky_Big_Key"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "CitS Chest Behind North Fan",
+        "Requirements": "(Progressive_Clawshot, 2)",
+        "GlitchedRequirements": "(Progressive_Clawshot, 1)"
+      }
+    ],
+    "Region": "City in The Sky"
+  },
+  {
+    "RoomName": "CitS West Wing",
+    "Exits": [
+      {
+        "ConnectedArea": "CitS Lobby",
+        "Requirements": "(Progressive_Clawshot, 2)",
+        "GlitchedRequirements": "(Progressive_Clawshot, 2)"
+      },
+      {
+        "ConnectedArea": "CitS Central Tower Second Floor",
+        "Requirements": "(Progressive_Clawshot, 2)",
+        "GlitchedRequirements": "(Progressive_Clawshot, 2)"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "CitS West Wing First Chest",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "CitS West Wing Baba Balcony Chest",
+        "Requirements": "(Progressive_Clawshot, 2)",
+        "GlitchedRequirements": "(Progressive_Clawshot, 2)"
+      },
+      {
+        "CheckName": "CitS West Wing Narrow Ledge Chest",
+        "Requirements": "(Progressive_Clawshot, 2)",
+        "GlitchedRequirements": "(Progressive_Clawshot, 2)"
+      },
+      {
+        "CheckName": "CitS West Wing Tile Worm Chest",
+        "Requirements": "(Progressive_Clawshot, 2)",
+        "GlitchedRequirements": "(Progressive_Clawshot, 2)"
+      },
+      {
+        "CheckName": "CitS Baba Tower Top Small Chest",
+        "Requirements": "CanDefeatBabaSerpent and CanDefeatBigBaba and (Progressive_Clawshot, 2)",
+        "GlitchedRequirements": "CanDefeatBabaSerpent and CanDefeatBigBaba and (Progressive_Clawshot, 2)"
+      },
+      {
+        "CheckName": "CitS Baba Tower Narrow Ledge Chest",
+        "Requirements": "CanDefeatBabaSerpent and CanDefeatBigBaba and (Progressive_Clawshot, 2)",
+        "GlitchedRequirements": "CanDefeatBabaSerpent and CanDefeatBigBaba and (Progressive_Clawshot, 2)"
+      },
+      {
+        "CheckName": "CitS Baba Tower Alcove Chest",
+        "Requirements": "CanDefeatBabaSerpent and CanDefeatBigBaba and (Progressive_Clawshot, 2)",
+        "GlitchedRequirements": "CanDefeatBabaSerpent and CanDefeatBigBaba and (Progressive_Clawshot, 2)"
+      },
+      {
+        "CheckName": "CitS West Garden Corner Chest",
+        "Requirements": "(Progressive_Clawshot, 2)",
+        "GlitchedRequirements": "(Progressive_Clawshot, 2)"
+      },
+      {
+        "CheckName": "CitS West Garden Lone Island Chest",
+        "Requirements": "(Progressive_Clawshot, 2)",
+        "GlitchedRequirements": "(Progressive_Clawshot, 2)"
+      },
+      {
+        "CheckName": "CitS West Garden Lower Chest",
+        "Requirements": "(Progressive_Clawshot, 2)",
+        "GlitchedRequirements": "(Progressive_Clawshot, 2)"
+      },
+      {
+        "CheckName": "CitS West Garden Ledge Chest",
+        "Requirements": "(Progressive_Clawshot, 2)",
+        "GlitchedRequirements": "(Progressive_Clawshot, 2)"
+      },
+      {
+        "CheckName": "CitS Garden Island Poe",
+        "Requirements": "Shadow_Crystal and (Progressive_Clawshot, 2)",
+        "GlitchedRequirements": "Shadow_Crystal and (Progressive_Clawshot, 2)"
+      }
+    ],
+    "Region": "City in The Sky"
+  }
+]

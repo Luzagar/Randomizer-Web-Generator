@@ -1,8 +1,11 @@
 {
-    "arcOffsets": ["3260"],
-    "stageIDX": [54],
-    "roomIDX": 3,
-    "fileDirectoryType": [0],
-    "replacementType": [0],
-    "dataCategory": ["Chest", "ARC"]
+  "arcOffsets": ["3260"],
+  "stageIDX": [54],
+  "roomIDX": 3,
+  "fileDirectoryType": [0],
+  "replacementType": [0],
+  "chestLowerNibble": "F",
+  "checkCategory": ["Overworld", "Chest", "Sacred Grove"],
+  "itemId": "Orange_Rupee",
+  "dataCategory": ["Chest", "ARC"]
 }

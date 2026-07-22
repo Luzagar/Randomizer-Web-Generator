@@ -1,0 +1,11 @@
+{
+  "arcOffsets": ["CD0"],
+  "stageIDX": [38],
+  "roomIDX": 3,
+  "fileDirectoryType": [0],
+  "replacementType": [0],
+  "chestLowerNibble": "0",
+  "checkCategory": ["Overworld", "Chest", "Gerudo Desert"],
+  "itemId": "Orange_Rupee",
+  "dataCategory": ["Chest", "ARC"]
+}

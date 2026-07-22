@@ -1,6 +1,0 @@
-{
-    "requirements": "CanCompleteEldinTwilight",
-    "glitchedRequirements": "CanCompleteEldinTwilight",
-    "checkCategory": ["Overworld", "Golden Bug", "Hyrule Field - Eldin Province"],
-    "itemId": "Female_Pill_Bug"
-}

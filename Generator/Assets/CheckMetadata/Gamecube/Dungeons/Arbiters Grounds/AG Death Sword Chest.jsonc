@@ -1,0 +1,11 @@
+{
+  "arcOffsets": ["87C"],
+  "stageIDX": [26],
+  "roomIDX": 51,
+  "fileDirectoryType": [0],
+  "replacementType": [0],
+  "chestLowerNibble": "F",
+  "checkCategory": ["Chest", "Dungeon", "Arbiters Grounds"],
+  "itemId": "Spinner",
+  "dataCategory": ["Chest", "ARC"]
+}

@@ -1,7 +1,9 @@
 {
-    "arcOffsets": ["D3F"],
-    "stageIDX": [45],
-    "fileDirectoryType": [ 1 ],
-    "replacementType": [ 0 ],
-    "dataCategory": [ "ARC" ]
-  }
+  "arcOffsets": ["D3F"],
+  "stageIDX": [45],
+  "fileDirectoryType": [1],
+  "replacementType": [0],
+  "checkCategory": ["Overworld", "Npc", "Faron Woods"],
+  "itemId": "Lantern",
+  "dataCategory": ["ARC"]
+}

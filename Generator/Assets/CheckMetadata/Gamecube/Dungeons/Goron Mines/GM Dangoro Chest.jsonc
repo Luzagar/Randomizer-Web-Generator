@@ -1,0 +1,11 @@
+{
+  "arcOffsets": ["B38"],
+  "stageIDX": [3],
+  "roomIDX": 11,
+  "fileDirectoryType": [0],
+  "replacementType": [0],
+  "chestLowerNibble": "F",
+  "checkCategory": ["Chest", "Dungeon", "Goron Mines"],
+  "itemId": "Progressive_Bow",
+  "dataCategory": ["Chest", "ARC"]
+}

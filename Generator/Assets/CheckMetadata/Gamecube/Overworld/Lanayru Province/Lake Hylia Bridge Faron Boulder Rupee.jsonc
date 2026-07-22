@@ -1,8 +1,10 @@
 {
-    "arcOffsets": ["CDB"],
-    "stageIDX": [56],
-    "roomIDX": 13,
-    "fileDirectoryType": [0],
-    "replacementType": [0],
-    "dataCategory": ["ARC"]
+  "arcOffsets": ["CDB"],
+  "stageIDX": [56],
+  "roomIDX": 13,
+  "fileDirectoryType": [0],
+  "replacementType": [0],
+  "checkCategory": ["Overworld", "Hyrule Field - Lanayru", "Rupee - Hidden"],
+  "itemId": "Yellow_Rupee",
+  "dataCategory": ["ARC"]
 }

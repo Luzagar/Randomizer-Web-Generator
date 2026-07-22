@@ -1,6 +1,0 @@
-{
-    "requirements": "CanDefeatSkulltula",
-    "glitchedRequirements": "CanDefeatSkulltula",
-    "checkCategory": ["Overworld", "Chest", "Gerudo Desert"],
-    "itemId": "Orange_Rupee"
-}

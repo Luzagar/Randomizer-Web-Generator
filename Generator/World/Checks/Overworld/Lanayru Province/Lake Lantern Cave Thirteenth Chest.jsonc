@@ -1,6 +1,0 @@
-{
-    "requirements": "CanSmash and Lantern",
-    "glitchedRequirements": "CanSmash",
-    "checkCategory": ["Overworld", "Chest", "Lake Lantern Cave"],
-    "itemId": "Seeds_50"
-}

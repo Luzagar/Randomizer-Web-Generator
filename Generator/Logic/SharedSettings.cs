@@ -25,9 +25,33 @@ namespace TPRandomizer
         public PoeSettings shufflePoes { get; set; }
         public bool shuffleShopItems { get; set; }
         public bool shuffleHiddenSkills { get; set; }
-        public SmallKeySettings smallKeySettings { get; set; }
-        public BigKeySettings bigKeySettings { get; set; }
-        public MapAndCompassSettings mapAndCompassSettings { get; set; }
+        public SmallKeySettings ftSmallKeySettings { get; set; }
+        public SmallKeySettings gmSmallKeySettings { get; set; }
+        public SmallKeySettings lbtSmallKeySettings { get; set; }
+        public SmallKeySettings agSmallKeySettings { get; set; }
+        public SmallKeySettings sprSmallKeySettings { get; set; }
+        public SmallKeySettings totSmallKeySettings { get; set; }
+        public SmallKeySettings citsSmallKeySettings { get; set; }
+        public SmallKeySettings potSmallKeySettings { get; set; }
+        public SmallKeySettings hcSmallKeySettings { get; set; }
+        public BigKeySettings ftBigKeySettings { get; set; }
+        public BigKeySettings gmBigKeySettings { get; set; }
+        public BigKeySettings lbtBigKeySettings { get; set; }
+        public BigKeySettings agBigKeySettings { get; set; }
+        public BigKeySettings sprBigKeySettings { get; set; }
+        public BigKeySettings totBigKeySettings { get; set; }
+        public BigKeySettings citsBigKeySettings { get; set; }
+        public BigKeySettings potBigKeySettings { get; set; }
+        public BigKeySettings hcBigKeySettings { get; set; }
+        public MapAndCompassSettings ftMapAndCompassSettings { get; set; }
+        public MapAndCompassSettings gmMapAndCompassSettings { get; set; }
+        public MapAndCompassSettings lbtMapAndCompassSettings { get; set; }
+        public MapAndCompassSettings agMapAndCompassSettings { get; set; }
+        public MapAndCompassSettings sprMapAndCompassSettings { get; set; }
+        public MapAndCompassSettings totMapAndCompassSettings { get; set; }
+        public MapAndCompassSettings citsMapAndCompassSettings { get; set; }
+        public MapAndCompassSettings potMapAndCompassSettings { get; set; }
+        public MapAndCompassSettings hcMapAndCompassSettings { get; set; }
         public bool skipPrologue { get; set; }
         public bool faronTwilightCleared { get; set; }
         public bool eldinTwilightCleared { get; set; }
@@ -54,7 +78,8 @@ namespace TPRandomizer
         public ItemScarcity itemScarcity { get; set; }
         public DamageMagnification damageMagnification { get; set; }
         public bool bonksDoDamage { get; set; }
-        public bool shuffleRewards { get; set; }
+        public bool shuffleFusedShadows { get; set; }
+        public bool shuffleMirrorShards { get; set; }
         public bool skipMajorCutscenes { get; set; }
         public bool increaseSpinnerSpeed { get; set; }
         public bool openDot { get; set; }
@@ -80,8 +105,30 @@ namespace TPRandomizer
         public bool noPlandoHints { get; set; }
         public bool adjustHintsForCompletionists { get; set; }
         public bool hintDungeonEntrances { get; set; }
+        public bool shuffleFishJournals { get; set; }
+        public bool shuffleLegendaryLoach { get; set; }
+        public bool chestSizeMatchesContent { get; set; }
+        public bool shuffleGrottoEntrances { get; set; }
+        public bool shuffleCaveEntrances { get; set; }
+        public bool shuffleOneWayEntrances { get; set; }
+        public bool shuffleInteriorEntrances { get; set; }
+        public bool shuffleBossEntrances { get; set; }
+        public bool shuffleExteriorEntrances { get; set; }
+        public bool shuffleAnimalConversations { get; set; }
+        public bool spawnGWolves { get; set; }
+        public bool shuffleMinigames { get; set; }
+        public bool affordableDonations { get; set; }
+        public bool ftShortCut { get; set; }
+        public bool lbtShortCut { get; set; }
+        public bool agShortCut { get; set; }
+        public bool sprShortCut { get; set; }
+        public bool citsBridgeShortCut { get; set; }
+        public bool citsFanShortCut { get; set; }
+        public bool potShortCut { get; set; }
+        public bool alwaysGreatSpin { get; set; }
         public List<Item> startingItems { get; set; }
         public List<string> excludedChecks { get; set; }
+        public Dictionary<string, string> logicalTricks { get; set; }
         public List<(string, Item)> plandoChecks { get; set; }
 
         public SharedSettings() { }
@@ -100,9 +147,33 @@ namespace TPRandomizer
             shufflePoes = (PoeSettings)processor.NextInt(2);
             shuffleShopItems = processor.NextBool();
             shuffleHiddenSkills = processor.NextBool();
-            smallKeySettings = (SmallKeySettings)processor.NextInt(3);
-            bigKeySettings = (BigKeySettings)processor.NextInt(3);
-            mapAndCompassSettings = (MapAndCompassSettings)processor.NextInt(3);
+            ftSmallKeySettings = (SmallKeySettings)processor.NextInt(3);
+            gmSmallKeySettings = (SmallKeySettings)processor.NextInt(3);
+            lbtSmallKeySettings = (SmallKeySettings)processor.NextInt(3);
+            agSmallKeySettings = (SmallKeySettings)processor.NextInt(3);
+            sprSmallKeySettings = (SmallKeySettings)processor.NextInt(3);
+            totSmallKeySettings = (SmallKeySettings)processor.NextInt(3);
+            citsSmallKeySettings = (SmallKeySettings)processor.NextInt(3);
+            potSmallKeySettings = (SmallKeySettings)processor.NextInt(3);
+            hcSmallKeySettings = (SmallKeySettings)processor.NextInt(3);
+            ftBigKeySettings = (BigKeySettings)processor.NextInt(3);
+            gmBigKeySettings = (BigKeySettings)processor.NextInt(3);
+            lbtBigKeySettings = (BigKeySettings)processor.NextInt(3);
+            agBigKeySettings = (BigKeySettings)processor.NextInt(3);
+            sprBigKeySettings = (BigKeySettings)processor.NextInt(3);
+            totBigKeySettings = (BigKeySettings)processor.NextInt(3);
+            citsBigKeySettings = (BigKeySettings)processor.NextInt(3);
+            potBigKeySettings = (BigKeySettings)processor.NextInt(3);
+            hcBigKeySettings = (BigKeySettings)processor.NextInt(3);
+            ftMapAndCompassSettings = (MapAndCompassSettings)processor.NextInt(3);
+            gmMapAndCompassSettings = (MapAndCompassSettings)processor.NextInt(3);
+            lbtMapAndCompassSettings = (MapAndCompassSettings)processor.NextInt(3);
+            agMapAndCompassSettings = (MapAndCompassSettings)processor.NextInt(3);
+            sprMapAndCompassSettings = (MapAndCompassSettings)processor.NextInt(3);
+            totMapAndCompassSettings = (MapAndCompassSettings)processor.NextInt(3);
+            citsMapAndCompassSettings = (MapAndCompassSettings)processor.NextInt(3);
+            potMapAndCompassSettings = (MapAndCompassSettings)processor.NextInt(3);
+            hcMapAndCompassSettings = (MapAndCompassSettings)processor.NextInt(3);
             skipPrologue = processor.NextBool();
             faronTwilightCleared = processor.NextBool();
             eldinTwilightCleared = processor.NextBool();
@@ -130,7 +201,8 @@ namespace TPRandomizer
             itemScarcity = (ItemScarcity)processor.NextInt(2);
             damageMagnification = (DamageMagnification)processor.NextInt(3);
             bonksDoDamage = processor.NextBool();
-            shuffleRewards = processor.NextBool();
+            shuffleFusedShadows = processor.NextBool();
+            shuffleMirrorShards = processor.NextBool();
             skipMajorCutscenes = processor.NextBool();
             noSmallKeysOnBosses = processor.NextBool();
             startingToD = (StartingToD)processor.NextInt(3);
@@ -155,11 +227,33 @@ namespace TPRandomizer
             noPlandoHints = processor.NextBool();
             adjustHintsForCompletionists = processor.NextBool();
             hintDungeonEntrances = processor.NextBool();
+            shuffleFishJournals = processor.NextBool();
+            shuffleLegendaryLoach = processor.NextBool();
+            chestSizeMatchesContent = processor.NextBool();
+            shuffleGrottoEntrances = processor.NextBool();
+            shuffleCaveEntrances = processor.NextBool();
+            shuffleOneWayEntrances = processor.NextBool();
+            shuffleInteriorEntrances = processor.NextBool();
+            shuffleExteriorEntrances = processor.NextBool();
+            shuffleBossEntrances = processor.NextBool();
+            shuffleAnimalConversations = processor.NextBool();
+            spawnGWolves = processor.NextBool();
+            shuffleMinigames = processor.NextBool();
+            affordableDonations = processor.NextBool();
+            ftShortCut = processor.NextBool();
+            lbtShortCut = processor.NextBool();
+            agShortCut = processor.NextBool();
+            sprShortCut = processor.NextBool();
+            citsBridgeShortCut = processor.NextBool();
+            citsFanShortCut = processor.NextBool();
+            potShortCut = processor.NextBool();
+            alwaysGreatSpin = processor.NextBool();
             // We sort these lists so that the order which the UI happens to
             // pass the data up does not affect anything.
             startingItems = processor.NextItemList();
             startingItems.Sort();
             excludedChecks = processor.NextExcludedChecksList();
+            logicalTricks = processor.NextLogicalTricksList();
             // StringComparer is needed because the default sort order is
             // different on Linux and Windows
             excludedChecks.Sort(StringComparer.Ordinal);

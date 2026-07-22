@@ -1,0 +1,10 @@
+{
+  "arcOffsets": ["21DF"],
+  "stageIDX": [68],
+  "fileDirectoryType": [1],
+  "replacementType": [0],
+  "flag": "12",
+  "checkCategory": ["Overworld", "Kakariko Village", "ARC", "Minigame"],
+  "itemId": "Hawkeye",
+  "dataCategory": ["ARC", "Shop"]
+}

@@ -1194,10 +1194,10 @@ namespace TPRandomizer.Hints
             List<string> checkNames =
                 new()
                 {
-                    "Cave of Ordeals Floor 17 Poe",
-                    "Cave of Ordeals Floor 33 Poe",
-                    "Cave of Ordeals Floor 44 Poe",
-                    "Cave of Ordeals Great Fairy Reward",
+                    "CoO Floor 17 Poe",
+                    "CoO Floor 33 Poe",
+                    "CoO Floor 44 Poe",
+                    "CoO Great Fairy Reward",
                 };
 
             foreach (string checkName in checkNames)
@@ -1265,16 +1265,11 @@ namespace TPRandomizer.Hints
                     // the big key is included. This only happens for dungeons,
                     // and the item we are looking for.
 
-                    bool includeBigKeyInfo = false;
-                    List<string> bigKeyChecks = null;
-                    if (genData.sSettings.bigKeySettings == BigKeySettings.Own_Dungeon)
-                    {
-                        includeBigKeyInfo = CheckForBeyondPointBigKeys(
-                            zone,
-                            checkNames,
-                            out bigKeyChecks
-                        );
-                    }
+                    bool includeBigKeyInfo = CheckForBeyondPointBigKeys(
+                        zone,
+                        checkNames,
+                        out List<string> bigKeyChecks
+                    );
 
                     if (placeHintsOnSpots)
                     {
@@ -1313,29 +1308,48 @@ namespace TPRandomizer.Hints
             // Init 'out' param
             checksWithBigKey = new();
 
-            Dictionary<Zone, Item> zoneToBigKey =
+            Dictionary<Zone, (BigKeySettings, Item)> zoneToBigKey =
                 new()
                 {
-                    { Zone.Goron_Mines, Item.Goron_Mines_Key_Shard },
-                    { Zone.Lakebed_Temple, Item.Lakebed_Temple_Big_Key },
-                    { Zone.Arbiters_Grounds, Item.Arbiters_Grounds_Big_Key },
-                    { Zone.Temple_of_Time, Item.Temple_of_Time_Big_Key },
-                    { Zone.City_in_the_Sky, Item.City_in_The_Sky_Big_Key },
-                    { Zone.Palace_of_Twilight, Item.Palace_of_Twilight_Big_Key },
+                    {
+                        Zone.Goron_Mines,
+                        (genData.sSettings.gmBigKeySettings, Item.Goron_Mines_Key_Shard)
+                    },
+                    {
+                        Zone.Lakebed_Temple,
+                        (genData.sSettings.lbtBigKeySettings, Item.Lakebed_Temple_Big_Key)
+                    },
+                    {
+                        Zone.Arbiters_Grounds,
+                        (genData.sSettings.agBigKeySettings, Item.Arbiters_Grounds_Big_Key)
+                    },
+                    {
+                        Zone.Temple_of_Time,
+                        (genData.sSettings.totBigKeySettings, Item.Temple_of_Time_Big_Key)
+                    },
+                    {
+                        Zone.City_in_the_Sky,
+                        (genData.sSettings.citsBigKeySettings, Item.City_in_The_Sky_Big_Key)
+                    },
+                    {
+                        Zone.Palace_of_Twilight,
+                        (genData.sSettings.potBigKeySettings, Item.Palace_of_Twilight_Big_Key)
+                    },
                 };
 
-            if (!zoneToBigKey.TryGetValue(zone, out Item bigKeyItem))
-            {
+            if (!zoneToBigKey.TryGetValue(zone, out (BigKeySettings, Item) tuple))
                 return false;
-            }
 
+            BigKeySettings bkSetting = tuple.Item1;
+            if (bkSetting != BigKeySettings.Own_Dungeon)
+                return false;
+
+            Item bigKeyItem = tuple.Item2;
             foreach (string checkName in categoryCheckNames)
             {
                 Item contents = HintUtils.getCheckContents(checkName);
                 if (contents == bigKeyItem)
-                {
                     checksWithBigKey.Add(checkName);
-                }
             }
 
             return true;
@@ -1343,13 +1357,7 @@ namespace TPRandomizer.Hints
 
         private void CreateBigKeyHints(SpotToHints spotToHints)
         {
-            if (
-                !hintSettings.dungeons.bigKeyHints
-                || (
-                    genData.sSettings.bigKeySettings != BigKeySettings.Any_Dungeon
-                    && genData.sSettings.bigKeySettings != BigKeySettings.Anywhere
-                )
-            )
+            if (!hintSettings.dungeons.bigKeyHints)
                 return;
 
             Dictionary<Item, int> startingBigKeys = new();
@@ -1362,10 +1370,33 @@ namespace TPRandomizer.Hints
                 }
             }
 
-            foreach (KeyValuePair<Item, string> pair in HintConstants.bigKeyToDungeonZone)
+            SharedSettings ss = genData.sSettings;
+            List<(BigKeySettings, Item, string)> dungeonData =
+                new()
+                {
+                    (ss.ftBigKeySettings, Item.Forest_Temple_Big_Key, "Forest Temple"),
+                    (ss.gmBigKeySettings, Item.Goron_Mines_Key_Shard, "Goron Mines"),
+                    (ss.lbtBigKeySettings, Item.Lakebed_Temple_Big_Key, "Lakebed Temple"),
+                    (ss.agBigKeySettings, Item.Arbiters_Grounds_Big_Key, "Arbiter's Grounds"),
+                    (ss.sprBigKeySettings, Item.Snowpeak_Ruins_Bedroom_Key, "Snowpeak Ruins"),
+                    (ss.totBigKeySettings, Item.Temple_of_Time_Big_Key, "Temple of Time"),
+                    (ss.citsBigKeySettings, Item.City_in_The_Sky_Big_Key, "City in the Sky"),
+                    (ss.potBigKeySettings, Item.Palace_of_Twilight_Big_Key, "Palace of Twilight"),
+                    (ss.hcBigKeySettings, Item.Hyrule_Castle_Big_Key, "Hyrule Castle"),
+                };
+
+            foreach ((BigKeySettings, Item, string) tuple in dungeonData)
             {
-                Item bigKeyItem = pair.Key;
-                string zoneName = pair.Value;
+                BigKeySettings bkSetting = tuple.Item1;
+                if (
+                    bkSetting != BigKeySettings.Any_Dungeon
+                    && bkSetting != BigKeySettings.Overworld
+                    && bkSetting != BigKeySettings.Anywhere
+                )
+                    continue;
+
+                Item bigKeyItem = tuple.Item2;
+                string zoneName = tuple.Item3;
                 Zone zone = ZoneUtils.StringToId(zoneName);
 
                 if (

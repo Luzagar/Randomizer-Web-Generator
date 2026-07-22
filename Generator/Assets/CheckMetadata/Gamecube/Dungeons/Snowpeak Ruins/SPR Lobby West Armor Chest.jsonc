@@ -1,0 +1,11 @@
+{
+  "arcOffsets": ["8EC"],
+  "stageIDX": [27],
+  "roomIDX": 0,
+  "fileDirectoryType": [0],
+  "replacementType": [0],
+  "chestLowerNibble": "F",
+  "checkCategory": ["Chest", "Dungeon", "Snowpeak Ruins"],
+  "itemId": "Red_Rupee",
+  "dataCategory": ["Chest", "ARC"]
+}

@@ -1,0 +1,108 @@
+[
+  {
+    "RoomName": "CoO Floors 01-11",
+    "Exits": [
+      {
+        "ConnectedArea": "Desert CoO Plateau",
+        "Requirements": "(Progressive_Clawshot, 1)",
+        "GlitchedRequirements": "(Progressive_Clawshot, 1)"
+      },
+      {
+        "ConnectedArea": "CoO Floors 12-21",
+        "Requirements": "Spinner and CanDefeatBokoblin and CanDefeatKeese and CanDefeatRat and CanDefeatHangingBabaSerpent and CanDefeatSkulltula and CanDefeatBulblin and CanDefeatTorchSlug and CanDefeatFireKeese and CanDefeatDodongo and CanDefeatTektite and CanDefeatLizalfos",
+        "GlitchedRequirements": "(Spinner or CanDoLJA) and CanDefeatBokoblin and CanDefeatKeese and CanDefeatRat and CanDefeatHangingBabaSerpent and CanDefeatSkulltula and CanDefeatBulblin and CanDefeatTorchSlug and CanDefeatFireKeese and CanDefeatDodongo and CanDefeatTektite and CanDefeatLizalfos"
+      },
+      {
+        "ConnectedArea": "Ordon Spring",
+        "Requirements": "(CanDefeatBokoblin and CanDefeatKeese and CanDefeatRat and CanDefeatHangingBabaSerpent and CanDefeatSkulltula and CanDefeatBulblin and CanDefeatTorchSlug and CanDefeatFireKeese and CanDefeatDodongo and CanDefeatTektite and CanDefeatLizalfos) and Trick.coo_fairy_access",
+        "GlitchedRequirements": "CanDefeatBokoblin and CanDefeatKeese and CanDefeatRat and CanDefeatHangingBabaSerpent and CanDefeatSkulltula and CanDefeatBulblin and CanDefeatTorchSlug and CanDefeatFireKeese and CanDefeatDodongo and CanDefeatTektite and CanDefeatLizalfos"
+      }
+    ],
+    "Region": "Gerudo Desert"
+  },
+  {
+    "RoomName": "CoO Floors 12-21",
+    "Exits": [
+      {
+        "ConnectedArea": "CoO Floors 22-31",
+        "Requirements": "CanDefeatHelmasaur and CanDefeatRat and Ball_and_Chain and CanDefeatChu and CanDefeatChuWorm and CanDefeatBubble and CanDefeatBulblin and CanDefeatKeese and CanDefeatRat and CanDefeatStalhound and CanDefeatPoe and CanDefeatLeever",
+        "GlitchedRequirements": "CanDefeatHelmasaur and CanDefeatRat and Ball_and_Chain and CanDefeatChu and CanDefeatChuWorm and CanDefeatBubble and CanDefeatBulblin and CanDefeatKeese and CanDefeatRat and CanDefeatStalhound and CanDefeatPoe and CanDefeatLeever"
+      },
+      {
+        "ConnectedArea": "South Faron Woods",
+        "Requirements": "(CanDefeatHelmasaur and CanDefeatRat and CanDefeatChu and CanDefeatChuWorm and CanDefeatBubble and CanDefeatBulblin and CanDefeatKeese and CanDefeatRat and CanDefeatStalhound and CanDefeatPoe and CanDefeatLeever) and Trick.coo_fairy_access",
+        "GlitchedRequirements": "CanDefeatHelmasaur and CanDefeatRat and CanDefeatChu and CanDefeatChuWorm and CanDefeatBubble and CanDefeatBulblin and CanDefeatKeese and CanDefeatRat and CanDefeatStalhound and CanDefeatPoe and CanDefeatLeever"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "CoO Floor 17 Poe",
+        "Requirements": "Spinner and Shadow_Crystal and CanDefeatHelmasaur and CanDefeatRat and CanDefeatChu and CanDefeatChuWorm and CanDefeatBubble and CanDefeatKeese and CanDefeatStalhound",
+        "GlitchedRequirements": "(Spinner or (((Progressive_Clawshot, 1)) and CanDoLJA)) and Shadow_Crystal and CanDefeatHelmasaur and CanDefeatRat and CanDefeatChu and CanDefeatChuWorm and CanDefeatBubble and CanDefeatKeese and CanDefeatStalhound"
+      }
+    ],
+    "Region": "Gerudo Desert"
+  },
+  {
+    "RoomName": "CoO Floors 22-31",
+    "Exits": [
+      {
+        "ConnectedArea": "CoO Floors 32-41",
+        "Requirements": "CanDefeatBokoblin and CanDefeatIceKeese and (Progressive_Dominion_Rod, 2) and CanDefeatKeese and CanDefeatRat and CanDefeatGhoulRat and CanDefeatStalchild and CanDefeatRedeadKnight and CanDefeatBulblin and CanDefeatStalfos and CanDefeatSkulltula and CanDefeatBubble and CanDefeatLizalfos and CanDefeatFireBubble",
+        "GlitchedRequirements": "CanDefeatBokoblin and CanDefeatIceKeese and (Progressive_Dominion_Rod, 2) and CanDefeatKeese and CanDefeatRat and CanDefeatGhoulRat and CanDefeatStalchild and CanDefeatRedeadKnight and CanDefeatBulblin and CanDefeatStalfos and CanDefeatSkulltula and CanDefeatBubble and CanDefeatLizalfos and CanDefeatFireBubble"
+      },
+      {
+        "ConnectedArea": "Lower Kak Village",
+        "Requirements": "(CanDefeatBokoblin and CanDefeatIceKeese and CanDefeatKeese and CanDefeatRat and CanDefeatGhoulRat and CanDefeatStalchild and CanDefeatRedeadKnight and CanDefeatBulblin and CanDefeatStalfos and CanDefeatSkulltula and CanDefeatBubble and CanDefeatLizalfos and CanDefeatFireBubble) and Trick.coo_fairy_access",
+        "GlitchedRequirements": "CanDefeatBokoblin and CanDefeatIceKeese and CanDefeatKeese and CanDefeatRat and CanDefeatGhoulRat and CanDefeatStalchild and CanDefeatRedeadKnight and CanDefeatBulblin and CanDefeatStalfos and CanDefeatSkulltula and CanDefeatBubble and CanDefeatLizalfos and CanDefeatFireBubble"
+      }
+    ],
+    "Region": "Gerudo Desert"
+  },
+  {
+    "RoomName": "CoO Floors 32-41",
+    "Exits": [
+      {
+        "ConnectedArea": "CoO Floors 42-50",
+        "Requirements": "CanDefeatBeamos and CanDefeatKeese and (Progressive_Clawshot, 2) and CanDefeatTorchSlug and CanDefeatFireKeese and CanDefeatDodongo and CanDefeatFireBubble and CanDefeatRedeadKnight and CanDefeatPoe and CanDefeatGhoulRat and CanDefeatChu and CanDefeatIceKeese and CanDefeatFreezard and CanDefeatChilfos and CanDefeatIceBubble and CanDefeatLeever and CanDefeatDarknut",
+        "GlitchedRequirements": "CanDefeatBeamos and CanDefeatKeese and ((Progressive_Clawshot, 2) or CanDoLJA) and CanDefeatTorchSlug and CanDefeatFireKeese and CanDefeatDodongo and CanDefeatFireBubble and CanDefeatRedeadKnight and CanDefeatPoe and CanDefeatGhoulRat and CanDefeatChu and CanDefeatIceKeese and CanDefeatFreezard and CanDefeatChilfos and CanDefeatIceBubble and CanDefeatLeever and CanDefeatDarknut"
+      },
+      {
+        "ConnectedArea": "Lake Hylia Lanayru Spring",
+        "Requirements": "(CanDefeatBeamos and CanDefeatKeese and CanDefeatTorchSlug and CanDefeatFireKeese and CanDefeatDodongo and CanDefeatFireBubble and CanDefeatRedeadKnight and CanDefeatPoe and CanDefeatGhoulRat and CanDefeatChu and CanDefeatIceKeese and CanDefeatFreezard and CanDefeatChilfos and CanDefeatIceBubble and CanDefeatLeever and CanDefeatDarknut) and Trick.coo_fairy_access",
+        "GlitchedRequirements": "CanDefeatBeamos and CanDefeatKeese and CanDefeatTorchSlug and CanDefeatFireKeese and CanDefeatDodongo and CanDefeatFireBubble and CanDefeatRedeadKnight and CanDefeatPoe and CanDefeatGhoulRat and CanDefeatChu and CanDefeatIceKeese and CanDefeatFreezard and CanDefeatChilfos and CanDefeatIceBubble and CanDefeatLeever and CanDefeatDarknut"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "CoO Floor 33 Poe",
+        "Requirements": "Shadow_Crystal and (Progressive_Dominion_Rod, 2) and CanDefeatBeamos and CanDefeatKeese and CanDefeatDodongo and CanDefeatBubble and CanDefeatRedeadKnight",
+        "GlitchedRequirements": "Shadow_Crystal and (Progressive_Dominion_Rod, 2) and CanDefeatBeamos and CanDefeatKeese and CanDefeatDodongo and CanDefeatBubble and CanDefeatRedeadKnight"
+      }
+    ],
+    "Region": "Gerudo Desert"
+  },
+  {
+    "RoomName": "CoO Floors 42-50",
+    "Exits": [
+      {
+        "ConnectedArea": "Lake Hylia Lanayru Spring",
+        "Requirements": "(CanDefeatArmos and CanDefeatBokoblin and CanDefeatBabaSerpent and CanDefeatLizalfos and CanDefeatBulblin and CanDefeatDinalfos and CanDefeatPoe and CanDefeatRedeadKnight and CanDefeatChu and CanDefeatFreezard and CanDefeatChilfos and CanDefeatGhoulRat and CanDefeatRat and CanDefeatStalchild and CanDefeatAeralfos and CanDefeatDarknut) and Trick.coo_fairy_access",
+        "GlitchedRequirements": "CanDefeatArmos and CanDefeatBokoblin and CanDefeatBabaSerpent and CanDefeatLizalfos and CanDefeatBulblin and CanDefeatDinalfos and CanDefeatPoe and CanDefeatRedeadKnight and CanDefeatChu and CanDefeatFreezard and CanDefeatChilfos and CanDefeatGhoulRat and CanDefeatRat and CanDefeatStalchild and CanDefeatAeralfos and CanDefeatDarknut"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "CoO Floor 44 Poe",
+        "Requirements": "Shadow_Crystal and (Progressive_Clawshot, 2) and CanDefeatArmos and CanDefeatBabaSerpent and CanDefeatLizalfos and CanDefeatDinalfos and ((Progressive_Bow, 1) or Ball_and_Chain)",
+        "GlitchedRequirements": "Shadow_Crystal and ((Progressive_Clawshot, 2) or ((Progressive_Clawshot, 1) and CanDoLJA)) and CanDefeatArmos and CanDefeatBabaSerpent and CanDefeatLizalfos and CanDefeatDinalfos and ((Progressive_Bow, 1) or Ball_and_Chain)"
+      },
+      {
+        "CheckName": "CoO Great Fairy Reward",
+        "Requirements": "CanDefeatArmos and CanDefeatBokoblin and CanDefeatBabaSerpent and CanDefeatLizalfos and CanDefeatBulblin and CanDefeatDinalfos and CanDefeatPoe and CanDefeatRedeadKnight and CanDefeatChu and CanDefeatFreezard and CanDefeatChilfos and CanDefeatGhoulRat and CanDefeatRat and CanDefeatStalchild and CanDefeatAeralfos and CanDefeatDarknut",
+        "GlitchedRequirements": "CanDefeatArmos and CanDefeatBokoblin and CanDefeatBabaSerpent and CanDefeatLizalfos and CanDefeatBulblin and CanDefeatDinalfos and CanDefeatPoe and CanDefeatRedeadKnight and CanDefeatChu and CanDefeatFreezard and CanDefeatChilfos and CanDefeatGhoulRat and CanDefeatRat and CanDefeatStalchild and CanDefeatAeralfos and CanDefeatDarknut"
+      }
+    ],
+    "Region": "Gerudo Desert"
+  }
+]

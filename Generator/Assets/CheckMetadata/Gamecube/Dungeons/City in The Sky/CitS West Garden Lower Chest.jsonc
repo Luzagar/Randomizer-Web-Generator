@@ -1,0 +1,11 @@
+{
+  "arcOffsets": ["A1C"],
+  "stageIDX": [12],
+  "roomIDX": 12,
+  "fileDirectoryType": [0],
+  "replacementType": [0],
+  "chestLowerNibble": "F",
+  "checkCategory": ["Chest", "Dungeon", "City in The Sky"],
+  "itemId": "Bombs_5",
+  "dataCategory": ["Chest", "ARC"]
+}

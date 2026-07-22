@@ -1,0 +1,11 @@
+{
+  "arcOffsets": ["C84"],
+  "stageIDX": [0],
+  "roomIDX": 9,
+  "fileDirectoryType": [0],
+  "replacementType": [0],
+  "chestLowerNibble": "F",
+  "checkCategory": ["Chest", "Dungeon", "Lakebed Temple"],
+  "itemId": "Water_Bombs_5",
+  "dataCategory": ["Chest", "ARC"]
+}

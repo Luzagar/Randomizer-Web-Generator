@@ -1,0 +1,257 @@
+[
+  {
+    "RoomName": "GM Boss Room",
+    "Exits": [
+      {
+        "ConnectedArea": "Lower Kak Village",
+        "Requirements": "CanDefeatFyrus",
+        "GlitchedRequirements": "CanDefeatFyrus"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "GM Fyrus Heart Container",
+        "Requirements": "CanDefeatFyrus",
+        "GlitchedRequirements": "CanDefeatFyrus"
+      },
+      {
+        "CheckName": "GM Fyrus",
+        "Requirements": "CanDefeatFyrus",
+        "GlitchedRequirements": "CanDefeatFyrus"
+      },
+      {
+        "CheckName": "GM Dungeon Reward",
+        "Requirements": "CanDefeatFyrus",
+        "GlitchedRequirements": "CanDefeatFyrus"
+      }
+    ],
+    "Region": "Goron Mines"
+  },
+  {
+    "RoomName": "GM Crystal Switch Room",
+    "Exits": [
+      {
+        "ConnectedArea": "GM Magnet Room",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "GM North Wing",
+        "Requirements": "((Iron_Boots and HasSword) or (Progressive_Bow, 1)) and (Goron_Mines_Small_Key, 2)",
+        "GlitchedRequirements": "(Goron_Mines_Small_Key, 2) and ((Progressive_Bow, 1) or (Iron_Boots and HasSword) or ((CanDoLJA or (HasSword and HasBombs)) and ((Progressive_Clawshot, 1) or Ball_and_Chain or HasBombs)))"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "GM Crystal Switch Room Underwater Chest",
+        "Requirements": "HasHeavyMod",
+        "GlitchedRequirements": "HasHeavyMod"
+      },
+      {
+        "CheckName": "GM Crystal Switch Room Small Chest",
+        "Requirements": "Iron_Boots",
+        "GlitchedRequirements": "Iron_Boots"
+      },
+      {
+        "CheckName": "GM After Crystal Switch Room Magnet Wall Chest",
+        "Requirements": "Iron_Boots",
+        "GlitchedRequirements": "Iron_Boots"
+      }
+    ],
+    "Region": "Goron Mines"
+  },
+  {
+    "RoomName": "GM Entrance",
+    "Exits": [
+      {
+        "ConnectedArea": "Death Mountain Sumo Hall GM Tunnel",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "GM Magnet Room",
+        "Requirements": "Iron_Boots and CanBreakWoodenDoor",
+        "GlitchedRequirements": "(Iron_Boots or Shadow_Crystal) and (CanBreakWoodenDoor or CanDoBSMoonBoots)"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "GM Entrance Chest",
+        "Requirements": "CanPressMinesSwitch and CanBreakWoodenDoor",
+        "GlitchedRequirements": "CanDoBSMoonBoots or CanBreakWoodenDoor"
+      }
+    ],
+    "Region": "Goron Mines"
+  },
+  {
+    "RoomName": "GM Lower West Wing",
+    "Exits": [
+      {
+        "ConnectedArea": "GM Magnet Room",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "GM Magnet Maze Chest",
+        "Requirements": "Iron_Boots",
+        "GlitchedRequirements": "Iron_Boots"
+      },
+      {
+        "CheckName": "GM Gor Amato Chest",
+        "Requirements": "Iron_Boots",
+        "GlitchedRequirements": "Iron_Boots"
+      },
+      {
+        "CheckName": "GM Gor Amato Small Chest",
+        "Requirements": "Iron_Boots",
+        "GlitchedRequirements": "Iron_Boots"
+      },
+      {
+        "CheckName": "GM Gor Amato Key Shard",
+        "Requirements": "Iron_Boots",
+        "GlitchedRequirements": "Iron_Boots"
+      }
+    ],
+    "Region": "Goron Mines"
+  },
+  {
+    "RoomName": "GM Magnet Room",
+    "Exits": [
+      {
+        "ConnectedArea": "GM Entrance",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "GM Lower West Wing",
+        "Requirements": "(Goron_Mines_Small_Key, 1) or ((Setting.gmShortcut equals True) and Iron_Boots)",
+        "GlitchedRequirements": "(Goron_Mines_Small_Key, 1) or (((Setting.gmShortcut equals True) or HasSword) and Iron_Boots)"
+      },
+      // Note the difference in the parentheses between this and the
+      // previous exit. The previous exit only requires IB when using the
+      // shortcut magnet, but the below exit always required IB.
+      // Kitty climb is also considered in logic
+      {
+        "ConnectedArea": "GM Crystal Switch Room",
+        "Requirements": "((Goron_Mines_Small_Key, 1) or (Setting.gmShortcut equals True)) and Iron_Boots",
+        "GlitchedRequirements": "((Goron_Mines_Small_Key, 1) or (Setting.gmShortcut equals True) or HasSword) and Iron_Boots"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "GM Main Magnet Room Bottom Chest",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "GM Main Magnet Room Top Chest",
+        "Requirements": "(Progressive_Bow, 1) and Iron_Boots and CanDefeatDangoro and (Goron_Mines_Small_Key, 3)",
+        "GlitchedRequirements": "Room.GM_Upper_East_Wing and CanDefeatDangoro and CanDefeatBeamos"
+      }
+    ],
+    "Region": "Goron Mines"
+  },
+  {
+    "RoomName": "GM North Wing",
+    "Exits": [
+      {
+        "ConnectedArea": "GM Crystal Switch Room",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "GM Upper East Wing",
+        "Requirements": "(Goron_Mines_Small_Key, 3)",
+        "GlitchedRequirements": "(Goron_Mines_Small_Key, 3)"
+      },
+      {
+        "ConnectedArea": "GM Boss Room",
+        "Requirements": "(Progressive_Bow, 1) and Iron_Boots and CanDefeatBulblin and (Goron_Mines_Key_Shard, 3)",
+        "GlitchedRequirements": "(Goron_Mines_Key_Shard, 3) and (Progressive_Bow, 1) and ((Iron_Boots and CanDefeatBulblin) or Progressive_Clawshot or CanDoLJA)"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "GM Outside Beamos Chest",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "GM Outside Underwater Chest",
+        "Requirements": "(HasSword or CanUseWaterBombs) and HasHeavyMod",
+        "GlitchedRequirements": "HasHeavyMod"
+      },
+      {
+        "CheckName": "GM Outside Clawshot Chest",
+        "Requirements": "(Progressive_Clawshot, 1) and ((Progressive_Bow, 1) or Slingshot)",
+        "GlitchedRequirements": "(Progressive_Clawshot, 1)"
+      }
+    ],
+    "Region": "Goron Mines"
+  },
+  {
+    "RoomName": "GM Upper East Wing",
+    "Exits": [
+      {
+        "ConnectedArea": "GM North Wing",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "GM Magnet Room",
+        "Requirements": "Iron_Boots and CanDefeatDangoro and (Progressive_Bow, 1)",
+        "GlitchedRequirements": "Iron_Boots and CanDefeatDangoro and ((Progressive_Bow, 1) or CanDefeatBeamos)"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "GM Gor Ebizo Chest",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "GM Chest Before Dangoro",
+        "Requirements": "Iron_Boots",
+        "GlitchedRequirements": "Iron_Boots or CanDoLJA"
+      },
+      {
+        "CheckName": "Catch A Greengill",
+        "Requirements": "Progressive_Fishing_Rod",
+        "GlitchedRequirements": "Progressive_Fishing_Rod"
+      },
+      {
+        "CheckName": "Catch A Hyrule Bass",
+        "Requirements": "CanCatchBaitedFish",
+        "GlitchedRequirements": "CanCatchBaitedFish"
+      },
+      {
+        "CheckName": "GM Gor Ebizo Key Shard",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "GM Dangoro Chest",
+        "Requirements": "Iron_Boots and CanDefeatDangoro",
+        "GlitchedRequirements": "Iron_Boots and CanDefeatDangoro"
+      },
+      {
+        "CheckName": "GM Beamos Room Chest",
+        "Requirements": " Iron_Boots and CanDefeatDangoro and (Progressive_Bow, 1)",
+        "GlitchedRequirements": " Iron_Boots and CanDefeatDangoro and CanDefeatBeamos"
+      },
+      {
+        "CheckName": "GM Gor Liggs Chest",
+        "Requirements": "Iron_Boots and CanDefeatDangoro and (Progressive_Bow, 1)",
+        "GlitchedRequirements": "Iron_Boots and CanDefeatDangoro and CanDefeatBeamos"
+      },
+      {
+        "CheckName": "GM Gor Liggs Key Shard",
+        "Requirements": "Iron_Boots and CanDefeatDangoro and (Progressive_Bow, 1)",
+        "GlitchedRequirements": "Iron_Boots and CanDefeatDangoro and CanDefeatBeamos"
+      }
+    ],
+    "Region": "Goron Mines"
+  }
+]

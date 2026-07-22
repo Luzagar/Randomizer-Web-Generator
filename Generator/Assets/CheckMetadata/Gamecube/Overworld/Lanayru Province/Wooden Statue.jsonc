@@ -1,8 +1,10 @@
 {
-    "stageIDX": [57],
-    "moduleID": ["2B3"],
-    "overrideInstruction": ["38800000"],
-    "relReplacementType": [0],
-    "relOffsets": ["F24"],
-    "dataCategory": ["REL"]
+  "stageIDX": [57],
+  "moduleID": ["2B3"],
+  "overrideInstruction": ["38800000"],
+  "relReplacementType": [0],
+  "relOffsets": ["F24"],
+  "checkCategory": ["Overworld", "Quest", "Hyrule Field - Lanayru Province"],
+  "itemId": "Wooden_Statue",
+  "dataCategory": ["REL"]
 }

@@ -1,0 +1,11 @@
+{
+  "arcOffsets": ["AD0"],
+  "stageIDX": [0],
+  "roomIDX": 12,
+  "fileDirectoryType": [0],
+  "replacementType": [0],
+  "chestLowerNibble": "F",
+  "checkCategory": ["Chest", "Dungeon", "Lakebed Temple"],
+  "itemId": "Red_Rupee",
+  "dataCategory": ["Chest", "ARC"]
+}

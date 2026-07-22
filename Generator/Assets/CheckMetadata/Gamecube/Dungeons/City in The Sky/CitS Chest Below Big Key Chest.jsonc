@@ -1,0 +1,11 @@
+{
+  "arcOffsets": ["F14"],
+  "stageIDX": [12],
+  "roomIDX": 2,
+  "fileDirectoryType": [0],
+  "replacementType": [0],
+  "chestLowerNibble": "F",
+  "checkCategory": ["Chest", "Dungeon", "City in The Sky", "ARC"],
+  "itemId": "Red_Rupee",
+  "dataCategory": ["Chest", "ARC"]
+}

@@ -1,7 +1,9 @@
 {
-    "arcOffsets": ["FF7", "F67"],
-    "stageIDX": [61, 61],
-    "fileDirectoryType": [1, 1],
-    "replacementType": [0, 0],
-    "dataCategory": ["ARC"]
+  "arcOffsets": ["FF7", "F67"],
+  "stageIDX": [61, 61],
+  "fileDirectoryType": [1, 1],
+  "replacementType": [0, 0],
+  "checkCategory": ["Overworld", "Npc", "Lake Hylia"],
+  "itemId": "Piece_of_Heart",
+  "dataCategory": ["ARC"]
 }

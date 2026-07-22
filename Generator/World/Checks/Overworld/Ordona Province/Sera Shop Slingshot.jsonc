@@ -1,6 +1,0 @@
-{
-    "requirements": "true",
-    "glitchedRequirements": "true",
-    "checkCategory": ["Overworld", "Shop", "Ordona Province"],
-    "itemId": "Slingshot"
-}

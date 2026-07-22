@@ -15,6 +15,7 @@ namespace TPRandomizer
     // Room               := Room.<Name>
     // Setting            := "(" <Name> { "equals" | "not_equal" } <Value> ")"
     // ProgressiveItem    := "(" <Name> "," <Count> ")"
+    // LogicalTrick       := Trick.<Name>
 
     /// <summary>
     /// Base class for logic parse tree nodes.
@@ -102,6 +103,16 @@ namespace TPRandomizer
                 LogicFunctions.EvaluateSetting(SettingName, SettingValue) == Sense;
         }
 
+        public class Trick : LogicAST
+        {
+            string TrickName { get; }
+
+            public Trick(string trick) => TrickName = trick;
+
+            public override bool Evaluate() =>
+                Randomizer.SSettings.logicalTricks.Values.Contains(TrickName);
+        }
+
         public class Conjunction : LogicAST
         {
             LogicAST Left { get; }
@@ -134,6 +145,7 @@ namespace TPRandomizer
         static Regex itemOrFunctionRegex = new(@"^(\w+)");
         static Regex conjunctionRegex = new(@"^and\s+");
         static Regex disjunctionRegex = new(@"^or\s+");
+        static Regex trickRegex = new(@"^Trick.(\w+)");
         static Dictionary<string, LogicAST> parseCache = [];
 
         /// <summary>
@@ -198,6 +210,10 @@ namespace TPRandomizer
                 else if ((m = Re(roomRegex, ref expression)) != null)
                 {
                     thisNode = new AST.Room(m.Groups[1].Value.Replace('_', ' '));
+                }
+                else if ((m = Re(trickRegex, ref expression)) != null)
+                {
+                    thisNode = new AST.Trick(m.Groups[1].Value);
                 }
                 else if (expression.StartsWith('('))
                 {

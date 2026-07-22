@@ -1,8 +1,10 @@
 {
-    "arcOffsets": ["3BF3"],
-    "stageIDX": [43],
-    "roomIDX": 0,
-    "fileDirectoryType": [0],
-    "replacementType": [0],
-    "dataCategory": ["ARC"]
+  "arcOffsets": ["3BF3"],
+  "stageIDX": [43],
+  "roomIDX": 0,
+  "fileDirectoryType": [0],
+  "replacementType": [0],
+  "checkCategory": ["Overworld", "Faron Woods", "Rupee - Freestanding"],
+  "itemId": "Green_Rupee",
+  "dataCategory": ["ARC"]
 }

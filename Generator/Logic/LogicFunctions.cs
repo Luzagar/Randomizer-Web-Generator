@@ -81,7 +81,7 @@ namespace TPRandomizer
         public static bool CanGetHotSpringWater()
         {
             return (
-                    Randomizer.Rooms.RoomDict["Lower Kakariko Village"].ReachedByPlaythrough
+                    Randomizer.Rooms.RoomDict["Lower Kak Village"].ReachedByPlaythrough
                     || (
                         Randomizer.Rooms.RoomDict[
                             "Death Mountain Elevator Lower"
@@ -784,7 +784,11 @@ namespace TPRandomizer
         /// </summary>
         public static bool CanDefeatShadowBeast()
         {
-            return HasSword() || (CanUse(Item.Shadow_Crystal) && CanMidnaCharge());
+            return HasSword()
+                || (
+                    CanUse(Item.Shadow_Crystal)
+                    && (CanMidnaCharge() || LogicTricks.isTrickEnabled("shadow_beasts_without_mdh"))
+                );
         }
 
         /// <summary>
@@ -1030,7 +1034,7 @@ namespace TPRandomizer
                 || CanUse(Item.Ball_and_Chain)
                 || CanUse(Item.Progressive_Bow)
                 || (HasShield() && GetItemCount(Item.Progressive_Hidden_Skill) >= 2)
-                || CanDoDifficultCombat() && (CanUse(Item.Shadow_Crystal))
+                || CanDoDifficultCombat() && CanUse(Item.Shadow_Crystal)
             );
         }
 
@@ -1294,8 +1298,12 @@ namespace TPRandomizer
         {
             return (
                 CanUse(Item.Progressive_Bow)
-                && CanUse(Item.Iron_Boots)
-                && (HasSword() || (CanDoDifficultCombat() && CanUseBacksliceAsSword()))
+                && (CanUse(Item.Iron_Boots) || LogicTricks.isTrickEnabled("fyrus_without_irons"))
+                && (
+                    HasSword()
+                    || (CanDoDifficultCombat() && CanUseBacksliceAsSword())
+                    || LogicTricks.isTrickEnabled("fyrus_without_sword")
+                )
             );
         }
 
@@ -1308,12 +1316,16 @@ namespace TPRandomizer
                 (
                     CanUse(Item.Zora_Armor)
                     && CanUse(Item.Iron_Boots)
-                    && HasSword()
+                    && (HasSword() || LogicTricks.isTrickEnabled("morpheel_without_sword"))
                     && CanUse(Item.Progressive_Clawshot)
                 )
                 || (
                     CanDoNicheStuff()
-                    && (CanUse(Item.Progressive_Clawshot) && CanDoAirRefill() && HasSword())
+                    && (
+                        CanUse(Item.Progressive_Clawshot)
+                        && CanDoAirRefill()
+                        && (HasSword() || CanDoDifficultCombat())
+                    )
                 )
             );
         }
@@ -1385,9 +1397,36 @@ namespace TPRandomizer
         /// </summary>
         public static bool CanDefeatGanondorf()
         {
-            return CanUse(Item.Shadow_Crystal)
+            return (
+                    CanUse(Item.Shadow_Crystal)
+                    || (
+                        (GetItemCount(Item.Progressive_Hidden_Skill) >= 5)
+                        && HasBottle()
+                        && CanGetTearsOrRareChu()
+                        && LogicTricks.isTrickEnabled("beast_ganon_without_wolf")
+                    )
+                )
                 && (GetItemCount(Item.Progressive_Sword) >= 3)
                 && CanUse(Item.Progressive_Hidden_Skill);
+        }
+
+        public static bool CanGetTearsOrRareChu()
+        {
+            return Randomizer.Checks.CheckDict["CoO Great Fairy Reward"].hasBeenReached
+                || (
+                    (
+                        Randomizer.Rooms.RoomDict["Lake Hylia Bridge"].ReachedByPlaythrough
+                        || Randomizer.Rooms.RoomDict["Desert Chu Grotto"].ReachedByPlaythrough
+                        || Randomizer.Rooms.RoomDict["Ordon Ranch Grotto"].ReachedByPlaythrough
+                        || Randomizer.Rooms.RoomDict[
+                            "Snowpeak Ice Keese Grotto"
+                        ].ReachedByPlaythrough
+                        || (
+                            Randomizer.Rooms.RoomDict["Death Mountain Volcano"].ReachedByPlaythrough
+                            && CanCompleteGoronMines()
+                        )
+                    ) && CanDefeatChu()
+                );
         }
 
         /// <summary>
@@ -1403,7 +1442,11 @@ namespace TPRandomizer
         /// </summary>
         public static bool CanBurnWebs()
         {
-            return CanUse(Item.Lantern) || HasBombs() || CanUse(Item.Ball_and_Chain);
+            return CanUse(Item.Lantern)
+                || (
+                    (HasBombs() || CanUse(Item.Ball_and_Chain))
+                    && LogicTricks.isTrickEnabled("can_smash_webs")
+                );
         }
 
         public static bool CanDestroyWebsWithoutLantern()
@@ -1433,15 +1476,87 @@ namespace TPRandomizer
             return (
                 CanUse(Item.Hylian_Shield)
                 || (
-                    Randomizer.Rooms.RoomDict["Kakariko Malo Mart"].ReachedByPlaythrough
+                    Randomizer.Rooms.RoomDict["Kak Malo Mart"].ReachedByPlaythrough
                     && !Randomizer.SSettings.shuffleShopItems
                 )
                 || (
-                    Randomizer.Rooms.RoomDict["Castle Town Goron House"].ReachedByPlaythrough
+                    Randomizer.Rooms.RoomDict["CT Goron House"].ReachedByPlaythrough
                     && !Randomizer.SSettings.shuffleShopItems
                 )
                 || Randomizer.Rooms.RoomDict["Death Mountain Hot Spring"].ReachedByPlaythrough
             );
+        }
+
+        public static bool CanCollectLarva()
+        {
+            return HasBottle()
+                && (
+                    Randomizer.Rooms.RoomDict["Ordon Seras Shop"].ReachedByPlaythrough
+                    || (
+                        (
+                            Randomizer.Rooms.RoomDict[
+                                "Lake Hylia Water Toadpoli Grotto"
+                            ].ReachedByPlaythrough
+                            || Randomizer.Rooms.RoomDict[
+                                "Eldin Field Water Bomb Fish Grotto"
+                            ].ReachedByPlaythrough
+                            || Randomizer.Rooms.RoomDict["Kak Graveyard"].ReachedByPlaythrough
+                            || Randomizer.Rooms.RoomDict[
+                                "OCT South Tektite Grotto"
+                            ].ReachedByPlaythrough
+                            // There's a hive above the hint sign.
+                            || Randomizer.Rooms.RoomDict["Fishing Hole"].ReachedByPlaythrough
+                        )
+                        && (
+                            CanUse(Item.Progressive_Clawshot)
+                            || CanUse(Item.Progressive_Bow)
+                            || CanUse(Item.Ball_and_Chain)
+                        )
+                    )
+                );
+        }
+
+        public static bool CanCollectWorms()
+        {
+            return HasBottle()
+                && (
+                    // Bomskits always drop them when killed. (This is the most reliable method.)
+                    (
+                        CanDefeatBomskit()
+                        && (
+                            Randomizer.Rooms.RoomDict["Faron Field"].ReachedByPlaythrough
+                            || Randomizer.Rooms.RoomDict["Kak Gorge"].ReachedByPlaythrough
+                            || Randomizer.Rooms.RoomDict[
+                                "Eldin Field Bomskit Grotto"
+                            ].ReachedByPlaythrough
+                        )
+                    )
+                    // Digging for worms: You'll see weird little spots in the ground, like dirt spots,
+                    // and if you dig as wolf on them, worms will pop up.
+                    // Each digging spot is finite, worms will go back into the hole and holes will
+                    // despawn after a random amount of digging attempts. (From my testing)
+                    || (
+                        CanUse(Item.Shadow_Crystal)
+                        && (
+                            // Behind the sign that says "Fishing Hole!" next to Hena's house
+                            Randomizer.Rooms.RoomDict["Fishing Hole"].ReachedByPlaythrough
+                            // Right next to the entrance; across the water
+                            || Randomizer.Rooms.RoomDict[
+                                "Faron Field Fishing Grotto"
+                            ].ReachedByPlaythrough
+                            // Supposedly can get from under pumpkins at night, but digging was
+                            // more reliable in testing than trying to get them from under pumpkins.
+                            || Randomizer.Rooms.RoomDict["Ordon Village"].ReachedByPlaythrough
+                        )
+                    )
+                );
+        }
+
+        public static bool CanCatchBaitedFish()
+        {
+            return (
+                    CanUse(Item.Progressive_Fishing_Rod) && (CanCollectLarva() || CanCollectWorms())
+                ) || (GetItemCount(Item.Progressive_Fishing_Rod) == 2);
         }
 
         public static bool CanUseBottledFairy()
@@ -1464,7 +1579,12 @@ namespace TPRandomizer
         /// </summary>
         public static bool CanLaunchBombs()
         {
-            return ((CanUse(Item.Boomerang) || CanUse(Item.Progressive_Bow)) && HasBombs());
+            return (
+                    (
+                        CanUse(Item.Boomerang)
+                        && LogicTricks.isTrickEnabled("launch_bombs_with_boomerang")
+                    ) || CanUse(Item.Progressive_Bow)
+                ) && HasBombs();
         }
 
         /// <summary>
@@ -1508,6 +1628,15 @@ namespace TPRandomizer
                     Randomizer.SSettings.logicRules == LogicRules.Glitched
                     && ((HasSword() && CanDoMoonBoots()) || CanDoBSMoonBoots())
                 )
+                || (LogicTricks.isTrickEnabled("hc_painting_switch_with_bombs") && HasBombs())
+                || (
+                    LogicTricks.isTrickEnabled("hc_painting_switch_with_js")
+                    && GetItemCount(Item.Progressive_Hidden_Skill) >= 6
+                )
+                || (
+                    LogicTricks.isTrickEnabled("hc_painting_switch_with_bs")
+                    && GetItemCount(Item.Progressive_Hidden_Skill) >= 3
+                )
             );
         }
 
@@ -1516,21 +1645,22 @@ namespace TPRandomizer
         /// </summary>
         public static bool CanBreakMonkeyCage()
         {
-            return (
-                HasSword()
-                || CanUse(Item.Iron_Boots)
-                || CanUse(Item.Spinner)
-                || CanUse(Item.Ball_and_Chain)
-                || CanUse(Item.Shadow_Crystal)
-                || HasBombs()
-                || CanUse(Item.Progressive_Bow)
-                || CanUse(Item.Progressive_Clawshot)
+            return Randomizer.SSettings.ftShortCut
                 || (
-                    CanDoNicheStuff()
-                    && HasShield()
-                    && GetItemCount(Item.Progressive_Hidden_Skill) >= 2
-                )
-            );
+                    HasSword()
+                    || CanUse(Item.Iron_Boots)
+                    || CanUse(Item.Spinner)
+                    || CanUse(Item.Ball_and_Chain)
+                    || CanUse(Item.Shadow_Crystal)
+                    || HasBombs()
+                    || CanUse(Item.Progressive_Bow)
+                    || CanUse(Item.Progressive_Clawshot)
+                    || (
+                        CanDoNicheStuff()
+                        && HasShield()
+                        && GetItemCount(Item.Progressive_Hidden_Skill) >= 2
+                    )
+                );
         }
 
         /// <summary>
@@ -1546,23 +1676,24 @@ namespace TPRandomizer
         /// </summary>
         public static bool CanFreeAllMonkeys()
         {
-            return (
-                CanBreakMonkeyCage()
-                && (
-                    CanUse(Item.Lantern)
-                    || (
-                        (Randomizer.SSettings.smallKeySettings == SmallKeySettings.Keysy)
-                        && (HasBombs() || CanUse(Item.Iron_Boots))
+            return Randomizer.SSettings.ftShortCut
+                || (
+                    CanBreakMonkeyCage()
+                    && (
+                        CanUse(Item.Lantern)
+                        || (
+                            (Randomizer.SSettings.ftSmallKeySettings == SmallKeySettings.Keysy)
+                            && (HasBombs() || CanUse(Item.Iron_Boots))
+                        )
                     )
-                )
-                && CanBurnWebs()
-                && CanUse(Item.Boomerang)
-                && CanDefeatBokoblin()
-                && (
-                    (GetItemCount(Item.Forest_Temple_Small_Key) >= 4)
-                    || (Randomizer.SSettings.smallKeySettings == SmallKeySettings.Keysy)
-                )
-            );
+                    && CanBurnWebs()
+                    && CanUse(Item.Boomerang)
+                    && CanDefeatBokoblin()
+                    && (
+                        (GetItemCount(Item.Forest_Temple_Small_Key) >= 4)
+                        || (Randomizer.SSettings.ftSmallKeySettings == SmallKeySettings.Keysy)
+                    )
+                );
         }
 
         /// <summary>
@@ -1596,15 +1727,13 @@ namespace TPRandomizer
             return (
                 CanUse(Item.Filled_Bomb_Bag)
                 && (
-                    Randomizer.Rooms.RoomDict[
-                        "Kakariko Barnes Bomb Shop Lower"
-                    ].ReachedByPlaythrough
+                    Randomizer.Rooms.RoomDict["Kak Barnes Bomb Shop Lower"].ReachedByPlaythrough
                     || (
                         Randomizer.Rooms.RoomDict[
                             "Eldin Field Water Bomb Fish Grotto"
                         ].ReachedByPlaythrough && CanUse(Item.Progressive_Fishing_Rod)
                     )
-                    || Randomizer.Rooms.RoomDict["City in The Sky Entrance"].ReachedByPlaythrough
+                    || Randomizer.Rooms.RoomDict["CitS Entrance"].ReachedByPlaythrough
                 )
             );
         }
@@ -1617,19 +1746,15 @@ namespace TPRandomizer
             return (
                 CanUse(Item.Filled_Bomb_Bag)
                 && (
-                    Randomizer.Rooms.RoomDict[
-                        "Kakariko Barnes Bomb Shop Lower"
-                    ].ReachedByPlaythrough
+                    Randomizer.Rooms.RoomDict["Kak Barnes Bomb Shop Lower"].ReachedByPlaythrough
                     || (
                         Randomizer.Rooms.RoomDict[
                             "Eldin Field Water Bomb Fish Grotto"
                         ].ReachedByPlaythrough && CanUse(Item.Progressive_Fishing_Rod)
                     )
                     || (
-                        Randomizer.Rooms.RoomDict[
-                            "Kakariko Barnes Bomb Shop Lower"
-                        ].ReachedByPlaythrough
-                        && Randomizer.Rooms.RoomDict["Castle Town Malo Mart"].ReachedByPlaythrough
+                        Randomizer.Rooms.RoomDict["Kak Barnes Bomb Shop Lower"].ReachedByPlaythrough
+                        && Randomizer.Rooms.RoomDict["CT Malo Mart"].ReachedByPlaythrough
                     )
                 )
             );
@@ -1644,12 +1769,11 @@ namespace TPRandomizer
                 Randomizer.Rooms.RoomDict["Lost Woods"].ReachedByPlaythrough
                 || (
                     CanCompleteGoronMines()
-                    && Randomizer.Rooms.RoomDict["Kakariko Malo Mart"].ReachedByPlaythrough
+                    && Randomizer.Rooms.RoomDict["Kak Malo Mart"].ReachedByPlaythrough
                 )
                 || (
-                    Randomizer.Rooms.RoomDict[
-                        "Castle Town Goron House Balcony"
-                    ].ReachedByPlaythrough && !Randomizer.SSettings.shuffleShopItems
+                    Randomizer.Rooms.RoomDict["CT Goron House Balcony"].ReachedByPlaythrough
+                    && !Randomizer.SSettings.shuffleShopItems
                 )
             );
         }
@@ -1665,7 +1789,7 @@ namespace TPRandomizer
             return (
                 Randomizer.Rooms.RoomDict["North Faron Woods"].ReachedByPlaythrough
                 || Randomizer.Rooms.RoomDict["South Faron Woods"].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict["Arbiters Grounds Entrance"].ReachedByPlaythrough
+                || Randomizer.Rooms.RoomDict["AG Entrance"].ReachedByPlaythrough
                 || (
                     Randomizer.Rooms.RoomDict["Lake Hylia Long Cave"].ReachedByPlaythrough
                     && CanSmash()
@@ -1673,16 +1797,16 @@ namespace TPRandomizer
                 || Randomizer.Rooms.RoomDict["Ordon Seras Shop"].ReachedByPlaythrough
                 || (
                     CanCompleteGoronMines()
-                    && Randomizer.Rooms.RoomDict["Lower Kakariko Village"].ReachedByPlaythrough
+                    && Randomizer.Rooms.RoomDict["Lower Kak Village"].ReachedByPlaythrough
                 )
                 || (
-                    Randomizer.Rooms.RoomDict["Castle Town Goron House"].ReachedByPlaythrough
+                    Randomizer.Rooms.RoomDict["CT Goron House"].ReachedByPlaythrough
                     && !Randomizer.SSettings.shuffleShopItems
                 )
                 || Randomizer.Rooms.RoomDict["Death Mountain Hot Spring"].ReachedByPlaythrough
-                || Randomizer.Rooms.RoomDict["City in The Sky Entrance"].ReachedByPlaythrough
+                || Randomizer.Rooms.RoomDict["CitS Entrance"].ReachedByPlaythrough
                 || (
-                    Randomizer.Rooms.RoomDict["Hyrule Castle Main Hall"].ReachedByPlaythrough
+                    Randomizer.Rooms.RoomDict["HC Main Hall"].ReachedByPlaythrough
                     && CanDefeatBokoblin()
                     && CanDefeatLizalfos()
                     && (GetItemCount(Item.Progressive_Clawshot) >= 2)
@@ -1693,10 +1817,7 @@ namespace TPRandomizer
                     && CanDestroyWebsWithoutLantern()
                     && CanDefeatChu()
                 )
-                || (
-                    Randomizer.Rooms.RoomDict["Hyrule Castle Graveyard"].ReachedByPlaythrough
-                    && CanSmash()
-                )
+                || (Randomizer.Rooms.RoomDict["HC Graveyard"].ReachedByPlaythrough && CanSmash())
             );
         }
 
@@ -1730,7 +1851,7 @@ namespace TPRandomizer
                 (Randomizer.SSettings.skipMdh == true)
                 || (
                     CanCompleteLakebedTemple()
-                    && Randomizer.Rooms.RoomDict["Castle Town South"].ReachedByPlaythrough
+                    && Randomizer.Rooms.RoomDict["CT South"].ReachedByPlaythrough
                 )
             );
             //return (CanCompleteLakebedTemple() || (Randomizer.SSettings.skipMdh == true));
@@ -1800,20 +1921,21 @@ namespace TPRandomizer
         {
             return Randomizer.SSettings.eldinTwilightCleared
                 || (
-                    Randomizer.Rooms.RoomDict["Faron Field"].ReachedByPlaythrough
-                    && Randomizer.Rooms.RoomDict["Lower Kakariko Village"].ReachedByPlaythrough
-                    && Randomizer.Rooms.RoomDict["Kakariko Graveyard"].ReachedByPlaythrough
-                    && Randomizer.Rooms.RoomDict["Kakariko Malo Mart"].ReachedByPlaythrough
+                    (
+                        Randomizer.Rooms.RoomDict["Faron Field"].ReachedByPlaythrough
+                        || CanUse(Item.Shadow_Crystal)
+                    )
+                    && Randomizer.Rooms.RoomDict["Lower Kak Village"].ReachedByPlaythrough
+                    && Randomizer.Rooms.RoomDict["Kak Graveyard"].ReachedByPlaythrough
+                    && Randomizer.Rooms.RoomDict["Kak Malo Mart"].ReachedByPlaythrough
+                    && Randomizer.Rooms.RoomDict["Kak Barnes Bomb Shop Upper"].ReachedByPlaythrough
                     && Randomizer.Rooms.RoomDict[
-                        "Kakariko Barnes Bomb Shop Upper"
+                        "Kak Renados Sanctuary Basement"
                     ].ReachedByPlaythrough
-                    && Randomizer.Rooms.RoomDict[
-                        "Kakariko Renados Sanctuary Basement"
-                    ].ReachedByPlaythrough
-                    && Randomizer.Rooms.RoomDict["Kakariko Elde Inn"].ReachedByPlaythrough
-                    && Randomizer.Rooms.RoomDict["Kakariko Bug House"].ReachedByPlaythrough
-                    && Randomizer.Rooms.RoomDict["Upper Kakariko Village"].ReachedByPlaythrough
-                    && Randomizer.Rooms.RoomDict["Kakariko Watchtower"].ReachedByPlaythrough
+                    && Randomizer.Rooms.RoomDict["Kak Elde Inn"].ReachedByPlaythrough
+                    && Randomizer.Rooms.RoomDict["Kak Bug House"].ReachedByPlaythrough
+                    && Randomizer.Rooms.RoomDict["Upper Kak Village"].ReachedByPlaythrough
+                    && Randomizer.Rooms.RoomDict["Kak Watchtower"].ReachedByPlaythrough
                     && Randomizer.Rooms.RoomDict["Death Mountain Volcano"].ReachedByPlaythrough
                     && (
                         !Randomizer.SSettings.bonksDoDamage
@@ -1838,12 +1960,12 @@ namespace TPRandomizer
                         Randomizer.Rooms.RoomDict["North Eldin Field"].ReachedByPlaythrough
                         || CanUse(Item.Shadow_Crystal)
                     )
-                    && Randomizer.Rooms.RoomDict["Zoras Domain"].ReachedByPlaythrough
-                    && Randomizer.Rooms.RoomDict["Zoras Domain Throne Room"].ReachedByPlaythrough
-                    && Randomizer.Rooms.RoomDict["Upper Zoras River"].ReachedByPlaythrough
+                    && Randomizer.Rooms.RoomDict["ZD Waterfall Area"].ReachedByPlaythrough
+                    && Randomizer.Rooms.RoomDict["ZD Throne Room"].ReachedByPlaythrough
+                    && Randomizer.Rooms.RoomDict["UZR River"].ReachedByPlaythrough
                     && Randomizer.Rooms.RoomDict["Lake Hylia"].ReachedByPlaythrough
                     && Randomizer.Rooms.RoomDict["Lake Hylia Lanayru Spring"].ReachedByPlaythrough
-                    && Randomizer.Rooms.RoomDict["Castle Town South"].ReachedByPlaythrough
+                    && Randomizer.Rooms.RoomDict["CT South"].ReachedByPlaythrough
                     && (
                         !Randomizer.SSettings.bonksDoDamage
                         || (
@@ -1856,15 +1978,20 @@ namespace TPRandomizer
                             )
                         )
                     )
+                    && CanCompleteEldinTwilight()
+                    && Randomizer.Rooms.RoomDict["ZD Throne Room"].ReachedByPlaythrough
+                    && CanUse(Item.Shadow_Crystal)
                 );
         }
 
         public static bool CanWarpMeteor()
         {
+            // We have to either be able to complete lanayru twilight, or complete eldin twilight, access throne room, and have the ability to defeat the bulblin karg at lake hylia. For softlock prevention, we also include shadow crystal because the player could meet all of these requirements and not be wolf, depending on settings.
             return CanCompleteLanayruTwilight()
                 || (
                     CanCompleteEldinTwilight()
-                    && Randomizer.Rooms.RoomDict["Zoras Domain Throne Room"].ReachedByPlaythrough
+                    && Randomizer.Rooms.RoomDict["ZD Throne Room"].ReachedByPlaythrough
+                    && Randomizer.Rooms.RoomDict["Lake Hylia"].ReachedByPlaythrough
                     && CanUse(Item.Shadow_Crystal)
                 );
         }
@@ -2263,7 +2390,8 @@ namespace TPRandomizer
         /// </summary>
         public static bool HasHeavyMod()
         {
-            return CanUse(Item.Iron_Boots) || CanUse(Item.Magic_Armor);
+            return CanUse(Item.Iron_Boots)
+                || (CanUse(Item.Magic_Armor) && LogicTricks.isTrickEnabled("drained_MA_as_irons"));
         }
 
         /// <summary>
@@ -2298,7 +2426,7 @@ namespace TPRandomizer
         public static bool CanDoMapGlitch()
         {
             return CanUse(Item.Shadow_Crystal)
-                && Randomizer.Rooms.RoomDict["Kakariko Gorge"].ReachedByPlaythrough;
+                && Randomizer.Rooms.RoomDict["Kak Gorge"].ReachedByPlaythrough;
         }
 
         /// <summary>
@@ -2444,7 +2572,7 @@ namespace TPRandomizer
         ///
         public static bool CanSkipKeyToDekuToad()
         {
-            return Randomizer.SSettings.smallKeySettings == SmallKeySettings.Keysy
+            return Randomizer.SSettings.lbtSmallKeySettings == SmallKeySettings.Keysy
                 || GetItemCount(Item.Progressive_Hidden_Skill) >= 3
                 || CanDoBSMoonBoots()
                 || CanDoJSMoonBoots()

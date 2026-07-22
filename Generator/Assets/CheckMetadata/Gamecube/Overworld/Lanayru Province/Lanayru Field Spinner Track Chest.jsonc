@@ -1,8 +1,11 @@
 {
-    "arcOffsets": ["5D4"],
-    "stageIDX": [56],
-    "roomIDX": 11,
-    "fileDirectoryType": [0],
-    "replacementType": [0],
-    "dataCategory": ["Chest", "ARC"]
+  "arcOffsets": ["5D4"],
+  "stageIDX": [56],
+  "roomIDX": 11,
+  "fileDirectoryType": [0],
+  "replacementType": [0],
+  "chestLowerNibble": "F",
+  "checkCategory": ["Overworld", "Chest", "Hyrule Field - Lanayru Province"],
+  "itemId": "Piece_of_Heart",
+  "dataCategory": ["Chest", "ARC"]
 }

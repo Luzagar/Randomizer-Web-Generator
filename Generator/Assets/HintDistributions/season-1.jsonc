@@ -30,8 +30,8 @@
   "removeChecks": {
     "Herding Goats Reward": ["sometimes"],
     "Wrestling With Bo": ["sometimes"],
-    "Zoras Domain Extinguish All Torches Chest": ["sometimes"],
-    "Zoras Domain Light All Torches Chest": ["sometimes"]
+    "ZD Extinguish All Torches Chest": ["sometimes"],
+    "ZD Light All Torches Chest": ["sometimes"]
   },
   "removeItems": {
     "Progressive_Sword": ["sometimes"]
@@ -51,7 +51,7 @@
         "hintType": "location",
         "options": {
           "canBeClaimHinted": true,
-          "validChecks": ["Forest Temple Gale Boomerang"]
+          "validChecks": ["FT Gale Boomerang"]
         }
       }
     },
@@ -65,9 +65,9 @@
             "options": {
               "canBeClaimHinted": true,
               "validChecks": [
-                "Snowpeak Ruins Chapel Chest",
-                "Snowpeak Ruins Lobby Chandelier Chest",
-                "Snowpeak Ruins Northeast Chandelier Chest"
+                "SPR Chapel Chest",
+                "SPR Lobby Chandelier Chest",
+                "SPR Northeast Chandelier Chest"
               ],
               "validItems": ["Snowpeak_Ruins_Bedroom_Key"]
             }
@@ -77,9 +77,9 @@
             "options": {
               "canBeClaimHinted": true,
               "validChecks": [
-                "Snowpeak Ruins Chapel Chest",
-                "Snowpeak Ruins Lobby Chandelier Chest",
-                "Snowpeak Ruins Northeast Chandelier Chest"
+                "SPR Chapel Chest",
+                "SPR Lobby Chandelier Chest",
+                "SPR Northeast Chandelier Chest"
               ]
             }
           }
@@ -92,7 +92,7 @@
         "hintType": "location",
         "options": {
           "canBeClaimHinted": true,
-          "validChecks": ["Temple of Time Darknut Chest"]
+          "validChecks": ["ToT Darknut Chest"]
         }
       }
     },
@@ -263,7 +263,7 @@
                 "hintType": "location",
                 "options": {
                   "markAsSometimes": true,
-                  "namedChecks": ["City in The Sky West Wing First Chest"],
+                  "namedChecks": ["CitS West Wing First Chest"],
                   "namedProbability": 0.5
                 }
               },

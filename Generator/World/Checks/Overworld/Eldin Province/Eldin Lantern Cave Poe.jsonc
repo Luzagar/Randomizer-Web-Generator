@@ -1,6 +1,0 @@
-{
-    "requirements": "Shadow_Crystal and CanBurnWebs",
-    "glitchedRequirements": "Shadow_Crystal and CanBurnWebs",
-    "checkCategory": ["Overworld", "Poe", "Eldin Lantern Cave"],
-    "itemId": "Poe_Soul"
-}

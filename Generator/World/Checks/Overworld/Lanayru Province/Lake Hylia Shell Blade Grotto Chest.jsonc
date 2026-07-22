@@ -1,6 +1,0 @@
-{
-    "requirements": "CanDefeatShellBlade",
-    "glitchedRequirements": "CanDefeatShellBlade",
-    "checkCategory": ["Overworld", "Chest", "Lake Hylia"],
-    "itemId": "Orange_Rupee"
-}

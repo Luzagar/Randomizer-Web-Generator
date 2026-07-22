@@ -1,0 +1,18 @@
+{
+  "moduleID": ["5B"],
+  "stageIDX": [7],
+  "relOffsets": ["1880"],
+  "overrideInstruction": ["38600000"],
+  "arcOffsets": ["3286"],
+  "fileDirectoryType": [3],
+  "replacementType": [2],
+  "relReplacementType": [0],
+  "checkCategory": [
+    "Dungeon",
+    "Forest Temple",
+    "Dungeon Reward",
+    "Fused Shadow"
+  ],
+  "itemId": "Progressive_Fused_Shadow",
+  "dataCategory": ["REL", "ARC"]
+}

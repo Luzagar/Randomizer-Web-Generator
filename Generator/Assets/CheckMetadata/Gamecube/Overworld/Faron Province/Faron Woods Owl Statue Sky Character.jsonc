@@ -1,5 +1,7 @@
 {
-  "stageIDX": [ 45 ],
+  "stageIDX": [45],
   "roomIDX": 8,
-  "dataCategory": [ "Sky Book" ]
+  "checkCategory": ["Overworld", "Faron Woods", "Sky Book"],
+  "itemId": "Progressive_Sky_Book",
+  "dataCategory": ["Sky Book"]
 }

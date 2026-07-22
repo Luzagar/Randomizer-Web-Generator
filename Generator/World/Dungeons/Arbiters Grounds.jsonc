@@ -1,0 +1,245 @@
+[
+  {
+    "RoomName": "AG Entrance",
+    "Exits": [
+      {
+        "ConnectedArea": "Outside AG",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "AG Lobby",
+        "Requirements": "(Arbiters_Grounds_Small_Key,1) and Lantern and (Progressive_Clawshot or Trick.ag_entrance_chain_without_claw)",
+        "GlitchedRequirements": "(Arbiters_Grounds_Small_Key,1) and Lantern"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "AG Entrance Chest",
+        "Requirements": "CanBreakWoodenDoor and (Progressive_Clawshot or Trick.ag_entrance_chain_without_claw)",
+        "GlitchedRequirements": "CanBreakWoodenDoor"
+      }
+    ],
+    "Region": "Arbiters Grounds"
+  },
+  {
+    "RoomName": "AG Lobby",
+    "Exits": [
+      {
+        "ConnectedArea": "AG Entrance",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "AG East Wing",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "AG West Wing",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "AG After Poe Gate",
+        "Requirements": "(CanDefeatPoe and Shadow_Crystal and (Progressive_Clawshot, 1) and CanDefeatRedeadKnight and CanDefeatStalchild and CanDefeatBubble and CanDefeatGhoulRat and CanDefeatStalfos and (Arbiters_Grounds_Small_Key, 4)) or (Setting.agShortCut equals True)",
+        "GlitchedRequirements": "(CanDefeatPoe and Shadow_Crystal and (Progressive_Clawshot, 1) and CanDefeatRedeadKnight and CanDefeatStalchild and CanDefeatBubble and CanDefeatGhoulRat and CanDefeatStalfos and (Arbiters_Grounds_Small_Key, 4)) or (Setting.agShortCut equals True)"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "AG Torch Room East Chest",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "AG Torch Room West Chest",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "AG Torch Room Poe",
+        "Requirements": "Shadow_Crystal",
+        "GlitchedRequirements": "Shadow_Crystal"
+      }
+    ],
+    "Region": "Arbiters Grounds"
+  },
+  {
+    "RoomName": "AG East Wing",
+    "Exits": [
+      {
+        "ConnectedArea": "AG Lobby",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "AG East Lower Turnable Redead Chest",
+        "Requirements": "Shadow_Crystal",
+        "GlitchedRequirements": "Shadow_Crystal"
+      },
+      {
+        "CheckName": "AG East Upper Turnable Chest",
+        "Requirements": "(Arbiters_Grounds_Small_Key, 2)",
+        "GlitchedRequirements": "(Arbiters_Grounds_Small_Key, 2)"
+      },
+      {
+        "CheckName": "AG East Upper Turnable Redead Chest",
+        "Requirements": "HasDamagingItem and (Arbiters_Grounds_Small_Key, 2)",
+        "GlitchedRequirements": "HasDamagingItem and (Arbiters_Grounds_Small_Key, 2)"
+      },
+      {
+        "CheckName": "AG Ghoul Rat Room Chest",
+        "Requirements": "CanDefeatBubble and CanDefeatStalchild and CanDefeatRedeadKnight and (Arbiters_Grounds_Small_Key, 3)",
+        "GlitchedRequirements": "CanDefeatBubble and CanDefeatStalchild and CanDefeatRedeadKnight and (Arbiters_Grounds_Small_Key, 3) "
+      },
+      {
+        "CheckName": "AG East Turning Room Poe",
+        "Requirements": "Shadow_Crystal and (Progressive_Clawshot, 1)",
+        "GlitchedRequirements": "Shadow_Crystal and (Progressive_Clawshot, 1)"
+      },
+      {
+        "CheckName": "AG Hidden Wall Poe",
+        "Requirements": "Shadow_Crystal and CanDefeatRedeadKnight and (Arbiters_Grounds_Small_Key, 3)",
+        "GlitchedRequirements": "Shadow_Crystal and CanDefeatRedeadKnight and (Arbiters_Grounds_Small_Key, 3)"
+      }
+    ],
+    "Region": "Arbiters Grounds"
+  },
+  {
+    "RoomName": "AG West Wing",
+    "Exits": [
+      {
+        "ConnectedArea": "AG Lobby",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "AG West Small Chest Behind Block",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "AG West Chandelier Chest",
+        "Requirements": "((Arbiters_Grounds_Small_Key, 4) and Shadow_Crystal) or ((Shadow_Crystal or Spinner) and Trick.ag_pillar_jump)",
+        // Either coming from East Wing or doing Poe 1 Skip LJA
+        "GlitchedRequirements": "((Arbiters_Grounds_Small_Key, 4) and Shadow_Crystal) or CanDoLJA"
+      },
+      {
+        "CheckName": "AG West Stalfos West Chest",
+        "Requirements": "CanBreakWoodenDoor and (((Arbiters_Grounds_Small_Key, 4) and CanDefeatRedeadKnight and CanDefeatStalchild and CanDefeatBubble and CanDefeatGhoulRat) or ((Shadow_Crystal or Spinner) and Trick.ag_pillar_jump))",
+        "GlitchedRequirements": "CanBreakWoodenDoor and (((Arbiters_Grounds_Small_Key, 4) and CanDefeatRedeadKnight and CanDefeatStalchild and CanDefeatBubble and CanDefeatGhoulRat) or CanDoLJA)"
+      },
+      {
+        "CheckName": "AG West Stalfos Northeast Chest",
+        "Requirements": "CanBreakWoodenDoor and (((Arbiters_Grounds_Small_Key, 4) and CanDefeatRedeadKnight and CanDefeatStalchild and CanDefeatBubble and CanDefeatGhoulRat) or ((Shadow_Crystal or Spinner) and Trick.ag_pillar_jump))",
+        // Either coming from East Wing or doing Poe 1 Skip LJA
+        "GlitchedRequirements": "CanBreakWoodenDoor and (((Arbiters_Grounds_Small_Key, 4) and CanDefeatRedeadKnight and CanDefeatStalchild and CanDefeatBubble and CanDefeatGhoulRat) or CanDoLJA)"
+      },
+      {
+        "CheckName": "AG West Poe",
+        "Requirements": "Shadow_Crystal and CanSmash and (((Arbiters_Grounds_Small_Key, 4) and CanDefeatRedeadKnight and CanDefeatStalchild and CanDefeatBubble and CanDefeatGhoulRat) or ((Shadow_Crystal or Spinner) and Trick.ag_pillar_jump))",
+        // Either coming from East Wing or doing Poe 1 Skip LJA
+        "GlitchedRequirements": "Shadow_Crystal and CanSmash and (((Arbiters_Grounds_Small_Key, 4) and CanDefeatRedeadKnight and CanDefeatStalchild and CanDefeatBubble and CanDefeatGhoulRat) or CanDoLJA)"
+      }
+    ],
+    "Region": "Arbiters Grounds"
+  },
+  {
+    "RoomName": "AG After Poe Gate",
+    "Exits": [
+      {
+        "ConnectedArea": "AG Lobby",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "AG Boss Room",
+        "Requirements": "Spinner and Arbiters_Grounds_Big_Key",
+        "GlitchedRequirements": "Spinner and Arbiters_Grounds_Big_Key"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "AG Big Key Chest",
+        "Requirements": "((Arbiters_Grounds_Small_Key, 5) and (Progressive_Clawshot, 1) and Spinner and CanSmash) or ((Arbiters_Grounds_Small_Key, 4) and Shadow_Crystal and Trick.ag_bk_with_wolf)",
+        // Either going around or just doing Wolf clip.
+        "GlitchedRequirements": "(((Arbiters_Grounds_Small_Key, 5) or ((Arbiters_Grounds_Small_Key, 4) and Shadow_Crystal)) and (Progressive_Clawshot, 1) and Spinner and CanSmash)"
+      },
+      {
+        "CheckName": "AG North Turning Room Chest",
+        "Requirements": "(Progressive_Clawshot, 1)",
+        "GlitchedRequirements": "(Progressive_Clawshot, 1)"
+      },
+      {
+        "CheckName": "AG Death Sword Chest",
+        "Requirements": "CanDefeatDeathSword and (Progressive_Clawshot, 1) and CanDefeatBubble and CanDefeatStalfos and (Arbiters_Grounds_Small_Key, 5)",
+        // Either going around or just doing Wolf clip.
+        "GlitchedRequirements": "CanDefeatDeathSword and (Progressive_Clawshot, 1) and CanDefeatBubble and CanDefeatStalfos and ((Arbiters_Grounds_Small_Key, 5) or ((Arbiters_Grounds_Small_Key, 4) and Shadow_Crystal))"
+      },
+      {
+        "CheckName": "AG Spinner Room First Small Chest",
+        "Requirements": "(Progressive_Clawshot, 1) and Spinner and CanDefeatBubble and CanDefeatStalfos and (Arbiters_Grounds_Small_Key, 5)",
+        // Either going around or just doing Wolf clip.
+        "GlitchedRequirements": "(Progressive_Clawshot, 1) and Spinner and CanDefeatBubble and CanDefeatStalfos and ((Arbiters_Grounds_Small_Key, 5) or Shadow_Crystal)"
+      },
+      {
+        "CheckName": "AG Spinner Room Second Small Chest",
+        "Requirements": "(Progressive_Clawshot, 1) and Spinner and CanDefeatBubble and CanDefeatStalfos and (Arbiters_Grounds_Small_Key, 5)",
+        // Either going around or just doing Wolf clip.
+        "GlitchedRequirements": "(Progressive_Clawshot, 1) and Spinner and CanDefeatBubble and CanDefeatStalfos and ((Arbiters_Grounds_Small_Key, 5) or Shadow_Crystal)"
+      },
+      {
+        "CheckName": "AG Spinner Room Lower Central Small Chest",
+        "Requirements": "(Progressive_Clawshot, 1) and Spinner and CanDefeatBubble and CanDefeatStalfos and (Arbiters_Grounds_Small_Key, 5)",
+        // Either going around or just doing Wolf clip.
+        "GlitchedRequirements": "(Progressive_Clawshot, 1) and Spinner and CanDefeatBubble and CanDefeatStalfos and ((Arbiters_Grounds_Small_Key, 5) or Shadow_Crystal)"
+      },
+      {
+        "CheckName": "AG Spinner Room Stalfos Alcove Chest",
+        "Requirements": "(Progressive_Clawshot, 1) and Spinner and CanDefeatBubble and CanDefeatStalfos and (Arbiters_Grounds_Small_Key, 5)",
+        // Either going around or just doing Wolf clip.
+        "GlitchedRequirements": "(Progressive_Clawshot, 1) and Spinner and CanDefeatBubble and CanDefeatStalfos and ((Arbiters_Grounds_Small_Key, 5) or Shadow_Crystal)"
+      },
+      {
+        "CheckName": "AG Spinner Room Lower North Chest",
+        "Requirements": "(Progressive_Clawshot, 1) and Spinner and CanDefeatBubble and CanDefeatStalfos and (Arbiters_Grounds_Small_Key, 5)",
+        // Either going around or just doing Wolf clip.
+        "GlitchedRequirements": "(Progressive_Clawshot, 1) and Spinner and CanDefeatBubble and CanDefeatStalfos and ((Arbiters_Grounds_Small_Key, 5) or Shadow_Crystal)"
+      }
+    ],
+    "Region": "Arbiters Grounds"
+  },
+  {
+    "RoomName": "AG Boss Room",
+    "Exits": [
+      {
+        "ConnectedArea": "Mirror Chamber Lower",
+        "Requirements": "CanDefeatStallord",
+        "GlitchedRequirements": "CanDefeatStallord"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "AG Stallord Heart Container",
+        "Requirements": "CanDefeatStallord",
+        "GlitchedRequirements": "CanDefeatStallord"
+      },
+      {
+        "CheckName": "AG Stallord",
+        "Requirements": "CanDefeatStallord",
+        "GlitchedRequirements": "CanDefeatStallord"
+      },
+      {
+        "CheckName": "AG Dungeon Reward",
+        "Requirements": "CanDefeatStallord",
+        "GlitchedRequirements": "CanDefeatStallord"
+      }
+    ],
+    "Region": "Arbiters Grounds"
+  }
+]

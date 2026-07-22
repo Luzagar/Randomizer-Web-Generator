@@ -1,6 +1,0 @@
-{
-    "requirements": "CanDefeatFyrus",
-    "glitchedRequirements": "CanDefeatFyrus",
-    "checkCategory": ["Dungeon", "Goron Mines"],
-    "itemId": "Fyrus_Defeated"
-}

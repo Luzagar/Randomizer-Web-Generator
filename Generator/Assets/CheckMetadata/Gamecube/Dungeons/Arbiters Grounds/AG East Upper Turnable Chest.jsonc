@@ -1,0 +1,17 @@
+{
+  "arcOffsets": ["D14"],
+  "stageIDX": [24],
+  "roomIDX": 4,
+  "fileDirectoryType": [0],
+  "replacementType": [0],
+  "chestLowerNibble": "F",
+  "checkCategory": [
+    "Chest",
+    "Dungeon",
+    "Arbiters Grounds",
+    "Dungeon Items",
+    "Compass"
+  ],
+  "itemId": "Arbiters_Grounds_Compass",
+  "dataCategory": ["Chest", "ARC"]
+}

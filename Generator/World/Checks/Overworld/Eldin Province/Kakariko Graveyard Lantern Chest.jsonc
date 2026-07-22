@@ -1,6 +1,0 @@
-{
-    "requirements": "Lantern",
-    "glitchedRequirements": "Lantern",
-    "checkCategory": ["Overworld", "Chest", "Kakariko Graveyard"],
-    "itemId": "Purple_Rupee"
-}

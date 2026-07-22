@@ -61,6 +61,7 @@ namespace TPRandomizer.SSettings.Enums
         Any_Dungeon = 2,
         Anywhere = 3,
         Keysy = 4,
+        Overworld = 5,
     }
 
     public enum BigKeySettings
@@ -70,6 +71,7 @@ namespace TPRandomizer.SSettings.Enums
         Any_Dungeon = 2,
         Anywhere = 3,
         Keysy = 4,
+        Overworld = 5,
     }
 
     public enum MapAndCompassSettings
@@ -79,6 +81,7 @@ namespace TPRandomizer.SSettings.Enums
         Any_Dungeon = 2,
         Anywhere = 3,
         Start_With = 4,
+        Overworld = 5,
     }
 
     public enum TrapFrequency

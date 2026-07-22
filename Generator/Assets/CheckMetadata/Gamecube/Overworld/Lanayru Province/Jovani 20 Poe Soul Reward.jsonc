@@ -1,7 +1,9 @@
 {
-    "arcOffsets": ["421F"],
-    "stageIDX": [73],
-    "fileDirectoryType": [1],
-    "replacementType": [0],
-    "dataCategory": ["ARC"]
+  "arcOffsets": ["421F"],
+  "stageIDX": [73],
+  "fileDirectoryType": [1],
+  "replacementType": [0],
+  "checkCategory": ["Overworld", "Npc", "Castle Town"],
+  "itemId": "Jovani_Bottle",
+  "dataCategory": ["ARC"]
 }

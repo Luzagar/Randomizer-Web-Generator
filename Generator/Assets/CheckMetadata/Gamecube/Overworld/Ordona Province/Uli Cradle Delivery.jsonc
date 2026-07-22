@@ -1,7 +1,9 @@
 {
-    "arcOffsets": ["C8F"],
-    "stageIDX": [43],
-    "fileDirectoryType": [1],
-    "replacementType": [0],
-    "dataCategory": ["ARC"]
+  "arcOffsets": ["C8F"],
+  "stageIDX": [43],
+  "fileDirectoryType": [1],
+  "replacementType": [0],
+  "checkCategory": ["Overworld", "Ordona Province", "Npc"],
+  "itemId": "Progressive_Fishing_Rod",
+  "dataCategory": ["ARC"]
 }

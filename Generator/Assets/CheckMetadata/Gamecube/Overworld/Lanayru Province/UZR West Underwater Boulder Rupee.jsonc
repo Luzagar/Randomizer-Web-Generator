@@ -1,0 +1,10 @@
+{
+  "arcOffsets": ["277F"],
+  "stageIDX": [61],
+  "roomIDX": 0,
+  "fileDirectoryType": [0],
+  "replacementType": [0],
+  "checkCategory": ["Overworld", "Upper Zoras River", "Rupee - Hidden"],
+  "itemId": "Blue_Rupee",
+  "dataCategory": ["ARC"]
+}

@@ -1,8 +1,11 @@
 {
-    "arcOffsets": ["D80"],
-    "stageIDX": [32],
-    "roomIDX": 0,
-    "fileDirectoryType": [0],
-    "replacementType": [0],
-    "dataCategory": ["Chest", "ARC"]
+  "arcOffsets": ["D80"],
+  "stageIDX": [32],
+  "roomIDX": 0,
+  "fileDirectoryType": [0],
+  "replacementType": [0],
+  "chestLowerNibble": "5",
+  "checkCategory": ["Overworld", "Chest", "Eldin Lantern Cave"],
+  "itemId": "Piece_of_Heart",
+  "dataCategory": ["Chest", "ARC"]
 }

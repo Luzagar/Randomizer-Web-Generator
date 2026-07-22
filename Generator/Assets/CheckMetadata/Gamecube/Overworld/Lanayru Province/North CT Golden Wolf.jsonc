@@ -1,0 +1,8 @@
+{
+  "stageIDX": [53],
+  "roomIDX": 1,
+  "flag": "9F",
+  "checkCategory": ["Overworld", "Hidden Skill", "Castle Town"],
+  "itemId": "Progressive_Hidden_Skill",
+  "dataCategory": ["Hidden Skill"]
+}

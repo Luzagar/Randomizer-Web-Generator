@@ -2,6 +2,7 @@ namespace TPRandomizer.Util
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
     using TPRandomizer.Assets.CLR0;
 
     public class SettingsEncoder
@@ -277,6 +278,27 @@ namespace TPRandomizer.Util
             return list;
         }
 
+        public Dictionary<string, string> NextLogicalTricksList()
+        {
+            Dictionary<string, string> list = new();
+            List<string> tricks = LogicTricks.listOfTricks.Keys.ToList();
+
+            while (true)
+            {
+                int trickIdNum = NextInt(10);
+                if (trickIdNum >= 0 && trickIdNum < 0x3FF)
+                {
+                    list[tricks[trickIdNum]] = LogicTricks.listOfTricks[tricks[trickIdNum]];
+                }
+                else
+                {
+                    break;
+                }
+            }
+
+            return list;
+        }
+
         public UInt16 NextVlq16()
         {
             if (done || bits.Length < currentIndex + 4)
@@ -321,12 +343,7 @@ namespace TPRandomizer.Util
                 if (checkName == null)
                     break;
 
-                int itemId = NextInt(8);
-                if (itemId > 0xFF)
-                    throw new Exception(
-                        $"Failed to parse valid itemId from plando list. Value was '{itemId}'."
-                    );
-
+                int itemId = NextInt(9);
                 list.Add((checkName, (Item)itemId));
             }
 

@@ -384,9 +384,10 @@ function initTabButtons() {
   [
     'randomizationSettingsTab',
     'gameplaySettingsTab',
-    'excludedChecksTab',
+    'detailedLogicTab',
     'startingInventoryTab',
     'plandoTab',
+    'dungeonSettingsTab',
     // 'legacyTab',
   ].forEach((id) => {
     byId(id + 'Btn').addEventListener('click', genOnTabClick(id));
@@ -464,8 +465,10 @@ function onDomContentLoaded() {
   initTabButtons();
   presetsMgr.init();
 
-  setDungeonERSettings();
-  setOverworldERSettings();
+  setSettingsString();
+  // Set the "Forest" dungeon item tab to be the default one open.
+  openDungeon(event, 'Forest');
+
   // If returning back from the seed page, the browser will fill in the state.
   // This updates the string after the browser updates all of the fields to
   // their previous values.
@@ -521,6 +524,10 @@ function onDomContentLoaded() {
   $('#plandoItemSelect').select2();
 
   updatePresetsSelect();
+
+  // Update the state of the HCBK elements once everything is loaded
+  setShowCastleBKRequirements();
+
   window.initTooltipsInTree(document);
 }
 
@@ -626,6 +633,19 @@ for (
     [j].addEventListener('click', setSettingsString);
 }
 
+for (
+  var j = 0;
+  j <
+  document.getElementById('logicalTricksListbox').getElementsByTagName('input')
+    .length;
+  j++
+) {
+  document
+    .getElementById('logicalTricksListbox')
+    .getElementsByTagName('input')
+    [j].addEventListener('click', setSettingsString);
+}
+
 // Starting item checkboxes
 $('#baseImportantItemsListbox input[type="checkbox"]').each(function () {
   this.addEventListener('click', setSettingsString);
@@ -672,9 +692,43 @@ document
 document
   .getElementById('introCheckbox')
   .addEventListener('click', setSettingsString);
-document.getElementById('smallKeyFieldset').onchange = setSettingsString;
-document.getElementById('bigKeyFieldset').onchange = setSettingsString;
-document.getElementById('mapAndCompassFieldset').onchange = setSettingsString;
+document.getElementById('smallKeyFieldset').onchange = setSmallKeyValues;
+document.getElementById('bigKeyFieldset').onchange = setBigKeyValues;
+document.getElementById('mapAndCompassFieldset').onchange =
+  setMapAndCompassValues;
+document.getElementById('ftSmallKeyFieldset').onchange = setSettingsString;
+document.getElementById('gmSmallKeyFieldset').onchange = setSettingsString;
+document.getElementById('lbtSmallKeyFieldset').onchange = setSettingsString;
+document.getElementById('agSmallKeyFieldset').onchange = setSettingsString;
+document.getElementById('sprSmallKeyFieldset').onchange = setSettingsString;
+document.getElementById('totSmallKeyFieldset').onchange = setSettingsString;
+document.getElementById('citsSmallKeyFieldset').onchange = setSettingsString;
+document.getElementById('potSmallKeyFieldset').onchange = setSettingsString;
+document.getElementById('hcSmallKeyFieldset').onchange = setSettingsString;
+document.getElementById('ftBigKeyFieldset').onchange = setSettingsString;
+document.getElementById('gmBigKeyFieldset').onchange = setSettingsString;
+document.getElementById('lbtBigKeyFieldset').onchange = setSettingsString;
+document.getElementById('agBigKeyFieldset').onchange = setSettingsString;
+document.getElementById('sprBigKeyFieldset').onchange = setSettingsString;
+document.getElementById('totBigKeyFieldset').onchange = setSettingsString;
+document.getElementById('citsBigKeyFieldset').onchange = setSettingsString;
+document.getElementById('potBigKeyFieldset').onchange = setSettingsString;
+document.getElementById('hcBigKeyFieldset').onchange =
+  setShowCastleBKRequirements;
+document.getElementById('ftMapAndCompassFieldset').onchange = setSettingsString;
+document.getElementById('gmMapAndCompassFieldset').onchange = setSettingsString;
+document.getElementById('lbtMapAndCompassFieldset').onchange =
+  setSettingsString;
+document.getElementById('agMapAndCompassFieldset').onchange = setSettingsString;
+document.getElementById('sprMapAndCompassFieldset').onchange =
+  setSettingsString;
+document.getElementById('totMapAndCompassFieldset').onchange =
+  setSettingsString;
+document.getElementById('citsMapAndCompassFieldset').onchange =
+  setSettingsString;
+document.getElementById('potMapAndCompassFieldset').onchange =
+  setSettingsString;
+document.getElementById('hcMapAndCompassFieldset').onchange = setSettingsString;
 document
   .getElementById('goldenBugsCheckbox')
   .addEventListener('click', setSettingsString);
@@ -775,14 +829,17 @@ document
   .getElementById('noSmallKeysOnBossesCheckbox')
   .addEventListener('click', setSettingsString);
 document
-  .getElementById('shuffleRewardsCheckbox')
+  .getElementById('shuffleFusedShadowsCheckbox')
+  .addEventListener('click', setSettingsString);
+document
+  .getElementById('shuffleMirrorShardsCheckbox')
   .addEventListener('click', setSettingsString);
 document
   .getElementById('randomizeStartingPointCheckbox')
-  .addEventListener('click', setOverworldERSettings);
+  .addEventListener('click', setSettingsString);
 document.getElementById('iliaQuestFieldset').onchange = setSettingsString;
 document.getElementById('mirrorChamberFieldset').onchange = setSettingsString;
-document.getElementById('dungeonERFieldset').onchange = setDungeonERSettings;
+document.getElementById('dungeonERFieldset').onchange = setSettingsString;
 document
   .getElementById('unpairedEntrancesCheckbox')
   .addEventListener('click', setSettingsString);
@@ -791,6 +848,21 @@ document
   .addEventListener('click', setSettingsString);
 document
   .getElementById('freestandingRupeeCheckbox')
+  .addEventListener('click', setSettingsString);
+document
+  .getElementById('fishJournalCheckbox')
+  .addEventListener('click', setSettingsString);
+document
+  .getElementById('animalConversationsCheckbox')
+  .addEventListener('click', setSettingsString);
+document
+  .getElementById('minigameCheckbox')
+  .addEventListener('click', setSettingsString);
+document
+  .getElementById('legendaryLoachCheckbox')
+  .addEventListener('click', setSettingsString);
+document
+  .getElementById('chestSizeCheckbox')
   .addEventListener('click', setSettingsString);
 document
   .getElementById('importSettingsStringButton')
@@ -823,6 +895,55 @@ document
   .addEventListener('click', setSettingsString);
 document
   .getElementById('hintDungeonEntrancesCheckbox')
+  .addEventListener('click', setSettingsString);
+document
+  .getElementById('grottoERCheckbox')
+  .addEventListener('click', setSettingsString);
+document
+  .getElementById('caveERCheckbox')
+  .addEventListener('click', setSettingsString);
+document
+  .getElementById('oneWayERCheckbox')
+  .addEventListener('click', setSettingsString);
+document
+  .getElementById('interiorERCheckbox')
+  .addEventListener('click', setSettingsString);
+document
+  .getElementById('exteriorERCheckbox')
+  .addEventListener('click', setSettingsString);
+document
+  .getElementById('bossERCheckbox')
+  .addEventListener('click', setSettingsString);
+document
+  .getElementById('spawnGWolvesCheckbox')
+  .addEventListener('click', setSettingsString);
+document
+  .getElementById('affordableDonationsCheckbox')
+  .addEventListener('click', setSettingsString);
+document
+  .getElementById('ftShortcutCheckbox')
+  .addEventListener('click', setSettingsString);
+
+document
+  .getElementById('lbtShortcutCheckbox')
+  .addEventListener('click', setSettingsString);
+document
+  .getElementById('agShortcutCheckbox')
+  .addEventListener('click', setSettingsString);
+document
+  .getElementById('sprShortcutCheckbox')
+  .addEventListener('click', setSettingsString);
+document
+  .getElementById('citsShortcutCheckbox')
+  .addEventListener('click', setSettingsString);
+document
+  .getElementById('citsShortcutFanCheckbox')
+  .addEventListener('click', setSettingsString);
+document
+  .getElementById('potShortcutCheckbox')
+  .addEventListener('click', setSettingsString);
+document
+  .getElementById('greatSpinCheckbox')
   .addEventListener('click', setSettingsString);
 
 function importSettingsString() {
@@ -912,6 +1033,17 @@ function setMaloShopDonationValue() {
   setSettingsString();
 }
 
+function setShowCastleBKRequirements() {
+  var reqs = document.getElementById('hcBigKeyFieldset').value;
+  if (reqs != '0') {
+    document.getElementById('castleBKRequirementsFieldset').value = 0;
+    document.getElementById('castleBKRequirementsSelectGroup').hidden = true;
+    setCastleBKRequirementsSettings();
+  } else {
+    document.getElementById('castleBKRequirementsSelectGroup').hidden = false;
+  }
+}
+
 function setCastleBKRequirementsSettings() {
   var reqs = document.getElementById('castleBKRequirementsFieldset').value;
   let sliderName = 'castleBKRequirementsSlider';
@@ -988,32 +1120,121 @@ function setCastleBKRequirementsValue() {
   setSettingsString();
 }
 
-function setOverworldERSettings() {
-  var overworldEREnabled = document.getElementById(
-    'randomizeStartingPointCheckbox'
-  ).checked;
-  document.getElementById('introCheckbox').checked = overworldEREnabled;
-  document.getElementById('introCheckbox').disabled = overworldEREnabled;
+function setGeneralERSettings() {
+  // If we have any ER enabled at all, with the exception of one-way/boss ER we want to enable the option to decouple entrances,
+  // We want to skip MDH and Prologue. Otherwise, allow the settings to be changed, but disable the option to decouple entrances.
+  if (
+    !document.getElementById('interiorERCheckbox').checked &&
+    document.getElementById('dungeonERFieldset').value == 0 &&
+    !document.getElementById('grottoERCheckbox').checked &&
+    !document.getElementById('caveERCheckbox').checked &&
+    !document.getElementById('exteriorERCheckbox').checked
+  ) {
+    document.getElementById('decoupleEntrancesCheckbox').checked = false;
+    document.getElementById('decoupleEntrancesCheckbox').disabled = true;
+  } else {
+    document.getElementById('decoupleEntrancesCheckbox').disabled = false;
+  }
+
+  if (
+    !document.getElementById('interiorERCheckbox').checked &&
+    document.getElementById('dungeonERFieldset').value == 0 &&
+    !document.getElementById('grottoERCheckbox').checked &&
+    !document.getElementById('caveERCheckbox').checked &&
+    !document.getElementById('oneWayERCheckbox').checked &&
+    !document.getElementById('exteriorERCheckbox').checked &&
+    !document.getElementById('bossERCheckbox').checked
+  ) {
+    document.getElementById('mdhCheckbox').disabled = false;
+    document.getElementById('introCheckbox').disabled = false;
+  } else {
+    document.getElementById('mdhCheckbox').checked = true;
+    document.getElementById('mdhCheckbox').disabled = true;
+    document.getElementById('introCheckbox').checked = true;
+    document.getElementById('introCheckbox').disabled = true;
+  }
+
+  // If dungeon ER or interior ER are enabled, we want to allow the option to unpair entrances.
+  if (
+    document.getElementById('dungeonERFieldset').value != 0 ||
+    document.getElementById('interiorERCheckbox').checked
+  ) {
+    document.getElementById('unpairedEntrancesCheckbox').disabled = false;
+  } else {
+    document.getElementById('unpairedEntrancesCheckbox').checked = false;
+    document.getElementById('unpairedEntrancesCheckbox').disabled = true;
+  }
+
+  // If overworld ER is enabled, we want to skip the twilights
+  if (!document.getElementById('exteriorERCheckbox').checked) {
+    document.getElementById('faronTwilightCheckbox').disabled = false;
+    document.getElementById('eldinTwilightCheckbox').disabled = false;
+    document.getElementById('lanayruTwilightCheckbox').disabled = false;
+  } else {
+    document.getElementById('faronTwilightCheckbox').disabled = true;
+    document.getElementById('eldinTwilightCheckbox').disabled = true;
+    document.getElementById('lanayruTwilightCheckbox').disabled = true;
+    document.getElementById('faronTwilightCheckbox').checked = true;
+    document.getElementById('eldinTwilightCheckbox').checked = true;
+    document.getElementById('lanayruTwilightCheckbox').checked = true;
+  }
+
+  // If cave ER is enabled, we want to skip Faron Twilight
+  if (!document.getElementById('caveERCheckbox').checked) {
+    document.getElementById('faronTwilightCheckbox').disabled = false;
+  } else {
+    document.getElementById('faronTwilightCheckbox').disabled = true;
+    document.getElementById('faronTwilightCheckbox').checked = true;
+  }
+}
+
+function setSmallKeyValues() {
+  const smallKeyValue = document.getElementById('smallKeyFieldset').value;
+  document.getElementById('ftSmallKeyFieldset').value = smallKeyValue;
+  document.getElementById('gmSmallKeyFieldset').value = smallKeyValue;
+  document.getElementById('lbtSmallKeyFieldset').value = smallKeyValue;
+  document.getElementById('agSmallKeyFieldset').value = smallKeyValue;
+  document.getElementById('sprSmallKeyFieldset').value = smallKeyValue;
+  document.getElementById('totSmallKeyFieldset').value = smallKeyValue;
+  document.getElementById('citsSmallKeyFieldset').value = smallKeyValue;
+  document.getElementById('potSmallKeyFieldset').value = smallKeyValue;
+  document.getElementById('hcSmallKeyFieldset').value = smallKeyValue;
+
   setSettingsString();
 }
 
-function setDungeonERSettings() {
-  if (document.getElementById('dungeonERFieldset').value != 0) {
-    document.getElementById('mdhCheckbox').checked = true;
-    document.getElementById('mdhCheckbox').disabled = true;
-    document.getElementById('unpairedEntrancesCheckbox').disabled = false;
-    document.getElementById('decoupleEntrancesCheckbox').disabled = false;
-  } else {
-    document.getElementById('mdhCheckbox').disabled = false;
-    document.getElementById('unpairedEntrancesCheckbox').checked = false;
-    document.getElementById('decoupleEntrancesCheckbox').checked = false;
-    document.getElementById('unpairedEntrancesCheckbox').disabled = true;
-    document.getElementById('decoupleEntrancesCheckbox').disabled = true;
-  }
+function setBigKeyValues() {
+  const values = document.getElementById('bigKeyFieldset').value;
+  document.getElementById('ftBigKeyFieldset').value = values;
+  document.getElementById('gmBigKeyFieldset').value = values;
+  document.getElementById('lbtBigKeyFieldset').value = values;
+  document.getElementById('agBigKeyFieldset').value = values;
+  document.getElementById('sprBigKeyFieldset').value = values;
+  document.getElementById('totBigKeyFieldset').value = values;
+  document.getElementById('citsBigKeyFieldset').value = values;
+  document.getElementById('potBigKeyFieldset').value = values;
+  document.getElementById('hcBigKeyFieldset').value = values;
+
+  setSettingsString();
+}
+
+function setMapAndCompassValues() {
+  const values = document.getElementById('mapAndCompassFieldset').value;
+  document.getElementById('ftMapAndCompassFieldset').value = values;
+  document.getElementById('gmMapAndCompassFieldset').value = values;
+  document.getElementById('lbtMapAndCompassFieldset').value = values;
+  document.getElementById('agMapAndCompassFieldset').value = values;
+  document.getElementById('sprMapAndCompassFieldset').value = values;
+  document.getElementById('totMapAndCompassFieldset').value = values;
+  document.getElementById('citsMapAndCompassFieldset').value = values;
+  document.getElementById('potMapAndCompassFieldset').value = values;
+  document.getElementById('hcMapAndCompassFieldset').value = values;
+
   setSettingsString();
 }
 
 function setSettingsString() {
+  setGeneralERSettings();
   const combinedSettingsString = window.tpr.shared.genSSettingsFromUi();
   document.getElementById('combinedSettingsString').textContent =
     combinedSettingsString;
@@ -1397,6 +1618,26 @@ function genExcludedChecksBits() {
     .each(function () {
       if ($(this).prop('checked')) {
         const itemId = parseInt($(this).attr('data-checkId'), 10);
+        bits += toPaddedBits(itemId, 9);
+      }
+    });
+
+  bits += '111111111';
+
+  return {
+    type: RawSettingType.bitString,
+    bitString: bits,
+  };
+}
+
+function genlogicalTricksBits() {
+  let bits = '';
+
+  $('#logicalTricksListbox')
+    .find('input[type="checkbox"]')
+    .each(function () {
+      if ($(this).prop('checked')) {
+        const itemId = parseInt($(this).attr('data-trickId'), 10);
         bits += toPaddedBits(itemId, 9);
       }
     });
@@ -2144,6 +2385,7 @@ function populateFromSettingsString(settingsString) {
   }
 
   setSettingsString();
+  setShowCastleBKRequirements();
 
   return null;
 }
@@ -2286,8 +2528,9 @@ function populateSSettings(s) {
   window.tpr.shared.uncheckCheckboxes([
     'randomizationSettingsTab',
     'gameplaySettingsTab',
-    'excludedChecksTab',
+    'detailedLogicTab',
     'startingInventoryTab',
+    'dungeonSettingsTab',
   ]);
   window.tpr.shared.setSlidersToMin(['startingInventoryTab']);
 
@@ -2301,9 +2544,33 @@ function populateSSettings(s) {
   $('#poeSettingsFieldset').val(s.poes);
   $('#shopItemsCheckbox').prop('checked', s.shopItems);
   $('#hiddenSkillsCheckbox').prop('checked', s.hiddenSkills);
-  $('#smallKeyFieldset').val(s.smallKeys);
-  $('#bigKeyFieldset').val(s.bigKeys);
-  $('#mapAndCompassFieldset').val(s.mapsAndCompasses);
+  $('#ftSmallKeyFieldset').val(s.ftSmallKeys);
+  $('#gmSmallKeyFieldset').val(s.gmSmallKeys);
+  $('#lbtSmallKeyFieldset').val(s.lbtSmallKeys);
+  $('#agSmallKeyFieldset').val(s.agSmallKeys);
+  $('#sprSmallKeyFieldset').val(s.sprSmallKeys);
+  $('#totSmallKeyFieldset').val(s.totSmallKeys);
+  $('#citsSmallKeyFieldset').val(s.citsSmallKeys);
+  $('#potSmallKeyFieldset').val(s.potSmallKeys);
+  $('#hcSmallKeyFieldset').val(s.hcSmallKeys);
+  $('#ftBigKeyFieldset').val(s.ftBigKey);
+  $('#gmBigKeyFieldset').val(s.gmBigKeys);
+  $('#lbtBigKeyFieldset').val(s.lbtBigKey);
+  $('#agBigKeyFieldset').val(s.agBigKey);
+  $('#sprBigKeyFieldset').val(s.sprBigKey);
+  $('#totBigKeyFieldset').val(s.totBigKey);
+  $('#citsBigKeyFieldset').val(s.citsBigKey);
+  $('#potBigKeyFieldset').val(s.potBigKey);
+  $('#hcBigKeyFieldset').val(s.hcBigKey);
+  $('#ftMapAndCompassFieldset').val(s.ftMapAndCompass);
+  $('#gmMapAndCompassFieldset').val(s.gmMapAndCompass);
+  $('#lbtMapAndCompassFieldset').val(s.lbtMapAndCompass);
+  $('#agMapAndCompassFieldset').val(s.agMapAndCompass);
+  $('#sprMapAndCompassFieldset').val(s.sprMapAndCompass);
+  $('#totMapAndCompassFieldset').val(s.totMapAndCompass);
+  $('#citsMapAndCompassFieldset').val(s.citsMapAndCompass);
+  $('#potMapAndCompassFieldset').val(s.potMapAndCompass);
+  $('#hcMapAndCompassFieldset').val(s.hcMapAndCompass);
   $('#introCheckbox').prop('checked', s.skipIntro);
   $('#faronTwilightCheckbox').prop('checked', s.faronTwilightCleared);
   $('#eldinTwilightCheckbox').prop('checked', s.eldinTwilightCleared);
@@ -2332,7 +2599,8 @@ function populateSSettings(s) {
   $('#itemScarcityFieldset').val(s.itemScarcity);
   $('#damageMagFieldset').val(s.damageMagnification);
   $('#bonksDoDamageCheckbox').prop('checked', s.bonksDoDamage);
-  $('#shuffleRewardsCheckbox').prop('checked', s.shuffleRewards);
+  $('#shuffleFusedShadowsCheckbox').prop('checked', s.shuffleFusedShadows);
+  $('#shuffleMirrorShardsCheckbox').prop('checked', s.shuffleMirrorShards);
   $('#openMapCheckbox').prop('checked', s.openMap);
   $('#spinnerSpeedCheckbox').prop('checked', s.increaseSpinnerSpeed);
   $('#openDotCheckbox').prop('checked', s.openDot);
@@ -2365,11 +2633,39 @@ function populateSSettings(s) {
     s.adjustHintsForCompletionists
   );
   $('#hintDungeonEntrancesCheckbox').prop('checked', s.hintDungeonEntrances);
+  $('#fishJournalCheckbox').prop('checked', s.fishJournals);
+  $('#legendaryLoachCheckbox').prop('checked', s.legendaryLoach);
+  $('#chestSizeCheckbox').prop('checked', s.chestSize);
+  $('#grottoERCheckbox').prop('checked', s.grottoER);
+  $('#caveERCheckbox').prop('checked', s.caveER);
+  $('#oneWayERCheckbox').prop('checked', s.oneWayER);
+  $('#interiorERCheckbox').prop('checked', s.interiorER);
+  $('#exteriorERCheckbox').prop('checked', s.exteriorER);
+  $('#bossERCheckbox').prop('checked', s.bossER);
+  $('#animalConversationsCheckbox').prop('checked', s.animalConversations);
+  $('#spawnGWolvesCheckbox').prop('checked', s.spawnGWolves);
+  $('#minigameCheckbox').prop('checked', s.shuffleMinigames);
+  $('#affordableDonationsCheckbox').prop('checked', s.affordableDonations);
+  $('#ftShortcutCheckbox').prop('checked', s.ftShortcut);
+  $('#lbtShortcutCheckbox').prop('checked', s.lbtShortcut);
+  $('#agShortcutCheckbox').prop('checked', s.agShortcut);
+  $('#sprShortcutCheckbox').prop('checked', s.sprShortcut);
+  $('#citsShortcutCheckbox').prop('checked', s.citsShortcut);
+  $('#citsShortcutFanCheckbox').prop('checked', s.citsFanShortcut);
+  $('#potShortcutCheckbox').prop('checked', s.potShortcut);
+  $('#greatSpinCheckbox').prop('checked', s.alwaysGreatSpin);
 
   const $excludedChecksParent = $('#baseExcludedChecksListbox');
   s.excludedChecks.forEach((checkNumId) => {
     $excludedChecksParent
-      .find(`input[data-checkid="${checkNumId}"`)
+      .find(`input[data-checkId="${checkNumId}"`)
+      .prop('checked', true);
+  });
+
+  const $logicalTricksParent = $('#logicalTricksListbox');
+  s.logicalTricks.forEach((logicalTrickID) => {
+    $logicalTricksParent
+      .find(`input[data-trickId="${logicalTrickID}"`)
       .prop('checked', true);
   });
 
@@ -2560,4 +2856,27 @@ function updatePresetsSelect(defaultToValue) {
   if (defaultToValue) {
     $select.val(defaultToValue).trigger('change');
   }
+}
+
+function openDungeon(evt, dungeonName) {
+  // Declare all variables
+  var i, tabcontent, tablinks;
+
+  // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName('dungeonTabcontent');
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = 'none';
+  }
+
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName('dungeonTablinks');
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(' active', '');
+  }
+
+  // Show the current tab, and add an "active" class to the button that opened the tab
+  document.getElementById(dungeonName).style.display = 'flex';
+  document.getElementById(dungeonName).className =
+    'dungeonTabcontent tabcontentactive';
+  evt.currentTarget.className += ' active';
 }

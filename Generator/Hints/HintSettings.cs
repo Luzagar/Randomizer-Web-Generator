@@ -28,7 +28,7 @@ namespace TPRandomizer.Hints.Settings
                 "Lanayru Ice Block Puzzle Cave Chest",
                 "Goron Springwater Rush",
                 "Plumm Fruit Balloon Minigame",
-                "Palace of Twilight Collect Both Sols"
+                "PoT Collect Both Sols"
             };
 
             Dictionary<string, Func<HintGenData, bool>> conditionalAlways =
@@ -107,7 +107,7 @@ namespace TPRandomizer.Hints.Settings
                 "Sacred Grove Spinner Chest",
                 "Faron Field Bridge Chest",
                 "Eldin Lantern Cave Lantern Chest",
-                "Kakariko Gorge Double Clawshot Chest",
+                "Kak Gorge Double Clawshot Chest",
                 "Eldin Spring Underwater Chest",
                 // "Kakariko Village Bomb Rock Spire Heart Piece", // takes slot for better hints
                 // "Kakariko Village Malo Mart Hawkeye",
@@ -122,28 +122,28 @@ namespace TPRandomizer.Hints.Settings
                 "Lanayru Field Behind Gate Underwater Chest",
                 "Lanayru Field Skulltula Grotto Chest",
                 "Lanayru Field Spinner Track Chest",
-                "Outside South Castle Town Fountain Chest",
-                "Outside South Castle Town Tightrope Chest",
+                "OCT South Fountain Chest",
+                "OCT South Tightrope Chest",
                 "STAR Prize 2",
                 "Lake Hylia Underwater Chest",
                 "Lake Hylia Shell Blade Grotto Chest",
                 "Lanayru Spring Back Room Lantern Chest",
-                "Zoras Domain Extinguish All Torches Chest",
-                "Zoras Domain Light All Torches Chest",
-                "Zoras Domain Underwater Goron",
-                "Gerudo Desert Rock Grotto Lantern Chest",
-                "Outside Arbiters Grounds Lantern Chest",
+                "ZD Extinguish All Torches Chest",
+                "ZD Light All Torches Chest",
+                "ZD Underwater Goron",
+                "Desert Rock Grotto Lantern Chest",
+                "Outside AG Lantern Chest",
                 "Snowboard Racing Prize",
                 // "Snowpeak Cave Ice Lantern Chest", // Seemed kind of worthless when it showed up
-                "Forest Temple Gale Boomerang",
+                "FT Gale Boomerang",
                 // This saves you a little time, but it is nowhere near as
                 // helpful as an easily isolated check like Bomskit grotto.
                 // "Lakebed Temple Deku Toad Chest",
-                "Arbiters Grounds Death Sword Chest",
+                "AG Death Sword Chest",
                 // This saves you a little time, but it is nowhere near as
                 // helpful as an easily isolated check like Bomskit grotto.
                 // "Snowpeak Ruins Chapel Chest",
-                "City in The Sky Aeralfos Chest",
+                "CitS Aeralfos Chest",
             };
 
             // TODO: Filter out certain sometimes hints if they are sphere0

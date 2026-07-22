@@ -15,10 +15,15 @@ namespace TPRandomizer
         Boss_Reverse,
         Dungeon,
         Dungeon_Reverse,
+        Grotto,
+        Grotto_Reverse,
         Cave,
         Cave_Reverse,
-        Door,
-        Door_Reverse,
+        Interior,
+        Interior_Reverse,
+        One_Way,
+        Exterior,
+        Exterior_Reverse,
         Misc,
         Misc_Reverse,
         Mixed,
@@ -246,6 +251,26 @@ namespace TPRandomizer
             else if (entranceType == "Paired")
             {
                 Type = EntranceType.Paired;
+            }
+            else if (entranceType == "Grotto")
+            {
+                Type = EntranceType.Grotto;
+            }
+            else if (entranceType == "Interior")
+            {
+                Type = EntranceType.Interior;
+            }
+            else if (entranceType == "Exterior")
+            {
+                Type = EntranceType.Exterior;
+            }
+            else if (entranceType == "Cave")
+            {
+                Type = EntranceType.Cave;
+            }
+            else if (entranceType == "One-Way")
+            {
+                Type = EntranceType.One_Way;
             }
         }
 
@@ -504,6 +529,124 @@ namespace TPRandomizer
                 vanillaEntranceTypes.Add(EntranceType.Dungeon);
             }
 
+            if (Randomizer.SSettings.shuffleGrottoEntrances)
+            {
+                // If we are grotto entrances, loop through the entrance table and make note of all of the grotto entrances and add them to the pool.
+                newEntrancePools.Add(
+                    EntranceType.Grotto,
+                    GetShufflableEntrances(EntranceType.Grotto, true)
+                );
+
+                if (Randomizer.SSettings.decoupleEntrances)
+                {
+                    newEntrancePools.Add(
+                        EntranceType.Grotto_Reverse,
+                        GetReverseEntrances(newEntrancePools, EntranceType.Grotto)
+                    );
+                    typesToDecouple.Add(EntranceType.Grotto);
+                    typesToDecouple.Add(EntranceType.Grotto_Reverse);
+                }
+            }
+            else
+            {
+                vanillaEntranceTypes.Add(EntranceType.Grotto);
+            }
+
+            if (Randomizer.SSettings.shuffleCaveEntrances)
+            {
+                // If we are cave entrances, loop through the entrance table and make note of all of the cave entrances and add them to the pool.
+                newEntrancePools.Add(
+                    EntranceType.Cave,
+                    GetShufflableEntrances(EntranceType.Cave, true)
+                );
+
+                if (Randomizer.SSettings.decoupleEntrances)
+                {
+                    newEntrancePools.Add(
+                        EntranceType.Cave_Reverse,
+                        GetReverseEntrances(newEntrancePools, EntranceType.Cave)
+                    );
+                    typesToDecouple.Add(EntranceType.Cave);
+                    typesToDecouple.Add(EntranceType.Cave_Reverse);
+                }
+            }
+            else
+            {
+                vanillaEntranceTypes.Add(EntranceType.Cave);
+            }
+
+            if (Randomizer.SSettings.shuffleOneWayEntrances)
+            {
+                // If we are One Way entrances, loop through the entrance table and make note of all of the One Way entrances and add them to the pool.
+                newEntrancePools.Add(
+                    EntranceType.One_Way,
+                    GetShufflableEntrances(EntranceType.One_Way, true)
+                );
+            }
+            else
+            {
+                vanillaEntranceTypes.Add(EntranceType.One_Way);
+            }
+
+            if (Randomizer.SSettings.shuffleBossEntrances)
+            {
+                // If we are shuffling Boss entrances, loop through the entrance table and make note of all of the Boss entrances and add them to the pool.
+                newEntrancePools.Add(
+                    EntranceType.Boss,
+                    GetShufflableEntrances(EntranceType.Boss, true)
+                );
+            }
+            else
+            {
+                vanillaEntranceTypes.Add(EntranceType.Boss);
+            }
+
+            if (Randomizer.SSettings.shuffleInteriorEntrances)
+            {
+                // If we are interior entrances, loop through the entrance table and make note of all of the interior entrances and add them to the pool.
+                newEntrancePools.Add(
+                    EntranceType.Interior,
+                    GetShufflableEntrances(EntranceType.Interior, true)
+                );
+
+                if (Randomizer.SSettings.decoupleEntrances)
+                {
+                    newEntrancePools.Add(
+                        EntranceType.Interior_Reverse,
+                        GetReverseEntrances(newEntrancePools, EntranceType.Interior)
+                    );
+                    typesToDecouple.Add(EntranceType.Interior);
+                    typesToDecouple.Add(EntranceType.Interior_Reverse);
+                }
+            }
+            else
+            {
+                vanillaEntranceTypes.Add(EntranceType.Interior);
+            }
+
+            if (Randomizer.SSettings.shuffleExteriorEntrances)
+            {
+                // If we are Exterior entrances, loop through the entrance table and make note of all of the Exterior entrances and add them to the pool.
+                newEntrancePools.Add(
+                    EntranceType.Exterior,
+                    GetShufflableEntrances(EntranceType.Exterior, true)
+                );
+
+                if (Randomizer.SSettings.decoupleEntrances)
+                {
+                    newEntrancePools.Add(
+                        EntranceType.Exterior_Reverse,
+                        GetReverseEntrances(newEntrancePools, EntranceType.Exterior)
+                    );
+                    typesToDecouple.Add(EntranceType.Exterior);
+                    typesToDecouple.Add(EntranceType.Exterior_Reverse);
+                }
+            }
+            else
+            {
+                vanillaEntranceTypes.Add(EntranceType.Exterior);
+            }
+
             // Set marked entrance types as decoupled
             foreach (EntranceType type in typesToDecouple)
             {
@@ -526,7 +669,7 @@ namespace TPRandomizer
                         assumedForward.BindTwoWay(assumedReturn);
                     }
 
-                    ChangeConnections(vanillaEntrance, assumedForward);
+                    ChangeConnections(vanillaEntrance, assumedForward, false);
                     ConfirmReplacement(vanillaEntrance, assumedForward);
                 }
             }
@@ -667,9 +810,9 @@ namespace TPRandomizer
                     {
                         shufflableEntrances.EntranceList.Add(entrance);
                         // DEBUG
-                        Console.WriteLine(
+                        /*Console.WriteLine(
                             "Entrance: " + entrance.GetOriginalName() + " is able to be randomized"
-                        );
+                        );*/
                     }
                 }
             }
@@ -697,14 +840,17 @@ namespace TPRandomizer
             return reversePool;
         }
 
-        void ChangeConnections(Entrance entrance, Entrance targetEntrance)
+        void ChangeConnections(Entrance entrance, Entrance targetEntrance, bool showDebug = false)
         {
-            Console.WriteLine(
-                "Changing connections for "
-                    + entrance.GetOriginalName()
-                    + " and "
-                    + targetEntrance.GetOriginalName()
-            );
+            if (showDebug)
+            {
+                Console.WriteLine(
+                    "Changing connections for "
+                        + entrance.GetOriginalName()
+                        + " and "
+                        + targetEntrance.GetOriginalName()
+                );
+            }
             entrance.Connect(targetEntrance.Disconnect());
             entrance.SetReplacedEntrance(targetEntrance.GetReplacedEntrance());
             if ((entrance.GetReverse() != null) && !entrance.IsDecoupled())
@@ -992,7 +1138,7 @@ namespace TPRandomizer
 
         EntranceShuffleError ValidateWorld()
         {
-            if (!BackendFunctions.ValidatePlaythrough(Randomizer.Rooms.RoomDict["Root"], true))
+            if (!BackendFunctions.ValidatePlaythrough(Randomizer.Rooms.RoomDict["Root"], false))
             {
                 return EntranceShuffleError.ALL_LOCATIONS_NOT_REACHABLE;
             }
@@ -1142,7 +1288,7 @@ namespace TPRandomizer
                 if (pairedEntrance.GetParentArea().Contains(dungeon))
                 {
                     roomName = dungeon;
-                    if (dungeon == "Snowpeak Ruins")
+                    if (dungeon == "SPR")
                     {
                         roomName += " Left Door";
                     }
@@ -1194,9 +1340,8 @@ namespace TPRandomizer
 
         void ShuffleSpecialEntrances()
         {
-            bool shuffleBossRooms = false;
             if (
-                shuffleBossRooms
+                Randomizer.SSettings.shuffleBossEntrances
                 || (Randomizer.SSettings.shuffleDungeonEntrances != SSettings.Enums.DungeonER.Off)
             )
             {
@@ -1204,13 +1349,13 @@ namespace TPRandomizer
                 List<string> bossRooms =
                     new()
                     {
-                        "Forest Temple Boss Room",
-                        "Goron Mines Boss Room",
-                        "Lakebed Temple Boss Room",
-                        "Snowpeak Ruins Boss Room",
-                        "Temple of Time Boss Room",
-                        "City in The Sky Boss Room",
-                        "Palace of Twilight Boss Room"
+                        "FT Boss Room",
+                        "GM Boss Room",
+                        "LBT Boss Room",
+                        "SPR Boss Room",
+                        "ToT Boss Room",
+                        "CitS Boss Room",
+                        "PoT Boss Room"
                     };
                 foreach (string bossRoomName in bossRooms)
                 {
@@ -1248,7 +1393,7 @@ namespace TPRandomizer
                 == SSettings.Enums.MirrorChamberEntrance.Closed
             )
             {
-                string bossRoomName = "Arbiters Grounds Boss Room";
+                string bossRoomName = "AG Boss Room";
                 Entrance bossEntrance = Randomizer.Rooms.RoomDict[bossRoomName].Exits[0];
                 Entrance newEntrance = GetDungeonEntrance(
                         GetReverseConnectionEntrance(bossRoomName)[0]
@@ -1283,7 +1428,7 @@ namespace TPRandomizer
 
                     //TODO: Once we randomize bosses, we will need to come back and make this dynamic so it checks for any connected boss requirements and add that requirement to the input json and seed header. Just saving myself some work right now.
                     Randomizer.Rooms.RoomDict["Mirror Chamber Lower"].Exits[0].Requirements +=
-                        " and CanDefeatStallord and Room.Arbiters_Grounds_Boss_Room";
+                        " and CanDefeatStallord and Room.AG_Boss_Room";
                     Randomizer.Rooms.RoomDict["Mirror Chamber Lower"].Exits[0].reqsCache = null;
                     break;
                 }
@@ -1292,7 +1437,7 @@ namespace TPRandomizer
                     // Mirror Chamber Lower and AG Boss door always lead to the same place.
                     Randomizer.Rooms.RoomDict["Mirror Chamber Lower"].Exits[0].SetAsShuffled();
                     Randomizer.Rooms.RoomDict["Mirror Chamber Lower"].Exits[0].SetReplacedEntrance(
-                        Randomizer.Rooms.RoomDict["Arbiters Grounds After Poe Gate"].Exits[1]
+                        Randomizer.Rooms.RoomDict["AG After Poe Gate"].Exits[1]
                     );
                     break;
                 }

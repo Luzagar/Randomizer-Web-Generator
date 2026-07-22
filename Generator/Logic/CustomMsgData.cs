@@ -218,10 +218,10 @@ namespace TPRandomizer
                     { "Charlo Donation Blessing", false },
                     { "Fishing Hole Bottle", false },
                     { "Coro Bottle", true },
-                    { "Castle Town Goron Shop Red Potion", true },
-                    { "Castle Town Goron Shop Lantern Oil", true },
-                    { "Castle Town Goron Shop Arrow Refill", true },
-                    { "Castle Town Goron Shop Hylian Shield", true },
+                    { "CT Goron Shop Red Potion", true },
+                    { "CT Goron Shop Lantern Oil", true },
+                    { "CT Goron Shop Arrow Refill", true },
+                    { "CT Goron Shop Hylian Shield", true },
                 };
             public List<HintSpot> hintSpots { get; private set; } = new();
 
@@ -423,7 +423,7 @@ namespace TPRandomizer
                 )
             );
 
-            // ----- Kakariko Malo Mart -----
+            // ----- Kak Malo Mart -----
 
             // Note that the Hawkeye soldOut sign is used as a comingSoon sign.
             // We only show the itemName on the sign if updateShopText is true.
@@ -432,7 +432,7 @@ namespace TPRandomizer
                 new() { { "context", updateShopText ? "item" : "" } }
             );
             Item hawkeyeItem = updateShopText
-                ? HintUtils.getCheckContents("Kakariko Village Malo Mart Hawkeye")
+                ? HintUtils.getCheckContents("Kak Village Malo Mart Hawkeye")
                 : Item.Hawkeye;
             if (HintUtils.IsTrapItem(hawkeyeItem))
                 hawkeyeItem = Item.Hawkeye;
@@ -496,7 +496,7 @@ namespace TPRandomizer
                 )
             );
 
-            // ----- Castle Town Gorons -----
+            // ----- CT Gorons -----
 
             // Hylian Shield Goron
             builder.AddBranchPatch(
@@ -546,7 +546,7 @@ namespace TPRandomizer
                             Node.br_CtGoronRedPotionStartNode,
                             null,
                             queryIndex: QueryIdx.query001_isEventBit,
-                            // F_0816 = 0x6340, // Custom Rando Flag - Bought Red Potion from Castle Town Goron
+                            // F_0816 = 0x6340, // Custom Rando Flag - Bought Red Potion from CT Goron
                             // Found at index 0x330 in `dSv_event_flag_c::saveBitLabels`
                             parameters: 0x330
                         ),
@@ -578,7 +578,7 @@ namespace TPRandomizer
                             Node.br_CtGoronLanternOilStartNode,
                             null,
                             queryIndex: QueryIdx.query001_isEventBit,
-                            // F_0817 = 0x6320, // Custom Rando Flag - Bought Lantern Oil from Castle Town Goron
+                            // F_0817 = 0x6320, // Custom Rando Flag - Bought Lantern Oil from CT Goron
                             // Found at index 0x331 in `dSv_event_flag_c::saveBitLabels`
                             parameters: 0x331
                         ),
@@ -617,7 +617,7 @@ namespace TPRandomizer
                             Node.br_CtGoronArrowsCheckTmpBitPostMdh,
                             null,
                             queryIndex: QueryIdx.query001_isEventBit,
-                            // F_0818 = 0x6310, // Custom Rando Flag - Bought Arrows from Castle Town Goron
+                            // F_0818 = 0x6310, // Custom Rando Flag - Bought Arrows from CT Goron
                             // Found at index 0x332 in `dSv_event_flag_c::saveBitLabels`
                             parameters: 0x332
                         ),
@@ -648,7 +648,7 @@ namespace TPRandomizer
                 );
             }
 
-            // ----- Castle Town Malo Mart -----
+            // ----- CT Malo Mart -----
 
             builder.AddStrReplacement(
                 StrRepl.Public(
@@ -1667,20 +1667,20 @@ namespace TPRandomizer
             uint kakMaloHawkeyePrice = 100;
             AddShopSlotMsg(
                 Node.msg_KakMaloMartHawkeyeSlot,
-                "Kakariko Village Malo Mart Hawkeye",
+                "Kak Village Malo Mart Hawkeye",
                 Item.Hawkeye,
                 kakMaloHawkeyePrice
             );
             AddShopCantAffordMsg(
                 Node.msg_KakMaloMartHawkeyeCantAfford,
-                "Kakariko Village Malo Mart Hawkeye",
+                "Kak Village Malo Mart Hawkeye",
                 Item.Hawkeye,
                 kakMaloHawkeyePrice,
                 "kak-malo"
             );
             AddShopConfirmationMsg(
                 Node.msg_KakMaloMartHawkeyeConfirmation,
-                "Kakariko Village Malo Mart Hawkeye",
+                "Kak Village Malo Mart Hawkeye",
                 Item.Hawkeye,
                 kakMaloHawkeyePrice,
                 "kak-malo"
@@ -1689,20 +1689,20 @@ namespace TPRandomizer
             uint kakMaloWoodenShieldPrice = 50;
             AddShopSlotMsg(
                 Node.msg_KakMaloMartWoodenShieldSlot,
-                "Kakariko Village Malo Mart Wooden Shield",
+                "Kak Village Malo Mart Wooden Shield",
                 Item.Wooden_Shield,
                 kakMaloWoodenShieldPrice
             );
             AddShopCantAffordMsg(
                 Node.msg_KakMaloMartWoodenShieldCantAfford,
-                "Kakariko Village Malo Mart Wooden Shield",
+                "Kak Village Malo Mart Wooden Shield",
                 Item.Wooden_Shield,
                 kakMaloWoodenShieldPrice,
                 "kak-malo"
             );
             AddShopConfirmationMsg(
                 Node.msg_KakMaloMartWoodenShieldConfirmation,
-                "Kakariko Village Malo Mart Wooden Shield",
+                "Kak Village Malo Mart Wooden Shield",
                 Item.Wooden_Shield,
                 kakMaloWoodenShieldPrice,
                 "kak-malo"
@@ -1711,21 +1711,21 @@ namespace TPRandomizer
             uint kakMaloHylianShieldPrice = 200;
             AddShopSlotMsg(
                 Node.msg_KakMaloMartHylianShieldSlot,
-                "Kakariko Village Malo Mart Hylian Shield",
+                "Kak Village Malo Mart Hylian Shield",
                 Item.Hylian_Shield,
                 kakMaloHylianShieldPrice,
                 "kak-malo-right"
             );
             AddShopCantAffordMsg(
                 Node.msg_KakMaloMartHylianShieldCantAfford,
-                "Kakariko Village Malo Mart Hylian Shield",
+                "Kak Village Malo Mart Hylian Shield",
                 Item.Hylian_Shield,
                 kakMaloHylianShieldPrice,
                 "kak-malo"
             );
             AddShopConfirmationMsg(
                 Node.msg_KakMaloMartHylianShieldConfirmation,
-                "Kakariko Village Malo Mart Hylian Shield",
+                "Kak Village Malo Mart Hylian Shield",
                 Item.Hylian_Shield,
                 kakMaloHylianShieldPrice,
                 "kak-malo"
@@ -1734,30 +1734,30 @@ namespace TPRandomizer
             uint kakMaloRedPotionPrice = 30;
             AddShopSlotMsg(
                 Node.msg_KakMaloMartRedPotionSlot,
-                "Kakariko Village Malo Mart Red Potion",
+                "Kak Village Malo Mart Red Potion",
                 Item.Red_Potion_Shop,
                 kakMaloRedPotionPrice
             );
             AddShopCantAffordMsg(
                 Node.msg_KakMaloMartRedPotionCantAfford,
-                "Kakariko Village Malo Mart Red Potion",
+                "Kak Village Malo Mart Red Potion",
                 Item.Red_Potion_Shop,
                 kakMaloRedPotionPrice,
                 "kak-malo"
             );
             AddShopConfirmationMsg(
                 Node.msg_KakMaloMartRedPotionConfirmation,
-                "Kakariko Village Malo Mart Red Potion",
+                "Kak Village Malo Mart Red Potion",
                 Item.Red_Potion_Shop,
                 kakMaloRedPotionPrice,
                 "kak-malo"
             );
 
-            // ----- Castle Town Malo Mart -----
+            // ----- CT Malo Mart -----
 
             AddShopSlotMsg(
                 Node.msg_ChudleysFineGoodsMagicArmorSlot,
-                "Castle Town Malo Mart Magic Armor",
+                "CT Malo Mart Magic Armor",
                 Item.Magic_Armor,
                 598,
                 "chudley"
@@ -1765,7 +1765,7 @@ namespace TPRandomizer
 
             AddShopSlotMsg(
                 Node.msg_CtMaloMartMagicArmorSlot,
-                "Castle Town Malo Mart Magic Armor",
+                "CT Malo Mart Magic Armor",
                 Item.Magic_Armor,
                 598,
                 "magic-armor"
@@ -1774,13 +1774,13 @@ namespace TPRandomizer
                 StrRepl.Hidden(
                     Node.msg_CtMaloMartMagicArmorSoldOut,
                     GenShopSoldOutText(
-                        HintUtils.getCheckContents("Castle Town Malo Mart Magic Armor"),
+                        HintUtils.getCheckContents("CT Malo Mart Magic Armor"),
                         "magic-armor"
                     )
                 )
             );
 
-            // ----- Castle Town Gorons -----
+            // ----- CT Gorons -----
 
             // Gorons use "rrubis" instead of "rubis" for French
             Dictionary<string, string> goronPriceContextMeta = new() { { "goron", "true" } };
@@ -1788,7 +1788,7 @@ namespace TPRandomizer
             uint ctGoronRedPotionPrice = 40;
             AddShopConfirmationMsg(
                 Node.msg_CtGoronRedPotionConfirmationInitial,
-                "Castle Town Goron Shop Red Potion",
+                "CT Goron Shop Red Potion",
                 Item.Red_Potion_Shop,
                 ctGoronRedPotionPrice,
                 "ct-goron-red-potion",
@@ -1796,7 +1796,7 @@ namespace TPRandomizer
             );
             AddShopConfirmationMsg(
                 Node.msg_CtGoronRedPotionConfirmationSecond,
-                "Castle Town Goron Shop Red Potion",
+                "CT Goron Shop Red Potion",
                 Item.Red_Potion_Shop,
                 ctGoronRedPotionPrice,
                 "ct-goron-red-potion",
@@ -1804,7 +1804,7 @@ namespace TPRandomizer
             );
             AddShopCantAffordMsg(
                 Node.msg_CtGoronRedPotionCantAfford,
-                "Castle Town Goron Shop Red Potion",
+                "CT Goron Shop Red Potion",
                 Item.Red_Potion_Shop,
                 ctGoronRedPotionPrice,
                 "ct-small-gorons"
@@ -1813,7 +1813,7 @@ namespace TPRandomizer
             uint ctGoronLanternOilPrice = 30;
             AddShopConfirmationMsg(
                 Node.msg_CtGoronLanternOilConfirmationInitial,
-                "Castle Town Goron Shop Lantern Oil",
+                "CT Goron Shop Lantern Oil",
                 Item.Lantern_Oil_Shop,
                 ctGoronLanternOilPrice,
                 "ct-goron-oil-initial",
@@ -1821,7 +1821,7 @@ namespace TPRandomizer
             );
             AddShopConfirmationMsg(
                 Node.msg_CtGoronLanternOilConfirmationSecond,
-                "Castle Town Goron Shop Lantern Oil",
+                "CT Goron Shop Lantern Oil",
                 Item.Lantern_Oil_Shop,
                 ctGoronLanternOilPrice,
                 "ct-goron-oil-later",
@@ -1829,7 +1829,7 @@ namespace TPRandomizer
             );
             AddShopCantAffordMsg(
                 Node.msg_CtGoronLanternOilCantAfford,
-                "Castle Town Goron Shop Lantern Oil",
+                "CT Goron Shop Lantern Oil",
                 Item.Lantern_Oil_Shop,
                 ctGoronLanternOilPrice,
                 "ct-small-gorons"
@@ -1838,7 +1838,7 @@ namespace TPRandomizer
             uint ctGoronArrowsPrice = 40;
             AddShopConfirmationMsg(
                 Node.msg_CtGoronArrowsConfirmationInitial,
-                "Castle Town Goron Shop Arrow Refill",
+                "CT Goron Shop Arrow Refill",
                 Item.Arrows_30,
                 ctGoronArrowsPrice,
                 "ct-goron-arrows",
@@ -1846,7 +1846,7 @@ namespace TPRandomizer
             );
             AddShopConfirmationMsg(
                 Node.msg_CtGoronArrowsConfirmationSecond,
-                "Castle Town Goron Shop Arrow Refill",
+                "CT Goron Shop Arrow Refill",
                 Item.Arrows_30,
                 ctGoronArrowsPrice,
                 "ct-goron-arrows",
@@ -1856,7 +1856,7 @@ namespace TPRandomizer
             uint ctGoronShieldPrice = 210;
             AddShopConfirmationMsg(
                 Node.msg_CtGoronShieldConfirmationIntitial,
-                "Castle Town Goron Shop Hylian Shield",
+                "CT Goron Shop Hylian Shield",
                 Item.Hylian_Shield,
                 ctGoronShieldPrice,
                 "ct-goron-shield-initial",
@@ -1864,7 +1864,7 @@ namespace TPRandomizer
             );
             AddShopConfirmationMsg(
                 Node.msg_CtGoronShieldConfirmationSecond,
-                "Castle Town Goron Shop Hylian Shield",
+                "CT Goron Shop Hylian Shield",
                 Item.Hylian_Shield,
                 ctGoronShieldPrice,
                 "ct-goron-shield-later",

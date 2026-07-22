@@ -268,13 +268,33 @@
     };
   }
 
+  function genLogicalTricksBits() {
+    let bits = '';
+
+    $('#logicalTricksListbox')
+      .find('input[type="checkbox"]')
+      .each(function () {
+        if ($(this).prop('checked')) {
+          const trickId = parseInt($(this).attr('data-trickId'), 10);
+          bits += numToPaddedBits(trickId, 10);
+        }
+      });
+
+    bits += '1111111111';
+
+    return {
+      type: RawSettingType.bitString,
+      bitString: bits,
+    };
+  }
+
   function genPlandoBits() {
     let bits = '';
     $('.plandoListItem').each(function () {
       const itemId = parseInt($(this).attr('data-itemid'), 10);
       const checkId = parseInt($(this).attr('data-checkid'), 10);
       bits += numToPaddedBits(checkId, 10);
-      bits += numToPaddedBits(itemId, 8);
+      bits += numToPaddedBits(itemId, 9);
     });
     if (bits.length < 1) {
       bits = '0';
@@ -393,7 +413,7 @@
   function genSSettingsFromUi() {
     // Increment the version when you make changes to the format. Need to make
     // sure you don't break backwards compatibility!!
-    const sSettingsVersion = 6;
+    const sSettingsVersion = 7;
 
     const values = [
       { id: 'logicRulesFieldset', bitLength: 2 },
@@ -406,9 +426,33 @@
       { id: 'poeSettingsFieldset', bitLength: 2 },
       { id: 'shopItemsCheckbox' },
       { id: 'hiddenSkillsCheckbox' },
-      { id: 'smallKeyFieldset', bitLength: 3 },
-      { id: 'bigKeyFieldset', bitLength: 3 },
-      { id: 'mapAndCompassFieldset', bitLength: 3 },
+      { id: 'ftSmallKeyFieldset', bitLength: 3 },
+      { id: 'gmSmallKeyFieldset', bitLength: 3 },
+      { id: 'lbtSmallKeyFieldset', bitLength: 3 },
+      { id: 'agSmallKeyFieldset', bitLength: 3 },
+      { id: 'sprSmallKeyFieldset', bitLength: 3 },
+      { id: 'totSmallKeyFieldset', bitLength: 3 },
+      { id: 'citsSmallKeyFieldset', bitLength: 3 },
+      { id: 'potSmallKeyFieldset', bitLength: 3 },
+      { id: 'hcSmallKeyFieldset', bitLength: 3 },
+      { id: 'ftBigKeyFieldset', bitLength: 3 },
+      { id: 'gmBigKeyFieldset', bitLength: 3 },
+      { id: 'lbtBigKeyFieldset', bitLength: 3 },
+      { id: 'agBigKeyFieldset', bitLength: 3 },
+      { id: 'sprBigKeyFieldset', bitLength: 3 },
+      { id: 'totBigKeyFieldset', bitLength: 3 },
+      { id: 'citsBigKeyFieldset', bitLength: 3 },
+      { id: 'potBigKeyFieldset', bitLength: 3 },
+      { id: 'hcBigKeyFieldset', bitLength: 3 },
+      { id: 'ftMapAndCompassFieldset', bitLength: 3 },
+      { id: 'gmMapAndCompassFieldset', bitLength: 3 },
+      { id: 'lbtMapAndCompassFieldset', bitLength: 3 },
+      { id: 'agMapAndCompassFieldset', bitLength: 3 },
+      { id: 'sprMapAndCompassFieldset', bitLength: 3 },
+      { id: 'totMapAndCompassFieldset', bitLength: 3 },
+      { id: 'citsMapAndCompassFieldset', bitLength: 3 },
+      { id: 'potMapAndCompassFieldset', bitLength: 3 },
+      { id: 'hcMapAndCompassFieldset', bitLength: 3 },
       { id: 'introCheckbox' },
       { id: 'faronTwilightCheckbox' },
       { id: 'eldinTwilightCheckbox' },
@@ -436,7 +480,8 @@
       { id: 'itemScarcityFieldset', bitLength: 2 },
       { id: 'damageMagFieldset', bitLength: 3 },
       { id: 'bonksDoDamageCheckbox' },
-      { id: 'shuffleRewardsCheckbox' },
+      { id: 'shuffleFusedShadowsCheckbox' },
+      { id: 'shuffleMirrorShardsCheckbox' },
       { id: 'skipMajorCutscenesCheckbox' },
       { id: 'noSmallKeysOnBossesCheckbox' },
       { id: 'todFieldset', bitLength: 3 },
@@ -461,6 +506,27 @@
       { id: 'noPlandoHintsCheckbox' },
       { id: 'adjustHintsForCompletionistsCheckbox' },
       { id: 'hintDungeonEntrancesCheckbox' },
+      { id: 'fishJournalCheckbox' },
+      { id: 'legendaryLoachCheckbox' },
+      { id: 'chestSizeCheckbox' },
+      { id: 'grottoERCheckbox' },
+      { id: 'caveERCheckbox' },
+      { id: 'oneWayERCheckbox' },
+      { id: 'interiorERCheckbox' },
+      { id: 'exteriorERCheckbox' },
+      { id: 'bossERCheckbox' },
+      { id: 'animalConversationsCheckbox' },
+      { id: 'spawnGWolvesCheckbox' },
+      { id: 'minigameCheckbox' },
+      { id: 'affordableDonationsCheckbox' },
+      { id: 'ftShortcutCheckbox' },
+      { id: 'lbtShortcutCheckbox' },
+      { id: 'agShortcutCheckbox' },
+      { id: 'sprShortcutCheckbox' },
+      { id: 'citsShortcutCheckbox' },
+      { id: 'citsShortcutFanCheckbox' },
+      { id: 'potShortcutCheckbox' },
+      { id: 'greatSpinCheckbox' },
     ].map(({ id, bitLength }) => {
       const val = getVal(id);
       if (bitLength) {
@@ -477,6 +543,7 @@
 
     values.push(genStartingItemsBits());
     values.push(genExcludedChecksBits());
+    values.push(genLogicalTricksBits());
     values.push(genPlandoBits());
 
     return encodeSettings(sSettingsVersion, 's', values);
@@ -698,6 +765,7 @@
       const list = [];
 
       const numCheckIdBits = version >= 6 ? 10 : 9;
+      const numItemIdBits = version >= 7 ? 9 : 8;
       const eolValue = genEolValue(numCheckIdBits);
 
       while (true) {
@@ -709,7 +777,7 @@
         if (checkId === eolValue) {
           break;
         } else {
-          const itemId = nextXBitsAsNum(8);
+          const itemId = nextXBitsAsNum(numItemIdBits);
           list.push([checkId, itemId]);
         }
       }
@@ -835,9 +903,70 @@
     }
     processBasic({ id: 'shopItems' });
     processBasic({ id: 'hiddenSkills' });
-    processBasic({ id: 'smallKeys', bitLength: 3 });
-    processBasic({ id: 'bigKeys', bitLength: 3 });
-    processBasic({ id: 'mapsAndCompasses', bitLength: 3 });
+    if (version >= 7) {
+      // dungeon items were broken out into their individual dungeon keys setting
+      processBasic({ id: 'ftSmallKeys', bitLength: 3 });
+      processBasic({ id: 'gmSmallKeys', bitLength: 3 });
+      processBasic({ id: 'lbtSmallKeys', bitLength: 3 });
+      processBasic({ id: 'agSmallKeys', bitLength: 3 });
+      processBasic({ id: 'sprSmallKeys', bitLength: 3 });
+      processBasic({ id: 'totSmallKeys', bitLength: 3 });
+      processBasic({ id: 'citsSmallKeys', bitLength: 3 });
+      processBasic({ id: 'potSmallKeys', bitLength: 3 });
+      processBasic({ id: 'hcSmallKeys', bitLength: 3 });
+      processBasic({ id: 'ftBigKey', bitLength: 3 });
+      processBasic({ id: 'gmBigKeys', bitLength: 3 });
+      processBasic({ id: 'lbtBigKey', bitLength: 3 });
+      processBasic({ id: 'agBigKey', bitLength: 3 });
+      processBasic({ id: 'sprBigKey', bitLength: 3 });
+      processBasic({ id: 'totBigKey', bitLength: 3 });
+      processBasic({ id: 'citsBigKey', bitLength: 3 });
+      processBasic({ id: 'potBigKey', bitLength: 3 });
+      processBasic({ id: 'hcBigKey', bitLength: 3 });
+      processBasic({ id: 'ftMapAndCompass', bitLength: 3 });
+      processBasic({ id: 'gmMapAndCompass', bitLength: 3 });
+      processBasic({ id: 'lbtMapAndCompass', bitLength: 3 });
+      processBasic({ id: 'agMapAndCompass', bitLength: 3 });
+      processBasic({ id: 'sprMapAndCompass', bitLength: 3 });
+      processBasic({ id: 'totMapAndCompass', bitLength: 3 });
+      processBasic({ id: 'citsMapAndCompass', bitLength: 3 });
+      processBasic({ id: 'potMapAndCompass', bitLength: 3 });
+      processBasic({ id: 'hcMapAndCompass', bitLength: 3 });
+    } else {
+      const smallKeyValue = processor.nextXBitsAsNum(3);
+      const bigKeyValue = processor.nextXBitsAsNum(3);
+      const mapCompassValue = processor.nextXBitsAsNum(3);
+      res.ftSmallKeys = smallKeyValue;
+      res.gmSmallKeys = smallKeyValue;
+      res.lbtSmallKeys = smallKeyValue;
+      res.agSmallKeys = smallKeyValue;
+      res.sprSmallKeys = smallKeyValue;
+      res.totSmallKeys = smallKeyValue;
+      res.citsSmallKeys = smallKeyValue;
+      res.potSmallKeys = smallKeyValue;
+      res.hcSmallKeys = smallKeyValue;
+
+      res.ftBigKey = bigKeyValue;
+      res.gmBigKeys = bigKeyValue;
+      res.lbtBigKey = bigKeyValue;
+      res.agBigKey = bigKeyValue;
+      res.sprBigKey = bigKeyValue;
+      res.totBigKey = bigKeyValue;
+      res.citsBigKey = bigKeyValue;
+      res.potBigKey = bigKeyValue;
+      res.hcBigKey = bigKeyValue;
+
+      res.ftMapAndCompass = mapCompassValue;
+      res.gmMapAndCompass = mapCompassValue;
+      res.lbtMapAndCompass = mapCompassValue;
+      res.agMapAndCompass = mapCompassValue;
+      res.sprMapAndCompass = mapCompassValue;
+      res.totMapAndCompass = mapCompassValue;
+      res.citsMapAndCompass = mapCompassValue;
+      res.potMapAndCompass = mapCompassValue;
+      res.hcMapAndCompass = mapCompassValue;
+    }
+
     processBasic({ id: 'skipIntro' });
     processBasic({ id: 'faronTwilightCleared' });
     processBasic({ id: 'eldinTwilightCleared' });
@@ -935,12 +1064,21 @@
       processBasic({ id: 'itemScarcity', bitLength: 2 });
       processBasic({ id: 'damageMagnification', bitLength: 3 });
       processBasic({ id: 'bonksDoDamage' });
-      processBasic({ id: 'shuffleRewards' });
+      // In string version 7, "shuffleRewards" was split into two seperate settings
+      if (version >= 7) {
+        processBasic({ id: 'shuffleFusedShadows' });
+        processBasic({ id: 'shuffleMirrorShards' });
+      } else {
+        const shuffleRewards = processor.nextBoolean();
+        res.shuffleFusedShadows = shuffleRewards;
+        res.shuffleMirrorShards = shuffleRewards;
+      }
     } else {
       res.itemScarcity = 0; // Vanilla
       res.damageMagnification = 1; // Vanilla
       res.bonksDoDamage = 0; // Vanilla
-      res.shuffleRewards = 0; // Vanilla
+      res.shuffleFusedShadows = 0; // Vanilla
+      res.shuffleMirrorShards = 0; // Vanilla
     }
     if (version >= 5) {
       processBasic({ id: 'skipMajorCutscenes' });
@@ -1014,10 +1152,61 @@
       res.hintDungeonEntrances = false;
     }
 
+    if (version >= 7) {
+      processBasic({ id: 'fishJournals' });
+      processBasic({ id: 'legendaryLoach' });
+      processBasic({ id: 'chestSize' });
+      processBasic({ id: 'grottoER' });
+      processBasic({ id: 'caveER' });
+      processBasic({ id: 'oneWayER' });
+      processBasic({ id: 'interiorER' });
+      processBasic({ id: 'exteriorER' });
+      processBasic({ id: 'bossER' });
+      processBasic({ id: 'animalConversations' });
+      processBasic({ id: 'spawnGWolves' });
+      processBasic({ id: 'shuffleMinigames' });
+      processBasic({ id: 'affordableDonations' });
+      processBasic({ id: 'ftShortcut' });
+      processBasic({ id: 'lbtShortcut' });
+      processBasic({ id: 'agShortcut' });
+      processBasic({ id: 'sprShortcut' });
+      processBasic({ id: 'citsShortcut' });
+      processBasic({ id: 'citsFanShortcut' });
+      processBasic({ id: 'potShortcut' });
+      processBasic({ id: 'alwaysGreatSpin' });
+    } else {
+      res.fishJournals = false;
+      res.legendaryLoach = false;
+      res.chestSize = false;
+      res.grottoER = false;
+      res.caveER = false;
+      res.oneWayER = false;
+      res.interiorER = false;
+      res.exteriorER = false;
+      res.bossER = false;
+      res.animalConversations = false;
+      res.spawnGWolves = false;
+      res.shuffleMinigames = false;
+      res.affordableDonations = false;
+      res.ftShortcut = false;
+      res.lbtShortcut = false;
+      res.agShortcut = false;
+      res.sprShortcut = false;
+      res.citsShortcut = false;
+      res.citsFanShortcut = false;
+      res.potShortcut = false;
+      res.alwaysGreatSpin = false;
+    }
+
     res.startingItems = processor.nextEolList(9);
 
     const numCheckIdBits = version >= 6 ? 10 : 9;
     res.excludedChecks = processor.nextEolList(numCheckIdBits);
+    if (version >= 7) {
+      res.logicalTricks = processor.nextEolList(10);
+    } else {
+      res.logicalTricks = [];
+    }
 
     if (version >= 5) {
       res.plando = [];
@@ -1419,52 +1608,66 @@
         { id: 'lanternColorFieldset', rgb: true },
         { id: 'lightSwordColorFieldset', rgb: true },
         // { id: 'midnaHairColorFieldset', bitLength: 1 },
-        { id: 'heartColorFieldset', rgb: true },
-        { id: 'aButtonColorFieldset', rgb: true },
-        { id: 'bButtonColorFieldset', rgb: true },
-        { id: 'xButtonColorFieldset', rgb: true },
-        { id: 'yButtonColorFieldset', rgb: true },
-        { id: 'zButtonColorFieldset', rgb: true },
+        { id: 'heartColorFieldset', rgb: true, storeIndex: true },
+        { id: 'aButtonColorFieldset', rgb: true, storeIndex: true },
+        { id: 'bButtonColorFieldset', rgb: true, storeIndex: true },
+        { id: 'xButtonColorFieldset', rgb: true, storeIndex: true },
+        { id: 'yButtonColorFieldset', rgb: true, storeIndex: true },
+        { id: 'zButtonColorFieldset', rgb: true, storeIndex: true },
         { id: 'midnaHairBaseColorFieldset', midnaHairBase: true },
         { id: 'midnaHairTipColorFieldset', midnaHairTips: true },
-        { id: 'midnaDomeRingColorFieldset', rgb: true },
+        { id: 'midnaDomeRingColorFieldset', rgb: true, storeIndex: true },
         { id: 'linkHairColorFieldset', rgb: true },
-      ].map(({ id, bitLength, rgb, midnaHairBase, midnaHairTips }) => {
-        if (bitLength) {
-          // select
-          return {
-            type: RawSettingType.xBitNum,
-            bitLength,
-            value: parseInt(getVal(id), 10),
-          };
-        } else if (rgb) {
-          const selVal = getVal(id);
-          const $option = $(`#${id}`).find(`option[value="${selVal}"]`);
-          const value = $option[0].getAttribute('data-rgb');
-
-          return {
-            type: RawSettingType.rgb,
-            value,
-          };
-        } else if (midnaHairBase || midnaHairTips) {
-          const selVal = getVal(id);
-          const $option = $(`#${id}`).find(`option[value="${selVal}"]`);
-          const rgbVal = $option[0].getAttribute('data-rgb');
-          const isCustomColor =
-            $option[0].getAttribute('data-custom-color') === 'true';
-
-          return {
-            type: midnaHairTips
-              ? RawSettingType.midnaHairTips
-              : RawSettingType.midnaHairBase,
-            valueNum: parseInt(selVal, 10),
-            rgbVal,
-            isCustomColor,
-          };
+      ].map(
+        ({ id, bitLength, rgb, midnaHairBase, midnaHairTips, storeIndex }) => {
+          if (bitLength) {
+            // select
+            localStorage.setItem(id, getVal(id));
+            return {
+              type: RawSettingType.xBitNum,
+              bitLength,
+              value: parseInt(getVal(id), 10),
+            };
+          } else if (rgb) {
+            const selVal = getVal(id);
+            const $option = $(`#${id}`).find(`option[value="${selVal}"]`);
+            const value = $option[0].getAttribute('data-rgb');
+            const isCustomColor =
+              $option[0].getAttribute('data-custom-color') === 'true';
+            if (!isCustomColor) {
+              localStorage.setItem(id, '00' + encodeToHexByte(getVal(id)));
+            } else {
+              localStorage.setItem(id, value);
+            }
+            return {
+              type: RawSettingType.rgb,
+              value,
+            };
+          } else if (midnaHairBase || midnaHairTips) {
+            const selVal = getVal(id);
+            const $option = $(`#${id}`).find(`option[value="${selVal}"]`);
+            const rgbVal = $option[0].getAttribute('data-rgb');
+            const isCustomColor =
+              $option[0].getAttribute('data-custom-color') === 'true';
+            if (isCustomColor) {
+              localStorage.setItem(id, rgbVal);
+            } else {
+              localStorage.setItem(id, '00' + encodeToHexByte(selVal));
+            }
+            return {
+              type: midnaHairTips
+                ? RawSettingType.midnaHairTips
+                : RawSettingType.midnaHairBase,
+              valueNum: parseInt(selVal, 10),
+              rgbVal,
+              isCustomColor,
+            };
+          }
+          // checkbox
+          localStorage.setItem(id, getVal(id));
+          return getVal(id);
         }
-        // checkbox
-        return getVal(id);
-      })
+      )
     );
 
     let bitString = '';
@@ -1578,3 +1781,8 @@
     callCreateGci,
   };
 })();
+
+function encodeToHexByte(value) {
+  const clamped = Math.max(0, Math.min(255, Math.round(value)));
+  return clamped.toString(16).padStart(2, '0');
+}

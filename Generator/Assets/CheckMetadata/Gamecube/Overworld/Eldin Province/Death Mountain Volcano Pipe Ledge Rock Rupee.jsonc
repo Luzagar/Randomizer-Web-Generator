@@ -1,8 +1,10 @@
 {
-    "arcOffsets": ["258E"],
-    "stageIDX": [47],
-    "roomIDX": 3,
-    "fileDirectoryType": [0],
-    "replacementType": [0],
-    "dataCategory": ["ARC"]
+  "arcOffsets": ["258E"],
+  "stageIDX": [47],
+  "roomIDX": 3,
+  "fileDirectoryType": [0],
+  "replacementType": [0],
+  "checkCategory": ["Overworld", "Death Mountain", "Rupee - Hidden"],
+  "itemId": "Yellow_Rupee",
+  "dataCategory": ["ARC"]
 }

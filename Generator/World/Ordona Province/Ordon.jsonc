@@ -1,0 +1,452 @@
+[
+  {
+    "RoomName": "Outside Links House",
+    "Exits": [
+      {
+        "ConnectedArea": "Ordon Village",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "Ordon Spring",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "Ordon Links House",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Region": "Ordona Province"
+  },
+  {
+    "RoomName": "Ordon Links House",
+    "Exits": [
+      {
+        "ConnectedArea": "Outside Links House",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "Wooden Sword Chest",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "Links Basement Chest",
+        "Requirements": "Lantern",
+        "GlitchedRequirements": "Lantern"
+      }
+    ],
+    "Region": "Ordona Province"
+  },
+  {
+    "RoomName": "Ordon Village",
+    "Exits": [
+      {
+        "ConnectedArea": "Outside Links House",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "Ordon Ranch Entrance",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "Ordon Seras Shop",
+        "Requirements": "CanCompleteGoats1",
+        "GlitchedRequirements": "CanCompleteGoats1"
+      },
+      {
+        "ConnectedArea": "Ordon Shield House Lower",
+        "Requirements": "CanCompleteGoats1",
+        "GlitchedRequirements": "CanCompleteGoats1"
+      },
+      {
+        "ConnectedArea": "Ordon Sword House",
+        "Requirements": "CanCompleteGoats1",
+        "GlitchedRequirements": "CanCompleteGoats1"
+      },
+      {
+        "ConnectedArea": "Ordon Bos House Left Door",
+        "Requirements": "CanCompleteGoats1",
+        "GlitchedRequirements": "CanCompleteGoats1"
+      },
+      {
+        "ConnectedArea": "Ordon Bos House Right Door",
+        "Requirements": "CanCompleteGoats1",
+        "GlitchedRequirements": "CanCompleteGoats1"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "Ordon Bo Cliff Rupee",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "Ordon Bo Roof Rupee",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        // Check is only available during the day
+        "CheckName": "Ordon Bo Window Rupee 1",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        // Check is only available during the day
+        "CheckName": "Ordon Bo Window Rupee 2",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "Ordon Hidden Rusl House Rupee",
+        "Requirements": "Boomerang or Progressive_Clawshot",
+        "GlitchedRequirements": "Boomerang or Progressive_Clawshot"
+      },
+      {
+        // Check is only available during the day
+        "CheckName": "Ordon Rupee In Grass By Bo",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        // Check is only available during the day
+        "CheckName": "Ordon Rupee In River 1",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        // Check is only available during the day
+        "CheckName": "Ordon Rupee In River 2",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        // Check is only available during the day
+        "CheckName": "Ordon Rupee Under Bridge",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        // Check is only available during the day
+        "CheckName": "Ordon Rupee Under Tall Tree 1",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        // Check is only available during the day
+        "CheckName": "Ordon Rupee Under Tall Tree 2",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "Ordon Rusl House Roof Rupee 1",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "Ordon Rusl House Roof Rupee 2",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        // Check is only available during the night
+        "CheckName": "Ordon Shield House Ledge Grass Rupee",
+        "Requirements": "Boomerang or Progressive_Clawshot",
+        "GlitchedRequirements": "Boomerang or Progressive_Clawshot or Progressive_Sword"
+      },
+      {
+        "CheckName": "Ordon Tree Long Branch Rupee",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "Ordon Tree Short Branch Rupee",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "Uli Cradle Delivery",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "Catch A Greengill",
+        "Requirements": "Progressive_Fishing_Rod",
+        "GlitchedRequirements": "Progressive_Fishing_Rod"
+      },
+      {
+        "CheckName": "Catch An Ordon Catfish",
+        "Requirements": "CanCatchBaitedFish",
+        "GlitchedRequirements": "CanCatchBaitedFish"
+      },
+      {
+        "CheckName": "Talk To Frog Outside Rusl House",
+        "Requirements": "Shadow_Crystal",
+        "GlitchedRequirements": "Shadow_Crystal"
+      },
+      {
+        "CheckName": "Talk To Ordon Hawk",
+        "Requirements": "Shadow_Crystal",
+        "GlitchedRequirements": "Shadow_Crystal"
+      }
+    ],
+    "Region": "Ordona Province"
+  },
+  {
+    "RoomName": "Ordon Seras Shop",
+    "Exits": [
+      {
+        "ConnectedArea": "Ordon Village",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "Ordon Cat Rescue",
+        "Requirements": "Room.Ordon_Village and (Progressive_Fishing_Rod, 1) and CanCompleteGoats1",
+        "GlitchedRequirements": "Room.Ordon_Village and (Progressive_Fishing_Rod, 1) and CanCompleteGoats1"
+      },
+      {
+        "CheckName": "Sera Shop Slingshot",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Region": "Ordona Province"
+  },
+  {
+    "RoomName": "Ordon Shield House Lower",
+    "Exits": [
+      {
+        "ConnectedArea": "Ordon Village",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "Ordon Shield House Upper",
+        "Requirements": "Shadow_Crystal",
+        "GlitchedRequirements": "Shadow_Crystal"
+      }
+    ],
+    "Region": "Ordon Village"
+  },
+  {
+    "RoomName": "Ordon Shield House Upper",
+    "Exits": [
+      {
+        "ConnectedArea": "Ordon Shield House Lower",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "Ordon Village",
+        "Requirements": "Shadow_Crystal",
+        "GlitchedRequirements": "Shadow_Crystal"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "Ordon Shield",
+        "Requirements": "(((Setting.faronTwilightCleared equals False) and CanCompletePrologue) or ((Setting.faronTwilightCleared equals True) and Shadow_Crystal)) and ((Setting.bonksDoDamage equals False) or ((Setting.bonksDoDamage equals True) and ((Setting.damageMagnification not_equal OHKO) or CanUseBottledFairies)))",
+        "GlitchedRequirements": "(((Setting.faronTwilightCleared equals False) and CanCompletePrologue) or ((Setting.faronTwilightCleared equals True) and Shadow_Crystal)) and ((Setting.bonksDoDamage equals False) or ((Setting.bonksDoDamage equals True) and ((Setting.damageMagnification not_equal OHKO) or CanUseBottledFairies)))"
+      }
+    ],
+    "Region": "Ordon Village"
+  },
+  {
+    "RoomName": "Ordon Sword House",
+    "Exits": [
+      {
+        "ConnectedArea": "Ordon Village",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "Ordon Sword",
+        "Requirements": "CanCompletePrologue or (Setting.faronTwilightCleared equals True)",
+        "GlitchedRequirements": "CanCompletePrologue or (Setting.faronTwilightCleared equals True)"
+      }
+    ],
+    "Region": "Ordon Village"
+  },
+  {
+    "RoomName": "Ordon Bos House Left Door",
+    "Exits": [
+      {
+        "ConnectedArea": "Ordon Village",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "Ordon Bos House",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Region": "Ordona Province"
+  },
+  {
+    "RoomName": "Ordon Bos House Right Door",
+    "Exits": [
+      {
+        "ConnectedArea": "Ordon Village",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "Ordon Bos House",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Region": "Ordona Province"
+  },
+  {
+    "RoomName": "Ordon Bos House",
+    "Exits": [
+      {
+        "ConnectedArea": "Ordon Bos House Left Door",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "Ordon Bos House Right Door",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "Wrestling With Bo",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Region": "Ordona Province"
+  },
+  {
+    "RoomName": "Ordon Ranch Entrance",
+    "Exits": [
+      {
+        "ConnectedArea": "Ordon Ranch",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "Ordon Village",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Region": "Ordona Province"
+  },
+  {
+    "RoomName": "Ordon Ranch",
+    "Exits": [
+      {
+        "ConnectedArea": "Ordon Ranch Entrance",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "Ordon Ranch Stable",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "Herding Goats Reward",
+        "Requirements": "CanCompletePrologue and CanCompleteGoats1",
+        "GlitchedRequirements": "CanCompletePrologue and CanCompleteGoats1"
+      }
+    ],
+    "Region": "Ordona Province"
+  },
+  {
+    "RoomName": "Ordon Ranch Stable",
+    "Exits": [
+      {
+        "ConnectedArea": "Ordon Ranch",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "Ordon Ranch Grotto",
+        "Requirements": "Shadow_Crystal",
+        "GlitchedRequirements": "Shadow_Crystal"
+      }
+    ],
+    "Region": "Ordona Province"
+  },
+  {
+    "RoomName": "Ordon Ranch Grotto",
+    "Exits": [
+      {
+        "ConnectedArea": "Ordon Ranch Stable",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "Ordon Ranch Grotto Lantern Chest",
+        "Requirements": "Lantern",
+        "GlitchedRequirements": "Lantern"
+      }
+    ],
+    "Region": "Ordona Province"
+  },
+  {
+    "RoomName": "Ordon Spring",
+    "Exits": [
+      {
+        "ConnectedArea": "Outside Links House",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "Ordon Bridge",
+        "Requirements": "(Room.Outside_Links_House and HasSword and Slingshot) or CanCompletePrologue",
+        // Gate clip
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "Ordon Spring Golden Wolf",
+        "Requirements": "((Shadow_Crystal and Room.Death_Mountain_Trail) or (Setting.spawnGWolves equals True)) and CanCompletePrologue and CanCompleteFaronTwilight",
+        "GlitchedRequirements": "((Shadow_Crystal and Room.Death_Mountain_Trail) or (Setting.spawnGWolves equals True)) and CanCompletePrologue and CanCompleteFaronTwilight"
+      }
+    ],
+    "Region": "Ordona Province"
+  },
+  {
+    "RoomName": "Ordon Bridge",
+    "Exits": [
+      {
+        "ConnectedArea": "Ordon Spring",
+        "Requirements": "(Room.Outside_Links_House and HasSword and Slingshot) or CanCompletePrologue",
+        "GlitchedRequirements": "(Room.Outside_Links_House and HasSword and Slingshot) or CanCompletePrologue"
+      },
+      {
+        "ConnectedArea": "South Faron Woods",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Checks": [],
+    "Region": "Ordona Province"
+  }
+]

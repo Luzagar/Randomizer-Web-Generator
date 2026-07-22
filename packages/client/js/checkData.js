@@ -1,5 +1,45 @@
 window.tpr = window.tpr || {};
 window.tpr.checkData = {
+  'Talk To HV Cucco': {
+    category: ['Overworld', 'Animal', 'Hidden Village'],
+    itemId: 'Nothing',
+  },
+  'Talk To Trill As Wolf': {
+    category: ['Overworld', 'Animal', 'Faron Woods'],
+    itemId: 'Nothing',
+  },
+  'Talk To CT Black And White Cat After Jovani 60': {
+    category: ['Overworld', 'Animal', 'Castle Town'],
+    itemId: 'Nothing',
+  },
+  'Talk To CT Dark Cat After MDH': {
+    category: ['Overworld', 'Animal', 'Castle Town'],
+    itemId: 'Nothing',
+  },
+  'Talk To East CT Dog': {
+    category: ['Overworld', 'Animal', 'Castle Town'],
+    itemId: 'Nothing',
+  },
+  'Talk To West CT Dog': {
+    category: ['Overworld', 'Animal', 'Castle Town'],
+    itemId: 'Nothing',
+  },
+  'Talk To Plumm As Link': {
+    category: ['Overworld', 'Animal', 'Lake Hylia'],
+    itemId: 'Nothing',
+  },
+  'Talk To Plumm As Wolf': {
+    category: ['Overworld', 'Animal', 'Lake Hylia'],
+    itemId: 'Nothing',
+  },
+  'Talk To Frog Outside Rusl House': {
+    category: ['Overworld', 'Animal', 'Ordona Province'],
+    itemId: 'Nothing',
+  },
+  'Talk To Ordon Hawk': {
+    category: ['Overworld', 'Animal', 'Ordona Province'],
+    itemId: 'Nothing',
+  },
   'Agitha Female Ant Reward': {
     category: ['Overworld', 'Npc', 'Castle Town', 'Bug Reward'],
     itemId: 'Purple_Rupee',
@@ -96,23 +136,23 @@ window.tpr.checkData = {
     category: ['Overworld', 'Npc', 'Castle Town', 'Bug Reward'],
     itemId: 'Purple_Rupee',
   },
-  'Arbiters Grounds Big Key Chest': {
+  'AG Big Key Chest': {
     category: ['Chest', 'Dungeon', 'Arbiters Grounds', 'Big Key', 'ARC'],
     itemId: 'Arbiters_Grounds_Big_Key',
   },
-  'Arbiters Grounds Death Sword Chest': {
+  'AG Death Sword Chest': {
     category: ['Chest', 'Dungeon', 'Arbiters Grounds', 'ARC'],
     itemId: 'Spinner',
   },
-  'Arbiters Grounds East Lower Turnable Redead Chest': {
+  'AG East Lower Turnable Redead Chest': {
     category: ['Chest', 'Dungeon', 'Arbiters Grounds', 'Small Key', 'ARC'],
     itemId: 'Arbiters_Grounds_Small_Key',
   },
-  'Arbiters Grounds East Turning Room Poe': {
+  'AG East Turning Room Poe': {
     category: ['Overworld', 'Poe', 'Arbiters Grounds'],
     itemId: 'Poe_Soul',
   },
-  'Arbiters Grounds East Upper Turnable Chest': {
+  'AG East Upper Turnable Chest': {
     category: [
       'Chest',
       'Dungeon',
@@ -123,68 +163,63 @@ window.tpr.checkData = {
     ],
     itemId: 'Arbiters_Grounds_Compass',
   },
-  'Arbiters Grounds East Upper Turnable Redead Chest': {
+  'AG East Upper Turnable Redead Chest': {
     category: ['Chest', 'Dungeon', 'Arbiters Grounds', 'Small Key', 'ARC'],
     itemId: 'Arbiters_Grounds_Small_Key',
   },
-  'Arbiters Grounds Entrance Chest': {
+  'AG Entrance Chest': {
     category: ['Chest', 'Dungeon', 'Arbiters Grounds', 'Small Key', 'ARC'],
     itemId: 'Arbiters_Grounds_Small_Key',
   },
-  'Arbiters Grounds Ghoul Rat Room Chest': {
+  'AG Ghoul Rat Room Chest': {
     category: ['Chest', 'Dungeon', 'Arbiters Grounds', 'Small Key', 'ARC'],
     itemId: 'Arbiters_Grounds_Small_Key',
   },
-  'Arbiters Grounds Hidden Wall Poe': {
+  'AG Hidden Wall Poe': {
     category: ['Overworld', 'Poe', 'Arbiters Grounds'],
     itemId: 'Poe_Soul',
   },
-  'Arbiters Grounds North Turning Room Chest': {
+  'AG North Turning Room Chest': {
     category: ['Chest', 'Dungeon', 'Arbiters Grounds', 'Small Key', 'ARC'],
     itemId: 'Arbiters_Grounds_Small_Key',
   },
-  'Arbiters Grounds Spinner Room First Small Chest': {
+  'AG Spinner Room First Small Chest': {
     category: ['Chest', 'Dungeon', 'Arbiters Grounds', 'ARC'],
     itemId: 'Bombs_10',
   },
-  'Arbiters Grounds Spinner Room Lower Central Small Chest': {
+  'AG Spinner Room Lower Central Small Chest': {
     category: ['Chest', 'Dungeon', 'Arbiters Grounds', 'ARC'],
     itemId: 'Yellow_Rupee',
   },
-  'Arbiters Grounds Spinner Room Lower North Chest': {
+  'AG Spinner Room Lower North Chest': {
     category: ['Chest', 'Dungeon', 'Arbiters Grounds', 'ARC'],
     itemId: 'Yellow_Rupee',
   },
-  'Arbiters Grounds Spinner Room Second Small Chest': {
+  'AG Spinner Room Second Small Chest': {
     category: ['Chest', 'Dungeon', 'Arbiters Grounds', 'ARC'],
     itemId: 'Red_Rupee',
   },
-  'Arbiters Grounds Spinner Room Stalfos Alcove Chest': {
+  'AG Spinner Room Stalfos Alcove Chest': {
     category: ['Chest', 'Dungeon', 'Arbiters Grounds', 'ARC'],
     itemId: 'Piece_of_Heart',
   },
-  'Arbiters Grounds Stallord': {
+  'AG Stallord': {
     category: ['Dungeon', 'Arbiters Grounds'],
     itemId: 'Stallord_Defeated',
   },
-  'Arbiters Grounds Stallord Heart Container': {
-    category: [
-      'Heart Container',
-      'Arbiters Grounds',
-      'Dungeon',
-      'Boss',
-    ],
+  'AG Stallord Heart Container': {
+    category: ['Heart Container', 'Arbiters Grounds', 'Dungeon', 'Boss'],
     itemId: 'Heart_Container',
   },
-  'Arbiters Grounds Torch Room East Chest': {
+  'AG Torch Room East Chest': {
     category: ['Chest', 'Dungeon', 'Arbiters Grounds', 'ARC'],
     itemId: 'Piece_of_Heart',
   },
-  'Arbiters Grounds Torch Room Poe': {
+  'AG Torch Room Poe': {
     category: ['Overworld', 'Poe', 'Arbiters Grounds'],
     itemId: 'Poe_Soul',
   },
-  'Arbiters Grounds Torch Room West Chest': {
+  'AG Torch Room West Chest': {
     category: [
       'Chest',
       'Dungeon',
@@ -195,23 +230,23 @@ window.tpr.checkData = {
     ],
     itemId: 'Arbiters_Grounds_Dungeon_Map',
   },
-  'Arbiters Grounds West Chandelier Chest': {
+  'AG West Chandelier Chest': {
     category: ['Chest', 'Dungeon', 'Arbiters Grounds', 'ARC'],
     itemId: 'Red_Rupee',
   },
-  'Arbiters Grounds West Poe': {
+  'AG West Poe': {
     category: ['Overworld', 'Poe', 'Arbiters Grounds'],
     itemId: 'Poe_Soul',
   },
-  'Arbiters Grounds West Small Chest Behind Block': {
+  'AG West Small Chest Behind Block': {
     category: ['Chest', 'Dungeon', 'Arbiters Grounds', 'ARC'],
     itemId: 'Red_Rupee',
   },
-  'Arbiters Grounds West Stalfos Northeast Chest': {
+  'AG West Stalfos Northeast Chest': {
     category: ['Chest', 'Dungeon', 'Arbiters Grounds', 'ARC'],
     itemId: 'Bombs_5',
   },
-  'Arbiters Grounds West Stalfos West Chest': {
+  'AG West Stalfos West Chest': {
     category: ['Chest', 'Dungeon', 'Arbiters Grounds', 'ARC'],
     itemId: 'Bombs_5',
   },
@@ -228,11 +263,21 @@ window.tpr.checkData = {
     itemId: 'Filled_Bomb_Bag',
   },
   'Bridge of Eldin Female Phasmid': {
-    category: ['Overworld', 'Golden Bug', 'Hyrule Field - Eldin Province', 'DZX'],
+    category: [
+      'Overworld',
+      'Golden Bug',
+      'Hyrule Field - Eldin Province',
+      'DZX',
+    ],
     itemId: 'Female_Phasmid',
   },
   'Bridge of Eldin Male Phasmid': {
-    category: ['Overworld', 'Golden Bug', 'Hyrule Field - Eldin Province', 'DZX'],
+    category: [
+      'Overworld',
+      'Golden Bug',
+      'Hyrule Field - Eldin Province',
+      'DZX',
+    ],
     itemId: 'Male_Phasmid',
   },
   'Bridge of Eldin Portal': {
@@ -267,47 +312,75 @@ window.tpr.checkData = {
     category: ['Overworld', 'Bulblin Camp', 'Small Key', 'DZX'],
     itemId: 'Gerudo_Desert_Bulblin_Camp_Key',
   },
-  'Castle Town Goron Shop Arrow Refill': {
+  'CT Goron Shop Arrow Refill': {
     category: ['Overworld', 'Castle Town', 'ARC', 'Shop'],
     itemId: 'Arrows_30',
   },
-  'Castle Town Goron Shop Hylian Shield': {
+  'CT Goron Shop Hylian Shield': {
     category: ['Overworld', 'Castle Town', 'ARC', 'Shop'],
     itemId: 'Hylian_Shield',
   },
-  'Castle Town Goron Shop Lantern Oil': {
+  'CT Goron Shop Lantern Oil': {
     category: ['Overworld', 'Castle Town', 'ARC', 'Shop'],
     itemId: 'Lantern_Oil_Shop',
   },
-  'Castle Town Goron Shop Red Potion': {
+  'CT Goron Shop Red Potion': {
     category: ['Overworld', 'Castle Town', 'ARC', 'Shop'],
     itemId: 'Red_Potion',
   },
-  'Castle Town Malo Mart Magic Armor': {
+  'CT Malo Mart Magic Armor': {
     category: ['Overworld', 'Castle Town', 'ARC', 'Shop'],
     itemId: 'Magic_Armor',
   },
-  'Castle Town Portal': {
+  'CT Portal': {
     category: ['Overworld', 'Hyrule Field - Lanayru Province'],
     itemId: 'Castle_Town_Portal',
   },
+  'Catch A Greengill': {
+    category: ['Overworld', 'Fishing', 'Ordona Province'],
+    itemId: 'Green_Rupee',
+  },
+  'Catch An Ordon Catfish': {
+    category: ['Overworld', 'Fishing', 'Ordona Province'],
+    itemId: 'Green_Rupee',
+  },
+  'Catch A Hyrule Bass': {
+    category: ['Overworld', 'Fishing', 'Ordona Province'],
+    itemId: 'Green_Rupee',
+  },
+  'Catch A Hylian Pike': {
+    category: ['Overworld', 'Fishing', 'Ordona Province'],
+    itemId: 'Green_Rupee',
+  },
+  'Catch A Hylian Loach': {
+    category: ['Overworld', 'Fishing', 'Ordona Province'],
+    itemId: 'Green_Rupee',
+  },
+  'Catch A Reekfish': {
+    category: ['Overworld', 'Fishing', 'Ordona Province'],
+    itemId: 'Green_Rupee',
+  },
+  'Catch The Legendary Hylian Loach': {
+    category: ['Overworld', 'Fishing', 'Ordona Province'],
+    itemId: 'Green_Rupee',
+  },
   'Cats Hide and Seek Minigame': {
-    category: ['Overworld', 'Npc', 'Hidden Village', 'DZX'],
+    category: ['Overworld', 'Minigame', 'Hidden Village', 'DZX'],
     itemId: 'Piece_of_Heart',
   },
-  'Cave of Ordeals Floor 17 Poe': {
+  'CoO Floor 17 Poe': {
     category: ['Overworld', 'Poe', 'Cave of Ordeals'],
     itemId: 'Poe_Soul',
   },
-  'Cave of Ordeals Floor 33 Poe': {
+  'CoO Floor 33 Poe': {
     category: ['Overworld', 'Poe', 'Cave of Ordeals'],
     itemId: 'Poe_Soul',
   },
-  'Cave of Ordeals Floor 44 Poe': {
+  'CoO Floor 44 Poe': {
     category: ['Overworld', 'Poe', 'Cave of Ordeals'],
     itemId: 'Poe_Soul',
   },
-  'Cave of Ordeals Great Fairy Reward': {
+  'CoO Great Fairy Reward': {
     category: ['Overworld', 'Npc', 'Cave of Ordeals', 'ARC'],
     itemId: 'Fairy_Tears',
   },
@@ -315,55 +388,55 @@ window.tpr.checkData = {
     category: ['Overworld', 'Npc', 'Castle Town', 'ObjectARC', 'Boss'],
     itemId: 'Piece_of_Heart',
   },
-  'City in The Sky Aeralfos Chest': {
+  'CitS Aeralfos Chest': {
     category: ['Chest', 'Dungeon', 'City in The Sky', 'ARC'],
     itemId: 'Progressive_Clawshot',
   },
-  'City in The Sky Argorok': {
+  'CitS Argorok': {
     category: ['Dungeon', 'City in The Sky'],
     itemId: 'Argorok_Defeated',
   },
-  'City in The Sky Argorok Heart Container': {
+  'CitS Argorok Heart Container': {
     category: ['Heart Container', 'Dungeon', 'City in The Sky', 'Boss'],
     itemId: 'Heart_Container',
   },
-  'City in The Sky Baba Tower Alcove Chest': {
+  'CitS Baba Tower Alcove Chest': {
     category: ['Chest', 'Dungeon', 'City in The Sky', 'ARC'],
     itemId: 'Piece_of_Heart',
   },
-  'City in The Sky Baba Tower Narrow Ledge Chest': {
+  'CitS Baba Tower Narrow Ledge Chest': {
     category: ['Chest', 'Dungeon', 'City in The Sky', 'ARC'],
     itemId: 'Red_Rupee',
   },
-  'City in The Sky Baba Tower Top Small Chest': {
+  'CitS Baba Tower Top Small Chest': {
     category: ['Chest', 'Dungeon', 'City in The Sky', 'ARC'],
     itemId: 'Yellow_Rupee',
   },
-  'City in The Sky Big Key Chest': {
+  'CitS Big Key Chest': {
     category: ['Chest', 'Dungeon', 'City in The Sky', 'Big Key', 'ARC'],
     itemId: 'City_in_The_Sky_Big_Key',
   },
-  'City in The Sky Central Outside Ledge Chest': {
+  'CitS Central Outside Ledge Chest': {
     category: ['Chest', 'Dungeon', 'City in The Sky', 'ARC'],
     itemId: 'Red_Rupee',
   },
-  'City in The Sky Central Outside Poe Island Chest': {
+  'CitS Central Outside Poe Island Chest': {
     category: ['Chest', 'Dungeon', 'City in The Sky', 'ARC'],
     itemId: 'Purple_Rupee',
   },
-  'City in The Sky Chest Behind North Fan': {
+  'CitS Chest Behind North Fan': {
     category: ['Chest', 'Dungeon', 'City in The Sky', 'ARC'],
     itemId: 'Purple_Rupee',
   },
-  'City in The Sky Chest Below Big Key Chest': {
+  'CitS Chest Below Big Key Chest': {
     category: ['Chest', 'Dungeon', 'City in The Sky', 'ARC'],
     itemId: 'Red_Rupee',
   },
-  'City in The Sky Dungeon Reward': {
+  'CitS Dungeon Reward': {
     category: ['Dungeon', 'City in The Sky', 'Dungeon Reward', 'REL', 'ARC'],
     itemId: 'Progressive_Mirror_Shard',
   },
-  'City in The Sky East First Wing Chest After Fans': {
+  'CitS East First Wing Chest After Fans': {
     category: [
       'Chest',
       'Dungeon',
@@ -374,19 +447,19 @@ window.tpr.checkData = {
     ],
     itemId: 'City_in_The_Sky_Dungeon_Map',
   },
-  'City in The Sky East Tile Worm Small Chest': {
+  'CitS East Tile Worm Small Chest': {
     category: ['Chest', 'Dungeon', 'City in The Sky', 'ARC'],
     itemId: 'Yellow_Rupee',
   },
-  'City in The Sky East Wing After Dinalfos Alcove Chest': {
+  'CitS East Wing After Dinalfos Alcove Chest': {
     category: ['Chest', 'Dungeon', 'City in The Sky', 'ARC'],
     itemId: 'Red_Rupee',
   },
-  'City in The Sky East Wing After Dinalfos Ledge Chest': {
+  'CitS East Wing After Dinalfos Ledge Chest': {
     category: ['Chest', 'Dungeon', 'City in The Sky', 'ARC'],
     itemId: 'Purple_Rupee',
   },
-  'City in The Sky East Wing Lower Level Chest': {
+  'CitS East Wing Lower Level Chest': {
     category: [
       'Chest',
       'Dungeon',
@@ -397,51 +470,51 @@ window.tpr.checkData = {
     ],
     itemId: 'City_in_The_Sky_Compass',
   },
-  'City in The Sky Garden Island Poe': {
+  'CitS Garden Island Poe': {
     category: ['Overworld', 'Poe', 'City in The Sky'],
     itemId: 'Poe_Soul',
   },
-  'City in The Sky Poe Above Central Fan': {
+  'CitS Poe Above Central Fan': {
     category: ['Overworld', 'Poe', 'City in The Sky'],
     itemId: 'Poe_Soul',
   },
-  'City in The Sky Underwater East Chest': {
+  'CitS Underwater East Chest': {
     category: ['Chest', 'Dungeon', 'City in The Sky', 'ARC'],
     itemId: 'Red_Rupee',
   },
-  'City in The Sky Underwater West Chest': {
+  'CitS Underwater West Chest': {
     category: ['Chest', 'Dungeon', 'City in The Sky', 'ARC'],
     itemId: 'Water_Bombs_15',
   },
-  'City in The Sky West Garden Corner Chest': {
+  'CitS West Garden Corner Chest': {
     category: ['Chest', 'Dungeon', 'City in The Sky', 'ARC'],
     itemId: 'Red_Rupee',
   },
-  'City in The Sky West Garden Ledge Chest': {
+  'CitS West Garden Ledge Chest': {
     category: ['Chest', 'Dungeon', 'City in The Sky', 'ARC'],
     itemId: 'Piece_of_Heart',
   },
-  'City in The Sky West Garden Lone Island Chest': {
+  'CitS West Garden Lone Island Chest': {
     category: ['Chest', 'Dungeon', 'City in The Sky', 'ARC'],
     itemId: 'Purple_Rupee',
   },
-  'City in The Sky West Garden Lower Chest': {
+  'CitS West Garden Lower Chest': {
     category: ['Chest', 'Dungeon', 'City in The Sky', 'ARC'],
     itemId: 'Bombs_5',
   },
-  'City in The Sky West Wing Baba Balcony Chest': {
+  'CitS West Wing Baba Balcony Chest': {
     category: ['Chest', 'Dungeon', 'City in The Sky', 'ARC'],
     itemId: 'Arrows_20',
   },
-  'City in The Sky West Wing First Chest': {
+  'CitS West Wing First Chest': {
     category: ['Chest', 'Dungeon', 'City in The Sky', 'Small Key', 'ARC'],
     itemId: 'City_in_The_Sky_Small_Key',
   },
-  'City in The Sky West Wing Narrow Ledge Chest': {
+  'CitS West Wing Narrow Ledge Chest': {
     category: ['Chest', 'Dungeon', 'City in The Sky', 'ARC'],
     itemId: 'Red_Rupee',
   },
-  'City in The Sky West Wing Tile Worm Chest': {
+  'CitS West Wing Tile Worm Chest': {
     category: ['Chest', 'Dungeon', 'City in The Sky', 'ARC'],
     itemId: 'Bombs_10',
   },
@@ -489,7 +562,7 @@ window.tpr.checkData = {
     category: ['Overworld', 'Chest', 'Castle Town', 'ARC'],
     itemId: 'Red_Rupee',
   },
-  'East Castle Town Bridge Poe': {
+  'East CT Bridge Poe': {
     category: ['Overworld', 'Poe', 'Hyrule Field - Lanayru Province'],
     itemId: 'Poe_Soul',
   },
@@ -510,11 +583,21 @@ window.tpr.checkData = {
     itemId: 'Purple_Rupee',
   },
   'Eldin Field Female Grasshopper': {
-    category: ['Overworld', 'Golden Bug', 'Hyrule Field - Eldin Province', 'DZX'],
+    category: [
+      'Overworld',
+      'Golden Bug',
+      'Hyrule Field - Eldin Province',
+      'DZX',
+    ],
     itemId: 'Female_Grasshopper',
   },
   'Eldin Field Male Grasshopper': {
-    category: ['Overworld', 'Golden Bug', 'Hyrule Field - Eldin Province', 'DZX'],
+    category: [
+      'Overworld',
+      'Golden Bug',
+      'Hyrule Field - Eldin Province',
+      'DZX',
+    ],
     itemId: 'Male_Grasshopper',
   },
   'Eldin Field Stalfos Grotto Left Small Chest': {
@@ -586,11 +669,21 @@ window.tpr.checkData = {
     itemId: 'Red_Rupee',
   },
   'Faron Field Female Beetle': {
-    category: ['Overworld', 'Golden Bug', 'Hyrule Field - Faron Province', 'DZX'],
+    category: [
+      'Overworld',
+      'Golden Bug',
+      'Hyrule Field - Faron Province',
+      'DZX',
+    ],
     itemId: 'Female_Beetle',
   },
   'Faron Field Male Beetle': {
-    category: ['Overworld', 'Golden Bug', 'Hyrule Field - Faron Province', 'DZX'],
+    category: [
+      'Overworld',
+      'Golden Bug',
+      'Hyrule Field - Faron Province',
+      'DZX',
+    ],
     itemId: 'Male_Beetle',
   },
   'Faron Field Poe': {
@@ -657,6 +750,18 @@ window.tpr.checkData = {
     category: ['Overworld', 'Fishing Hole', 'ARC', 'REL'],
     itemId: 'Empty_Bottle',
   },
+  'Rollgoal 1-1': {
+    category: ['Overworld', 'Fishing Hole', 'Minigame'],
+    itemId: 'Nothing',
+  },
+  'Rollgoal 1-8': {
+    category: ['Overworld', 'Fishing Hole', 'Minigame'],
+    itemId: 'Nothing',
+  },
+  'Rollgoal 8-8': {
+    category: ['Overworld', 'Fishing Hole', 'Minigame'],
+    itemId: 'Nothing',
+  },
   'Fishing Hole Heart Piece': {
     category: ['Overworld', 'Fishing Hole', 'ARC', 'REL'],
     itemId: 'Piece_of_Heart',
@@ -685,19 +790,19 @@ window.tpr.checkData = {
     category: ['Overworld', 'Chest', 'Lake Hylia', 'DZX'],
     itemId: 'Orange_Rupee',
   },
-  'Forest Temple Big Baba Key': {
+  'FT Big Baba Key': {
     category: ['Small Key', 'Dungeon', 'Forest Temple', 'REL'],
     itemId: 'Forest_Temple_Small_Key',
   },
-  'Forest Temple Big Key Chest': {
+  'FT Big Key Chest': {
     category: ['Chest', 'Dungeon', 'Forest Temple', 'Big Key', 'ARC'],
     itemId: 'Forest_Temple_Big_Key',
   },
-  'Forest Temple Central Chest Behind Stairs': {
+  'FT Central Chest Behind Stairs': {
     category: ['Chest', 'Dungeon', 'Forest Temple', 'ARC'],
     itemId: 'Red_Rupee',
   },
-  'Forest Temple Central Chest Hanging From Web': {
+  'FT Central Chest Hanging From Web': {
     category: [
       'Chest',
       'Dungeon',
@@ -708,7 +813,7 @@ window.tpr.checkData = {
     ],
     itemId: 'Forest_Temple_Compass',
   },
-  'Forest Temple Central North Chest': {
+  'FT Central North Chest': {
     category: [
       'Chest',
       'Dungeon',
@@ -719,155 +824,155 @@ window.tpr.checkData = {
     ],
     itemId: 'Forest_Temple_Dungeon_Map',
   },
-  'Forest Temple Diababa': {
+  'FT Diababa': {
     category: ['Dungeon', 'Forest Temple'],
     itemId: 'Diababa_Defeated',
   },
-  'Forest Temple Diababa Heart Container': {
+  'FT Diababa Heart Container': {
     category: ['Heart Container', 'Dungeon', 'Forest Temple', 'Boss'],
     itemId: 'Heart_Container',
   },
-  'Forest Temple Dungeon Reward': {
+  'FT Dungeon Reward': {
     category: ['Dungeon', 'Forest Temple', 'Dungeon Reward', 'REL', 'ARC'],
     itemId: 'Progressive_Fused_Shadow',
   },
-  'Forest Temple East Tile Worm Chest': {
+  'FT East Tile Worm Chest': {
     category: ['Chest', 'Dungeon', 'Forest Temple', 'ARC'],
     itemId: 'Red_Rupee',
   },
-  'Forest Temple East Water Cave Chest': {
+  'FT East Water Cave Chest': {
     category: ['Chest', 'Dungeon', 'Forest Temple', 'ARC'],
     itemId: 'Yellow_Rupee',
   },
-  'Forest Temple Entrance Vines Chest': {
+  'FT Entrance Vines Chest': {
     category: ['Chest', 'Dungeon', 'Forest Temple', 'ARC'],
     itemId: 'Yellow_Rupee',
   },
-  'Forest Temple Gale Boomerang': {
+  'FT Gale Boomerang': {
     category: ['Forest Temple', 'Dungeon', 'Boss'],
     itemId: 'Boomerang',
   },
-  'Forest Temple North Deku Like Chest': {
+  'FT North Deku Like Chest': {
     category: ['Chest', 'Dungeon', 'Forest Temple', 'Small Key', 'ARC'],
     itemId: 'Forest_Temple_Small_Key',
   },
-  'Forest Temple Second Monkey Under Bridge Chest': {
+  'FT Second Monkey Under Bridge Chest': {
     category: ['Chest', 'Dungeon', 'Forest Temple', 'ARC'],
     itemId: 'Yellow_Rupee',
   },
-  'Forest Temple Totem Pole Chest': {
+  'FT Totem Pole Chest': {
     category: ['Chest', 'Dungeon', 'Forest Temple', 'Small Key', 'ARC'],
     itemId: 'Forest_Temple_Small_Key',
   },
-  'Forest Temple West Deku Like Chest': {
+  'FT West Deku Like Chest': {
     category: ['Chest', 'Dungeon', 'Forest Temple', 'ARC'],
     itemId: 'Piece_of_Heart',
   },
-  'Forest Temple West Tile Worm Chest Behind Stairs': {
+  'FT West Tile Worm Chest Behind Stairs': {
     category: ['Chest', 'Dungeon', 'Forest Temple', 'ARC'],
     itemId: 'Piece_of_Heart',
   },
-  'Forest Temple West Tile Worm Room Vines Chest': {
+  'FT West Tile Worm Room Vines Chest': {
     category: ['Chest', 'Dungeon', 'Forest Temple', 'ARC'],
     itemId: 'Red_Rupee',
   },
-  'Forest Temple Windless Bridge Chest': {
+  'FT Windless Bridge Chest': {
     category: ['Chest', 'Dungeon', 'Forest Temple', 'Small Key', 'ARC'],
     itemId: 'Forest_Temple_Small_Key',
   },
-  'Gerudo Desert Campfire East Chest': {
+  'Desert Campfire East Chest': {
     category: ['Overworld', 'Chest', 'Gerudo Desert', 'ARC'],
     itemId: 'Purple_Rupee',
   },
-  'Gerudo Desert Campfire North Chest': {
+  'Desert Campfire North Chest': {
     category: ['Overworld', 'Chest', 'Gerudo Desert', 'ARC'],
     itemId: 'Red_Rupee',
   },
-  'Gerudo Desert Campfire West Chest': {
+  'Desert Campfire West Chest': {
     category: ['Overworld', 'Chest', 'Gerudo Desert', 'ARC'],
     itemId: 'Arrows_10',
   },
-  'Gerudo Desert East Canyon Chest': {
+  'Desert East Canyon Chest': {
     category: ['Overworld', 'Chest', 'Gerudo Desert', 'ARC'],
     itemId: 'Red_Rupee',
   },
-  'Gerudo Desert East Poe': {
+  'Desert East Poe': {
     category: ['Overworld', 'Poe', 'Gerudo Desert'],
     itemId: 'Poe_Soul',
   },
-  'Gerudo Desert Female Dayfly': {
+  'Desert Female Dayfly': {
     category: ['Overworld', 'Golden Bug', 'Gerudo Desert', 'DZX'],
     itemId: 'Female_Dayfly',
   },
-  'Gerudo Desert Golden Wolf': {
+  'Desert Golden Wolf': {
     category: ['Overworld', 'Hidden Skill', 'Gerudo Desert', 'ARC'],
     itemId: 'Progressive_Hidden_Skill',
   },
-  'Gerudo Desert Lone Small Chest': {
+  'Desert Lone Small Chest': {
     category: ['Overworld', 'Chest', 'Gerudo Desert', 'ARC'],
     itemId: 'Arrows_10',
   },
-  'Gerudo Desert Male Dayfly': {
+  'Desert Male Dayfly': {
     category: ['Overworld', 'Golden Bug', 'Gerudo Desert', 'DZX'],
     itemId: 'Male_Dayfly',
   },
-  'Gerudo Desert North Peahat Poe': {
+  'Desert North Peahat Poe': {
     category: ['Overworld', 'Poe', 'Gerudo Desert'],
     itemId: 'Poe_Soul',
   },
-  'Gerudo Desert North Small Chest Before Bulblin Camp': {
+  'Desert North Small Chest Before Bulblin Camp': {
     category: ['Overworld', 'Chest', 'Gerudo Desert', 'ARC'],
     itemId: 'Arrows_10',
   },
-  'Gerudo Desert Northeast Chest Behind Gates': {
+  'Desert Northeast Chest Behind Gates': {
     category: ['Overworld', 'Chest', 'Gerudo Desert', 'ARC'],
     itemId: 'Red_Rupee',
   },
-  'Gerudo Desert Northwest Chest Behind Gates': {
+  'Desert Northwest Chest Behind Gates': {
     category: ['Overworld', 'Chest', 'Gerudo Desert', 'ARC'],
     itemId: 'Red_Rupee',
   },
-  'Gerudo Desert Owl Statue Chest': {
+  'Desert Owl Statue Chest': {
     category: ['Overworld', 'Chest', 'Gerudo Desert', 'ARC'],
     itemId: 'Orange_Rupee',
   },
-  'Gerudo Desert Owl Statue Sky Character': {
+  'Desert Owl Statue Sky Character': {
     category: ['Overworld', 'Gerudo Desert', 'Sky Book'],
     itemId: 'Progressive_Sky_Book',
   },
-  'Gerudo Desert Peahat Ledge Chest': {
+  'Desert Peahat Ledge Chest': {
     category: ['Overworld', 'Chest', 'Gerudo Desert', 'ARC'],
     itemId: 'Red_Rupee',
   },
-  'Gerudo Desert Poe Above Cave of Ordeals': {
+  'Desert Poe Above Cave of Ordeals': {
     category: ['Overworld', 'Poe', 'Gerudo Desert'],
     itemId: 'Poe_Soul',
   },
-  'Gerudo Desert Portal': {
+  'Desert Portal': {
     category: ['Overworld', 'Gerudo Desert'],
     itemId: 'Gerudo_Desert_Portal',
   },
-  'Gerudo Desert Rock Grotto First Poe': {
+  'Desert Rock Grotto First Poe': {
     category: ['Overworld', 'Poe', 'Gerudo Desert'],
     itemId: 'Poe_Soul',
   },
-  'Gerudo Desert Rock Grotto Lantern Chest': {
+  'Desert Rock Grotto Lantern Chest': {
     category: ['Overworld', 'Chest', 'Gerudo Desert', 'DZX'],
     itemId: 'Orange_Rupee',
   },
-  'Gerudo Desert Rock Grotto Second Poe': {
+  'Desert Rock Grotto Second Poe': {
     category: ['Overworld', 'Poe', 'Gerudo Desert'],
     itemId: 'Poe_Soul',
   },
-  'Gerudo Desert Skulltula Grotto Chest': {
+  'Desert Skulltula Grotto Chest': {
     category: ['Overworld', 'Chest', 'Gerudo Desert', 'DZX'],
     itemId: 'Orange_Rupee',
   },
-  'Gerudo Desert South Chest Behind Wooden Gates': {
+  'Desert South Chest Behind Wooden Gates': {
     category: ['Overworld', 'Chest', 'Gerudo Desert', 'ARC'],
     itemId: 'Orange_Rupee',
   },
-  'Gerudo Desert West Canyon Chest': {
+  'Desert West Canyon Chest': {
     category: ['Overworld', 'Chest', 'Gerudo Desert', 'ARC'],
     itemId: 'Purple_Rupee',
   },
@@ -879,11 +984,11 @@ window.tpr.checkData = {
     category: ['Overworld', 'Chest', 'Ordona Province', 'ARC'],
     itemId: 'Progressive_Sword',
   },
-  'Goron Mines After Crystal Switch Room Magnet Wall Chest': {
+  'GM After Crystal Switch Room Magnet Wall Chest': {
     category: ['Chest', 'Dungeon', 'Goron Mines', 'ARC'],
     itemId: 'Piece_of_Heart',
   },
-  'Goron Mines Beamos Room Chest': {
+  'GM Beamos Room Chest': {
     category: [
       'Chest',
       'Dungeon',
@@ -894,39 +999,39 @@ window.tpr.checkData = {
     ],
     itemId: 'Goron_Mines_Compass',
   },
-  'Goron Mines Chest Before Dangoro': {
+  'GM Chest Before Dangoro': {
     category: ['Chest', 'Dungeon', 'Goron Mines', 'ARC'],
     itemId: 'Yellow_Rupee',
   },
-  'Goron Mines Crystal Switch Room Small Chest': {
+  'GM Crystal Switch Room Small Chest': {
     category: ['Chest', 'Dungeon', 'Goron Mines', 'ARC'],
     itemId: 'Red_Rupee',
   },
-  'Goron Mines Crystal Switch Room Underwater Chest': {
+  'GM Crystal Switch Room Underwater Chest': {
     category: ['Chest', 'Dungeon', 'Goron Mines', 'Small Key', 'ARC'],
     itemId: 'Goron_Mines_Small_Key',
   },
-  'Goron Mines Dangoro Chest': {
+  'GM Dangoro Chest': {
     category: ['Chest', 'Dungeon', 'Goron Mines', 'ARC'],
     itemId: 'Progressive_Bow',
   },
-  'Goron Mines Dungeon Reward': {
+  'GM Dungeon Reward': {
     category: ['Dungeon', 'Goron Mines', 'Dungeon Reward', 'REL', 'ARC'],
     itemId: 'Progressive_Fused_Shadow',
   },
-  'Goron Mines Entrance Chest': {
+  'GM Entrance Chest': {
     category: ['Chest', 'Dungeon', 'Goron Mines', 'ARC'],
     itemId: 'Red_Rupee',
   },
-  'Goron Mines Fyrus': {
+  'GM Fyrus': {
     category: ['Dungeon', 'Goron Mines'],
     itemId: 'Fyrus_Defeated',
   },
-  'Goron Mines Fyrus Heart Container': {
+  'GM Fyrus Heart Container': {
     category: ['Heart Container', 'Dungeon', 'Goron Mines', 'Boss'],
     itemId: 'Heart_Container',
   },
-  'Goron Mines Gor Amato Chest': {
+  'GM Gor Amato Chest': {
     category: [
       'Chest',
       'Dungeon',
@@ -937,7 +1042,7 @@ window.tpr.checkData = {
     ],
     itemId: 'Goron_Mines_Dungeon_Map',
   },
-  'Goron Mines Gor Amato Key Shard': {
+  'GM Gor Amato Key Shard': {
     category: [
       'Npc',
       'Dungeon',
@@ -948,15 +1053,15 @@ window.tpr.checkData = {
     ],
     itemId: 'Goron_Mines_Key_Shard',
   },
-  'Goron Mines Gor Amato Small Chest': {
+  'GM Gor Amato Small Chest': {
     category: ['Chest', 'Dungeon', 'Goron Mines', 'ARC'],
     itemId: 'Red_Rupee',
   },
-  'Goron Mines Gor Ebizo Chest': {
+  'GM Gor Ebizo Chest': {
     category: ['Chest', 'Dungeon', 'Goron Mines', 'ARC'],
     itemId: 'Yellow_Rupee',
   },
-  'Goron Mines Gor Ebizo Key Shard': {
+  'GM Gor Ebizo Key Shard': {
     category: [
       'Npc',
       'Dungeon',
@@ -967,11 +1072,11 @@ window.tpr.checkData = {
     ],
     itemId: 'Goron_Mines_Key_Shard',
   },
-  'Goron Mines Gor Liggs Chest': {
+  'GM Gor Liggs Chest': {
     category: ['Chest', 'Dungeon', 'Goron Mines', 'ARC'],
     itemId: 'Purple_Rupee',
   },
-  'Goron Mines Gor Liggs Key Shard': {
+  'GM Gor Liggs Key Shard': {
     category: [
       'Npc',
       'Dungeon',
@@ -982,27 +1087,27 @@ window.tpr.checkData = {
     ],
     itemId: 'Goron_Mines_Key_Shard',
   },
-  'Goron Mines Magnet Maze Chest': {
+  'GM Magnet Maze Chest': {
     category: ['Chest', 'Dungeon', 'Goron Mines', 'ARC'],
     itemId: 'Piece_of_Heart',
   },
-  'Goron Mines Main Magnet Room Bottom Chest': {
+  'GM Main Magnet Room Bottom Chest': {
     category: ['Chest', 'Dungeon', 'Goron Mines', 'Small Key', 'ARC'],
     itemId: 'Goron_Mines_Small_Key',
   },
-  'Goron Mines Main Magnet Room Top Chest': {
+  'GM Main Magnet Room Top Chest': {
     category: ['Chest', 'Dungeon', 'Goron Mines', 'ARC'],
     itemId: 'Purple_Rupee',
   },
-  'Goron Mines Outside Beamos Chest': {
+  'GM Outside Beamos Chest': {
     category: ['Chest', 'Dungeon', 'Goron Mines', 'Small Key', 'ARC'],
     itemId: 'Goron_Mines_Small_Key',
   },
-  'Goron Mines Outside Clawshot Chest': {
+  'GM Outside Clawshot Chest': {
     category: ['Chest', 'Dungeon', 'Goron Mines', 'ARC'],
     itemId: 'Purple_Rupee',
   },
-  'Goron Mines Outside Underwater Chest': {
+  'GM Outside Underwater Chest': {
     category: ['Chest', 'Dungeon', 'Goron Mines', 'ARC'],
     itemId: 'Purple_Rupee',
   },
@@ -1011,22 +1116,22 @@ window.tpr.checkData = {
     itemId: 'Piece_of_Heart',
   },
   'Herding Goats Reward': {
-    category: ['Overworld', 'Npc', 'Ordona Province', 'ARC'],
+    category: ['Overworld', 'Minigame', 'Ordona Province', 'ARC'],
     itemId: 'Piece_of_Heart',
   },
-  'Hidden Village Poe': {
+  'HV Poe': {
     category: ['Overworld', 'Poe', 'Hidden Village'],
     itemId: 'Poe_Soul',
   },
-  'Hyrule Castle Big Key Chest': {
+  'HC Big Key Chest': {
     category: ['Chest', 'Dungeon', 'Hyrule Castle', 'Big Key', 'ARC'],
     itemId: 'Hyrule_Castle_Big_Key',
   },
-  'Hyrule Castle East Wing Balcony Chest': {
+  'HC East Wing Balcony Chest': {
     category: ['Chest', 'Dungeon', 'Hyrule Castle', 'ARC'],
     itemId: 'Yellow_Rupee',
   },
-  'Hyrule Castle East Wing Boomerang Puzzle Chest': {
+  'HC East Wing Boomerang Puzzle Chest': {
     category: [
       'Chest',
       'Dungeon',
@@ -1037,35 +1142,35 @@ window.tpr.checkData = {
     ],
     itemId: 'Hyrule_Castle_Dungeon_Map',
   },
-  'Hyrule Castle Ganondorf': {
+  'HC Ganondorf': {
     category: ['Dungeon', 'Hyrule Castle'],
     itemId: 'Ganondorf_Defeated',
   },
-  'Hyrule Castle Graveyard Grave Switch Room Back Left Chest': {
+  'HC Graveyard Grave Switch Room Back Left Chest': {
     category: ['Chest', 'Dungeon', 'Hyrule Castle', 'ARC'],
     itemId: 'Red_Rupee',
   },
-  'Hyrule Castle Graveyard Grave Switch Room Front Left Chest': {
+  'HC Graveyard Grave Switch Room Front Left Chest': {
     category: ['Chest', 'Dungeon', 'Hyrule Castle', 'ARC'],
     itemId: 'Green_Rupee',
   },
-  'Hyrule Castle Graveyard Grave Switch Room Right Chest': {
+  'HC Graveyard Grave Switch Room Right Chest': {
     category: ['Chest', 'Dungeon', 'Hyrule Castle', 'ARC'],
     itemId: 'Orange_Rupee',
   },
-  'Hyrule Castle Graveyard Owl Statue Chest': {
+  'HC Graveyard Owl Statue Chest': {
     category: ['Chest', 'Dungeon', 'Hyrule Castle', 'Small Key', 'ARC'],
     itemId: 'Hyrule_Castle_Small_Key',
   },
-  'Hyrule Castle King Bulblin Key': {
+  'HC King Bulblin Key': {
     category: ['Npc', 'Small Key', 'Dungeon', 'Hyrule Castle', 'REL'],
     itemId: 'Hyrule_Castle_Small_Key',
   },
-  'Hyrule Castle Lantern Staircase Chest': {
+  'HC Lantern Staircase Chest': {
     category: ['Chest', 'Dungeon', 'Hyrule Castle', 'ARC'],
     itemId: 'Purple_Rupee',
   },
-  'Hyrule Castle Main Hall Northeast Chest': {
+  'HC Main Hall Northeast Chest': {
     category: [
       'Chest',
       'Dungeon',
@@ -1076,75 +1181,75 @@ window.tpr.checkData = {
     ],
     itemId: 'Hyrule_Castle_Compass',
   },
-  'Hyrule Castle Main Hall Northwest Chest': {
+  'HC Main Hall Northwest Chest': {
     category: ['Chest', 'Dungeon', 'Hyrule Castle', 'ARC'],
     itemId: 'Silver_Rupee',
   },
-  'Hyrule Castle Main Hall Southwest Chest': {
+  'HC Main Hall Southwest Chest': {
     category: ['Chest', 'Dungeon', 'Hyrule Castle', 'ARC'],
     itemId: 'Orange_Rupee',
   },
-  'Hyrule Castle Southeast Balcony Tower Chest': {
+  'HC Southeast Balcony Tower Chest': {
     category: ['Chest', 'Dungeon', 'Hyrule Castle', 'Small Key', 'ARC'],
     itemId: 'Hyrule_Castle_Small_Key',
   },
-  'Hyrule Castle Treasure Room Eighth Small Chest': {
+  'HC Treasure Room Eighth Small Chest': {
     category: ['Chest', 'Dungeon', 'Hyrule Castle', 'ARC'],
     itemId: 'Blue_Rupee',
   },
-  'Hyrule Castle Treasure Room Fifth Chest': {
+  'HC Treasure Room Fifth Chest': {
     category: ['Chest', 'Dungeon', 'Hyrule Castle', 'ARC'],
     itemId: 'Purple_Rupee',
   },
-  'Hyrule Castle Treasure Room Fifth Small Chest': {
+  'HC Treasure Room Fifth Small Chest': {
     category: ['Chest', 'Dungeon', 'Hyrule Castle', 'ARC'],
     itemId: 'Water_Bombs_15',
   },
-  'Hyrule Castle Treasure Room First Chest': {
+  'HC Treasure Room First Chest': {
     category: ['Chest', 'Dungeon', 'Hyrule Castle', 'ARC'],
     itemId: 'Orange_Rupee',
   },
-  'Hyrule Castle Treasure Room First Small Chest': {
+  'HC Treasure Room First Small Chest': {
     category: ['Chest', 'Dungeon', 'Hyrule Castle', 'ARC'],
     itemId: 'Arrows_30',
   },
-  'Hyrule Castle Treasure Room Fourth Chest': {
+  'HC Treasure Room Fourth Chest': {
     category: ['Chest', 'Dungeon', 'Hyrule Castle', 'ARC'],
     itemId: 'Bomblings_10',
   },
-  'Hyrule Castle Treasure Room Fourth Small Chest': {
+  'HC Treasure Room Fourth Small Chest': {
     category: ['Chest', 'Dungeon', 'Hyrule Castle', 'ARC'],
     itemId: 'Arrows_20',
   },
-  'Hyrule Castle Treasure Room Second Chest': {
+  'HC Treasure Room Second Chest': {
     category: ['Chest', 'Dungeon', 'Hyrule Castle', 'ARC'],
     itemId: 'Seeds_50',
   },
-  'Hyrule Castle Treasure Room Second Small Chest': {
+  'HC Treasure Room Second Small Chest': {
     category: ['Chest', 'Dungeon', 'Hyrule Castle', 'ARC'],
     itemId: 'Green_Rupee',
   },
-  'Hyrule Castle Treasure Room Seventh Small Chest': {
+  'HC Treasure Room Seventh Small Chest': {
     category: ['Chest', 'Dungeon', 'Hyrule Castle', 'ARC'],
     itemId: 'Yellow_Rupee',
   },
-  'Hyrule Castle Treasure Room Sixth Small Chest': {
+  'HC Treasure Room Sixth Small Chest': {
     category: ['Chest', 'Dungeon', 'Hyrule Castle', 'ARC'],
     itemId: 'Red_Rupee',
   },
-  'Hyrule Castle Treasure Room Third Chest': {
+  'HC Treasure Room Third Chest': {
     category: ['Chest', 'Dungeon', 'Hyrule Castle', 'ARC'],
     itemId: 'Silver_Rupee',
   },
-  'Hyrule Castle Treasure Room Third Small Chest': {
+  'HC Treasure Room Third Small Chest': {
     category: ['Chest', 'Dungeon', 'Hyrule Castle', 'ARC'],
     itemId: 'Bombs_20',
   },
-  'Hyrule Castle West Courtyard Central Small Chest': {
+  'HC West Courtyard Central Small Chest': {
     category: ['Chest', 'Dungeon', 'Hyrule Castle', 'ARC'],
     itemId: 'Red_Rupee',
   },
-  'Hyrule Castle West Courtyard North Small Chest': {
+  'HC West Courtyard North Small Chest': {
     category: ['Chest', 'Dungeon', 'Hyrule Castle', 'ARC'],
     itemId: 'Red_Rupee',
   },
@@ -1177,7 +1282,7 @@ window.tpr.checkData = {
     itemId: 'Filled_Bomb_Bag',
   },
   'Iza Raging Rapids Minigame': {
-    category: ['Overworld', 'Npc', 'Upper Zoras River', 'ARC'],
+    category: ['Overworld', 'Minigame', 'Upper Zoras River', 'ARC'],
     itemId: 'Giant_Bomb_Bag',
   },
   'Jovani 20 Poe Soul Reward': {
@@ -1192,135 +1297,145 @@ window.tpr.checkData = {
     category: ['Overworld', 'Castle Town', 'Poe'],
     itemId: 'Poe_Soul',
   },
-  'Kakariko Gorge Owl Statue Boulder Rupee': {
+  'Kak Gorge Owl Statue Boulder Rupee': {
     category: ['Overworld', 'Rupee - Hidden', 'Hyrule Field - Eldin Province'],
     itemId: 'Yellow_Rupee',
   },
-  'Kakariko Gorge Spire Boulder Rupee': {
+  'Kak Gorge Spire Boulder Rupee': {
     category: ['Overworld', 'Rupee - Hidden', 'Hyrule Field - Eldin Province'],
     itemId: 'Yellow_Rupee',
   },
-  'Kakariko Gorge Double Clawshot Chest': {
+  'Kak Gorge Double Clawshot Chest': {
     category: ['Overworld', 'Chest', 'Hyrule Field - Eldin Province', 'ARC'],
     itemId: 'Piece_of_Heart',
   },
-  'Kakariko Gorge Female Pill Bug': {
-    category: ['Overworld', 'Golden Bug', 'Hyrule Field - Eldin Province', 'DZX'],
+  'Kak Gorge Female Pill Bug': {
+    category: [
+      'Overworld',
+      'Golden Bug',
+      'Hyrule Field - Eldin Province',
+      'DZX',
+    ],
     itemId: 'Female_Pill_Bug',
   },
-  'Kakariko Gorge Male Pill Bug': {
-    category: ['Overworld', 'Golden Bug', 'Hyrule Field - Eldin Province', 'DZX'],
+  'Kak Gorge Male Pill Bug': {
+    category: [
+      'Overworld',
+      'Golden Bug',
+      'Hyrule Field - Eldin Province',
+      'DZX',
+    ],
     itemId: 'Male_Pill_Bug',
   },
-  'Kakariko Gorge Portal': {
+  'Kak Gorge Portal': {
     category: ['Overworld', 'Hyrule Field - Eldin Province'],
     itemId: 'Kakariko_Gorge_Portal',
   },
-  'Kakariko Gorge Owl Statue Chest': {
+  'Kak Gorge Owl Statue Chest': {
     category: ['Overworld', 'Chest', 'Hyrule Field - Eldin Province', 'ARC'],
     itemId: 'Orange_Rupee',
   },
-  'Kakariko Gorge Owl Statue Sky Character': {
+  'Kak Gorge Owl Statue Sky Character': {
     category: ['Overworld', 'Hyrule Field - Eldin Province', 'Sky Book'],
     itemId: 'Progressive_Sky_Book',
   },
-  'Kakariko Gorge Poe': {
+  'Kak Gorge Poe': {
     category: ['Overworld', 'Poe', 'Hyrule Field - Eldin Province'],
     itemId: 'Poe_Soul',
   },
-  'Kakariko Gorge Spire Heart Piece': {
+  'Kak Gorge Spire Heart Piece': {
     category: ['Overworld', 'Hyrule Field - Eldin Province', 'ARC'],
     itemId: 'Piece_of_Heart',
   },
-  'Kakariko Graveyard Golden Wolf': {
+  'Kak Graveyard Golden Wolf': {
     category: ['Overworld', 'Hidden Skill', 'Kakariko Graveyard', 'ARC'],
     itemId: 'Progressive_Hidden_Skill',
   },
-  'Kakariko Graveyard Grave Poe': {
+  'Kak Graveyard Grave Poe': {
     category: ['Overworld', 'Poe', 'Kakariko Graveyard'],
     itemId: 'Poe_Soul',
   },
-  'Kakariko Graveyard Lantern Chest': {
+  'Kak Graveyard Lantern Chest': {
     category: ['Overworld', 'Chest', 'Kakariko Graveyard', 'ARC'],
     itemId: 'Purple_Rupee',
   },
-  'Kakariko Graveyard Male Ant': {
+  'Kak Graveyard Male Ant': {
     category: ['Overworld', 'Golden Bug', 'Kakariko Graveyard', 'DZX'],
     itemId: 'Male_Ant',
   },
-  'Kakariko Graveyard Open Poe': {
+  'Kak Graveyard Open Poe': {
     category: ['Overworld', 'Poe', 'Kakariko Graveyard'],
     itemId: 'Poe_Soul',
   },
-  'Kakariko Graveyard Underwater Boulder Rupee': {
+  'Kak Graveyard Underwater Boulder Rupee': {
     category: ['Overworld', 'Rupee - Hidden', 'Kakariko Graveyard'],
     itemId: 'Red_Rupee',
   },
-  'Kakariko Inn Chest': {
+  'Kak Inn Chest': {
     category: ['Overworld', 'Chest', 'Kakariko Village', 'ARC'],
     itemId: 'Red_Rupee',
   },
-  'Kakariko Village Bell Rupee': {
-    category: ['Overworld','Kakariko Village', 'Rupee - Hidden', 'ARC'],
+  'Kak Village Bell Rupee': {
+    category: ['Overworld', 'Kakariko Village', 'Rupee - Hidden', 'ARC'],
     itemId: 'Silver_Rupee',
   },
-  'Kakariko Village Bomb Rock Spire Heart Piece': {
+  'Kak Village Bomb Rock Spire Heart Piece': {
     category: ['Overworld', 'Chest', 'Kakariko Village', 'DZX'],
     itemId: 'Piece_of_Heart',
   },
-  'Kakariko Village Bomb Shop Poe': {
+  'Kak Village Bomb Shop Poe': {
     category: ['Overworld', 'Poe', 'Kakariko Village'],
     itemId: 'Poe_Soul',
   },
-  'Kakariko Village Female Ant': {
+  'Kak Village Female Ant': {
     category: ['Overworld', 'Golden Bug', 'Kakariko Village', 'DZX'],
     itemId: 'Female_Ant',
   },
-  'Kakariko Village Malo Mart Hawkeye': {
-    category: ['Overworld', 'Kakariko Village', 'ARC', 'Shop'],
+  'Kak Village Malo Mart Hawkeye': {
+    category: ['Overworld', 'Kakariko Village', 'ARC', 'Minigame'],
     itemId: 'Hawkeye',
   },
-  'Kakariko Village Malo Mart Hylian Shield': {
+  'Kak Village Malo Mart Hylian Shield': {
     category: ['Overworld', 'Kakariko Village', 'ARC', 'Shop'],
     itemId: 'Hylian_Shield',
   },
-  'Kakariko Village Malo Mart Red Potion': {
+  'Kak Village Malo Mart Red Potion': {
     category: ['Overworld', 'Kakariko Village', 'ARC', 'Shop'],
     itemId: 'Red_Potion',
   },
-  'Kakariko Village Malo Mart Wooden Shield': {
+  'Kak Village Malo Mart Wooden Shield': {
     category: ['Overworld', 'Kakariko Village', 'ARC', 'Shop'],
     itemId: 'Wooden_Shield',
   },
-  'Kakariko Village Portal': {
+  'Kak Village Portal': {
     category: ['Overworld', 'Kakariko Village'],
     itemId: 'Kakariko_Village_Portal',
   },
-  'Kakariko Village Watchtower Poe': {
+  'Kak Village Watchtower Poe': {
     category: ['Overworld', 'Poe', 'Kakariko Village'],
     itemId: 'Poe_Soul',
   },
-  'Kakariko Watchtower Alcove Chest': {
+  'Kak Watchtower Alcove Chest': {
     category: ['Overworld', 'Chest', 'Kakariko Village', 'ARC'],
     itemId: 'Orange_Rupee',
   },
-  'Kakariko Watchtower Chest': {
+  'Kak Watchtower Chest': {
     category: ['Overworld', 'Chest', 'Kakariko Village', 'ARC'],
     itemId: 'Purple_Rupee',
   },
-  'Kakariko Village Spring Shortcut Box Rupee 1': {
+  'Kak Village Spring Shortcut Box Rupee 1': {
     category: ['Overworld', 'Rupee - Hidden', 'Kakariko Village'],
     itemId: 'Blue_Rupee',
   },
-  'Kakariko Village Spring Shortcut Box Rupee 2': {
+  'Kak Village Spring Shortcut Box Rupee 2': {
     category: ['Overworld', 'Rupee - Hidden', 'Kakariko Village'],
     itemId: 'Yellow_Rupee',
   },
-  'Kakariko Village Hot Spring Ledge Box Rupee': {
+  'Kak Village Hot Spring Ledge Box Rupee': {
     category: ['Overworld', 'Rupee - Hidden', 'Kakariko Village'],
     itemId: 'Yellow_Rupee',
   },
-  'Kakariko Village Ant House Ledge Box Rupee': {
+  'Kak Village Ant House Ledge Box Rupee': {
     category: ['Overworld', 'Rupee - Hidden', 'Kakariko Village'],
     itemId: 'Red_Rupee',
   },
@@ -1329,11 +1444,19 @@ window.tpr.checkData = {
     itemId: 'Poe_Soul',
   },
   'Lake Hylia Bridge Faron Boulder Rupee': {
-    category: ['Overworld', 'Rupee - Hidden', 'Hyrule Field - Lanayru Province'],
+    category: [
+      'Overworld',
+      'Rupee - Hidden',
+      'Hyrule Field - Lanayru Province',
+    ],
     itemId: 'Yellow_Rupee',
   },
   'Lake Hylia Bridge Owl Statue Boulder Rupee': {
-    category: ['Overworld', 'Rupee - Hidden', 'Hyrule Field - Lanayru Province'],
+    category: [
+      'Overworld',
+      'Rupee - Hidden',
+      'Hyrule Field - Lanayru Province',
+    ],
     itemId: 'Yellow_Rupee',
   },
   'Lake Hylia Bridge Bubble Grotto Chest': {
@@ -1349,11 +1472,21 @@ window.tpr.checkData = {
     itemId: 'Poe_Soul',
   },
   'Lake Hylia Bridge Female Mantis': {
-    category: ['Overworld', 'Golden Bug', 'Hyrule Field - Lanayru Province', 'DZX'],
+    category: [
+      'Overworld',
+      'Golden Bug',
+      'Hyrule Field - Lanayru Province',
+      'DZX',
+    ],
     itemId: 'Female_Mantis',
   },
   'Lake Hylia Bridge Male Mantis': {
-    category: ['Overworld', 'Golden Bug', 'Hyrule Field - Lanayru Province', 'DZX'],
+    category: [
+      'Overworld',
+      'Golden Bug',
+      'Hyrule Field - Lanayru Province',
+      'DZX',
+    ],
     itemId: 'Male_Mantis',
   },
   'Lake Hylia Bridge Owl Statue Chest': {
@@ -1408,95 +1541,95 @@ window.tpr.checkData = {
     category: ['Overworld', 'Rupee - Hidden', 'Lake Hylia'],
     itemId: 'Blue_Rupee',
   },
-  'Lake Lantern Cave Eighth Chest': {
+  'LLC Eighth Chest': {
     category: ['Overworld', 'Chest', 'Lake Lantern Cave', 'ARC'],
     itemId: 'Bomblings_5',
   },
-  'Lake Lantern Cave Eleventh Chest': {
+  'LLC Eleventh Chest': {
     category: ['Overworld', 'Chest', 'Lake Lantern Cave', 'ARC'],
     itemId: 'Bomblings_10',
   },
-  'Lake Lantern Cave End Lantern Chest': {
+  'LLC End Lantern Chest': {
     category: ['Overworld', 'Chest', 'Lake Lantern Cave', 'ARC'],
     itemId: 'Piece_of_Heart',
   },
-  'Lake Lantern Cave Fifth Chest': {
+  'LLC Fifth Chest': {
     category: ['Overworld', 'Chest', 'Lake Lantern Cave', 'ARC'],
     itemId: 'Red_Rupee',
   },
-  'Lake Lantern Cave Final Poe': {
+  'LLC Final Poe': {
     category: ['Overworld', 'Poe', 'Lake Lantern Cave'],
     itemId: 'Poe_Soul',
   },
-  'Lake Lantern Cave First Chest': {
+  'LLC First Chest': {
     category: ['Overworld', 'Chest', 'Lake Lantern Cave', 'ARC'],
     itemId: 'Bomblings_5',
   },
-  'Lake Lantern Cave First Poe': {
+  'LLC First Poe': {
     category: ['Overworld', 'Poe', 'Lake Lantern Cave'],
     itemId: 'Poe_Soul',
   },
-  'Lake Lantern Cave Fourteenth Chest': {
+  'LLC Fourteenth Chest': {
     category: ['Overworld', 'Chest', 'Lake Lantern Cave', 'ARC'],
     itemId: 'Orange_Rupee',
   },
-  'Lake Lantern Cave Fourth Chest': {
+  'LLC Fourth Chest': {
     category: ['Overworld', 'Chest', 'Lake Lantern Cave', 'ARC'],
     itemId: 'Arrows_10',
   },
-  'Lake Lantern Cave Ninth Chest': {
+  'LLC Ninth Chest': {
     category: ['Overworld', 'Chest', 'Lake Lantern Cave', 'ARC'],
     itemId: 'Arrows_10',
   },
-  'Lake Lantern Cave Second Chest': {
+  'LLC Second Chest': {
     category: ['Overworld', 'Chest', 'Lake Lantern Cave', 'ARC'],
     itemId: 'Yellow_Rupee',
   },
-  'Lake Lantern Cave Second Poe': {
+  'LLC Second Poe': {
     category: ['Overworld', 'Poe', 'Lake Lantern Cave'],
     itemId: 'Poe_Soul',
   },
-  'Lake Lantern Cave Seventh Chest': {
+  'LLC Seventh Chest': {
     category: ['Overworld', 'Chest', 'Lake Lantern Cave', 'ARC'],
     itemId: 'Red_Rupee',
   },
-  'Lake Lantern Cave Sixth Chest': {
+  'LLC Sixth Chest': {
     category: ['Overworld', 'Chest', 'Lake Lantern Cave', 'ARC'],
     itemId: 'Orange_Rupee',
   },
-  'Lake Lantern Cave Tenth Chest': {
+  'LLC Tenth Chest': {
     category: ['Overworld', 'Chest', 'Lake Lantern Cave', 'ARC'],
     itemId: 'Purple_Rupee',
   },
-  'Lake Lantern Cave Third Chest': {
+  'LLC Third Chest': {
     category: ['Overworld', 'Chest', 'Lake Lantern Cave', 'ARC'],
     itemId: 'Red_Rupee',
   },
-  'Lake Lantern Cave Thirteenth Chest': {
+  'LLC Thirteenth Chest': {
     category: ['Overworld', 'Chest', 'Lake Lantern Cave', 'ARC'],
     itemId: 'Seeds_50',
   },
-  'Lake Lantern Cave Twelfth Chest': {
+  'LLC Twelfth Chest': {
     category: ['Overworld', 'Chest', 'Lake Lantern Cave', 'ARC'],
     itemId: 'Purple_Rupee',
   },
-  'Lakebed Temple Before Deku Toad Alcove Chest': {
+  'LBT Before Deku Toad Alcove Chest': {
     category: ['Chest', 'Dungeon', 'Lakebed Temple', 'Small Key', 'ARC'],
     itemId: 'Lakebed_Temple_Small_Key',
   },
-  'Lakebed Temple Before Deku Toad Underwater Left Chest': {
+  'LBT Before Deku Toad Underwater Left Chest': {
     category: ['Chest', 'Dungeon', 'Lakebed Temple', 'ARC'],
     itemId: 'Red_Rupee',
   },
-  'Lakebed Temple Before Deku Toad Underwater Right Chest': {
+  'LBT Before Deku Toad Underwater Right Chest': {
     category: ['Chest', 'Dungeon', 'Lakebed Temple', 'ARC'],
     itemId: 'Water_Bombs_5',
   },
-  'Lakebed Temple Big Key Chest': {
+  'LBT Big Key Chest': {
     category: ['Chest', 'Dungeon', 'Lakebed Temple', 'Big Key', 'ARC'],
     itemId: 'Lakebed_Temple_Big_Key',
   },
-  'Lakebed Temple Central Room Chest': {
+  'LBT Central Room Chest': {
     category: [
       'Chest',
       'Dungeon',
@@ -1507,95 +1640,95 @@ window.tpr.checkData = {
     ],
     itemId: 'Lakebed_Temple_Dungeon_Map',
   },
-  'Lakebed Temple Central Room Small Chest': {
+  'LBT Central Room Small Chest': {
     category: ['Chest', 'Dungeon', 'Lakebed Temple', 'ARC'],
     itemId: 'Arrows_20',
   },
-  'Lakebed Temple Central Room Spire Chest': {
+  'LBT Central Room Spire Chest': {
     category: ['Chest', 'Dungeon', 'Lakebed Temple', 'ARC'],
     itemId: 'Red_Rupee',
   },
-  'Lakebed Temple Chandelier Chest': {
+  'LBT Chandelier Chest': {
     category: ['Chest', 'Dungeon', 'Lakebed Temple', 'ARC'],
     itemId: 'Piece_of_Heart',
   },
-  'Lakebed Temple Deku Toad Chest': {
+  'LBT Deku Toad Chest': {
     category: ['Chest', 'Dungeon', 'Lakebed Temple', 'ARC'],
     itemId: 'Progressive_Clawshot',
   },
-  'Lakebed Temple Dungeon Reward': {
+  'LBT Dungeon Reward': {
     category: ['Dungeon', 'Lakebed Temple', 'Dungeon Reward', 'REL', 'ARC'],
     itemId: 'Progressive_Fused_Shadow',
   },
-  'Lakebed Temple East Lower Waterwheel Bridge Chest': {
+  'LBT East Lower Waterwheel Bridge Chest': {
     category: ['Chest', 'Dungeon', 'Lakebed Temple', 'ARC'],
     itemId: 'Piece_of_Heart',
   },
-  'Lakebed Temple East Lower Waterwheel Stalactite Chest': {
+  'LBT East Lower Waterwheel Stalactite Chest': {
     category: ['Chest', 'Dungeon', 'Lakebed Temple', 'Small Key', 'ARC'],
     itemId: 'Lakebed_Temple_Small_Key',
   },
-  'Lakebed Temple East Second Floor Southeast Chest': {
+  'LBT East Second Floor Southeast Chest': {
     category: ['Chest', 'Dungeon', 'Lakebed Temple', 'Small Key', 'ARC'],
     itemId: 'Lakebed_Temple_Small_Key',
   },
-  'Lakebed Temple East Second Floor Southwest Chest': {
+  'LBT East Second Floor Southwest Chest': {
     category: ['Chest', 'Dungeon', 'Lakebed Temple', 'ARC'],
     itemId: 'Water_Bombs_5',
   },
-  'Lakebed Temple East Water Supply Clawshot Chest': {
+  'LBT East Water Supply Clawshot Chest': {
     category: ['Chest', 'Dungeon', 'Lakebed Temple', 'ARC'],
     itemId: 'Purple_Rupee',
   },
-  'Lakebed Temple East Water Supply Small Chest': {
+  'LBT East Water Supply Small Chest': {
     category: ['Chest', 'Dungeon', 'Lakebed Temple', 'ARC'],
     itemId: 'Water_Bombs_10',
   },
-  'Lakebed Temple Lobby Left Chest': {
+  'LBT Lobby Left Chest': {
     category: ['Chest', 'Dungeon', 'Lakebed Temple', 'ARC'],
     itemId: 'Arrows_20',
   },
-  'Lakebed Temple Lobby Rear Chest': {
+  'LBT Lobby Rear Chest': {
     category: ['Chest', 'Dungeon', 'Lakebed Temple', 'ARC'],
     itemId: 'Water_Bombs_10',
   },
-  'Lakebed Temple Morpheel': {
+  'LBT Morpheel': {
     category: ['Dungeon', 'Lakebed Temple'],
     itemId: 'Morpheel_Defeated',
   },
-  'Lakebed Temple Morpheel Heart Container': {
+  'LBT Morpheel Heart Container': {
     category: ['Heart Container', 'Dungeon', 'Lakebed Temple', 'Boss'],
     itemId: 'Heart_Container',
   },
-  'Lakebed Temple Stalactite Room Chest': {
+  'LBT Stalactite Room Chest': {
     category: ['Chest', 'Dungeon', 'Lakebed Temple', 'ARC'],
     itemId: 'Water_Bombs_10',
   },
-  'Lakebed Temple Underwater Maze Small Chest': {
+  'LBT Underwater Maze Small Chest': {
     category: ['Chest', 'Dungeon', 'Lakebed Temple', 'ARC'],
     itemId: 'Water_Bombs_5',
   },
-  'Lakebed Temple West Lower Small Chest': {
+  'LBT West Lower Small Chest': {
     category: ['Chest', 'Dungeon', 'Lakebed Temple', 'ARC'],
     itemId: 'Water_Bombs_10',
   },
-  'Lakebed Temple West Second Floor Central Small Chest': {
+  'LBT West Second Floor Central Small Chest': {
     category: ['Chest', 'Dungeon', 'Lakebed Temple', 'ARC'],
     itemId: 'Red_Rupee',
   },
-  'Lakebed Temple West Second Floor Northeast Chest': {
+  'LBT West Second Floor Northeast Chest': {
     category: ['Chest', 'Dungeon', 'Lakebed Temple', 'ARC'],
     itemId: 'Water_Bombs_15',
   },
-  'Lakebed Temple West Second Floor Southeast Chest': {
+  'LBT West Second Floor Southeast Chest': {
     category: ['Chest', 'Dungeon', 'Lakebed Temple', 'ARC'],
     itemId: 'Red_Rupee',
   },
-  'Lakebed Temple West Second Floor Southwest Underwater Chest': {
+  'LBT West Second Floor Southwest Underwater Chest': {
     category: ['Chest', 'Dungeon', 'Lakebed Temple', 'ARC'],
     itemId: 'Red_Rupee',
   },
-  'Lakebed Temple West Water Supply Chest': {
+  'LBT West Water Supply Chest': {
     category: [
       'Chest',
       'Dungeon',
@@ -1606,28 +1739,48 @@ window.tpr.checkData = {
     ],
     itemId: 'Lakebed_Temple_Compass',
   },
-  'Lakebed Temple West Water Supply Small Chest': {
+  'LBT West Water Supply Small Chest': {
     category: ['Chest', 'Dungeon', 'Lakebed Temple', 'ARC'],
     itemId: 'Water_Bombs_10',
   },
   'Lanayru Field North Spinner Track Boulder Rupee': {
-    category: ['Overworld', 'Rupee - Hidden', 'Hyrule Field - Lanayru Province'],
+    category: [
+      'Overworld',
+      'Rupee - Hidden',
+      'Hyrule Field - Lanayru Province',
+    ],
     itemId: 'Yellow_Rupee',
   },
   'Lanayru Field South Spinner Track Boulder Rupee': {
-    category: ['Overworld', 'Rupee - Hidden', 'Hyrule Field - Lanayru Province'],
+    category: [
+      'Overworld',
+      'Rupee - Hidden',
+      'Hyrule Field - Lanayru Province',
+    ],
     itemId: 'Yellow_Rupee',
   },
   'Lanayru Field North Underwater Boulder Rupee': {
-    category: ['Overworld', 'Rupee - Hidden', 'Hyrule Field - Lanayru Province'],
+    category: [
+      'Overworld',
+      'Rupee - Hidden',
+      'Hyrule Field - Lanayru Province',
+    ],
     itemId: 'Yellow_Rupee',
   },
   'Lanayru Field South Underwater Boulder Rupee': {
-    category: ['Overworld', 'Rupee - Hidden', 'Hyrule Field - Lanayru Province'],
+    category: [
+      'Overworld',
+      'Rupee - Hidden',
+      'Hyrule Field - Lanayru Province',
+    ],
     itemId: 'Yellow_Rupee',
   },
   'Lanayru Field Tree Boulder Rupee': {
-    category: ['Overworld', 'Rupee - Hidden', 'Hyrule Field - Lanayru Province'],
+    category: [
+      'Overworld',
+      'Rupee - Hidden',
+      'Hyrule Field - Lanayru Province',
+    ],
     itemId: 'Yellow_Rupee',
   },
   'Lanayru Field Behind Gate Underwater Chest': {
@@ -1639,11 +1792,21 @@ window.tpr.checkData = {
     itemId: 'Poe_Soul',
   },
   'Lanayru Field Female Stag Beetle': {
-    category: ['Overworld', 'Golden Bug', 'Hyrule Field - Lanayru Province', 'DZX'],
+    category: [
+      'Overworld',
+      'Golden Bug',
+      'Hyrule Field - Lanayru Province',
+      'DZX',
+    ],
     itemId: 'Female_Stag_Beetle',
   },
   'Lanayru Field Male Stag Beetle': {
-    category: ['Overworld', 'Golden Bug', 'Hyrule Field - Lanayru Province', 'DZX'],
+    category: [
+      'Overworld',
+      'Golden Bug',
+      'Hyrule Field - Lanayru Province',
+      'DZX',
+    ],
     itemId: 'Male_Stag_Beetle',
   },
   'Lanayru Field Poe Grotto Left Poe': {
@@ -1722,11 +1885,11 @@ window.tpr.checkData = {
     category: ['Overworld', 'Mirror Chamber'],
     itemId: 'Mirror_Chamber_Portal',
   },
-  'Arbiters Grounds Dungeon Reward': {
+  'AG Dungeon Reward': {
     category: ['Dungeon', 'Arbiters Grounds', 'Dungeon Reward', 'Event'],
     itemId: 'Progressive_Mirror_Shard',
   },
-  'North Castle Town Golden Wolf': {
+  'North CT Golden Wolf': {
     category: ['Overworld', 'Hidden Skill', 'Castle Town', 'ARC'],
     itemId: 'Progressive_Hidden_Skill',
   },
@@ -1822,11 +1985,11 @@ window.tpr.checkData = {
     category: ['Overworld', 'Rupee - Freestanding', 'Ordona Province', 'ARC'],
     itemId: 'Green_Rupee',
   },
-  'Outside Arbiters Grounds Lantern Chest': {
+  'Outside AG Lantern Chest': {
     category: ['Overworld', 'Chest', 'Bulblin Camp', 'ARC'],
     itemId: 'Purple_Rupee',
   },
-  'Outside Arbiters Grounds Poe': {
+  'Outside AG Poe': {
     category: ['Overworld', 'Poe', 'Bulblin Camp'],
     itemId: 'Poe_Soul',
   },
@@ -1842,91 +2005,110 @@ window.tpr.checkData = {
     category: ['Overworld', 'Chest', 'Lake Hylia', 'DZX'],
     itemId: 'Orange_Rupee',
   },
-  'Outside South Castle Town Boulder Rupee': {
-    category: ['Overworld', 'Rupee - Hidden', 'Hyrule Field - Lanayru Province'],
+  'OCT South Boulder Rupee': {
+    category: [
+      'Overworld',
+      'Rupee - Hidden',
+      'Hyrule Field - Lanayru Province',
+    ],
     itemId: 'Yellow_Rupee',
   },
-  'Outside South Castle Town Double Clawshot Chasm Chest': {
+  'OCT South Double Clawshot Chasm Chest': {
     category: ['Overworld', 'Chest', 'Hyrule Field - Lanayru Province', 'ARC'],
     itemId: 'Orange_Rupee',
   },
-  'Outside South Castle Town Female Ladybug': {
-    category: ['Overworld', 'Golden Bug', 'Hyrule Field - Lanayru Province', 'DZX'],
+  'OCT South Female Ladybug': {
+    category: [
+      'Overworld',
+      'Golden Bug',
+      'Hyrule Field - Lanayru Province',
+      'DZX',
+    ],
     itemId: 'Female_Ladybug',
   },
-  'Outside South Castle Town Fountain Chest': {
+  'OCT South Fountain Chest': {
     category: ['Overworld', 'Chest', 'Hyrule Field - Lanayru Province', 'ARC'],
     itemId: 'Orange_Rupee',
   },
-  'Outside South Castle Town Golden Wolf': {
-    category: ['Overworld', 'Hidden Skill', 'Hyrule Field - Lanayru Province', 'ARC'],
+  'OCT South Golden Wolf': {
+    category: [
+      'Overworld',
+      'Hidden Skill',
+      'Hyrule Field - Lanayru Province',
+      'ARC',
+    ],
     itemId: 'Progressive_Hidden_Skill',
   },
-  'Outside South Castle Town Male Ladybug': {
-    category: ['Overworld', 'Golden Bug', 'Hyrule Field - Lanayru Province', 'DZX'],
+  'OCT South Male Ladybug': {
+    category: [
+      'Overworld',
+      'Golden Bug',
+      'Hyrule Field - Lanayru Province',
+      'DZX',
+    ],
     itemId: 'Male_Ladybug',
   },
-  'Outside South Castle Town Poe': {
+  'OCT South Poe': {
     category: ['Overworld', 'Poe', 'Hyrule Field - Lanayru Province'],
     itemId: 'Poe_Soul',
   },
-  'Outside South Castle Town Tektite Grotto Chest': {
+  'OCT South Tektite Grotto Chest': {
     category: ['Overworld', 'Chest', 'Hyrule Field - Lanayru Province', 'DZX'],
     itemId: 'Orange_Rupee',
   },
-  'Outside South Castle Town Tightrope Chest': {
+  'OCT South Tightrope Chest': {
     category: ['Overworld', 'Chest', 'Hyrule Field - Lanayru Province', 'ARC'],
     itemId: 'Orange_Rupee',
   },
-  'Palace of Twilight Big Key Chest': {
+  'PoT Big Key Chest': {
     category: ['Chest', 'Dungeon', 'Palace of Twilight', 'Big Key', 'ARC'],
     itemId: 'Palace_of_Twilight_Big_Key',
   },
-  'Palace of Twilight Central First Room Chest': {
+  'PoT Central First Room Chest': {
     category: ['Chest', 'Dungeon', 'Palace of Twilight', 'Small Key', 'ARC'],
     itemId: 'Palace_of_Twilight_Small_Key',
   },
-  'Palace of Twilight Central Outdoor Chest': {
+  'PoT Central Outdoor Chest': {
     category: ['Chest', 'Dungeon', 'Palace of Twilight', 'Small Key', 'ARC'],
     itemId: 'Palace_of_Twilight_Small_Key',
   },
-  'Palace of Twilight Central Tower Chest': {
+  'PoT Central Tower Chest': {
     category: ['Chest', 'Dungeon', 'Palace of Twilight', 'Small Key', 'ARC'],
     itemId: 'Palace_of_Twilight_Small_Key',
   },
-  'Palace of Twilight Collect Both Sols': {
+  'PoT Collect Both Sols': {
     category: ['Cutscene', 'Dungeon', 'Palace of Twilight', 'REL'],
     itemId: 'Progressive_Sword',
   },
-  'Palace of Twilight East Wing First Room East Alcove Chest': {
+  'PoT East Wing First Room East Alcove Chest': {
     category: ['Chest', 'Dungeon', 'Palace of Twilight', 'ARC'],
     itemId: 'Piece_of_Heart',
   },
-  'Palace of Twilight East Wing First Room North Small Chest': {
+  'PoT East Wing First Room North Small Chest': {
     category: ['Chest', 'Dungeon', 'Palace of Twilight', 'ARC'],
     itemId: 'Purple_Rupee',
   },
-  'Palace of Twilight East Wing First Room West Alcove Chest': {
+  'PoT East Wing First Room West Alcove Chest': {
     category: ['Chest', 'Dungeon', 'Palace of Twilight', 'ARC'],
     itemId: 'Purple_Rupee',
   },
-  'Palace of Twilight East Wing First Room Zant Head Chest': {
+  'PoT East Wing First Room Zant Head Chest': {
     category: ['Chest', 'Dungeon', 'Palace of Twilight', 'Small Key', 'ARC'],
     itemId: 'Palace_of_Twilight_Small_Key',
   },
-  'Palace of Twilight East Wing Second Room Northeast Chest': {
+  'PoT East Wing Second Room Northeast Chest': {
     category: ['Chest', 'Dungeon', 'Palace of Twilight', 'ARC'],
     itemId: 'Purple_Rupee',
   },
-  'Palace of Twilight East Wing Second Room Northwest Chest': {
+  'PoT East Wing Second Room Northwest Chest': {
     category: ['Chest', 'Dungeon', 'Palace of Twilight', 'ARC'],
     itemId: 'Purple_Rupee',
   },
-  'Palace of Twilight East Wing Second Room Southeast Chest': {
+  'PoT East Wing Second Room Southeast Chest': {
     category: ['Chest', 'Dungeon', 'Palace of Twilight', 'Small Key', 'ARC'],
     itemId: 'Palace_of_Twilight_Small_Key',
   },
-  'Palace of Twilight East Wing Second Room Southwest Chest': {
+  'PoT East Wing Second Room Southwest Chest': {
     category: [
       'Chest',
       'Dungeon',
@@ -1937,19 +2119,19 @@ window.tpr.checkData = {
     ],
     itemId: 'Palace_of_Twilight_Dungeon_Map',
   },
-  'Palace of Twilight West Wing Chest Behind Wall of Darkness': {
+  'PoT West Wing Chest Behind Wall of Darkness': {
     category: ['Chest', 'Dungeon', 'Palace of Twilight', 'ARC'],
     itemId: 'Piece_of_Heart',
   },
-  'Palace of Twilight West Wing First Room Central Chest': {
+  'PoT West Wing First Room Central Chest': {
     category: ['Chest', 'Dungeon', 'Palace of Twilight', 'Small Key', 'ARC'],
     itemId: 'Palace_of_Twilight_Small_Key',
   },
-  'Palace of Twilight West Wing Second Room Central Chest': {
+  'PoT West Wing Second Room Central Chest': {
     category: ['Chest', 'Dungeon', 'Palace of Twilight', 'Small Key', 'ARC'],
     itemId: 'Palace_of_Twilight_Small_Key',
   },
-  'Palace of Twilight West Wing Second Room Lower South Chest': {
+  'PoT West Wing Second Room Lower South Chest': {
     category: [
       'Chest',
       'Dungeon',
@@ -1960,15 +2142,15 @@ window.tpr.checkData = {
     ],
     itemId: 'Palace_of_Twilight_Compass',
   },
-  'Palace of Twilight West Wing Second Room Southeast Chest': {
+  'PoT West Wing Second Room Southeast Chest': {
     category: ['Chest', 'Dungeon', 'Palace of Twilight', 'ARC'],
     itemId: 'Orange_Rupee',
   },
-  'Palace of Twilight Zant': {
+  'PoT Zant': {
     category: ['Dungeon', 'Palace of Twilight'],
     itemId: 'Zant_Defeated',
   },
-  'Palace of Twilight Zant Heart Container': {
+  'PoT Zant Heart Container': {
     category: [
       'Dungeon',
       'Palace of Twilight',
@@ -1991,11 +2173,11 @@ window.tpr.checkData = {
     itemId: 'Zora_Armor',
   },
   'STAR Prize 1': {
-    category: ['Overworld', 'Npc', 'Castle Town', 'ARC'],
+    category: ['Overworld', 'Minigame', 'Castle Town', 'ARC'],
     itemId: 'Progressive_Bow',
   },
   'STAR Prize 2': {
-    category: ['Overworld', 'Npc', 'Castle Town', 'ARC'],
+    category: ['Overworld', 'Minigame', 'Castle Town', 'ARC'],
     itemId: 'Progressive_Bow',
   },
   'Sacred Grove Baba Serpent Grotto Chest': {
@@ -2034,7 +2216,7 @@ window.tpr.checkData = {
     category: ['Overworld', 'Chest', 'Sacred Grove', 'ARC'],
     itemId: 'Orange_Rupee',
   },
-  'Sacred Grove Temple of Time Owl Statue Poe': {
+  'Sacred Grove ToT Owl Statue Poe': {
     category: ['Overworld', 'Poe', 'Sacred Grove'],
     itemId: 'Poe_Soul',
   },
@@ -2127,7 +2309,7 @@ window.tpr.checkData = {
     itemId: 'Green_Rupee',
   },
   'Snowboard Racing Prize': {
-    category: ['Overworld', 'Npc', 'Snowpeak Province', 'ARC'],
+    category: ['Overworld', 'Minigame', 'Snowpeak Province', 'ARC'],
     itemId: 'Piece_of_Heart',
   },
   'Snowpeak Above Freezard Grotto Poe': {
@@ -2162,71 +2344,71 @@ window.tpr.checkData = {
     category: ['Overworld', 'Snowpeak Province'],
     itemId: 'Snowpeak_Portal',
   },
-  'Snowpeak Ruins Ball and Chain': {
+  'SPR Ball and Chain': {
     category: ['Dungeon', 'Snowpeak Ruins', 'REL'],
     itemId: 'Ball_and_Chain',
   },
-  'Snowpeak Ruins Blizzeta': {
+  'SPR Blizzeta': {
     category: ['Dungeon', 'Snowpeak Ruins'],
     itemId: 'Blizzeta_Defeated',
   },
-  'Snowpeak Ruins Blizzeta Heart Container': {
+  'SPR Blizzeta Heart Container': {
     category: ['Heart Container', 'Dungeon', 'Snowpeak Ruins', 'Boss'],
     itemId: 'Heart_Container',
   },
-  'Snowpeak Ruins Broken Floor Chest': {
+  'SPR Broken Floor Chest': {
     category: ['Chest', 'Dungeon', 'Snowpeak Ruins', 'ARC'],
     itemId: 'Piece_of_Heart',
   },
-  'Snowpeak Ruins Chapel Chest': {
+  'SPR Chapel Chest': {
     category: ['Chest', 'Dungeon', 'Snowpeak Ruins', 'Big Key', 'ARC'],
     itemId: 'Snowpeak_Ruins_Bedroom_Key',
   },
-  'Snowpeak Ruins Chest After Darkhammer': {
+  'SPR Chest After Darkhammer': {
     category: ['Chest', 'Dungeon', 'Snowpeak Ruins', 'Small Key', 'ARC'],
     itemId: 'Snowpeak_Ruins_Ordon_Goat_Cheese',
   },
-  'Snowpeak Ruins Courtyard Central Chest': {
+  'SPR Courtyard Central Chest': {
     category: ['Chest', 'Dungeon', 'Snowpeak Ruins', 'ARC'],
     itemId: 'Bombs_5',
   },
-  'Snowpeak Ruins Dungeon Reward': {
+  'SPR Dungeon Reward': {
     category: ['Dungeon', 'Snowpeak Ruins', 'Dungeon Reward', 'REL', 'ARC'],
     itemId: 'Progressive_Mirror_Shard',
   },
-  'Snowpeak Ruins East Courtyard Buried Chest': {
+  'SPR East Courtyard Buried Chest': {
     category: ['Chest', 'Dungeon', 'Snowpeak Ruins', 'ARC'],
     itemId: 'Red_Rupee',
   },
-  'Snowpeak Ruins East Courtyard Chest': {
+  'SPR East Courtyard Chest': {
     category: ['Chest', 'Dungeon', 'Snowpeak Ruins', 'Small Key', 'ARC'],
     itemId: 'Snowpeak_Ruins_Small_Key',
   },
-  'Snowpeak Ruins Ice Room Poe': {
+  'SPR Ice Room Poe': {
     category: ['Overworld', 'Poe', 'Snowpeak Ruins'],
     itemId: 'Poe_Soul',
   },
-  'Snowpeak Ruins Lobby Armor Poe': {
+  'SPR Lobby Armor Poe': {
     category: ['Overworld', 'Poe', 'Snowpeak Ruins'],
     itemId: 'Poe_Soul',
   },
-  'Snowpeak Ruins Lobby Chandelier Chest': {
+  'SPR Lobby Chandelier Chest': {
     category: ['Chest', 'Dungeon', 'Snowpeak Ruins', 'ARC'],
     itemId: 'Piece_of_Heart',
   },
-  'Snowpeak Ruins Lobby East Armor Chest': {
+  'SPR Lobby East Armor Chest': {
     category: ['Chest', 'Dungeon', 'Snowpeak Ruins', 'ARC'],
     itemId: 'Yellow_Rupee',
   },
-  'Snowpeak Ruins Lobby Poe': {
+  'SPR Lobby Poe': {
     category: ['Overworld', 'Poe', 'Snowpeak Ruins'],
     itemId: 'Poe_Soul',
   },
-  'Snowpeak Ruins Lobby West Armor Chest': {
+  'SPR Lobby West Armor Chest': {
     category: ['Chest', 'Dungeon', 'Snowpeak Ruins', 'ARC'],
     itemId: 'Red_Rupee',
   },
-  'Snowpeak Ruins Mansion Map': {
+  'SPR Mansion Map': {
     category: [
       'Npc',
       'Dungeon',
@@ -2237,11 +2419,11 @@ window.tpr.checkData = {
     ],
     itemId: 'Snowpeak_Ruins_Dungeon_Map',
   },
-  'Snowpeak Ruins Northeast Chandelier Chest': {
+  'SPR Northeast Chandelier Chest': {
     category: ['Chest', 'Dungeon', 'Snowpeak Ruins', 'Small Key', 'ARC'],
     itemId: 'Snowpeak_Ruins_Small_Key',
   },
-  'Snowpeak Ruins Ordon Pumpkin Chest': {
+  'SPR Ordon Pumpkin Chest': {
     category: [
       'Chest',
       'Dungeon',
@@ -2253,27 +2435,27 @@ window.tpr.checkData = {
     ],
     itemId: 'Snowpeak_Ruins_Ordon_Pumpkin',
   },
-  'Snowpeak Ruins West Cannon Room Central Chest': {
+  'SPR West Cannon Room Central Chest': {
     category: ['Chest', 'Dungeon', 'Snowpeak Ruins', 'ARC'],
     itemId: 'Red_Rupee',
   },
-  'Snowpeak Ruins West Cannon Room Corner Chest': {
+  'SPR West Cannon Room Corner Chest': {
     category: ['Chest', 'Dungeon', 'Snowpeak Ruins', 'ARC'],
     itemId: 'Bombs_5',
   },
-  'Snowpeak Ruins West Courtyard Buried Chest': {
+  'SPR West Courtyard Buried Chest': {
     category: ['Chest', 'Dungeon', 'Snowpeak Ruins', 'Small Key', 'ARC'],
     itemId: 'Snowpeak_Ruins_Small_Key',
   },
-  'Snowpeak Ruins Wooden Beam Central Chest': {
+  'SPR Wooden Beam Central Chest': {
     category: ['Chest', 'Dungeon', 'Snowpeak Ruins', 'ARC'],
     itemId: 'Red_Rupee',
   },
-  'Snowpeak Ruins Wooden Beam Chandelier Chest': {
+  'SPR Wooden Beam Chandelier Chest': {
     category: ['Chest', 'Dungeon', 'Snowpeak Ruins', 'Small Key', 'ARC'],
     itemId: 'Snowpeak_Ruins_Small_Key',
   },
-  'Snowpeak Ruins Wooden Beam Northwest Chest': {
+  'SPR Wooden Beam Northwest Chest': {
     category: [
       'Chest',
       'Dungeon',
@@ -2293,50 +2475,50 @@ window.tpr.checkData = {
     itemId: 'South_Faron_Portal',
   },
   'Talo Sharpshooting': {
-    category: ['Overworld', 'Npc', 'Kakariko Village', 'ARC'],
+    category: ['Overworld', 'Minigame', 'Kakariko Village', 'ARC'],
     itemId: 'Piece_of_Heart',
   },
   'Telma Invoice': {
     category: ['Overworld', 'Npc', 'Castle Town', 'ARC'],
     itemId: 'Invoice',
   },
-  'Temple of Time Armogohma': {
+  'ToT Armogohma': {
     category: ['Dungeon', 'Temple of Time'],
     itemId: 'Armogohma_Defeated',
   },
-  'Temple of Time Armogohma Heart Container': {
+  'ToT Armogohma Heart Container': {
     category: ['Heart Container', 'Dungeon', 'Temple of Time', 'Boss'],
     itemId: 'Heart_Container',
   },
-  'Temple of Time Armos Antechamber East Chest': {
+  'ToT Armos Antechamber East Chest': {
     category: ['Chest', 'Dungeon', 'Temple of Time', 'Small Key', 'ARC'],
     itemId: 'Temple_of_Time_Small_Key',
   },
-  'Temple of Time Armos Antechamber North Chest': {
+  'ToT Armos Antechamber North Chest': {
     category: ['Chest', 'Dungeon', 'Temple of Time', 'ARC'],
     itemId: 'Red_Rupee',
   },
-  'Temple of Time Armos Antechamber Statue Chest': {
+  'ToT Armos Antechamber Statue Chest': {
     category: ['Chest', 'Dungeon', 'Temple of Time', 'ARC'],
     itemId: 'Piece_of_Heart',
   },
-  'Temple of Time Big Key Chest': {
+  'ToT Big Key Chest': {
     category: ['Chest', 'Dungeon', 'Temple of Time', 'Big Key', 'ARC'],
     itemId: 'Temple_of_Time_Big_Key',
   },
-  'Temple of Time Chest Before Darknut': {
+  'ToT Chest Before Darknut': {
     category: ['Chest', 'Dungeon', 'Temple of Time', 'ARC'],
     itemId: 'Purple_Rupee',
   },
-  'Temple of Time Darknut Chest': {
+  'ToT Darknut Chest': {
     category: ['Chest', 'Dungeon', 'Temple of Time', 'ARC'],
     itemId: 'Progressive_Dominion_Rod',
   },
-  'Temple of Time Dungeon Reward': {
+  'ToT Dungeon Reward': {
     category: ['Dungeon', 'Temple of Time', 'Dungeon Reward', 'REL', 'ARC'],
     itemId: 'Progressive_Mirror_Shard',
   },
-  'Temple of Time First Staircase Armos Chest': {
+  'ToT First Staircase Armos Chest': {
     category: [
       'Chest',
       'Dungeon',
@@ -2347,27 +2529,27 @@ window.tpr.checkData = {
     ],
     itemId: 'Temple_of_Time_Dungeon_Map',
   },
-  'Temple of Time First Staircase Gohma Gate Chest': {
+  'ToT First Staircase Gohma Gate Chest': {
     category: ['Chest', 'Dungeon', 'Temple of Time', 'ARC'],
     itemId: 'Arrows_30',
   },
-  'Temple of Time First Staircase Window Chest': {
+  'ToT First Staircase Window Chest': {
     category: ['Chest', 'Dungeon', 'Temple of Time', 'ARC'],
     itemId: 'Red_Rupee',
   },
-  'Temple of Time Floor Switch Puzzle Room Upper Chest': {
+  'ToT Floor Switch Puzzle Room Upper Chest': {
     category: ['Chest', 'Dungeon', 'Temple of Time', 'ARC'],
     itemId: 'Red_Rupee',
   },
-  'Temple of Time Guillotine Chest': {
+  'ToT Guillotine Chest': {
     category: ['Chest', 'Dungeon', 'Temple of Time', 'Small Key', 'ARC'],
     itemId: 'Temple_of_Time_Small_Key',
   },
-  'Temple of Time Lobby Lantern Chest': {
+  'ToT Lobby Lantern Chest': {
     category: ['Chest', 'Dungeon', 'Temple of Time', 'Small Key', 'ARC'],
     itemId: 'Temple_of_Time_Small_Key',
   },
-  'Temple of Time Moving Wall Beamos Room Chest': {
+  'ToT Moving Wall Beamos Room Chest': {
     category: [
       'Chest',
       'Dungeon',
@@ -2378,23 +2560,23 @@ window.tpr.checkData = {
     ],
     itemId: 'Temple_of_Time_Compass',
   },
-  'Temple of Time Moving Wall Dinalfos Room Chest': {
+  'ToT Moving Wall Dinalfos Room Chest': {
     category: ['Chest', 'Dungeon', 'Temple of Time', 'ARC'],
     itemId: 'Piece_of_Heart',
   },
-  'Temple of Time Poe Above Scales': {
+  'ToT Poe Above Scales': {
     category: ['Overworld', 'Poe', 'Temple of Time'],
     itemId: 'Poe_Soul',
   },
-  'Temple of Time Poe Behind Gate': {
+  'ToT Poe Behind Gate': {
     category: ['Overworld', 'Poe', 'Temple of Time'],
     itemId: 'Poe_Soul',
   },
-  'Temple of Time Scales Gohma Chest': {
+  'ToT Scales Gohma Chest': {
     category: ['Chest', 'Dungeon', 'Temple of Time', 'ARC'],
     itemId: 'Purple_Rupee',
   },
-  'Temple of Time Scales Upper Chest': {
+  'ToT Scales Upper Chest': {
     category: ['Chest', 'Dungeon', 'Temple of Time', 'ARC'],
     itemId: 'Red_Rupee',
   },
@@ -2402,40 +2584,63 @@ window.tpr.checkData = {
     category: ['Overworld', 'Ordona Province', 'Npc', 'ARC'],
     itemId: 'Progressive_Fishing_Rod',
   },
-  'Upper Zoras River Female Dragonfly': {
+  'UZR Female Dragonfly': {
     category: ['Overworld', 'Golden Bug', 'Upper Zoras River', 'DZX'],
     itemId: 'Female_Dragonfly',
   },
-  'Upper Zoras River Poe': {
+  'UZR Poe': {
     category: ['Overworld', 'Poe', 'Upper Zoras River'],
     itemId: 'Poe_Soul',
   },
-  'Upper Zoras River Portal': {
+  'UZR Portal': {
     category: ['Overworld', 'Upper Zoras River'],
     itemId: 'Upper_Zoras_River_Portal',
   },
-  'West Hyrule Field Northern Boulder Rupee': {
-    category: ['Overworld', 'Rupee - Hidden', 'Hyrule Field - Lanayru Province'],
+  'BCT Northern Boulder Rupee': {
+    category: [
+      'Overworld',
+      'Rupee - Hidden',
+      'Hyrule Field - Lanayru Province',
+    ],
     itemId: 'Yellow_Rupee',
   },
-  'West Hyrule Field Southern Boulder Rupee': {
-    category: ['Overworld', 'Rupee - Hidden', 'Hyrule Field - Lanayru Province'],
+  'BCT Southern Boulder Rupee': {
+    category: [
+      'Overworld',
+      'Rupee - Hidden',
+      'Hyrule Field - Lanayru Province',
+    ],
     itemId: 'Yellow_Rupee',
   },
-  'West Hyrule Field Female Butterfly': {
-    category: ['Overworld', 'Golden Bug', 'Hyrule Field - Lanayru Province', 'DZX'],
+  'BCT Female Butterfly': {
+    category: [
+      'Overworld',
+      'Golden Bug',
+      'Hyrule Field - Lanayru Province',
+      'DZX',
+    ],
     itemId: 'Female_Butterfly',
   },
-  'West Hyrule Field Golden Wolf': {
-    category: ['Overworld', 'Hidden Skill', 'Hyrule Field - Lanayru Province', 'ARC'],
+  'BCT Golden Wolf': {
+    category: [
+      'Overworld',
+      'Hidden Skill',
+      'Hyrule Field - Lanayru Province',
+      'ARC',
+    ],
     itemId: 'Progressive_Hidden_Skill',
   },
-  'West Hyrule Field Helmasaur Grotto Chest': {
+  'BCT Helmasaur Grotto Chest': {
     category: ['Overworld', 'Chest', 'Hyrule Field - Lanayru Province', 'DZX'],
     itemId: 'Orange_Rupee',
   },
-  'West Hyrule Field Male Butterfly': {
-    category: ['Overworld', 'Golden Bug', 'Hyrule Field - Lanayru Province', 'DZX'],
+  'BCT Male Butterfly': {
+    category: [
+      'Overworld',
+      'Golden Bug',
+      'Hyrule Field - Lanayru Province',
+      'DZX',
+    ],
     itemId: 'Male_Butterfly',
   },
   'Wooden Statue': {
@@ -2446,119 +2651,119 @@ window.tpr.checkData = {
     category: ['Overworld', 'Chest', 'Ordona Province', 'ARC'],
     itemId: 'Iron_Boots',
   },
-  'Zoras Domain Chest Behind Waterfall': {
+  'ZD Chest Behind Waterfall': {
     category: ['Overworld', 'Chest', 'Zoras Domain', 'ARC'],
     itemId: 'Red_Rupee',
   },
-  'Zoras Domain Chest By Mother and Child Isles': {
+  'ZD Chest By Mother and Child Isles': {
     category: ['Overworld', 'Chest', 'Zoras Domain', 'ARC'],
     itemId: 'Yellow_Rupee',
   },
-  'Zoras Domain Extinguish All Torches Chest': {
+  'ZD Extinguish All Torches Chest': {
     category: ['Overworld', 'Chest', 'Zoras Domain', 'ARC'],
     itemId: 'Purple_Rupee',
   },
-  'Zoras Domain Light All Torches Chest': {
+  'ZD Light All Torches Chest': {
     category: ['Overworld', 'Chest', 'Zoras Domain', 'ARC'],
     itemId: 'Purple_Rupee',
   },
-  'Zoras Domain Male Dragonfly': {
+  'ZD Male Dragonfly': {
     category: ['Overworld', 'Golden Bug', 'Zoras Domain', 'DZX'],
     itemId: 'Male_Dragonfly',
   },
-  'Zoras Domain Mother and Child Isle Poe': {
+  'ZD Mother and Child Isle Poe': {
     category: ['Overworld', 'Poe', 'Zoras Domain'],
     itemId: 'Poe_Soul',
   },
-  'Zoras Domain Portal': {
+  'ZD Portal': {
     category: ['Overworld', 'Zoras Domain'],
     itemId: 'Zoras_Domain_Portal',
   },
-  'Zoras Domain Underwater Goron': {
+  'ZD Underwater Goron': {
     category: ['Overworld', 'Npc', 'Zoras Domain', 'ARC'],
     itemId: 'Filled_Bomb_Bag',
   },
-  'Zoras Domain Waterfall Poe': {
+  'ZD Waterfall Poe': {
     category: ['Overworld', 'Poe', 'Zoras Domain'],
     itemId: 'Poe_Soul',
   },
-  'Zoras Domain Waterfall Rupee': {
+  'ZD Waterfall Rupee': {
     category: ['Overworld', 'Rupee - Freestanding', 'Zoras Domain'],
     itemId: 'Yellow_Rupee',
   },
-  'Zoras Domain Behind Waterfall Rupee': {
+  'ZD Behind Waterfall Rupee': {
     category: ['Overworld', 'Rupee - Freestanding', 'Zoras Domain'],
     itemId: 'Yellow_Rupee',
   },
-  'Zoras Domain Central Underwater Boulder Rupee': {
+  'ZD Central Underwater Boulder Rupee': {
     category: ['Overworld', 'Rupee - Hidden', 'Zoras Domain'],
     itemId: 'Yellow_Rupee',
   },
-  'Zoras Domain North Underwater Boulder Rupee': {
+  'ZD North Underwater Boulder Rupee': {
     category: ['Overworld', 'Rupee - Hidden', 'Zoras Domain'],
     itemId: 'Yellow_Rupee',
   },
-  'Zoras Domain Shortcut Ledge Rupee': {
+  'ZD Shortcut Ledge Rupee': {
     category: ['Overworld', 'Rupee - Freestanding', 'Zoras Domain'],
     itemId: 'Yellow_Rupee',
   },
-  'Zoras Domain Shortcut Lower Boulder Rupee': {
+  'ZD Shortcut Lower Boulder Rupee': {
     category: ['Overworld', 'Rupee - Hidden', 'Zoras Domain'],
     itemId: 'Yellow_Rupee',
   },
-  'Zoras Domain Shortcut Upper Boulder Rupee': {
+  'ZD Shortcut Upper Boulder Rupee': {
     category: ['Overworld', 'Rupee - Hidden', 'Zoras Domain'],
     itemId: 'Yellow_Rupee',
   },
-  'Zoras Domain Throne East Gate Underwater Rupee': {
+  'ZD Throne East Gate Underwater Rupee': {
     category: ['Overworld', 'Rupee - Freestanding', 'Zoras Domain'],
     itemId: 'Yellow_Rupee',
   },
-  'Zoras Domain Throne East Underwater Rupee': {
+  'ZD Throne East Underwater Rupee': {
     category: ['Overworld', 'Rupee - Freestanding', 'Zoras Domain'],
     itemId: 'Yellow_Rupee',
   },
-  'Zoras Domain Throne Northwest Underwater Rupee': {
+  'ZD Throne Northwest Underwater Rupee': {
     category: ['Overworld', 'Rupee - Freestanding', 'Zoras Domain'],
     itemId: 'Yellow_Rupee',
   },
-  'Zoras Domain Throne West Gate Underwater Rupee': {
+  'ZD Throne West Gate Underwater Rupee': {
     category: ['Overworld', 'Rupee - Freestanding', 'Zoras Domain'],
     itemId: 'Yellow_Rupee',
   },
-  'Zoras Domain Throne South Underwater Rupee': {
+  'ZD Throne South Underwater Rupee': {
     category: ['Overworld', 'Rupee - Freestanding', 'Zoras Domain'],
     itemId: 'Yellow_Rupee',
   },
-  'Zoras Domain Throne West Underwater Rupee': {
+  'ZD Throne West Underwater Rupee': {
     category: ['Overworld', 'Rupee - Freestanding', 'Zoras Domain'],
     itemId: 'Yellow_Rupee',
   },
-  'Zoras Domain Top Ledge Rupee': {
+  'ZD Top Ledge Rupee': {
     category: ['Overworld', 'Rupee - Freestanding', 'Zoras Domain'],
     itemId: 'Yellow_Rupee',
   },
-  'Zoras Domain Vine Ledge Rupee': {
+  'ZD Vine Ledge Rupee': {
     category: ['Overworld', 'Rupee - Freestanding', 'Zoras Domain'],
     itemId: 'Yellow_Rupee',
   },
-  'Zoras Domain Waterfall Ledge Rupee': {
+  'ZD Waterfall Ledge Rupee': {
     category: ['Overworld', 'Rupee - Freestanding', 'Zoras Domain'],
     itemId: 'Yellow_Rupee',
   },
-  'Upper Zoras River Central Underwater Boulder Rupee': {
+  'UZR Central Underwater Boulder Rupee': {
     category: ['Overworld', 'Rupee - Freestanding', 'Upper Zoras River'],
     itemId: 'Yellow_Rupee',
   },
-  'Upper Zoras River West Underwater Boulder Rupee': {
+  'UZR West Underwater Boulder Rupee': {
     category: ['Overworld', 'Rupee - Freestanding', 'Upper Zoras River'],
     itemId: 'Yellow_Rupee',
   },
-  'Upper Zoras River East Underwater Boulder Rupee': {
+  'UZR East Underwater Boulder Rupee': {
     category: ['Overworld', 'Rupee - Freestanding', 'Upper Zoras River'],
     itemId: 'Yellow_Rupee',
   },
-  'Upper Zoras River Ledge Boulder Rupee': {
+  'UZR Ledge Boulder Rupee': {
     category: ['Overworld', 'Rupee - Freestanding', 'Upper Zoras River'],
     itemId: 'Yellow_Rupee',
   },

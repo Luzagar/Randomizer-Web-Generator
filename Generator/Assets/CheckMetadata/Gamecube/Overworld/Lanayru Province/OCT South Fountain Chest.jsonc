@@ -1,0 +1,11 @@
+{
+  "arcOffsets": ["21BC"],
+  "stageIDX": [57],
+  "roomIDX": 16,
+  "fileDirectoryType": [0],
+  "replacementType": [0],
+  "chestLowerNibble": "F",
+  "checkCategory": ["Overworld", "Chest", "Hyrule Field - Lanayru Province"],
+  "itemId": "Orange_Rupee",
+  "dataCategory": ["Chest", "ARC"]
+}

@@ -1,7 +1,9 @@
 {
-    "arcOffsets": ["1737"],
-    "stageIDX": [52],
-    "fileDirectoryType": [1],
-    "replacementType": [0],
-    "dataCategory": ["ARC"]
+  "arcOffsets": ["1737"],
+  "stageIDX": [52],
+  "fileDirectoryType": [1],
+  "replacementType": [0],
+  "checkCategory": ["Overworld", "Npc", "Upper Zoras River"],
+  "itemId": "Filled_Bomb_Bag",
+  "dataCategory": ["ARC"]
 }

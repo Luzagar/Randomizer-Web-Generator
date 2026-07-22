@@ -1,0 +1,492 @@
+[
+  {
+    "RoomName": "Kak Gorge",
+    "Exits": [
+      {
+        "ConnectedArea": "Kak Gorge Cave Entrance",
+        "Requirements": "CanSmash",
+        "GlitchedRequirements": "CanSmash"
+      },
+      {
+        "ConnectedArea": "Kak Gorge Behind Gate",
+        "Requirements": "CanCompleteEldinTwilight or (Room.Faron_Field) or Shadow_Crystal",
+        "GlitchedRequirements": "CanCompleteEldinTwilight or (Room.Faron_Field) or Shadow_Crystal"
+      },
+      {
+        "ConnectedArea": "Faron Field",
+        "Requirements": "CanCompleteEldinTwilight",
+        "GlitchedRequirements": "CanCompleteEldinTwilight"
+      },
+      {
+        "ConnectedArea": "Eldin Field",
+        "Requirements": "CanSmash",
+        "GlitchedRequirements": "CanSmash"
+      },
+      {
+        "ConnectedArea": "Kak Gorge Keese Grotto",
+        "Requirements": "Shadow_Crystal and CanCompleteEldinTwilight",
+        "GlitchedRequirements": "Shadow_Crystal and CanCompleteEldinTwilight"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "Kak Gorge Owl Statue Chest",
+        "Requirements": "(Progressive_Dominion_Rod, 2)",
+        "GlitchedRequirements": "(Progressive_Dominion_Rod, 2) or CanDoLJA or CanDoStorage or CanDoEBMoonBoots"
+      },
+      {
+        "CheckName": "Kak Gorge Double Clawshot Chest",
+        "Requirements": "(Progressive_Clawshot, 2) or (Shadow_Crystal and Trick.kak_gorge_skip_claws_with_wolf)",
+        "GlitchedRequirements": "(Progressive_Clawshot, 2) or CanDoLJA or Shadow_Crystal"
+      },
+      {
+        "CheckName": "Kak Gorge Spire Heart Piece",
+        "Requirements": "(Progressive_Clawshot, 1) or Boomerang",
+        "GlitchedRequirements": "(Progressive_Clawshot, 1) or Boomerang"
+      },
+      {
+        "CheckName": "Kak Gorge Owl Statue Sky Character",
+        "Requirements": "(Progressive_Dominion_Rod, 2)",
+        "GlitchedRequirements": "(Progressive_Dominion_Rod, 2)"
+      },
+      {
+        "CheckName": "Kak Gorge Male Pill Bug",
+        "Requirements": "CanCompleteEldinTwilight",
+        "GlitchedRequirements": "CanCompleteEldinTwilight"
+      },
+      {
+        "CheckName": "Kak Gorge Female Pill Bug",
+        "Requirements": "CanCompleteEldinTwilight",
+        "GlitchedRequirements": "CanCompleteEldinTwilight"
+      },
+      {
+        "CheckName": "Kak Gorge Poe",
+        "Requirements": "Shadow_Crystal and CanCompleteMDH and CanCompleteAllTwilight",
+        "GlitchedRequirements": "Shadow_Crystal and CanCompleteMDH and CanCompleteAllTwilight"
+      },
+      {
+        "CheckName": "Kak Gorge Portal",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "Kak Gorge Owl Statue Boulder Rupee",
+        "Requirements": "CanSmash",
+        "GlitchedRequirements": "CanSmash"
+      },
+      {
+        "CheckName": "Kak Gorge Spire Boulder Rupee",
+        "Requirements": "CanSmash",
+        "GlitchedRequirements": "CanSmash"
+      }
+    ],
+    "Region": "Hyrule Field - Eldin Province"
+  },
+  {
+    "RoomName": "Kak Gorge Cave Entrance",
+    "Exits": [
+      {
+        "ConnectedArea": "Kak Gorge",
+        "Requirements": "CanSmash",
+        "GlitchedRequirements": "CanSmash"
+      },
+      {
+        "ConnectedArea": "Eldin Lantern Cave",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Region": "Hyrule Field - Eldin Province"
+  },
+  {
+    "RoomName": "Kak Gorge Behind Gate",
+    "Exits": [
+      {
+        "ConnectedArea": "Kak Gorge",
+        "Requirements": "Shadow_Crystal or Gate_Keys", // or acccess to epona
+        "GlitchedRequirements": "Shadow_Crystal or Gate_Keys" // or access to epona
+      },
+      {
+        "ConnectedArea": "Lower Kak Village",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Region": "Hyrule Field - Eldin Province"
+  },
+  {
+    "RoomName": "Eldin Lantern Cave",
+    "Exits": [
+      {
+        "ConnectedArea": "Kak Gorge Cave Entrance",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "Eldin Lantern Cave First Chest",
+        "Requirements": "CanBurnWebs",
+        "GlitchedRequirements": "CanBurnWebs"
+      },
+      {
+        "CheckName": "Eldin Lantern Cave Lantern Chest",
+        "Requirements": "Lantern",
+        "GlitchedRequirements": "Lantern"
+      },
+      {
+        "CheckName": "Eldin Lantern Cave Second Chest",
+        "Requirements": "CanBurnWebs",
+        "GlitchedRequirements": "CanBurnWebs"
+      },
+      {
+        "CheckName": "Eldin Lantern Cave Poe",
+        "Requirements": "Shadow_Crystal and CanBurnWebs",
+        "GlitchedRequirements": "Shadow_Crystal and CanBurnWebs"
+      }
+    ],
+    "Region": "Hyrule Field - Eldin Province"
+  },
+  {
+    "RoomName": "Kak Gorge Keese Grotto",
+    "Exits": [
+      {
+        "ConnectedArea": "Kak Gorge",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Region": "Hyrule Field - Eldin Province"
+  },
+  {
+    "RoomName": "Eldin Field",
+    "Exits": [
+      {
+        "ConnectedArea": "Eldin Field Near CT",
+        // When it comes time for ER, we will add (Room.Kak_Malo_Mart and Setting.randomizeOverworldEntrances) or  . . .
+        // For now, it's only in logic if we have visited the other side.
+        "Requirements": "(Room.Eldin_Field_Near_CT and CanCompleteEldinTwilight and CanCompleteLanayruTwilight and Room.Kak_Malo_Mart) or (Setting.skipBridgeDonation equals true)",
+        "GlitchedRequirements": "((Room.Kak_Malo_Mart or Shadow_Crystal) and CanCompleteEldinTwilight) or (Setting.skipBridgeDonation equals true)"
+      },
+      {
+        "ConnectedArea": "Eldin Field Lava Cave Ledge",
+        "Requirements": "(Progressive_Clawshot, 1)",
+        "GlitchedRequirements": "(Progressive_Clawshot, 1) or Shadow_Crystal"
+      },
+      {
+        "ConnectedArea": "Eldin Field From Lava Cave Lower",
+        "Requirements": "false",
+        "GlitchedRequirements": "(Shadow_Crystal and CanCompleteEldinTwilight) or CanDoLJA"
+      },
+      {
+        "ConnectedArea": "Kak Gorge",
+        "Requirements": "CanSmash",
+        "GlitchedRequirements": "CanSmash"
+      },
+      {
+        "ConnectedArea": "Kak Village Behind Gate",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "North Eldin Field",
+        "Requirements": "CanSmash",
+        "GlitchedRequirements": "CanSmash or (Shadow_Crystal and CanCompleteEldinTwilight)"
+      },
+      {
+        "ConnectedArea": "Eldin Field Bomskit Grotto",
+        "Requirements": "Shadow_Crystal",
+        "GlitchedRequirements": "Shadow_Crystal"
+      },
+      {
+        "ConnectedArea": "Eldin Field Water Bomb Fish Grotto",
+        "Requirements": "Shadow_Crystal",
+        "GlitchedRequirements": "Shadow_Crystal"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "Eldin Field Bomb Rock Chest",
+        "Requirements": "CanSmash",
+        "GlitchedRequirements": "CanSmash or (CanDoMapGlitch and CanCompleteEldinTwilight) or (CanDoEBMoonBoots and CanDoLJA and CanCompleteEldinTwilight)"
+      },
+      {
+        "CheckName": "Bridge of Eldin Owl Statue Chest",
+        "Requirements": "(Progressive_Dominion_Rod, 2) or (Shadow_Crystal and Trick.bridge_owl_chest_as_wolf)",
+        "GlitchedRequirements": "(Progressive_Dominion_Rod, 2) or CanDoLJA or Shadow_Crystal"
+      },
+      {
+        "CheckName": "Bridge of Eldin Owl Statue Sky Character",
+        "Requirements": "(Progressive_Dominion_Rod, 2)",
+        "GlitchedRequirements": "(Progressive_Dominion_Rod, 2)"
+      },
+      {
+        "CheckName": "Eldin Field Male Grasshopper",
+        "Requirements": "CanCompleteEldinTwilight",
+        "GlitchedRequirements": "CanCompleteEldinTwilight"
+      },
+      {
+        "CheckName": "Eldin Field Female Grasshopper",
+        "Requirements": "CanCompleteEldinTwilight",
+        "GlitchedRequirements": "CanCompleteEldinTwilight"
+      },
+      {
+        "CheckName": "Bridge of Eldin Male Phasmid",
+        "Requirements": "((Progressive_Clawshot, 1) or Boomerang or (Trick.freestandings_with_bnc and Ball_and_Chain)) and CanCompleteEldinTwilight",
+        "GlitchedRequirements": "((Progressive_Clawshot, 1) or Boomerang or Ball_and_Chain) and CanCompleteEldinTwilight"
+      },
+      {
+        "CheckName": "Bridge of Eldin Female Phasmid",
+        "Requirements": "((Progressive_Clawshot, 1) or Boomerang) and CanCompleteEldinTwilight",
+        "GlitchedRequirements": "((Progressive_Clawshot, 1) or Boomerang) and CanCompleteEldinTwilight"
+      },
+      {
+        "CheckName": "Bridge of Eldin Portal",
+        "Requirements": "CanDefeatShadowBeast",
+        "GlitchedRequirements": "CanDefeatShadowBeast"
+      },
+      {
+        "CheckName": "Bridge of Eldin Boulder Rupee",
+        "Requirements": "CanSmash",
+        "GlitchedRequirements": "CanSmash"
+      }
+    ],
+    "Region": "Hyrule Field - Eldin Province"
+  },
+  {
+    "RoomName": "Eldin Field Near CT",
+    "Exits": [
+      {
+        "ConnectedArea": "Eldin Field",
+        "Requirements": "(Room.Kak_Malo_Mart and CanCompleteEldinTwilight and CanCompleteLanayruTwilight) or (Setting.skipBridgeDonation equals true)",
+        "GlitchedRequirements": "(Room.Kak_Malo_Mart and CanCompleteEldinTwilight and CanCompleteLanayruTwilight) or (Setting.skipBridgeDonation equals true)"
+      },
+      {
+        "ConnectedArea": "OCT East",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "Goron Springwater Rush",
+        // Note: this check is in the "Eldin Field Near CT" room which takes
+        // care of a lot of the logic. The important thing is that paying the initial
+        // donation is not a way to logically gain access to Lanayru. Therefore we
+        // require that they already have access to the Lanayru side of the bridge to
+        // avoid a confusing scenario where the player is expected to build the bridge
+        // to do this check but then crossing the bridge would be going out of logic.
+        "Requirements": "CanCompleteEldinTwilight and Room.Lower_Kak_Village and ((Setting.skipBridgeDonation equals True) or (Room.Kak_Malo_Mart and ((Setting.walletSize not_equal Reduced) or Progressive_Wallet)))",
+        "GlitchedRequirements": "CanCompleteEldinTwilight and Room.Lower_Kak_Village and ((Setting.skipBridgeDonation equals True) or (Room.Kak_Malo_Mart and ((Setting.walletSize not_equal Reduced) or Progressive_Wallet)))"
+      }
+    ],
+    "Region": "Hyrule Field - Eldin Province"
+  },
+  {
+    "RoomName": "Eldin Field Lava Cave Ledge",
+    "Exits": [
+      {
+        "ConnectedArea": "Eldin Field",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "Eldin Field Lava Cave Upper",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Region": "Hyrule Field - Eldin Province"
+  },
+  {
+    "RoomName": "Eldin Field From Lava Cave Lower",
+    "Exits": [
+      {
+        "ConnectedArea": "Eldin Field",
+        "Requirements": "(Progressive_Clawshot, 1)",
+        "GlitchedRequirements": "(Progressive_Clawshot, 1)"
+      },
+      {
+        "ConnectedArea": "Eldin Field Lava Cave Lower",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Region": "Hyrule Field - Eldin Province"
+  },
+  {
+    // This is the area between Lanayru Field Wall of Twilight and the Bridge of Eldin Rocks
+    "RoomName": "North Eldin Field",
+    "Exits": [
+      {
+        "ConnectedArea": "Eldin Field",
+        "Requirements": "CanSmash",
+        "GlitchedRequirements": "CanSmash or (CanDoMapGlitch and CanCompleteEldinTwilight and (CanCompleteLanayruTwilight or Horse_Call))"
+      },
+      {
+        "ConnectedArea": "Eldin Field Outside HV",
+        "Requirements": "(Room.Kak_Renados_Sanctuary and Wooden_Statue) or (Setting.iliaQuest equals Charm)",
+        "GlitchedRequirements": "(Room.Kak_Renados_Sanctuary and Wooden_Statue) or (Setting.iliaQuest equals Charm)"
+      },
+      {
+        "ConnectedArea": "Eldin Field Grotto Platform",
+        "Requirements": "Spinner",
+        "GlitchedRequirements": "Spinner"
+      },
+      {
+        "ConnectedArea": "Lanayru Field",
+        "Requirements": "CanCompleteEldinTwilight",
+        "GlitchedRequirements": "CanCompleteEldinTwilight"
+      }
+    ],
+    "Region": "Hyrule Field - Eldin Province"
+  },
+  {
+    "RoomName": "Eldin Field Outside HV",
+    "Exits": [
+      {
+        "ConnectedArea": "North Eldin Field",
+        "Requirements": "Room.Kak_Renados_Sanctuary and Wooden_Statue",
+        "GlitchedRequirements": "Room.Kak_Renados_Sanctuary and Wooden_Statue"
+      },
+      {
+        "ConnectedArea": "HV Outside",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Region": "Hyrule Field - Eldin Province"
+  },
+  {
+    "RoomName": "Eldin Field Grotto Platform",
+    "Exits": [
+      {
+        "ConnectedArea": "North Eldin Field",
+        "Requirements": "Spinner",
+        "GlitchedRequirements": "Spinner"
+      },
+      {
+        "ConnectedArea": "Eldin Field Stalfos Grotto",
+        "Requirements": "Shadow_Crystal",
+        "GlitchedRequirements": "Shadow_Crystal"
+      }
+    ],
+    "Region": "Hyrule Field - Eldin Province"
+  },
+  {
+    "RoomName": "Eldin Field Lava Cave Upper",
+    "Exits": [
+      {
+        "ConnectedArea": "Eldin Field Lava Cave Ledge",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "Eldin Field Lava Cave Lower",
+        "Requirements": "Iron_Boots or (Shadow_Crystal and Trick.lava_cave_wolf_jump_to_bottom)",
+        // Wolf can just jump down.
+        "GlitchedRequirements": "Iron_Boots or Shadow_Crystal"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "Eldin Stockcave Upper Chest",
+        "Requirements": "Iron_Boots or Trick.lava_cave_itemless_upper_chest",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Region": "Hyrule Field - Eldin Province"
+  },
+  {
+    "RoomName": "Eldin Field Lava Cave Lower",
+    "Exits": [
+      {
+        "ConnectedArea": "Eldin Field From Lava Cave Lower",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "Eldin Stockcave Lantern Chest",
+        "Requirements": "Lantern",
+        "GlitchedRequirements": "Lantern"
+      },
+      {
+        "CheckName": "Eldin Stockcave Lowest Chest",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Region": "Hyrule Field - Eldin Province"
+  },
+  {
+    "RoomName": "Eldin Field Bomskit Grotto",
+    "Exits": [
+      {
+        "ConnectedArea": "Eldin Field",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "Eldin Field Bomskit Grotto Left Chest",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "Eldin Field Bomskit Grotto Lantern Chest",
+        "Requirements": "Lantern",
+        "GlitchedRequirements": "Lantern"
+      }
+    ],
+    "Region": "Hyrule Field - Eldin Province"
+  },
+  {
+    "RoomName": "Eldin Field Water Bomb Fish Grotto",
+    "Exits": [
+      {
+        "ConnectedArea": "Eldin Field",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "Eldin Field Water Bomb Fish Grotto Chest",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Region": "Hyrule Field - Eldin Province"
+  },
+  {
+    "RoomName": "Eldin Field Stalfos Grotto",
+    "Exits": [
+      {
+        "ConnectedArea": "Eldin Field Grotto Platform",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "Eldin Field Stalfos Grotto Right Small Chest",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "Eldin Field Stalfos Grotto Left Small Chest",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "Eldin Field Stalfos Grotto Stalfos Chest",
+        "Requirements": "CanDefeatStalfos",
+        "GlitchedRequirements": "CanDefeatStalfos"
+      }
+    ],
+    "Region": "Hyrule Field - Eldin Province"
+  }
+]

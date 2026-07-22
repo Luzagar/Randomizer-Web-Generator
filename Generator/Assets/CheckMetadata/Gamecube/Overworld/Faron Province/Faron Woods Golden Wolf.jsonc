@@ -1,6 +1,8 @@
 {
-    "stageIDX": [45],
-    "roomIDX": 6,
-    "flag": "9F",
-    "dataCategory": ["Hidden Skill"]
+  "stageIDX": [45],
+  "roomIDX": 6,
+  "flag": "9F",
+  "checkCategory": ["Overworld", "Hidden Skill", "Faron Woods"],
+  "itemId": "Progressive_Hidden_Skill",
+  "dataCategory": ["Hidden Skill"]
 }

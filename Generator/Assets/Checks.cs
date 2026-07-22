@@ -2,6 +2,7 @@ namespace TPRandomizer
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
     using TPRandomizer.SSettings.Enums;
 
     /// <summary>
@@ -10,10 +11,6 @@ namespace TPRandomizer
     public class Check
     {
         public string checkName { get; set; } // The common name for the check this can be used in the randomizer to identify the check."
-
-        public string requirements { get; set; } // List of requirements to obtain this check while inside the room (so does not include the items needed to enter the room)
-
-        public string glitchedRequirements { get; set; } // List of glitched logic requirements to obtain this check while inside the room (so does not include the items needed to enter the room)
 
         public string checkStatus { get; set; } // Identifies if the check is excluded or not. We can write the randomizer to not place important items in excluded checks
 
@@ -27,7 +24,7 @@ namespace TPRandomizer
         // Data that will be stored in the rando-data .gci file.
         public Item itemId { get; set; } // The original item id of the check. This allows us to make an array of all items in the item pool for randomization purposes. Also is useful for documentation purposes.
 
-        public List<byte> stageIDX { get; set; } // Used by DZX, SHOP, POE, SKILL, and BOSS checks. The index of the stage where the check is located.
+        public List<byte> stageIDX { get; set; } // Used by DZX, SHOP, POE, SKILL, and BOSS checks. The index of the stage where the check is located. In flag checks, this could be the nodeID
 
         public byte roomIDX { get; set; } // Used by SKILL checks to determine which wolf is being learned from.
 
@@ -53,20 +50,9 @@ namespace TPRandomizer
         public string fileName { get; set; }
 
         public List<string> overrideInstruction { get; set; } // Used by REL checks. The override instruction to be used when replacing the item in the rel.
+        public string chestLowerNibble { get; set; } // Used by Chests to determine functionality
 
         public bool isRequired { get; set; }
-
-        private LogicAST reqsCache;
-
-        public LogicAST CachedRequirements()
-        {
-            if (reqsCache != null)
-            {
-                return reqsCache;
-            }
-
-            return reqsCache = Parser.Parse(requirements);
-        }
     }
 
     /// <summary>
@@ -77,215 +63,215 @@ namespace TPRandomizer
         public static List<string> forestRequirementChecks =
             new()
             {
-                "Forest Temple Big Baba Key",
-                "Forest Temple Big Key Chest",
-                "Forest Temple Central Chest Behind Stairs",
-                "Forest Temple Central Chest Hanging From Web",
-                "Forest Temple Central North Chest",
-                "Forest Temple East Tile Worm Chest",
-                "Forest Temple East Water Cave Chest",
-                "Forest Temple Entrance Vines Chest",
-                "Forest Temple Gale Boomerang",
-                "Forest Temple North Deku Like Chest",
-                "Forest Temple Second Monkey Under Bridge Chest",
-                "Forest Temple Totem Pole Chest",
-                "Forest Temple West Deku Like Chest",
-                "Forest Temple West Tile Worm Chest Behind Stairs",
-                "Forest Temple West Tile Worm Room Vines Chest",
-                "Forest Temple Windless Bridge Chest",
+                "FT Big Baba Key",
+                "FT Big Key Chest",
+                "FT Central Chest Behind Stairs",
+                "FT Central Chest Hanging From Web",
+                "FT Central North Chest",
+                "FT East Tile Worm Chest",
+                "FT East Water Cave Chest",
+                "FT Entrance Vines Chest",
+                "FT Gale Boomerang",
+                "FT North Deku Like Chest",
+                "FT Second Monkey Under Bridge Chest",
+                "FT Totem Pole Chest",
+                "FT West Deku Like Chest",
+                "FT West Tile Worm Chest Behind Stairs",
+                "FT West Tile Worm Room Vines Chest",
+                "FT Windless Bridge Chest",
             };
         public static List<string> minesRequirementChecks =
             new()
             {
-                "Goron Mines After Crystal Switch Room Magnet Wall Chest",
-                "Goron Mines Beamos Room Chest",
-                "Goron Mines Chest Before Dangoro",
-                "Goron Mines Crystal Switch Room Small Chest",
-                "Goron Mines Crystal Switch Room Underwater Chest",
-                "Goron Mines Dangoro Chest",
-                "Goron Mines Entrance Chest",
-                "Goron Mines Gor Amato Chest",
-                "Goron Mines Gor Amato Key Shard",
-                "Goron Mines Gor Amato Small Chest",
-                "Goron Mines Gor Ebizo Chest",
-                "Goron Mines Gor Ebizo Key Shard",
-                "Goron Mines Gor Liggs Chest",
-                "Goron Mines Gor Liggs Key Shard",
-                "Goron Mines Magnet Maze Chest",
-                "Goron Mines Main Magnet Room Bottom Chest",
-                "Goron Mines Main Magnet Room Top Chest",
-                "Goron Mines Outside Beamos Chest",
-                "Goron Mines Outside Clawshot Chest",
-                "Goron Mines Outside Underwater Chest",
+                "GM After Crystal Switch Room Magnet Wall Chest",
+                "GM Beamos Room Chest",
+                "GM Chest Before Dangoro",
+                "GM Crystal Switch Room Small Chest",
+                "GM Crystal Switch Room Underwater Chest",
+                "GM Dangoro Chest",
+                "GM Entrance Chest",
+                "GM Gor Amato Chest",
+                "GM Gor Amato Key Shard",
+                "GM Gor Amato Small Chest",
+                "GM Gor Ebizo Chest",
+                "GM Gor Ebizo Key Shard",
+                "GM Gor Liggs Chest",
+                "GM Gor Liggs Key Shard",
+                "GM Magnet Maze Chest",
+                "GM Main Magnet Room Bottom Chest",
+                "GM Main Magnet Room Top Chest",
+                "GM Outside Beamos Chest",
+                "GM Outside Clawshot Chest",
+                "GM Outside Underwater Chest",
             };
 
         public static List<string> lakebedRequirementChecks =
             new()
             {
-                "Lakebed Temple Before Deku Toad Alcove Chest",
-                "Lakebed Temple Before Deku Toad Underwater Left Chest",
-                "Lakebed Temple Before Deku Toad Underwater Right Chest",
-                "Lakebed Temple Big Key Chest",
-                "Lakebed Temple Central Room Chest",
-                "Lakebed Temple Central Room Small Chest",
-                "Lakebed Temple Central Room Spire Chest",
-                "Lakebed Temple Chandelier Chest",
-                "Lakebed Temple Deku Toad Chest",
-                "Lakebed Temple East Lower Waterwheel Bridge Chest",
-                "Lakebed Temple East Lower Waterwheel Stalactite Chest",
-                "Lakebed Temple East Second Floor Southeast Chest",
-                "Lakebed Temple East Second Floor Southwest Chest",
-                "Lakebed Temple East Water Supply Clawshot Chest",
-                "Lakebed Temple East Water Supply Small Chest",
-                "Lakebed Temple Lobby Left Chest",
-                "Lakebed Temple Lobby Rear Chest",
-                "Lakebed Temple Stalactite Room Chest",
-                "Lakebed Temple Underwater Maze Small Chest",
-                "Lakebed Temple West Lower Small Chest",
-                "Lakebed Temple West Second Floor Central Small Chest",
-                "Lakebed Temple West Second Floor Northeast Chest",
-                "Lakebed Temple West Second Floor Southeast Chest",
-                "Lakebed Temple West Second Floor Southwest Underwater Chest",
-                "Lakebed Temple West Water Supply Chest",
-                "Lakebed Temple West Water Supply Small Chest",
+                "LBT Before Deku Toad Alcove Chest",
+                "LBT Before Deku Toad Underwater Left Chest",
+                "LBT Before Deku Toad Underwater Right Chest",
+                "LBT Big Key Chest",
+                "LBT Central Room Chest",
+                "LBT Central Room Small Chest",
+                "LBT Central Room Spire Chest",
+                "LBT Chandelier Chest",
+                "LBT Deku Toad Chest",
+                "LBT East Lower Waterwheel Bridge Chest",
+                "LBT East Lower Waterwheel Stalactite Chest",
+                "LBT East Second Floor Southeast Chest",
+                "LBT East Second Floor Southwest Chest",
+                "LBT East Water Supply Clawshot Chest",
+                "LBT East Water Supply Small Chest",
+                "LBT Lobby Left Chest",
+                "LBT Lobby Rear Chest",
+                "LBT Stalactite Room Chest",
+                "LBT Underwater Maze Small Chest",
+                "LBT West Lower Small Chest",
+                "LBT West Second Floor Central Small Chest",
+                "LBT West Second Floor Northeast Chest",
+                "LBT West Second Floor Southeast Chest",
+                "LBT West Second Floor Southwest Underwater Chest",
+                "LBT West Water Supply Chest",
+                "LBT West Water Supply Small Chest",
             };
 
         public static List<string> arbitersRequirementChecks =
             new()
             {
-                "Arbiters Grounds Big Key Chest",
-                "Arbiters Grounds Death Sword Chest",
-                "Arbiters Grounds East Lower Turnable Redead Chest",
-                "Arbiters Grounds East Turning Room Poe",
-                "Arbiters Grounds East Upper Turnable Chest",
-                "Arbiters Grounds East Upper Turnable Redead Chest",
-                "Arbiters Grounds Entrance Chest",
-                "Arbiters Grounds Ghoul Rat Room Chest",
-                "Arbiters Grounds Hidden Wall Poe",
-                "Arbiters Grounds North Turning Room Chest",
-                "Arbiters Grounds Spinner Room First Small Chest",
-                "Arbiters Grounds Spinner Room Lower Central Small Chest",
-                "Arbiters Grounds Spinner Room Lower North Chest",
-                "Arbiters Grounds Spinner Room Second Small Chest",
-                "Arbiters Grounds Spinner Room Stalfos Alcove Chest",
-                "Arbiters Grounds Torch Room East Chest",
-                "Arbiters Grounds Torch Room Poe",
-                "Arbiters Grounds Torch Room West Chest",
-                "Arbiters Grounds West Chandelier Chest",
-                "Arbiters Grounds West Poe",
-                "Arbiters Grounds West Small Chest Behind Block",
-                "Arbiters Grounds West Stalfos Northeast Chest",
-                "Arbiters Grounds West Stalfos West Chest",
+                "AG Big Key Chest",
+                "AG Death Sword Chest",
+                "AG East Lower Turnable Redead Chest",
+                "AG East Turning Room Poe",
+                "AG East Upper Turnable Chest",
+                "AG East Upper Turnable Redead Chest",
+                "AG Entrance Chest",
+                "AG Ghoul Rat Room Chest",
+                "AG Hidden Wall Poe",
+                "AG North Turning Room Chest",
+                "AG Spinner Room First Small Chest",
+                "AG Spinner Room Lower Central Small Chest",
+                "AG Spinner Room Lower North Chest",
+                "AG Spinner Room Second Small Chest",
+                "AG Spinner Room Stalfos Alcove Chest",
+                "AG Torch Room East Chest",
+                "AG Torch Room Poe",
+                "AG Torch Room West Chest",
+                "AG West Chandelier Chest",
+                "AG West Poe",
+                "AG West Small Chest Behind Block",
+                "AG West Stalfos Northeast Chest",
+                "AG West Stalfos West Chest",
             };
 
         public static List<string> snowpeakRequirementChecks =
             new()
             {
-                "Snowpeak Ruins Ball and Chain",
-                "Snowpeak Ruins Broken Floor Chest",
-                "Snowpeak Ruins Chapel Chest",
-                "Snowpeak Ruins Chest After Darkhammer",
-                "Snowpeak Ruins Courtyard Central Chest",
-                "Snowpeak Ruins East Courtyard Buried Chest",
-                "Snowpeak Ruins East Courtyard Chest",
-                "Snowpeak Ruins Ice Room Poe",
-                "Snowpeak Ruins Lobby Armor Poe",
-                "Snowpeak Ruins Lobby Chandelier Chest",
-                "Snowpeak Ruins Lobby East Armor Chest",
-                "Snowpeak Ruins Lobby Poe",
-                "Snowpeak Ruins Lobby West Armor Chest",
-                "Snowpeak Ruins Mansion Map",
-                "Snowpeak Ruins Northeast Chandelier Chest",
-                "Snowpeak Ruins Ordon Pumpkin Chest",
-                "Snowpeak Ruins West Cannon Room Central Chest",
-                "Snowpeak Ruins West Cannon Room Corner Chest",
-                "Snowpeak Ruins West Courtyard Buried Chest",
-                "Snowpeak Ruins Wooden Beam Central Chest",
-                "Snowpeak Ruins Wooden Beam Chandelier Chest",
-                "Snowpeak Ruins Wooden Beam Northwest Chest",
+                "SPR Ball and Chain",
+                "SPR Broken Floor Chest",
+                "SPR Chapel Chest",
+                "SPR Chest After Darkhammer",
+                "SPR Courtyard Central Chest",
+                "SPR East Courtyard Buried Chest",
+                "SPR East Courtyard Chest",
+                "SPR Ice Room Poe",
+                "SPR Lobby Armor Poe",
+                "SPR Lobby Chandelier Chest",
+                "SPR Lobby East Armor Chest",
+                "SPR Lobby Poe",
+                "SPR Lobby West Armor Chest",
+                "SPR Mansion Map",
+                "SPR Northeast Chandelier Chest",
+                "SPR Ordon Pumpkin Chest",
+                "SPR West Cannon Room Central Chest",
+                "SPR West Cannon Room Corner Chest",
+                "SPR West Courtyard Buried Chest",
+                "SPR Wooden Beam Central Chest",
+                "SPR Wooden Beam Chandelier Chest",
+                "SPR Wooden Beam Northwest Chest",
             };
 
         public static List<string> totRequirementChecks =
             new()
             {
-                "Temple of Time Armos Antechamber East Chest",
-                "Temple of Time Armos Antechamber North Chest",
-                "Temple of Time Armos Antechamber Statue Chest",
-                "Temple of Time Big Key Chest",
-                "Temple of Time Chest Before Darknut",
-                "Temple of Time Darknut Chest",
-                "Temple of Time First Staircase Armos Chest",
-                "Temple of Time First Staircase Gohma Gate Chest",
-                "Temple of Time First Staircase Window Chest",
-                "Temple of Time Floor Switch Puzzle Room Upper Chest",
-                "Temple of Time Guillotine Chest",
-                "Temple of Time Lobby Lantern Chest",
-                "Temple of Time Moving Wall Beamos Room Chest",
-                "Temple of Time Moving Wall Dinalfos Room Chest",
-                "Temple of Time Poe Above Scales",
-                "Temple of Time Poe Behind Gate",
-                "Temple of Time Scales Gohma Chest",
-                "Temple of Time Scales Upper Chest",
+                "ToT Armos Antechamber East Chest",
+                "ToT Armos Antechamber North Chest",
+                "ToT Armos Antechamber Statue Chest",
+                "ToT Big Key Chest",
+                "ToT Chest Before Darknut",
+                "ToT Darknut Chest",
+                "ToT First Staircase Armos Chest",
+                "ToT First Staircase Gohma Gate Chest",
+                "ToT First Staircase Window Chest",
+                "ToT Floor Switch Puzzle Room Upper Chest",
+                "ToT Guillotine Chest",
+                "ToT Lobby Lantern Chest",
+                "ToT Moving Wall Beamos Room Chest",
+                "ToT Moving Wall Dinalfos Room Chest",
+                "ToT Poe Above Scales",
+                "ToT Poe Behind Gate",
+                "ToT Scales Gohma Chest",
+                "ToT Scales Upper Chest",
             };
 
         public static List<string> cityRequirementChecks =
             new()
             {
-                "City in The Sky Aeralfos Chest",
-                "City in The Sky Baba Tower Alcove Chest",
-                "City in The Sky Baba Tower Narrow Ledge Chest",
-                "City in The Sky Baba Tower Top Small Chest",
-                "City in The Sky Big Key Chest",
-                "City in The Sky Central Outside Ledge Chest",
-                "City in The Sky Central Outside Poe Island Chest",
-                "City in The Sky Chest Behind North Fan",
-                "City in The Sky Chest Below Big Key Chest",
-                "City in The Sky East First Wing Chest After Fans",
-                "City in The Sky East Tile Worm Small Chest",
-                "City in The Sky East Wing After Dinalfos Alcove Chest",
-                "City in The Sky East Wing After Dinalfos Ledge Chest",
-                "City in The Sky East Wing Lower Level Chest",
-                "City in The Sky Garden Island Poe",
-                "City in The Sky Poe Above Central Fan",
-                "City in The Sky Underwater East Chest",
-                "City in The Sky Underwater West Chest",
-                "City in The Sky West Garden Corner Chest",
-                "City in The Sky West Garden Ledge Chest",
-                "City in The Sky West Garden Lone Island Chest",
-                "City in The Sky West Garden Lower Chest",
-                "City in The Sky West Wing Baba Balcony Chest",
-                "City in The Sky West Wing First Chest",
-                "City in The Sky West Wing Narrow Ledge Chest",
-                "City in The Sky West Wing Tile Worm Chest",
+                "CitS Aeralfos Chest",
+                "CitS Baba Tower Alcove Chest",
+                "CitS Baba Tower Narrow Ledge Chest",
+                "CitS Baba Tower Top Small Chest",
+                "CitS Big Key Chest",
+                "CitS Central Outside Ledge Chest",
+                "CitS Central Outside Poe Island Chest",
+                "CitS Chest Behind North Fan",
+                "CitS Chest Below Big Key Chest",
+                "CitS East First Wing Chest After Fans",
+                "CitS East Tile Worm Small Chest",
+                "CitS East Wing After Dinalfos Alcove Chest",
+                "CitS East Wing After Dinalfos Ledge Chest",
+                "CitS East Wing Lower Level Chest",
+                "CitS Garden Island Poe",
+                "CitS Poe Above Central Fan",
+                "CitS Underwater East Chest",
+                "CitS Underwater West Chest",
+                "CitS West Garden Corner Chest",
+                "CitS West Garden Ledge Chest",
+                "CitS West Garden Lone Island Chest",
+                "CitS West Garden Lower Chest",
+                "CitS West Wing Baba Balcony Chest",
+                "CitS West Wing First Chest",
+                "CitS West Wing Narrow Ledge Chest",
+                "CitS West Wing Tile Worm Chest",
             };
 
         public static List<string> palaceRequirementChecks =
             new()
             {
-                "Palace of Twilight Big Key Chest",
-                "Palace of Twilight Central First Room Chest",
-                "Palace of Twilight Central Outdoor Chest",
-                "Palace of Twilight Central Tower Chest",
-                "Palace of Twilight Collect Both Sols",
-                "Palace of Twilight East Wing First Room East Alcove Chest",
-                "Palace of Twilight East Wing First Room North Small Chest",
-                "Palace of Twilight East Wing First Room West Alcove Chest",
-                "Palace of Twilight East Wing First Room Zant Head Chest",
-                "Palace of Twilight East Wing Second Room Northeast Chest",
-                "Palace of Twilight East Wing Second Room Northwest Chest",
-                "Palace of Twilight East Wing Second Room Southeast Chest",
-                "Palace of Twilight East Wing Second Room Southwest Chest",
-                "Palace of Twilight West Wing Chest Behind Wall of Darkness",
-                "Palace of Twilight West Wing First Room Central Chest",
-                "Palace of Twilight West Wing Second Room Central Chest",
-                "Palace of Twilight West Wing Second Room Lower South Chest",
-                "Palace of Twilight West Wing Second Room Southeast Chest",
+                "PoT Big Key Chest",
+                "PoT Central First Room Chest",
+                "PoT Central Outdoor Chest",
+                "PoT Central Tower Chest",
+                "PoT Collect Both Sols",
+                "PoT East Wing First Room East Alcove Chest",
+                "PoT East Wing First Room North Small Chest",
+                "PoT East Wing First Room West Alcove Chest",
+                "PoT East Wing First Room Zant Head Chest",
+                "PoT East Wing Second Room Northeast Chest",
+                "PoT East Wing Second Room Northwest Chest",
+                "PoT East Wing Second Room Southeast Chest",
+                "PoT East Wing Second Room Southwest Chest",
+                "PoT West Wing Chest Behind Wall of Darkness",
+                "PoT West Wing First Room Central Chest",
+                "PoT West Wing Second Room Central Chest",
+                "PoT West Wing Second Room Lower South Chest",
+                "PoT West Wing Second Room Southeast Chest",
             };
 
         public static List<string> postFyrusChecks =
             new()
             {
-                "Kakariko Village Malo Mart Hawkeye",
+                "Kak Village Malo Mart Hawkeye",
                 "Talo Sharpshooting",
                 "Death Mountain Trail Poe",
             };
@@ -300,10 +286,10 @@ namespace TPRandomizer
                 "Wooden Statue",
                 "Ilia Charm",
                 "Ilia Memory Reward",
-                "Hidden Village Poe",
+                "HV Poe",
                 "Skybook From Impaz",
                 "Doctors Office Balcony Chest",
-                "North Castle Town Golden Wolf",
+                "North CT Golden Wolf",
                 "Cats Hide and Seek Minigame",
             };
 
@@ -317,26 +303,26 @@ namespace TPRandomizer
                 "South Faron Portal",
                 "North Faron Portal",
                 "Sacred Grove Portal",
-                "Kakariko Gorge Portal",
-                "Kakariko Village Portal",
+                "Kak Gorge Portal",
+                "Kak Village Portal",
                 "Death Mountain Portal",
                 "Bridge of Eldin Portal",
-                "Castle Town Portal",
-                "Zoras Domain Portal",
+                "CT Portal",
+                "ZD Portal",
                 "Lake Hylia Portal",
-                "Gerudo Desert Portal",
+                "Desert Portal",
                 "Snowpeak Portal",
                 "Mirror Chamber Portal",
-                "Upper Zoras River Portal",
-                "Forest Temple Diababa",
-                "Goron Mines Fyrus",
-                "Lakebed Temple Morpheel",
-                "Arbiters Grounds Stallord",
-                "Snowpeak Ruins Blizzeta",
-                "Temple of Time Armogohma",
-                "City in The Sky Argorok",
-                "Palace of Twilight Zant",
-                "Hyrule Castle Ganondorf",
+                "UZR Portal",
+                "FT Diababa",
+                "GM Fyrus",
+                "LBT Morpheel",
+                "AG Stallord",
+                "SPR Blizzeta",
+                "ToT Armogohma",
+                "CitS Argorok",
+                "PoT Zant",
+                "HC Ganondorf",
             };
 
         /// <summary>
@@ -350,35 +336,85 @@ namespace TPRandomizer
         public static void GenerateCheckList()
         {
             SharedSettings parseSetting = Randomizer.SSettings;
+            var dungeonSkSettings = new[]
+            {
+                parseSetting.ftSmallKeySettings,
+                parseSetting.gmSmallKeySettings,
+                parseSetting.lbtSmallKeySettings,
+                parseSetting.agSmallKeySettings,
+                parseSetting.sprSmallKeySettings,
+                parseSetting.totSmallKeySettings,
+                parseSetting.citsSmallKeySettings,
+                parseSetting.potSmallKeySettings,
+                parseSetting.hcSmallKeySettings,
+            };
+
+            var dungeonBkSettings = new[]
+            {
+                parseSetting.ftBigKeySettings,
+                parseSetting.gmBigKeySettings,
+                parseSetting.lbtBigKeySettings,
+                parseSetting.agBigKeySettings,
+                parseSetting.sprBigKeySettings,
+                parseSetting.totBigKeySettings,
+                parseSetting.citsBigKeySettings,
+                parseSetting.potBigKeySettings,
+                parseSetting.hcBigKeySettings,
+            };
+
+            var dungeonMcSettings = new[]
+            {
+                parseSetting.ftMapAndCompassSettings,
+                parseSetting.gmMapAndCompassSettings,
+                parseSetting.lbtMapAndCompassSettings,
+                parseSetting.agMapAndCompassSettings,
+                parseSetting.sprMapAndCompassSettings,
+                parseSetting.totMapAndCompassSettings,
+                parseSetting.citsMapAndCompassSettings,
+                parseSetting.potMapAndCompassSettings,
+                parseSetting.hcMapAndCompassSettings,
+            };
             foreach (KeyValuePair<string, Check> check in Randomizer.Checks.CheckDict)
             {
                 Check currentCheck = check.Value;
 
-                if (
-                    (parseSetting.smallKeySettings == SmallKeySettings.Vanilla)
-                    && currentCheck.checkCategory.Contains("Small Key")
-                )
+                for (int i = 0; i < RoomFunctions.AllDungeonNames.Count(); i++)
                 {
-                    currentCheck.checkStatus = "Vanilla";
-                }
-
-                if (
-                    (parseSetting.bigKeySettings == BigKeySettings.Vanilla)
-                    && currentCheck.checkCategory.Contains("Big Key")
-                )
-                {
-                    currentCheck.checkStatus = "Vanilla";
-                }
-
-                if (
-                    (parseSetting.mapAndCompassSettings == MapAndCompassSettings.Vanilla)
-                    && (
-                        currentCheck.checkCategory.Contains("Dungeon Map")
-                        || currentCheck.checkCategory.Contains("Compass")
+                    if (
+                        dungeonSkSettings[i] == SmallKeySettings.Vanilla
+                        && ValidateDungeonSmallKeyCheck(
+                            currentCheck,
+                            RoomFunctions.AllDungeonNames[i]
+                        )
                     )
-                )
-                {
-                    currentCheck.checkStatus = "Vanilla";
+                    {
+                        currentCheck.checkStatus = "Vanilla";
+                        break;
+                    }
+
+                    if (
+                        dungeonBkSettings[i] == BigKeySettings.Vanilla
+                        && ValidateDungeonBigKeyCheck(
+                            currentCheck,
+                            RoomFunctions.AllDungeonNames[i]
+                        )
+                    )
+                    {
+                        currentCheck.checkStatus = "Vanilla";
+                        break;
+                    }
+
+                    if (
+                        dungeonMcSettings[i] == MapAndCompassSettings.Vanilla
+                        && ValidateDungeonMapCompassCheck(
+                            currentCheck,
+                            RoomFunctions.AllDungeonNames[i]
+                        )
+                    )
+                    {
+                        currentCheck.checkStatus = "Vanilla";
+                        break;
+                    }
                 }
 
                 // Some NPCs give dungeon items (Yeta give dungeon map, Elders give key shards) so we need to account for the possibility of conflicting settings.
@@ -386,30 +422,39 @@ namespace TPRandomizer
                 {
                     if (currentCheck.checkCategory.Contains("Npc"))
                     {
-                        if (
-                            (
-                                (parseSetting.smallKeySettings == SmallKeySettings.Keysy)
-                                && currentCheck.checkCategory.Contains("Small Key")
-                            )
-                            || (
-                                (parseSetting.bigKeySettings == BigKeySettings.Keysy)
-                                && currentCheck.checkCategory.Contains("Big Key")
-                            )
-                            || (
-                                (
-                                    parseSetting.mapAndCompassSettings
-                                    == MapAndCompassSettings.Start_With
-                                )
-                                && (
-                                    currentCheck.checkCategory.Contains("Dungeon Map")
-                                    || currentCheck.checkCategory.Contains("Compass")
-                                )
-                            )
-                        )
+                        bool isExcluded = false;
+                        for (int i = 0; i < RoomFunctions.AllDungeonNames.Count(); i++)
                         {
-                            currentCheck.checkStatus = "Excluded";
+                            if (
+                                (
+                                    dungeonSkSettings[i] == SmallKeySettings.Keysy
+                                    && ValidateDungeonSmallKeyCheck(
+                                        currentCheck,
+                                        RoomFunctions.AllDungeonNames[i]
+                                    )
+                                )
+                                || (
+                                    dungeonBkSettings[i] == BigKeySettings.Keysy
+                                    && ValidateDungeonBigKeyCheck(
+                                        currentCheck,
+                                        RoomFunctions.AllDungeonNames[i]
+                                    )
+                                )
+                                || (
+                                    dungeonMcSettings[i] == MapAndCompassSettings.Start_With
+                                    && ValidateDungeonMapCompassCheck(
+                                        currentCheck,
+                                        RoomFunctions.AllDungeonNames[i]
+                                    )
+                                )
+                            )
+                            {
+                                currentCheck.checkStatus = "Excluded";
+                                isExcluded = true;
+                                break;
+                            }
                         }
-                        else
+                        if (!isExcluded)
                         {
                             currentCheck.checkStatus = "Vanilla";
                             Randomizer.Items.RandomizedImportantItems.Remove(currentCheck.itemId);
@@ -526,6 +571,38 @@ namespace TPRandomizer
                         currentCheck.checkStatus = "Vanilla";
                     }
                 }
+
+                if (!parseSetting.shuffleFishJournals)
+                {
+                    if (currentCheck.checkCategory.Contains("Fish Journal"))
+                    {
+                        currentCheck.checkStatus = "Vanilla";
+                    }
+                }
+
+                if (!parseSetting.shuffleAnimalConversations)
+                {
+                    if (currentCheck.checkCategory.Contains("Animal Conversation"))
+                    {
+                        currentCheck.checkStatus = "Vanilla";
+                    }
+                }
+
+                if (!parseSetting.shuffleMinigames)
+                {
+                    if (currentCheck.checkCategory.Contains("Minigame"))
+                    {
+                        currentCheck.checkStatus = "Vanilla";
+                    }
+                }
+
+                if (!parseSetting.shuffleLegendaryLoach)
+                {
+                    if (currentCheck.checkCategory.Contains("Legendary Loach"))
+                    {
+                        currentCheck.checkStatus = "Vanilla";
+                    }
+                }
             }
 
             List<string> removedQuestChecks = new();
@@ -583,7 +660,7 @@ namespace TPRandomizer
             vanillaChecks.AddRange(questChecks);
             if (Randomizer.SSettings.castleBKRequirements != CastleBKRequirements.None)
             {
-                vanillaChecks.Add("Hyrule Castle Big Key Chest");
+                vanillaChecks.Add("HC Big Key Chest");
             }
 
             foreach (string vanillaCheck in vanillaChecks)
@@ -599,6 +676,45 @@ namespace TPRandomizer
                 Randomizer.Checks.CheckDict[checkName].checkStatus = "Plando";
                 Randomizer.Checks.CheckDict[checkName].itemId = item;
             }
+        }
+
+        public static bool ValidateDungeonSmallKeyCheck(Check smallKeyCheck, string Dungeon)
+        {
+            if (
+                smallKeyCheck.checkCategory.Contains(Dungeon)
+                && smallKeyCheck.checkCategory.Contains("Small Key")
+            )
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public static bool ValidateDungeonBigKeyCheck(Check smallKeyCheck, string Dungeon)
+        {
+            if (
+                smallKeyCheck.checkCategory.Contains(Dungeon)
+                && smallKeyCheck.checkCategory.Contains("Big Key")
+            )
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public static bool ValidateDungeonMapCompassCheck(Check smallKeyCheck, string Dungeon)
+        {
+            if (
+                smallKeyCheck.checkCategory.Contains(Dungeon)
+                && (
+                    smallKeyCheck.checkCategory.Contains("Dungeon Map")
+                    || smallKeyCheck.checkCategory.Contains("Compass")
+                )
+            )
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

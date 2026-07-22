@@ -1,0 +1,390 @@
+[
+  {
+    "RoomName": "Ganondorf Castle",
+    "Exits": [
+      {
+        "ConnectedArea": "HC Tower Climb",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "HC Ganondorf",
+        "Requirements": "CanDefeatGanondorf",
+        "GlitchedRequirements": "CanDefeatGanondorf"
+      }
+    ],
+    "Region": "Ganondorf"
+  },
+  {
+    "RoomName": "HC Entrance",
+    "Exits": [
+      {
+        "ConnectedArea": "CT North Inside Barrier",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "HC Main Hall",
+        "Requirements": "(Hyrule_Castle_Small_Key, 1)",
+        "GlitchedRequirements": "(Hyrule_Castle_Small_Key, 1)"
+      },
+      {
+        "ConnectedArea": "HC Outside West Wing",
+        "Requirements": "CanDefeatBokoblinRed",
+        "GlitchedRequirements": "CanDefeatBokoblinRed"
+      },
+      {
+        "ConnectedArea": "HC Outside East Wing",
+        "Requirements": "CanDefeatBokoblinRed",
+        "GlitchedRequirements": "CanDefeatBokoblinRed"
+      }
+    ],
+    "Region": "Hyrule Castle"
+  },
+  {
+    "RoomName": "HC Graveyard",
+    "Exits": [
+      {
+        "ConnectedArea": "HC Outside East Wing",
+        "Requirements": "Shadow_Crystal",
+        "GlitchedRequirements": "Shadow_Crystal"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "HC Graveyard Grave Switch Room Right Chest",
+        "Requirements": "CanSmash",
+        "GlitchedRequirements": "CanSmash"
+      },
+      {
+        "CheckName": "HC Graveyard Grave Switch Room Front Left Chest",
+        "Requirements": "CanSmash",
+        "GlitchedRequirements": "CanSmash"
+      },
+      {
+        "CheckName": "HC Graveyard Grave Switch Room Back Left Chest",
+        "Requirements": "CanSmash",
+        "GlitchedRequirements": "CanSmash"
+      },
+      {
+        "CheckName": "HC Graveyard Owl Statue Chest",
+        "Requirements": "CanSmash and Lantern and (Progressive_Dominion_Rod, 2)",
+        "GlitchedRequirements": "CanSmash and Lantern and (Progressive_Dominion_Rod, 2)"
+      }
+    ],
+    "Region": "Hyrule Castle"
+  },
+  {
+    "RoomName": "HC Main Hall",
+    "Exits": [
+      {
+        "ConnectedArea": "HC Entrance",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "HC Above Lantern Staircase",
+        "Requirements": "((CanDefeatBokoblin and CanDefeatLizalfos) or (Trick.hc_skip_main_hall_barrier and HasSword)) and ((Progressive_Clawshot, 2) or (Progressive_Clawshot and Trick.hc_chandeliers_with_1_claw)) and CanDefeatDarknut and Boomerang",
+        "GlitchedRequirements": "HasSword and Progressive_Clawshot and CanDefeatDarknut and Boomerang"
+      },
+      {
+        "ConnectedArea": "HC After Double Dinalfos",
+        "Requirements": "((CanDefeatBokoblin and CanDefeatLizalfos) or (Trick.hc_skip_main_hall_barrier) and HasSword) and (Setting.hcShortcut equals True) and (Progressive_Clawshot, 2)",
+        "GlitchedRequirements": "HasSword and (Setting.hcShortcut equals True) and (Progressive_Clawshot, 2)"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "HC Main Hall Northeast Chest",
+        "Requirements": "((CanDefeatBokoblin and CanDefeatLizalfos) or (Trick.hc_skip_main_hall_barrier and Lantern)) and (Progressive_Clawshot, 1)",
+        "GlitchedRequirements": "(HasSword or Lantern) and Progressive_Clawshot"
+      }
+    ],
+    "Region": "Hyrule Castle"
+  },
+  {
+    "RoomName": "HC Outside East Wing",
+    "Exits": [
+      {
+        "ConnectedArea": "HC Entrance",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "HC Graveyard",
+        "Requirements": "Shadow_Crystal",
+        "GlitchedRequirements": "Shadow_Crystal"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "HC East Wing Boomerang Puzzle Chest",
+        "Requirements": "Boomerang",
+        "GlitchedRequirements": "Boomerang"
+      },
+      {
+        "CheckName": "HC East Wing Balcony Chest",
+        "Requirements": "Boomerang",
+        "GlitchedRequirements": "Boomerang"
+      }
+    ],
+    "Region": "Hyrule Castle"
+  },
+  {
+    "RoomName": "HC Outside West Wing",
+    "Exits": [
+      {
+        "ConnectedArea": "HC Entrance",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "HC West Courtyard North Small Chest",
+        "Requirements": "CanDefeatBokoblin",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "HC West Courtyard Central Small Chest",
+        "Requirements": "CanDefeatBokoblin",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "HC King Bulblin Key",
+        "Requirements": "CanDefeatKingBulblinCastle",
+        "GlitchedRequirements": "CanDefeatKingBulblinCastle"
+      }
+    ],
+    "Region": "Hyrule Castle"
+  },
+  {
+    "RoomName": "HC Above Lantern Staircase",
+    "Exits": [
+      {
+        "ConnectedArea": "HC Main Hall",
+        "Requirements": "CanDefeatDarknut",
+        "GlitchedRequirements": "CanDefeatDarknut"
+      },
+      {
+        "ConnectedArea": "HC After Double Dinalfos",
+        "Requirements": "Lantern and CanDefeatDinalfos",
+        "GlitchedRequirements": "Lantern and CanDefeatDinalfos"
+      },
+      {
+        "ConnectedArea": "HC After Double Darknuts",
+        "Requirements": "CanKnockDownHCPainting and CanDefeatLizalfos and CanDefeatDarknut",
+        "GlitchedRequirements": "CanKnockDownHCPainting and CanDefeatLizalfos and CanDefeatDarknut"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "HC Lantern Staircase Chest",
+        "Requirements": "CanDefeatDarknut",
+        "GlitchedRequirements": "CanDefeatDarknut"
+      }
+    ],
+    "Region": "Hyrule Castle"
+  },
+  {
+    "RoomName": "HC After Double Dinalfos",
+    "Exits": [
+      {
+        "ConnectedArea": "HC Main Hall",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "HC Above Lantern Staircase",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "HC Third Floor Balcony",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Region": "Hyrule Castle"
+  },
+  {
+    "RoomName": "HC After Double Darknuts",
+    "Exits": [
+      {
+        "ConnectedArea": "HC Main Hall",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "HC Above Lantern Staircase",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "HC Third Floor Balcony",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "HC Main Hall Southwest Chest",
+        // Access is from the "HC After Double Darknuts" room. Note that
+        // the Double-Darknut Skip is not infinitely reproducible since it is only
+        // available until you lower the shortcut chandelier, so there is no logical
+        // way even in glitched to get this chest without going through the Double
+        // Darknuts, at which point you just walk up and get it for free.
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "HC Main Hall Northwest Chest",
+        // Access is from the "HC After Double Darknuts" room since you
+        // must press the switch there to make the chest appear and Double-Darknut
+        // Skip is not infinitely reproducible. Note that the barrier fight is not
+        // relevant to this for multiple reasons, the simplest one being that the
+        // trigger for the fight is nowhere near anywhere you would walk to do this
+        // (but the fight is logically completed in order to get here regardless).
+        "Requirements": "(Progressive_Clawshot, 2)",
+        // For glitched, you can easily clawshot to this chest from next to the
+        // center north door of the main hall, or you can LJA to it from the switch.
+        "GlitchedRequirements": "(Progressive_Clawshot, 1) or CanDoLJA"
+      }
+    ],
+    "Region": "Hyrule Castle"
+  },
+  {
+    "RoomName": "HC Third Floor Balcony",
+    "Exits": [
+      {
+        "ConnectedArea": "HC After Double Dinalfos",
+        "Requirements": "(Lantern and CanDefeatDinalfos) or (Setting.hcShortcut equals True)",
+        "GlitchedRequirements": "(Lantern and CanDefeatDinalfos) or (Setting.hcShortcut equals True)"
+      },
+      {
+        "ConnectedArea": "HC After Double Darknuts",
+        "Requirements": "CanDefeatDarknut and CanDefeatLizalfos and CanKnockDownHCPainting",
+        "GlitchedRequirements": "CanDefeatDarknut and CanDefeatLizalfos and CanKnockDownHCPainting"
+      },
+      {
+        "ConnectedArea": "HC Tower Climb",
+        "Requirements": "(Hyrule_Castle_Small_Key, 2)",
+        "GlitchedRequirements": "(Hyrule_Castle_Small_Key, 2)"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "HC Southeast Balcony Tower Chest",
+        "Requirements": "CanDefeatAeralfos",
+        "GlitchedRequirements": "CanDefeatAeralfos"
+      },
+      {
+        "CheckName": "HC Big Key Chest",
+        "Requirements": "CanOpenHCBKGate",
+        "GlitchedRequirements": "CanOpenHCBKGate"
+      }
+    ],
+    "Region": "Hyrule Castle"
+  },
+  {
+    "RoomName": "HC Tower Climb",
+    "Exits": [
+      {
+        "ConnectedArea": "HC Third Floor Balcony",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "HC Treasure Room",
+        "Requirements": "(Hyrule_Castle_Small_Key, 3) and Spinner and ((Progressive_Clawshot, 2) or (Progressive_Clawshot and Trick.hc_tower_climb_with_1_claw)) and CanDefeatDarknut and CanDefeatLizalfos",
+        "GlitchedRequirements": "(Hyrule_Castle_Small_Key, 3) and (Spinner or CanDoJSLJA) and Progressive_Clawshot and CanDefeatDarknut and CanDefeatLizalfos"
+      },
+      {
+        "ConnectedArea": "Ganondorf Castle",
+        "Requirements": "Spinner and ((Progressive_Clawshot, 2) or (Progressive_Clawshot and Trick.hc_tower_climb_with_1_claw)) and CanDefeatDarknut and CanDefeatLizalfos and Hyrule_Castle_Big_Key",
+        "GlitchedRequirements": "(Spinner or CanDoJSLJA) and Progressive_Clawshot and CanDefeatDarknut and CanDefeatLizalfos and Hyrule_Castle_Big_Key"
+      }
+    ],
+    "Region": "Hyrule Castle"
+  },
+  {
+    "RoomName": "HC Treasure Room",
+    "Exits": [
+      {
+        "ConnectedArea": "HC Tower Climb",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "HC Treasure Room Eighth Small Chest",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "HC Treasure Room Seventh Small Chest",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "HC Treasure Room Sixth Small Chest",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "HC Treasure Room Fifth Small Chest",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "HC Treasure Room Fourth Small Chest",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "HC Treasure Room Third Small Chest",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "HC Treasure Room Second Small Chest",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "HC Treasure Room First Small Chest",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "HC Treasure Room Fifth Chest",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "HC Treasure Room Fourth Chest",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "HC Treasure Room Third Chest",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "HC Treasure Room Second Chest",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "HC Treasure Room First Chest",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Region": "Hyrule Castle"
+  }
+]

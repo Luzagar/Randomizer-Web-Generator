@@ -1,8 +1,10 @@
 {
-    "arcOffsets": ["3117"],
-    "stageIDX": [51],
-    "roomIDX": 1,
-    "fileDirectoryType": [0],
-    "replacementType": [0],
-    "dataCategory": ["ARC"]
+  "arcOffsets": ["3117"],
+  "stageIDX": [51],
+  "roomIDX": 1,
+  "fileDirectoryType": [0],
+  "replacementType": [0],
+  "checkCategory": ["Overworld", "Snowpeak", "Rupee - Freestanding"],
+  "itemId": "Green_Rupee",
+  "dataCategory": ["ARC"]
 }

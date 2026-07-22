@@ -1,8 +1,10 @@
 {
-    "arcOffsets": ["6DB"],
-    "stageIDX": [45],
-    "roomIDX": 4,
-    "fileDirectoryType": [0],
-    "replacementType": [0],
-    "dataCategory": ["ARC"]
+  "arcOffsets": ["6DB"],
+  "stageIDX": [45],
+  "roomIDX": 4,
+  "fileDirectoryType": [0],
+  "replacementType": [0],
+  "checkCategory": ["Overworld", "Faron Woods", "Rupee - Hidden"],
+  "itemId": "Yellow_Rupee",
+  "dataCategory": ["ARC"]
 }

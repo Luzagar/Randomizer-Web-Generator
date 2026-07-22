@@ -1,6 +1,0 @@
-{
-    "requirements": "Shadow_Crystal and Room.Upper_Zoras_River",
-    "glitchedRequirements": "Shadow_Crystal and Room.Zoras_Domain",
-    "checkCategory": ["Overworld", "Hidden Skill", "Hyrule Field - Lanayru Province"],
-    "itemId": "Progressive_Hidden_Skill"
-}

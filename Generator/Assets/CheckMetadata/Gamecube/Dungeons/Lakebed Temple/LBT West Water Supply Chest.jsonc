@@ -1,0 +1,17 @@
+{
+  "arcOffsets": ["21F8"],
+  "stageIDX": [0],
+  "roomIDX": 13,
+  "fileDirectoryType": [0],
+  "replacementType": [0],
+  "chestLowerNibble": "F",
+  "checkCategory": [
+    "Chest",
+    "Dungeon",
+    "Lakebed Temple",
+    "Dungeon Items",
+    "Compass"
+  ],
+  "itemId": "Lakebed_Temple_Compass",
+  "dataCategory": ["Chest", "ARC"]
+}

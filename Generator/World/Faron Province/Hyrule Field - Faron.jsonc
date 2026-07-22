@@ -1,0 +1,121 @@
+[
+  {
+    "RoomName": "Faron Field",
+    "Exits": [
+      {
+        "ConnectedArea": "OCT South",
+        "Requirements": "CanGetHotSpringWater and Room.OCT_South",
+        "GlitchedRequirements": "Room.CT_South and HasBottle and Room.OCT_South"
+      },
+      {
+        "ConnectedArea": "South Faron Woods Behind Field Gate",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "Kak Gorge",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "Lake Hylia Bridge",
+        "Requirements": "Gate_Keys",
+        "GlitchedRequirements": "Gate_Keys or Shadow_Crystal"
+      },
+      {
+        "ConnectedArea": "Faron Field Corner Grotto",
+        "Requirements": "Shadow_Crystal",
+        "GlitchedRequirements": "Shadow_Crystal"
+      },
+      {
+        "ConnectedArea": "Faron Field Fishing Grotto",
+        "Requirements": "Shadow_Crystal",
+        "GlitchedRequirements": "Shadow_Crystal"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "Faron Field Bridge Chest",
+        "Requirements": "(Progressive_Clawshot, 1)",
+        "GlitchedRequirements": "(Progressive_Clawshot, 1) or CanDoStorage"
+      },
+      {
+        "CheckName": "Faron Field Tree Heart Piece",
+        "Requirements": "Boomerang or (Progressive_Clawshot, 1) or (Trick.freestandings_with_bnc and Ball_and_Chain)",
+        "GlitchedRequirements": "Boomerang or (Progressive_Clawshot, 1) or Ball_and_Chain"
+      },
+      {
+        "CheckName": "Faron Field Male Beetle",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "Faron Field Female Beetle",
+        "Requirements": "Boomerang or (Progressive_Clawshot, 1)",
+        "GlitchedRequirements": "Boomerang or (Progressive_Clawshot, 1) or CanDoStorage"
+      },
+      {
+        "CheckName": "Faron Field Poe",
+        "Requirements": "Shadow_Crystal and CanCompleteMDH and CanCompleteAllTwilight",
+        "GlitchedRequirements": "Shadow_Crystal and CanCompleteMDH and CanCompleteAllTwilight"
+      }
+    ],
+    "Region": "Hyrule Field - Faron Province"
+  },
+  {
+    "RoomName": "Faron Field Corner Grotto",
+    "Exits": [
+      {
+        "ConnectedArea": "Faron Field",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "Faron Field Corner Grotto Right Chest",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "Faron Field Corner Grotto Left Chest",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "Faron Field Corner Grotto Rear Chest",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Region": "Hyrule Field - Faron Province"
+  },
+  {
+    "RoomName": "Faron Field Fishing Grotto",
+    "Exits": [
+      {
+        "ConnectedArea": "Faron Field",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "Catch A Greengill",
+        "Requirements": "Progressive_Fishing_Rod",
+        "GlitchedRequirements": "Progressive_Fishing_Rod"
+      },
+      {
+        "CheckName": "Catch An Ordon Catfish",
+        "Requirements": "CanCatchBaitedFish",
+        "GlitchedRequirements": "CanCatchBaitedFish"
+      },
+      {
+        "CheckName": "Catch A Hylian Loach",
+        "Requirements": "CanCatchBaitedFish",
+        "GlitchedRequirements": "CanCatchBaitedFish"
+      }
+    ],
+    "Region": "Hyrule Field - Faron Province"
+  }
+]

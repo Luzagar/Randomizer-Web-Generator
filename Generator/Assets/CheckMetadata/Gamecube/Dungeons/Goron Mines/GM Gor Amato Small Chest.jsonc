@@ -1,0 +1,11 @@
+{
+  "arcOffsets": ["308"],
+  "stageIDX": [3],
+  "roomIDX": 14,
+  "fileDirectoryType": [0],
+  "replacementType": [0],
+  "chestLowerNibble": "F",
+  "checkCategory": ["Chest", "Dungeon", "Goron Mines"],
+  "itemId": "Red_Rupee",
+  "dataCategory": ["Chest", "ARC"]
+}

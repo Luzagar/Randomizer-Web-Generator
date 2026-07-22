@@ -1,9 +1,11 @@
 {
-    "arcOffsets": ["1354"],
-    "fileDirectoryType": [1],
-    "replacementType": [4],
-    "stageIDX": [44],
-    "roomIDX": 1,
-    "flag": "84",
-    "dataCategory": ["Event", "ARC"]
+  "arcOffsets": ["1354"],
+  "fileDirectoryType": [1],
+  "replacementType": [4],
+  "stageIDX": [44],
+  "roomIDX": 1,
+  "flag": "84",
+  "checkCategory": ["Overworld", "Quest", "Kakariko Village"],
+  "itemId": "Horse_Call",
+  "dataCategory": ["Event", "ARC"]
 }

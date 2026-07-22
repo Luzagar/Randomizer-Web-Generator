@@ -1,8 +1,10 @@
 {
-    "arcOffsets": ["1823"],
-    "stageIDX": [56],
-    "roomIDX": 0,
-    "fileDirectoryType": [0],
-    "replacementType": [0],
-    "dataCategory": ["ARC"]
+  "arcOffsets": ["1823"],
+  "stageIDX": [56],
+  "roomIDX": 0,
+  "fileDirectoryType": [0],
+  "replacementType": [0],
+  "checkCategory": ["Overworld", "Hyrule Field - Eldin", "Rupee - Hidden"],
+  "itemId": "Red_Rupee",
+  "dataCategory": ["ARC"]
 }

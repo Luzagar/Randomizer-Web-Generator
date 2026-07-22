@@ -1,7 +1,9 @@
 {
-    "arcOffsets": ["13C7"],
-    "stageIDX": [74],
-    "fileDirectoryType": [1],
-    "replacementType": [0],
-    "dataCategory": ["ARC"]
+  "arcOffsets": ["13C7"],
+  "stageIDX": [74],
+  "fileDirectoryType": [1],
+  "replacementType": [0],
+  "checkCategory": ["Overworld", "Minigame", "Castle Town"],
+  "itemId": "Progressive_Bow",
+  "dataCategory": ["ARC"]
 }

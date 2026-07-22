@@ -1,0 +1,299 @@
+[
+  {
+    "RoomName": "ToT Armos Antechamber",
+    "Exits": [
+      {
+        "ConnectedArea": "ToT Central Mechanical Platform",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "ToT Armos Antechamber East Chest",
+        "Requirements": "CanDefeatArmos",
+        "GlitchedRequirements": "CanDefeatArmos"
+      },
+      {
+        "CheckName": "ToT Armos Antechamber North Chest",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "ToT Armos Antechamber Statue Chest",
+        "Requirements": "(Progressive_Dominion_Rod, 1)",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Region": "Temple of Time"
+  },
+  {
+    "RoomName": "ToT Boss Room",
+    "Exits": [
+      {
+        "ConnectedArea": "Sacred Grove Past",
+        "Requirements": "CanDefeatArmogohma",
+        "GlitchedRequirements": "CanDefeatArmogohma"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "ToT Armogohma Heart Container",
+        "Requirements": "CanDefeatArmogohma",
+        "GlitchedRequirements": "CanDefeatArmogohma"
+      },
+      {
+        "CheckName": "ToT Armogohma",
+        "Requirements": "CanDefeatArmogohma",
+        "GlitchedRequirements": "CanDefeatArmogohma"
+      },
+      {
+        "CheckName": "ToT Dungeon Reward",
+        "Requirements": "CanDefeatArmogohma",
+        "GlitchedRequirements": "CanDefeatArmogohma"
+      }
+    ],
+    "Region": "Temple of Time"
+  },
+  {
+    "RoomName": "ToT Central Mechanical Platform",
+    "Exits": [
+      {
+        "ConnectedArea": "ToT Connecting Corridors",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "ToT Armos Antechamber",
+        "Requirements": "Spinner",
+        "GlitchedRequirements": "Spinner or CanDoLJA"
+      },
+      {
+        "ConnectedArea": "ToT Moving Wall Hallways",
+        "Requirements": "Spinner and (Temple_of_Time_Small_Key, 2)",
+        "GlitchedRequirements": "(Spinner or CanDoLJA) and (Temple_of_Time_Small_Key, 2)"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "ToT Poe Behind Gate",
+        "Requirements": "Shadow_Crystal and (Progressive_Dominion_Rod, 1)",
+        "GlitchedRequirements": "Shadow_Crystal and ((Progressive_Dominion_Rod, 1) or Ball_and_Chain or CanDoHSMoonBoots)"
+      }
+    ],
+    "Region": "Temple of Time"
+  },
+  {
+    "RoomName": "ToT Connecting Corridors",
+    "Exits": [
+      {
+        "ConnectedArea": "ToT Entrance",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "ToT Central Mechanical Platform",
+        "Requirements": "HasRangedItem and CanDefeatYoungGohma and CanDefeatLizalfos",
+        "GlitchedRequirements": "HasRangedItem and CanDefeatYoungGohma and CanDefeatLizalfos"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "ToT First Staircase Gohma Gate Chest",
+        "Requirements": "CanDefeatYoungGohma",
+        "GlitchedRequirements": "CanDefeatYoungGohma"
+      },
+      {
+        "CheckName": "ToT First Staircase Window Chest",
+        "Requirements": "HasRangedItem",
+        "GlitchedRequirements": "HasRangedItem"
+      },
+      {
+        "CheckName": "ToT First Staircase Armos Chest",
+        "Requirements": "CanDefeatArmos and HasRangedItem",
+        "GlitchedRequirements": "CanDefeatArmos and HasRangedItem"
+      }
+    ],
+    "Region": "Temple of Time"
+  },
+  {
+    "RoomName": "ToT Crumbling Corridor",
+    "Exits": [
+      {
+        "ConnectedArea": "ToT Entrance",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "ToT Boss Room",
+        "Requirements": "(Progressive_Dominion_Rod, 1) and Temple_of_Time_Big_Key",
+        "GlitchedRequirements": "(Progressive_Dominion_Rod, 1) and Temple_of_Time_Big_Key"
+      }
+    ],
+    "Region": "Temple of Time"
+  },
+  {
+    "RoomName": "ToT Darknut Arena",
+    "Exits": [
+      {
+        "ConnectedArea": "ToT Upper Spike Trap Corridor",
+        "Requirements": "CanDefeatDarknut and (Progressive_Dominion_Rod, 1)",
+        "GlitchedRequirements": "CanDefeatDarknut and (Progressive_Dominion_Rod, 1)"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "ToT Darknut Chest",
+        "Requirements": "CanDefeatDarknut",
+        "GlitchedRequirements": "CanDefeatDarknut"
+      }
+    ],
+    "Region": "Temple of Time"
+  },
+  {
+    "RoomName": "ToT Entrance",
+    "Exits": [
+      {
+        "ConnectedArea": "Sacred Grove Past Behind Window",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "ToT Connecting Corridors",
+        "Requirements": "(Temple_of_Time_Small_Key, 1)",
+        "GlitchedRequirements": "(Temple_of_Time_Small_Key, 1)"
+      },
+      {
+        "ConnectedArea": "ToT Crumbling Corridor",
+        "Requirements": "((Progressive_Dominion_Rod, 1) and (Progressive_Bow, 1) and Spinner and CanDefeatLizalfos and CanDefeatDinalfos and CanDefeatDarknut and (Temple_of_Time_Small_Key, 3)) or (Setting.openDot equals True)",
+        // DoT Skip
+        "GlitchedRequirements": "(Progressive_Dominion_Rod, 1) or (Setting.openDot equals True)"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "ToT Lobby Lantern Chest",
+        "Requirements": "Lantern",
+        "GlitchedRequirements": "Lantern"
+      }
+    ],
+    "Region": "Temple of Time"
+  },
+  {
+    "RoomName": "ToT Floor Switch Puzzle Room",
+    "Exits": [
+      {
+        "ConnectedArea": "ToT Scales of Time",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "ToT Big Key Chest",
+        "Requirements": "CanDefeatHelmasaur and (Progressive_Clawshot, 1)",
+        "GlitchedRequirements": "CanDefeatHelmasaur and (Progressive_Clawshot, 1)"
+      },
+      {
+        "CheckName": "ToT Floor Switch Puzzle Room Upper Chest",
+        "Requirements": "(Progressive_Clawshot, 1)",
+        "GlitchedRequirements": "(Progressive_Clawshot, 1)"
+      }
+    ],
+    "Region": "Temple of Time"
+  },
+  {
+    "RoomName": "ToT Moving Wall Hallways",
+    "Exits": [
+      {
+        "ConnectedArea": "ToT Central Mechanical Platform",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "ToT Scales of Time",
+        "Requirements": "((Progressive_Bow, 1) or (Progressive_Clawshot and Trick.tot_crystal_switches_with_claw)) and CanDefeatLizalfos and CanDefeatDinalfos",
+        "GlitchedRequirements": "((Progressive_Bow, 1) or Progressive_Clawshot) and CanDefeatLizalfos and CanDefeatDinalfos"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "ToT Moving Wall Beamos Room Chest",
+        "Requirements": "(Progressive_Bow, 1)",
+        "GlitchedRequirements": "(Progressive_Bow, 1)"
+      },
+      {
+        "CheckName": "ToT Moving Wall Dinalfos Room Chest",
+        "Requirements": "CanDefeatDinalfos and (Progressive_Dominion_Rod, 1) and (Progressive_Bow, 1)",
+        "GlitchedRequirements": "CanDefeatDinalfos and ((Progressive_Dominion_Rod, 1) or (Spinner and HasBombs)) and (Progressive_Bow, 1)"
+      }
+    ],
+    "Region": "Temple of Time"
+  },
+  {
+    "RoomName": "ToT Scales of Time",
+    "Exits": [
+      {
+        "ConnectedArea": "ToT Moving Wall Hallways",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "ToT Floor Switch Puzzle Room",
+        "Requirements": "(Progressive_Clawshot, 1) and Spinner",
+        "GlitchedRequirements": "(Progressive_Clawshot, 1) and Spinner"
+      },
+      {
+        "ConnectedArea": "ToT Upper Spike Trap Corridor",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "ToT Scales Gohma Chest",
+        "Requirements": "CanDefeatYoungGohma and CanDefeatBabyGohma",
+        "GlitchedRequirements": "CanDefeatYoungGohma and CanDefeatBabyGohma"
+      },
+      {
+        "CheckName": "ToT Scales Upper Chest",
+        "Requirements": "(Progressive_Clawshot, 1) and Spinner",
+        "GlitchedRequirements": "(Progressive_Clawshot, 1) and Spinner"
+      },
+      {
+        "CheckName": "ToT Poe Above Scales",
+        "Requirements": "Shadow_Crystal and (Progressive_Clawshot, 1) and Spinner",
+        "GlitchedRequirements": "Shadow_Crystal and (Progressive_Clawshot, 1) and Spinner"
+      }
+    ],
+    "Region": "Temple of Time"
+  },
+  {
+    "RoomName": "ToT Upper Spike Trap Corridor",
+    "Exits": [
+      {
+        "ConnectedArea": "ToT Scales of Time",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "ConnectedArea": "ToT Darknut Arena",
+        "Requirements": "CanDefeatLizalfos and CanDefeatBabyGohma and CanDefeatYoungGohma and CanDefeatArmos and (Temple_of_Time_Small_Key, 3)",
+        "GlitchedRequirements": "CanDefeatLizalfos and CanDefeatBabyGohma and CanDefeatYoungGohma and CanDefeatArmos and (Temple_of_Time_Small_Key, 3)"
+      }
+    ],
+    "Checks": [
+      {
+        "CheckName": "ToT Guillotine Chest",
+        "Requirements": "true",
+        "GlitchedRequirements": "true"
+      },
+      {
+        "CheckName": "ToT Chest Before Darknut",
+        "Requirements": "CanDefeatArmos and CanDefeatBabyGohma and CanDefeatYoungGohma",
+        "GlitchedRequirements": "CanDefeatArmos and CanDefeatBabyGohma and CanDefeatYoungGohma"
+      }
+    ],
+    "Region": "Temple of Time"
+  }
+]

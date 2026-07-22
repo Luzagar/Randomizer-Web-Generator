@@ -1,0 +1,11 @@
+{
+  "arcOffsets": ["4D0"],
+  "stageIDX": [29],
+  "roomIDX": 51,
+  "fileDirectoryType": [0],
+  "replacementType": [0],
+  "chestLowerNibble": "F",
+  "checkCategory": ["Chest", "Dungeon", "Snowpeak Ruins", "Small Key"],
+  "itemId": "Snowpeak_Ruins_Ordon_Goat_Cheese",
+  "dataCategory": ["Chest", "ARC"]
+}

@@ -1,0 +1,11 @@
+{
+  "arcOffsets": ["1CDC"],
+  "stageIDX": [33],
+  "roomIDX": 0,
+  "fileDirectoryType": [0],
+  "replacementType": [0],
+  "chestLowerNibble": "2",
+  "checkCategory": ["Overworld", "Chest", "Lake Lantern Cave"],
+  "itemId": "Piece_of_Heart",
+  "dataCategory": ["Chest", "ARC"]
+}

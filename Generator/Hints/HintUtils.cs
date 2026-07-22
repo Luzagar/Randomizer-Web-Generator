@@ -104,53 +104,53 @@ namespace TPRandomizer.Hints
         public static readonly Goal Diababa = new Goal(
             GoalEnum.Diababa,
             Goal.Type.Check,
-            "Forest Temple Dungeon Reward"
+            "FT Dungeon Reward"
         );
         public static readonly Goal Fyrus = new Goal(
             GoalEnum.Fyrus,
             Goal.Type.Check,
-            "Goron Mines Dungeon Reward"
+            "GM Dungeon Reward"
         );
         public static readonly Goal Morpheel = new Goal(
             GoalEnum.Morpheel,
             Goal.Type.Check,
-            "Lakebed Temple Dungeon Reward"
+            "LBT Dungeon Reward"
         );
         public static readonly Goal Stallord = new Goal(
             GoalEnum.Stallord,
             Goal.Type.Check,
-            "Arbiters Grounds Stallord Heart Container"
+            "AG Dungeon Reward"
         );
         public static readonly Goal Blizzeta = new Goal(
             GoalEnum.Blizzeta,
             Goal.Type.Check,
-            "Snowpeak Ruins Dungeon Reward"
+            "SPR Dungeon Reward"
         );
         public static readonly Goal Armogohma = new Goal(
             GoalEnum.Armogohma,
             Goal.Type.Check,
-            "Temple of Time Dungeon Reward"
+            "ToT Dungeon Reward"
         );
         public static readonly Goal Argorok = new Goal(
             GoalEnum.Argorok,
             Goal.Type.Check,
-            "City in The Sky Dungeon Reward"
+            "CitS Dungeon Reward"
         );
 
         public static readonly Goal Zant = new Goal(
             GoalEnum.Zant,
             Goal.Type.Check,
-            "Palace of Twilight Zant Heart Container"
+            "PoT Zant Heart Container"
         );
         public static readonly Goal Hyrule_Castle = new Goal(
             GoalEnum.Hyrule_Castle,
             Goal.Type.Room,
-            "Hyrule Castle Entrance"
+            "HC Entrance"
         );
         public static readonly Goal Ganondorf = new Goal(
             GoalEnum.Ganondorf,
             Goal.Type.Check,
-            "Hyrule Castle Ganondorf"
+            "HC Ganondorf"
         );
 
         private static readonly Dictionary<GoalEnum, Goal> goalEnumToGoal =
@@ -186,7 +186,7 @@ namespace TPRandomizer.Hints
             {
                 {
                     SpotId.Agithas_Castle_Sign,
-                    new() { Goal.Room("Castle Town South") }
+                    new() { Goal.Room("CT South") }
                 },
                 {
                     SpotId.Ordon_Sign,
@@ -206,17 +206,17 @@ namespace TPRandomizer.Hints
                 },
                 {
                     SpotId.Kakariko_Gorge_Sign,
-                    new() { Goal.Room("Kakariko Gorge") }
+                    new() { Goal.Room("Kak Gorge") }
                 },
                 {
                     SpotId.Kakariko_Village_Sign,
-                    new() { Goal.Room("Lower Kakariko Village") }
+                    new() { Goal.Room("Lower Kak Village") }
                 },
                 {
                     SpotId.Kakariko_Graveyard_Sign,
                     new()
                     {
-                        Goal.Room("Kakariko Graveyard"),
+                        Goal.Room("Kak Graveyard"),
                         Goal.Logic("Gate_Keys and CanCompleteEldinTwilight")
                     }
                 },
@@ -234,7 +234,7 @@ namespace TPRandomizer.Hints
                 },
                 {
                     SpotId.Hidden_Village_Sign,
-                    new() { Goal.Room("Hidden Village") }
+                    new() { Goal.Room("HV Outside") }
                 },
                 {
                     SpotId.Lanayru_Field_Sign,
@@ -242,15 +242,15 @@ namespace TPRandomizer.Hints
                 },
                 {
                     SpotId.Beside_Castle_Town_Sign,
-                    new() { Goal.Room("Outside Castle Town West Grotto Ledge") }
+                    new() { Goal.Room("BCT Grotto Ledge") }
                 },
                 {
                     SpotId.South_of_Castle_Town_Sign,
-                    new() { Goal.Room("Outside Castle Town South") }
+                    new() { Goal.Room("OCT South") }
                 },
                 {
                     SpotId.Castle_Town_Sign,
-                    new() { Goal.Room("Castle Town Center") }
+                    new() { Goal.Room("CT Center") }
                 },
                 {
                     SpotId.Great_Bridge_of_Hylia_Sign,
@@ -278,7 +278,7 @@ namespace TPRandomizer.Hints
                 },
                 {
                     SpotId.Zoras_Domain_Sign,
-                    new() { Goal.Room("Zoras Domain West Ledge"), }
+                    new() { Goal.Room("ZD West Ledge"), }
                 },
                 {
                     SpotId.Upper_Zoras_River_Sign,
@@ -298,13 +298,13 @@ namespace TPRandomizer.Hints
                 },
                 {
                     SpotId.Cave_of_Ordeals_Sign,
-                    new() { Goal.Room("Gerudo Desert Cave of Ordeals Floors 01-11"), }
+                    new() { Goal.Room("CoO Floors 01-11"), }
                 },
                 {
                     SpotId.Forest_Temple_Sign,
                     new()
                     {
-                        Goal.Room("Forest Temple Lobby"),
+                        Goal.Room("FT Lobby"),
                         // Lobby to west wing logic, minus needing to destroy the web.
                         Goal.Logic(
                             "((Forest_Temple_Small_Key, 2) and CanDefeatBokoblin) or (Progressive_Clawshot, 1)"
@@ -313,43 +313,43 @@ namespace TPRandomizer.Hints
                 },
                 {
                     SpotId.Goron_Mines_Sign,
-                    new() { Goal.Room("Goron Mines Upper East Wing"), }
+                    new() { Goal.Room("GM Upper East Wing"), }
                 },
                 {
                     SpotId.Lakebed_Temple_Sign,
                     // Note: can pull the immediate switch and easily walk to sign
-                    new() { Goal.Room("Lakebed Temple Central Room"), }
+                    new() { Goal.Room("LBT Central Room"), }
                 },
                 {
                     SpotId.Arbiters_Grounds_Sign,
-                    new() { Goal.Room("Arbiters Grounds Lobby"), }
+                    new() { Goal.Room("AG Lobby"), }
                 },
                 {
                     SpotId.Snowpeak_Ruins_Sign,
-                    new() { Goal.Room("Snowpeak Ruins Yeto and Yeta"), }
+                    new() { Goal.Room("SPR Yeto and Yeta"), }
                 },
                 {
                     SpotId.Temple_of_Time_Sign,
-                    new() { Goal.Room("Temple of Time Entrance"), }
+                    new() { Goal.Room("ToT Entrance"), }
                 },
                 {
                     SpotId.City_in_the_Sky_Sign,
-                    new() { Goal.Room("City in The Sky Lobby"), }
+                    new() { Goal.Room("CitS Lobby"), }
                 },
                 {
                     SpotId.Palace_of_Twilight_Sign,
-                    new() { Goal.Room("Palace of Twilight Entrance"), }
+                    new() { Goal.Room("PoT Entrance"), }
                 },
                 {
                     SpotId.Hyrule_Castle_Sign,
-                    new() { Goal.Room("Hyrule Castle Entrance"), }
+                    new() { Goal.Room("HC Entrance"), }
                 },
                 {
                     SpotId.Temple_of_Time_Beyond_Point_Sign,
                     // Note: matching main logic which expects Bow specifically even for glitched.
                     new()
                     {
-                        Goal.Room("Temple of Time Moving Wall Hallways"),
+                        Goal.Room("ToT Moving Wall Hallways"),
                         Goal.Logic("(Progressive_Bow, 1)")
                     }
                 },
@@ -373,7 +373,7 @@ namespace TPRandomizer.Hints
                     SpotId.Kakariko_Graveyard_Sign,
                     new()
                     {
-                        Goal.Room("Kakariko Graveyard"),
+                        Goal.Room("Kak Graveyard"),
                         // Note: based on logic for connection to Lake Hylia.
                         Goal.Logic(
                             "(HasBombs and (HasSword or Spinner)) or CanDoLJA or CanDoMoonBoots"
@@ -396,7 +396,7 @@ namespace TPRandomizer.Hints
                     SpotId.Forest_Temple_Sign,
                     new()
                     {
-                        Goal.Room("Forest Temple Lobby"),
+                        Goal.Room("FT Lobby"),
                         Goal.Logic(
                             "((Forest_Temple_Small_Key, 2) and CanDefeatBokoblin) or (Progressive_Clawshot, 1) or CanDoLJA"
                         )
@@ -650,15 +650,11 @@ namespace TPRandomizer.Hints
             if (goalsFromDungeons == null)
                 goalsFromDungeons = getGoalsBasedOnDungeons(sSettings);
 
-            bool startWithBigKeys =
-                sSettings.bigKeySettings == BigKeySettings.Anywhere
-                || sSettings.bigKeySettings == BigKeySettings.Any_Dungeon;
-
             return filterToRequiredChecksOfGoals(
                 startingRoom,
                 maybeRequiredCheckNames,
                 goalsFromDungeons,
-                startWithBigKeys
+                false
             );
         }
 
@@ -669,7 +665,7 @@ namespace TPRandomizer.Hints
             // Goals to bosses are only valid if it is common knowledge based on
             // the settings that the bosses themselves are required.
 
-            if (!sSettings.shuffleRewards)
+            if (!sSettings.shuffleFusedShadows && !sSettings.shuffleMirrorShards)
             {
                 // If not shuffling rewards, can simply add a goal for the boss
                 // of each required dungeon.

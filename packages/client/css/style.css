@@ -266,6 +266,12 @@ img.flag {
   overflow-x: hidden;
 }
 
+.dungeonFieldset {
+  height: auto;
+  width: 100%;
+  overflow-x: hidden;
+}
+
 .otherItemsFieldset {
   width: 100%;
 }
@@ -291,6 +297,10 @@ ul {
 .tabColumn > * {
   height: 100%;
   box-sizing: border-box;
+}
+
+#dungeonItemFieldset {
+  border: none;
 }
 
 /* Style the buttons that are used to open the tab content */
@@ -324,6 +334,20 @@ ul {
 
 .tabcontent.tabcontentactive {
   display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+/* Style the tab content */
+.dungeonTabcontent {
+  display: none;
+  padding: 6px 12px;
+  border-top: none;
+  align-content: center;
+}
+
+.dungeonTabcontent.tabcontentactive {
+  display: block;
   flex-wrap: wrap;
   align-items: stretch;
 }

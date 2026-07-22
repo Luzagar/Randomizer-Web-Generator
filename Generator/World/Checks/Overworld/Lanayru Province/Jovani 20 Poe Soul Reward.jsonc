@@ -1,6 +1,0 @@
-{
-    "requirements": "(Poe_Soul, 20)",
-    "glitchedRequirements": "(Poe_Soul, 20)",
-    "checkCategory": ["Overworld", "Npc", "Castle Town"],
-    "itemId": "Jovani_Bottle"
-}
