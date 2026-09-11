@@ -429,6 +429,7 @@ namespace TPRandomizer.Hints
                         "LBT Before Deku Toad Underwater Left Chest",
                         "LBT Before Deku Toad Underwater Right Chest",
                         "LBT West Second Floor Southwest Underwater Chest",
+                        "LBT Central Room Spire Chest",
                     }
                 },
             };
