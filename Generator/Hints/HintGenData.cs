@@ -1336,6 +1336,7 @@ namespace TPRandomizer.Hints
             Item contents = HintUtils.getCheckContents(checkName);
             return (
                 !HintConstants.invalidSpolItems.Contains(contents)
+                && !HintConstants.invalidSpolChecks.Contains(checkName)
                 && CheckCanBeClaimHinted(checkName)
                 && CalcDetailedCheckStatus(checkName) == DetailedCheckStatus.Required
             );
