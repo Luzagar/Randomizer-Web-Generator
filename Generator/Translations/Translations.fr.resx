@@ -162,7 +162,7 @@
     <comment></comment>
   </data>
   <data name="area.category.lakebed_temple_underwater" xml:space="preserve">
-    <value>$(ap:dans)les {cs}3 coffres sous l&apos;eau{ce} de ce Donjon</value>
+    <value>$(ap:dans)les {cs}4 coffres sous l&apos;eau{ce} de ce Donjon</value>
     <comment></comment>
   </data>
   <data name="area.category.lantern_chests" xml:space="preserve">
@@ -235,6 +235,14 @@
   </data>
   <data name="area.category.palace_of_twilight_west_wing" xml:space="preserve">
     <value>$(ap:dans)l&apos;{cs}aile ouest{ce}</value>
+    <comment></comment>
+  </data>
+  <data name="area.zone.fish_journal_zone" xml:space="preserve">
+    <value>$(ap:dans)le {cs}Carnet de Pêche{ce}</value>
+    <comment></comment>
+  </data>
+  <data name="area.province.fish_journal_province" xml:space="preserve">
+    <value>$(ap:dans)le {cs}Carnet de Pêche{ce}</value>
     <comment></comment>
   </data>
   <data name="area.category.southern_desert" xml:space="preserve">

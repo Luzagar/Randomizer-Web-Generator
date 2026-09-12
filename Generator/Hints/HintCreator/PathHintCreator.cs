@@ -80,6 +80,13 @@ namespace TPRandomizer.Hints.HintCreator
             if (pathHints != null)
             {
                 List<Hint> a = pathHints.ConvertAll(x => (Hint)x);
+
+                // Log path hints
+                foreach (PathHint hint in a)
+                {
+                    Console.WriteLine(hint.areaId.stringId + " (" + hint.checkName + ") is path to " + hint.goalEnum);
+                }
+ 
                 return a;
             }
             return null;

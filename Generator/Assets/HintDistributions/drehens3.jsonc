@@ -244,6 +244,9 @@
                         "Armogohma",
                         "Argorok",
                         "Zant"
+                      ],
+                      "invalidItems": [
+                        "Faron_Woods_Coro_Key"
                       ]
                     }
                   }
@@ -311,7 +314,8 @@
                       "PoT Big Key Chest",
                       "AG Death Sword Chest",
                       "ToT Darknut Chest",
-                      "CitS Aeralfos Chest"
+                      "CitS Aeralfos Chest",
+                      "LBT Deku Toad Chest"
                     ]
                   }
                 }

@@ -170,7 +170,7 @@
     <comment></comment>
   </data>
   <data name="area.category.lakebed_temple_underwater" xml:space="preserve">
-    <value>this Dungeon{cs} 3 underwater chests{ce}</value>
+    <value>this Dungeon{cs} 4 underwater chests{ce}</value>
     <comment></comment>
   </data>
   <data name="area.category.lantern_chests" xml:space="preserve">
@@ -239,6 +239,14 @@
   </data>
   <data name="area.category.palace_of_twilight_west_wing" xml:space="preserve">
     <value>the {cs}west wing{ce}</value>
+    <comment></comment>
+  </data>
+  <data name="area.zone.fish_journal_zone" xml:space="preserve">
+    <value>the {cs}Fish Journal{ce}</value>
+    <comment></comment>
+  </data>
+  <data name="area.province.fish_journal_province" xml:space="preserve">
+    <value>the {cs}Fish Journal{ce}</value>
     <comment></comment>
   </data>
   <data name="area.category.southern_desert" xml:space="preserve">
