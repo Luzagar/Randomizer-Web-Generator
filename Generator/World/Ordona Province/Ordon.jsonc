@@ -58,8 +58,8 @@
       },
       {
         "ConnectedArea": "Ordon Seras Shop",
-        "Requirements": "CanCompleteGoats1 and CanPay",
-        "GlitchedRequirements": "CanCompleteGoats1 and CanPay"
+        "Requirements": "CanCompleteGoats1",
+        "GlitchedRequirements": "CanCompleteGoats1"
       },
       {
         "ConnectedArea": "Ordon Shield House Lower",
@@ -217,8 +217,8 @@
       },
       {
         "CheckName": "Sera Shop Slingshot",
-        "Requirements": "true",
-        "GlitchedRequirements": "true"
+        "Requirements": "CanPay",
+        "GlitchedRequirements": "CanPay"
       }
     ],
     "Region": "Ordona Province"
