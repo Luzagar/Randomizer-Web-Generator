@@ -288,6 +288,7 @@
                   "iterations": 2,
                   "options": {
                     "markAsSometimes": true,
+                    "prioritizeNewZones": true,
                     "validChecks": [
                       "FT West Tile Worm Chest Behind Stairs",
                       "GM Outside Clawshot Chest",
