@@ -156,6 +156,17 @@
       "hintDef": {
         "copies": 3,
         "hintDef": [
+          // Most Sword Province
+          {
+            "hintType": "numItemInArea",
+            "saveToVar": "firstLayerHint",
+            "options": {
+              "item": "Progressive_Sword",
+              "areaType": "province",
+              "validAreas": ["Dungeon", "Faron", "Eldin", "Lanayru", "Desert", "Ordona", "Peak"],
+              "order": "desc"
+            }
+          },
           {
             "hintDef": [
               {
@@ -165,9 +176,6 @@
                     "iterations": 4,
                     "starting": 4,
                     "saveToVar": "barrenHints",
-                    "options": {
-                      "validAreas": ["alias:allminusfishjournal"]
-                    }
                   }
                 ]
               }
@@ -222,16 +230,6 @@
             ]
           },
           {
-            "hintType": "numItemInArea",
-            "saveToVar": "firstLayerHint",
-            "options": {
-              "item": "Progressive_Sword",
-              "areaType": "province",
-              "validAreas": ["Dungeon", "Faron", "Eldin", "Lanayru", "Desert", "Ordona", "Peak", "Fish_Journal_Province"],
-              "order": "desc"
-            }
-          },
-          {
             "copies": 1,
             "iterations": 99,
             "hintDef": [
@@ -251,6 +249,7 @@
       "groupId": "overworld",
       "hintDef": {
         "hintDef": [
+          // Least Sword Province
           {     
             "copies": 3,
             "hintType": "numItemInArea",
