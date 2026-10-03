@@ -174,20 +174,6 @@
             ]
           },
           {
-            "hintDef": [
-              {
-                "hintType": "importanceCount",
-                "iterations": 1,
-                "starting": 1,
-                "options": {
-                  "areaType": "zone",
-                  "indicateImportant": false,
-                  "validAreas": ["Fish Journal Zone"]
-                }
-              }
-            ]
-          },
-          {
             "hintType": "barren",
             "saveToVar": "firstLayerHint",
             "options": {
@@ -288,6 +274,7 @@
                   "iterations": 2,
                   "options": {
                     "markAsSometimes": true,
+                    "prioritizeNewZones": true,
                     "validChecks": [
                       "FT West Tile Worm Chest Behind Stairs",
                       "GM Outside Clawshot Chest",
