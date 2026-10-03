@@ -175,7 +175,7 @@
                     "hintType": "barren",
                     "iterations": 4,
                     "starting": 4,
-                    "saveToVar": "barrenHints",
+                    "saveToVar": "barrenHints"
                   }
                 ]
               }
